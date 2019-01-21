@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Filters Reference &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sizers Reference" href="sizers-reference.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Filters Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sessionfilter">SessionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sessionfiltersimple">SessionFilterSimple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sessionfilller">SessionFilller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calendardays">CalendarDays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#barreplayer-open">BarReplayer_Open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#daysplitter-close">DaySplitter_Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heikinashi">HeikinAshi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renko">Renko</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="filters-reference">
+<h1>Filters Reference<a class="headerlink" href="#filters-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sessionfilter">
+<h2>SessionFilter<a class="headerlink" href="#sessionfilter" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.SessionFilter">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">SessionFilter</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.SessionFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class can be applied to a data source as a filter and will filter out
+intraday bars which fall outside of the regular session times (ie: pre/post
+market data)</p>
+<p>This is a “non-simple” filter and must manage the stack of the data (passed
+during init and __call__)</p>
+<p>It needs no “last” method because it has nothing to deliver</p>
+</dd></dl>
+
+</div>
+<div class="section" id="sessionfiltersimple">
+<h2>SessionFilterSimple<a class="headerlink" href="#sessionfiltersimple" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.SessionFilterSimple">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">SessionFilterSimple</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.SessionFilterSimple" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class can be applied to a data source as a filter and will filter out
+intraday bars which fall outside of the regular session times (ie: pre/post
+market data)</p>
+<p>This is a “simple” filter and must NOT manage the stack of the data (passed
+during init and __call__)</p>
+<p>It needs no “last” method because it has nothing to deliver</p>
+<p>Bar Management will be done by the SimpleFilterWrapper class made which is
+added durint the DataBase.addfilter_simple call</p>
+</dd></dl>
+
+</div>
+<div class="section" id="sessionfilller">
+<h2>SessionFilller<a class="headerlink" href="#sessionfilller" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.SessionFiller">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">SessionFiller</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.SessionFiller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bar Filler for a Data Source inside the declared session start/end times.</p>
+<p>The fill bars are constructed using the declared Data Source <code class="docutils literal notranslate"><span class="pre">timeframe</span></code>
+and <code class="docutils literal notranslate"><span class="pre">compression</span></code> (used to calculate the intervening missing times)</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">fill_price (def: None):</p>
+<p>If None is passed, the closing price of the previous bar will be
+used. To end up with a bar which for example takes time but it is not
+displayed in a plot … use float(‘Nan’)</p>
+</li>
+<li><p class="first">fill_vol (def: float(‘NaN’)):</p>
+<p>Value to use to fill the missing volume</p>
+</li>
+<li><p class="first">fill_oi (def: float(‘NaN’)):</p>
+<p>Value to use to fill the missing Open Interest</p>
+</li>
+<li><p class="first">skip_first_fill (def: True):</p>
+<p>Upon seeing the 1st valid bar do not fill from the sessionstart up to
+that bar</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="calendardays">
+<h2>CalendarDays<a class="headerlink" href="#calendardays" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.CalendarDays">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">CalendarDays</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.CalendarDays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bar Filler to add missing calendar days to trading days</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">fill_price (def: None):</p>
+<p>&gt; 0: The given value to fill
+0 or None: Use the last known closing price
+-1: Use the midpoint of the last bar (High-Low average)</p>
+</li>
+<li><p class="first">fill_vol (def: float(‘NaN’)):</p>
+<p>Value to use to fill the missing volume</p>
+</li>
+<li><p class="first">fill_oi (def: float(‘NaN’)):</p>
+<p>Value to use to fill the missing Open Interest</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="barreplayer-open">
+<h2>BarReplayer_Open<a class="headerlink" href="#barreplayer-open" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.BarReplayer_Open">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">BarReplayer_Open</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.BarReplayer_Open" title="Permalink to this definition">¶</a></dt>
+<dd><p>This filters splits a bar in two parts:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Open</span></code>: the opening price of the bar will be used to deliver an
+initial price bar in which the four components (OHLC) are equal</p>
+<p>The volume/openinterest fields are 0 for this initial bar</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">OHLC</span></code>: the original bar is delivered complete with the original
+<code class="docutils literal notranslate"><span class="pre">volume</span></code>/<code class="docutils literal notranslate"><span class="pre">openinterest</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+<p>The split simulates a replay without the need to use the <em>replay</em> filter.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daysplitter-close">
+<h2>DaySplitter_Close<a class="headerlink" href="#daysplitter-close" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.DaySplitter_Close">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">DaySplitter_Close</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.DaySplitter_Close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits a daily bar in two parts simulating 2 ticks which will be used to
+replay the data:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">First tick: <code class="docutils literal notranslate"><span class="pre">OHLX</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Close</span></code> will be replaced by the <em>average</em> of <code class="docutils literal notranslate"><span class="pre">Open</span></code>, <code class="docutils literal notranslate"><span class="pre">High</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Low</span></code></p>
+<p>The session opening time is used for this tick</p>
+</li>
+</ul>
+<p>and</p>
+<ul>
+<li><p class="first">Second tick: <code class="docutils literal notranslate"><span class="pre">CCCC</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Close</span></code> price will be used for the four components of the price</p>
+<p>The session closing time is used for this tick</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The volume will be split amongst the 2 ticks using the parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">closevol</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code>) The value indicate which percentage, in
+absolute terms from 0.0 to 1.0, has to be assigned to the <em>closing</em>
+tick. The rest will be assigned to the <code class="docutils literal notranslate"><span class="pre">OHLX</span></code> tick.</li>
+</ul>
+</div></blockquote>
+<p><strong>This filter is meant to be used together with</strong> <code class="docutils literal notranslate"><span class="pre">cerebro.replaydata</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="heikinashi">
+<h2>HeikinAshi<a class="headerlink" href="#heikinashi" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.HeikinAshi">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">HeikinAshi</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.HeikinAshi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The filter remodels the open, high, low, close to make HeikinAshi
+candlesticks</p>
+<dl class="docutils">
+<dt>See:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Candlestick_chart#Heikin_Ashi_candlesticks">https://en.wikipedia.org/wiki/Candlestick_chart#Heikin_Ashi_candlesticks</a></li>
+<li><a class="reference external" href="http://stockcharts.com/school/doku.php?id=chart_school:chart_analysis:heikin_ashi">http://stockcharts.com/school/doku.php?id=chart_school:chart_analysis:heikin_ashi</a></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="renko">
+<h2>Renko<a class="headerlink" href="#renko" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.filters.Renko">
+<em class="property">class </em><code class="descclassname">backtrader.filters.</code><code class="descname">Renko</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.filters.Renko" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the data stream to draw Renko bars (or bricks)</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">hilo</span></code> (default: <em>False</em>) Use high and low instead of close to decide
+if a new brick is needed</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">size</span></code> (default: <em>None</em>) The size to consider for each brick</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">autosize</span></code> (default: <em>20.0</em>) If <em>size</em> is <em>None</em>, this will be used
+to autocalculate the size of the bricks (simply dividing the current
+price by the given value)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">dynamic</span></code> (default: <em>False</em>) If <em>True</em> and using <em>autosize</em>, the size
+of the bricks will be recalculated when moving to a new brick. This
+will of course eliminate the perfect alignment of Renko bricks.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">align</span></code> (default: <em>1.0</em>) Factor use to align the price boundaries of
+the bricks. If the price is for example <em>3563.25</em> and <em>align</em> is
+<em>10.0</em>, the resulting aligned price will be <em>3560</em>. The calculation:</p>
+<blockquote>
+<div><ul class="simple">
+<li>3563.25 / 10.0 = 356.325</li>
+<li>round it and remove the decimals -&gt; 356</li>
+<li>356 * 10.0 -&gt; 3560</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>See:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://stockcharts.com/school/doku.php?id=chart_school:chart_analysis:renko">http://stockcharts.com/school/doku.php?id=chart_school:chart_analysis:renko</a></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

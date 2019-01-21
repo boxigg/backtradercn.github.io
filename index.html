@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to backtrader’s documentation! &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="#">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="welcome-to-backtrader-s-documentation">
+<h1>Welcome to backtrader’s documentation!<a class="headerlink" href="#welcome-to-backtrader-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements-and-versions">Requirements and versions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#python-2-x-3-x-compatibility">Python 2.x/3.x compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from pypi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi-including-matplotlib">Install from pypi (including <em>matplotlib</em>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-source">Install from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#run-from-source-in-your-project">Run from source in your project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart/quickstart.html#using-the-platform">Using the platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart/quickstart.html#from-0-to-100-the-samples">From 0 to 100: the samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#basic-setup">Basic Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#setting-the-cash">Setting the Cash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#adding-a-data-feed">Adding a Data Feed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#our-first-strategy">Our First Strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#adding-some-logic-to-the-strategy">Adding some Logic to the Strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#do-not-only-buy-but-sell">Do not only buy … but SELL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#the-broker-says-show-me-the-money">The broker says: Show me the money!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#customizing-the-strategy-parameters">Customizing the Strategy: Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#adding-an-indicator">Adding an indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#visual-inspection-plotting">Visual Inspection: Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#let-s-optimize">Let’s Optimize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/quickstart.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#before-starting">Before Starting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#data-feeds-passing-them-around">Data Feeds - Passing them around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#shortcuts-for-data-feeds">Shortcuts for Data Feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#omitting-the-data-feeds">Omitting the Data Feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#almost-everything-is-a-data-feed">Almost everything is a <em>Data Feed</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#lines">Lines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#lines-declaration"><em>Lines</em> declaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#accessing-lines-in-data-feeds">Accessing <code class="docutils literal notranslate"><span class="pre">lines</span></code> in <em>Data Feeds</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#lines-len"><em>Lines</em> len</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#inheritance-of-lines-and-params">Inheritance of Lines and Params</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#indexing-0-and-1">Indexing: 0 and -1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#slicing">Slicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#getting-a-slice">Getting a slice</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#lines-delayed-indexing">Lines: DELAYED indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#lines-coupling">Lines Coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#operators-using-natural-constructs">Operators, using natural constructs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#stage-1-operators-create-objects">Stage 1 - Operators Create Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#stage-2-operators-true-to-nature">Stage 2 - Operators true to nature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts.html#some-non-overriden-operators-functions">Some non-overriden operators/functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operating.html#line-iterators">Line Iterators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating.html#extra-methods-for-indicators">Extra methods for <em>Indicators</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating.html#minimum-period">Minimum Period</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="operating.html#up-and-running">Up and Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating.html#data-feeds">Data Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating.html#a-strategy-derived-class">A Strategy (derived) class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating.html#a-cerebro">A Cerebro</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#hierarchy">Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#location">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#id1">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exceptions.html#strategyskiperror"><code class="docutils literal notranslate"><span class="pre">StrategySkipError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cerebro.html#gathering-input">Gathering input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro.html#execute-the-backtesting">Execute the backtesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cerebro.html#standard-observers">Standard Observers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro.html#returning-the-results">Returning the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro.html#giving-access-to-the-plotting-facilities">Giving access to the plotting facilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro.html#backtesting-logic">Backtesting logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cerebro.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html#trying-cheat-on-open">Trying cheat-on-open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html#sample-usage">Sample usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html#sample-source">Sample source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html#how-to-buy-sell-close">How to Buy/Sell/Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html#information-bits">Information Bits:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html#member-attributes">Member Attributes:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html#member-attributes-meant-for-statistics-observers-analyzers">Member Attributes (meant for statistics/observers/analyzers):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html#reference-strategy">Reference: Strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sizers/sizers.html#using-sizers">Using <em>Sizers</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sizers/sizers.html#from-cerebro">From <em>Cerebro</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sizers/sizers.html#from-strategy">From <em>Strategy</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sizers/sizers.html#sizer-development"><em>Sizer</em> Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sizers/sizers.html#practical-sizer-applicability">Practical <em>Sizer</em> Applicability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sizers/sizers.html#bt-sizer-reference"><em>bt.Sizer</em> Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#usage-pattern">Usage pattern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="timers/timers.html#adding-timers-via-strategy">Adding timers - Via Strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timers/timers.html#adding-timers-via-cerebro">Adding timers - Via Cerebro</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#when-are-timers-called">When are timers called</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="timers/timers.html#if-cheat-false">If <code class="docutils literal notranslate"><span class="pre">cheat=False</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="timers/timers.html#if-cheat-true">If <code class="docutils literal notranslate"><span class="pre">cheat=True</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#running-with-daily-bars">Running with daily bars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#running-with-5-minute-bars">Running with 5-minute bars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#additional-scenarios">Additional scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#parameters-to-add-timer">Parameters to <code class="docutils literal notranslate"><span class="pre">add_timer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#sample-usage-scheduled-py">Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#sample-usage-scheduled-min-py">Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#sample-source-scheduled-py">Sample source <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timers/timers.html#sample-source-scheduled-min-py">Sample source <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order_target/order_target.html#the-sample">The Sample</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="order_target/order_target.html#order-target-size">order_target_size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order_target/order_target.html#order-target-value">order_target_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order_target/order_target.html#order-target-percent">order_target_percent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="order_target/order_target.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order_target/order_target.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#initial-faq">Initial <em>FAQ</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#signals-technicalities"><em>Signals</em> technicalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#signals-indications"><em>Signals</em> indications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#signals-types"><em>Signals</em> Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#accumulation-and-order-concurrency">Accumulation and Order Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_strategy/signal_strategy.html#the-sample">The sample</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#first-run-long-and-short">First run: long and short</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#second-run-long-only">Second run: long only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#third-run-short-only">Third run: short only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#fourth-run-long-longexit">Fourth run: long + longexit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_strategy/signal_strategy.html#the-code">The code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="broker.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slippage/slippage.html#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slippage/slippage.html#configuring-slippage">Configuring slippage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slippage/slippage.html#practical-examples">Practical examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filler.html#the-fillers-signature">The fillers signature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filler.html#adding-a-filler-to-the-broker">Adding a Filler to the broker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filler.html#the-sample">The sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filler.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order.html#order-creation">Order creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order.html#order-notification">Order notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order.html#order-status-values">Order Status values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order.html#reference-order-and-associated-classes">Reference: Order and associated classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#order-management">Order Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#order-execution-logic">Order Execution Logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#market">Market</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#close">Close</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#limit">Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#stop">Stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#stoplimit">StopLimit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#some-samples">Some samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-market">Execution Type: Market</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-close">Execution Type: Close</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-limit">Execution Type: Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-limit-with-validity">Execution Type: Limit with validity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-stop">Execution Type: Stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#execution-type-stoplimit">Execution Type: StopLimit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#test-script-execution">Test Script Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-creation-execution/order-creation-execution.html#the-full-code">The full code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/oco/oco.html#sample-usage">Sample usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/oco/oco.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#usage-pattern">Usage Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#single-issuing-of-a-bracket">Single Issuing of a Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#manual-issuing-of-a-bracket">Manual Issuing of a Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#a-sample-of-it">A sample of it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#some-reference">Some reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#sample-usage">Sample usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/bracket/bracket.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html#putting-it-all-together">Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datafeed.html#data-feeds-common-parameters">Data Feeds Common parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datafeed.html#csv-data-feeds-common-parameters">CSV Data Feeds Common parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datafeed.html#genericcsvdata">GenericCSVData</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datafeed-develop-csv.html#caveat-emptor">Caveat Emptor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#sample-binary-datafeed">Sample binary datafeed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#initialization">Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#start">Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#stop">Stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#actual-loading">Actual Loading</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#other-binary-formats">Other Binary Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#vchartdata-test">VChartData Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html#vchartdata-full-code">VChartData Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending-a-datafeed.html#plotting-that-extra-p-e-line">Plotting that extra P/E line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#trading-calendar-interface">Trading Calendar Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#implementations">Implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#pandasmarketcalendar">PandasMarketCalendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#tradingcalendar">TradingCalendar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#usage-pattern">Usage pattern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#global-trading-calendar">Global Trading Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#per-data-feed">Per data-feed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#daily-to-weekly">Daily to Weekly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#minutes-to-daily">Minutes to Daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#extra-bonus-for-the-strategy">Extra bonus for the strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#sample-usage-tcal-py">Sample usage (tcal.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#sample-usage-tcal-intra-py">Sample usage (tcal-intra.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#sample-code-tcal-py">Sample Code (tcal.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tradingcalendar/tradingcalendar.html#sample-code-tcal-intra-py">Sample Code (tcal-intra.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#example-1-daily-and-weekly">Example 1 - Daily and Weekly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#example-2-daily-and-daily-compression-2-bars-to-1">Example 2 - Daily and Daily Compression (2 bars to 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#example-3-strategy-with-sma">Example 3 - Strategy with SMA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#invocation-1">Invocation 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#invocation-2">Invocation 2:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data-replay/data-replay.html#example-replay-daily-to-weekly">Example - Replay Daily to Weekly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-replay/data-replay.html#example-2-daily-to-daily-with-compression">Example 2 - Daily to Daily with Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-replay/data-replay.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data-rollover/rolling-futures-over.html#the-rollover-data-feed">The RollOver Data Feed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#options-for-the-roll-over">Options for the Roll-Over</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#subclassing-rollover">Subclassing <code class="docutils literal notranslate"><span class="pre">RollOver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data-rollover/rolling-futures-over.html#let-s-roll">Let’s Roll</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#futures-concatenation">Futures concatenation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#futures-roll-over-with-no-checks">Futures roll-over with no checks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#changing-during-the-week">Changing during the Week</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-rollover/rolling-futures-over.html#adding-a-volume-condition">Adding a volume condition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data-rollover/rolling-futures-over.html#concluding">Concluding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-rollover/rolling-futures-over.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-rollover/rolling-futures-over.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#filters-at-work">Filters at work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#filter-interface">Filter Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#a-sample-filter">A Sample Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#data-pseudo-api-for-filters">Data Pseudo-API for Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html#another-example-pinkfish-filter">Another example: Pinkfish Filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="induse.html#indicators-in-action">Indicators in action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="induse.html#init-vs-next"><code class="docutils literal notranslate"><span class="pre">__init__</span></code> vs <code class="docutils literal notranslate"><span class="pre">next</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="induse.html#during-init">During <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="induse.html#during-next">During <code class="docutils literal notranslate"><span class="pre">next</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="induse.html#the-init-vs-next-why">The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> vs <code class="docutils literal notranslate"><span class="pre">next</span></code> <em>why</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="induse.html#some-notes">Some notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="induse.html#indicator-plotting">Indicator Plotting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="induse.html#controlling-plotting">Controlling plotting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#using-ta-lib">Using <em>ta-lib</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#moving-averages-and-ma-type">Moving Averages and MA_Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#plotting-ta-lib-indicators">Plotting ta-lib indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#examples-and-comparisons">Examples and comparisons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#kama-kaufman-moving-average">KAMA (Kaufman Moving Average)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#sma">SMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#ema">EMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#stochastic">Stochastic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#rsi">RSI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#macd">MACD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#bollinger-bands">Bollinger Bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#aroon">AROON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#ultimate-oscillator">Ultimate Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#trix">Trix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#adxr">ADXR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#dema">DEMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#tema">TEMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#ppo">PPO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#williamsr">WilliamsR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib/talib.html#roc">ROC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib/talib.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html#full-coupling-syntax">Full coupling syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html#script-code-and-usage">Script Code and Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inddev.html#important-note-idempotence">Important note: Idempotence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="inddev.html#a-dummy-but-functional-indicator">A dummy (but functional) indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inddev.html#manual-automatic-minimum-period">Manual/Automatic Minimum Period</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="inddev.html#a-full-custom-indicator">A full custom indicator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#accesing-the-observers">Accesing the Observers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#observer-implementation">Observer Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#adding-observers-to-the-strategy">Adding Observers to the Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#developing-observers">Developing Observers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#custom-orderobserver">Custom <em>OrderObserver</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html#saving-keeping-the-statistics">Saving/Keeping the statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="observer-benchmark/benchmarking.html#analyzers-benchmarking">Analyzers - Benchmarking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observer-benchmark/benchmarking.html#observers-benchmarking">Observers - Benchmarking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="observer-benchmark/benchmarking.html#observing-timereturn">Observing TimeReturn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observer-benchmark/benchmarking.html#observing-benchmarking">Observing Benchmarking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observer-benchmark/benchmarking.html#observing-benchmarking-another-data">Observing Benchmarking - Another data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="observer-benchmark/benchmarking.html#concluding">Concluding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="observer-benchmark/benchmarking.html#the-code">The code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#nature-of-analyzers">Nature of analyzers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#location-in-the-ecosystem">Location in the ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analyzers/analyzers.html#additional-location">Additional Location</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#attributes">Attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analyzers/analyzers.html#returning-the-analysis">Returning the analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#modus-operandi">Modus operandi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#analyzer-patterns">Analyzer Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#a-quick-example">A quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#forensic-analysis-of-an-analyzer">Forensic Analysis of an Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/analyzers.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/pyfolio.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/pyfolio.html#sample-code">Sample Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analyzers/pyfolio.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html#no-pyfolio">No PyFolio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html#a-pyfolio-run">A PyFolio run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writer.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#agnosticity">Agnosticity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#using-the-broker-shortcuts">Using the broker shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#the-meaning-of-the-setcommission-parameters">The meaning of the setcommission parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#two-examples-now-stocks-vs-futures">Two examples now: stocks vs futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#creating-permanent-commission-schemes">Creating permanent Commission schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#now-a-real-comparison-with-a-sma-crossover">Now a “real” comparison with a SMA Crossover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#commissions-for-futures">Commissions for futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#commissions-for-stocks">Commissions for stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#the-code">The code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-schemes/commission-schemes.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html#commissions-for-futures-fixed-and-with-margin">Commissions for futures (fixed and with margin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html#commissions-for-stocks-perc-and-withoout-margin">Commissions for stocks (perc and withoout  margin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html#commissions-for-futures-perc-and-with-margin">Commissions for futures (perc and with margin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html#the-code-for-the-sample">The code for the sample</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html#defining-a-commission-scheme">Defining a Commission Scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html#how-to-apply-this-to-the-platform">How to apply this to the platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html#a-practical-example">A practical example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html#explaining-pseudoexec">Explaining <code class="docutils literal notranslate"><span class="pre">pseudoexec</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html#comminfobase-docstring-and-params">CommInfoBase docstring and params</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commission-credit.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-credit.html#the-formula">The formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commission-credit.html#overriding-the-formula">Overriding the formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="position.html#reference-position">Reference: Position</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trade.html#reference-trade">Reference: Trade</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotting/plotting.html#how-to-plot">How to plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting/plotting.html#plotted-elements">Plotted Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting/plotting.html#plotting-options">Plotting Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plotting/plotting.html#object-wide-plotting-options">Object-wide plotting options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/plotting.html#line-specific-plotting-options">Line specific plotting options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/plotting.html#methods-controlling-plotting">Methods controlling plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotting/plotting.html#system-wide-plotting-options">System-wide plotting options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="optimization-improvements.html#data-feed-management">Data Feed Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimization-improvements.html#results-management">Results management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimization-improvements.html#some-test-runs">Some test runs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization-improvements.html#single-core-run">Single Core Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization-improvements.html#multiple-core-runs">Multiple Core Runs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization-improvements.html#concluding">Concluding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimization-improvements.html#sample-usage">Sample Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#applying-a-user-defined-strategy">Applying a User Defined Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#using-a-built-in-strategy">Using a built-in Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#using-no-strategy">Using no Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#adding-analyzers">Adding Analyzers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#adding-indicators-and-observers">Adding Indicators and Observers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#plotting-control">Plotting Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automated-bt-run/automated-bt-run.html#usage-of-the-script">Usage of the script</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="memory-savings/memory-savings.html#script-code-and-usage">Script Code and Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timemgmt.html#operation-with-timezones">Operation with timezones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="timemgmt.html#datetime-input">Datetime Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timemgmt.html#datetime-output">Datetime output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="live/ib/ib.html">Interactive Brokers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#sample-code">Sample Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#store-model-vs-direct-model">Store Model vs Direct Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#ibstore-the-store">IBStore - the store</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#ibdata-feeds">IBData feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#ibbroker-trading-live">IBBroker - Trading Live</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/ib/ib.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="live/vc/vc.html">Visual Chart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#sample-code">Sample Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#vcstore-the-store">VCStore - the store</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#vcdata-feeds">VCData feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#vcbroker-trading-live">VCBroker - Trading Live</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/vc/vc.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="live/oanda/oanda.html">Oanda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#sample-code">Sample Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#oanda-the-store">Oanda - the store</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#oanda-feeds">Oanda feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#oandabroker-trading-live">OandaBroker - Trading Live</a></li>
+<li class="toctree-l3"><a class="reference internal" href="live/oanda/oanda.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datayahoo.html#using-the-v7-api-format">Using the v7 API/format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datayahoo.html#using-the-legacy-api-format">Using the legacy API/format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="talibindautoref.html#id1">TA-Lib Indicator Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#annualreturn">AnnualReturn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#calmar">Calmar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#drawdown">DrawDown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#timedrawdown">TimeDrawDown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#grossleverage">GrossLeverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#positionsvalue">PositionsValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#pyfolio">PyFolio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#logreturnsrolling">LogReturnsRolling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#periodstats">PeriodStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#returns">Returns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#sharperatio">SharpeRatio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#sharperatio-a">SharpeRatio_A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#sqn">SQN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#timereturn">TimeReturn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#tradeanalyzer">TradeAnalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#transactions">Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzers-reference.html#vwr">VWR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#benchmark">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#broker">Broker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="observers-reference.html#broker-cash">Broker - Cash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observers-reference.html#broker-value">Broker - Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#buysell">BuySell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#drawdown">DrawDown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#timereturn">TimeReturn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#trades">Trades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#logreturns">LogReturns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#logreturns2">LogReturns2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#fundvalue">FundValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observers-reference.html#fundshares">FundShares</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sizers-reference.html#fixedsize">FixedSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sizers-reference.html#fixedreverser">FixedReverser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sizers-reference.html#percentsizer">PercentSizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sizers-reference.html#allinsizer">AllInSizer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#sessionfilter">SessionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#sessionfiltersimple">SessionFilterSimple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#sessionfilller">SessionFilller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#calendardays">CalendarDays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#barreplayer-open">BarReplayer_Open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#daysplitter-close">DaySplitter_Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#heikinashi">HeikinAshi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters-reference.html#renko">Renko</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,6517 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TA-Lib Indicator Reference &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Strategies Reference" href="strategy-reference.html" />
+    <link rel="prev" title="Indicator Reference" href="indautoref.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TA-Lib Indicator Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">TA-Lib Indicator Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="ta-lib-indicator-reference">
+<h1>TA-Lib Indicator Reference<a class="headerlink" href="#ta-lib-indicator-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>TA-Lib Indicator Reference<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>ACOS</p>
+<p>ACOS([input_arrays])</p>
+<p>Vector Trigonometric ACos (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>AD</p>
+<p>AD([input_arrays])</p>
+<p>Chaikin A/D Line (Volume Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’, ‘volume’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ADD</p>
+<p>ADD([input_arrays])</p>
+<p>Vector Arithmetic Add (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ADOSC</p>
+<p>ADOSC([input_arrays], [fastperiod=3], [slowperiod=10])</p>
+<p>Chaikin A/D Oscillator (Volume Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’, ‘volume’]</dd>
+<dt>Parameters:</dt>
+<dd>fastperiod: 3 slowperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastperiod (3)</li>
+<li>slowperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ADX</p>
+<p>ADX([input_arrays], [timeperiod=14])</p>
+<p>Average Directional Movement Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ADXR</p>
+<p>ADXR([input_arrays], [timeperiod=14])</p>
+<p>Average Directional Movement Index Rating (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>APO</p>
+<p>APO([input_arrays], [fastperiod=12], [slowperiod=26], [matype=0])</p>
+<p>Absolute Price Oscillator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>fastperiod: 12 slowperiod: 26 matype: 0 (Simple Moving Average)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastperiod (12)</li>
+<li>slowperiod (26)</li>
+<li>matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>AROON</p>
+<p>AROON([input_arrays], [timeperiod=14])</p>
+<p>Aroon (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>aroondown aroonup</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>aroondown</li>
+<li>aroonup</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>aroondown: - ls (–)</li>
+<li>aroonup: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>AROONOSC</p>
+<p>AROONOSC([input_arrays], [timeperiod=14])</p>
+<p>Aroon Oscillator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ASIN</p>
+<p>ASIN([input_arrays])</p>
+<p>Vector Trigonometric ASin (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ATAN</p>
+<p>ATAN([input_arrays])</p>
+<p>Vector Trigonometric ATan (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ATR</p>
+<p>ATR([input_arrays], [timeperiod=14])</p>
+<p>Average True Range (Volatility Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>AVGPRICE</p>
+<p>AVGPRICE([input_arrays])</p>
+<p>Average Price (Price Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>BBANDS</p>
+<p>BBANDS([input_arrays], [timeperiod=5], [nbdevup=2], [nbdevdn=2],
+[matype=0])</p>
+<p>Bollinger Bands (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 5 nbdevup: 2 nbdevdn: 2 matype: 0 (Simple Moving
+Average)</dd>
+<dt>Outputs:</dt>
+<dd>upperband middleband lowerband</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>upperband</li>
+<li>middleband</li>
+<li>lowerband</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (5)</li>
+<li>nbdevup (2)</li>
+<li>nbdevdn (2)</li>
+<li>matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>middleband: - _samecolor (True) - ls (-)</li>
+<li>upperband:</li>
+<li>lowerband: - _samecolor (True)</li>
+</ul>
+</dd>
+</dl>
+<p>BETA</p>
+<p>BETA([input_arrays], [timeperiod=5])</p>
+<p>Beta (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 5</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (5)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>BOP</p>
+<p>BOP([input_arrays])</p>
+<p>Balance Of Power (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>CCI</p>
+<p>CCI([input_arrays], [timeperiod=14])</p>
+<p>Commodity Channel Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL2CROWS</p>
+<p>CDL2CROWS([input_arrays])</p>
+<p>Two Crows (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL2CROWS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3BLACKCROWS</p>
+<p>CDL3BLACKCROWS([input_arrays])</p>
+<p>Three Black Crows (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3BLACKCROWS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3INSIDE</p>
+<p>CDL3INSIDE([input_arrays])</p>
+<p>Three Inside Up/Down (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3INSIDE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3LINESTRIKE</p>
+<p>CDL3LINESTRIKE([input_arrays])</p>
+<p>Three-Line Strike  (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3LINESTRIKE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3OUTSIDE</p>
+<p>CDL3OUTSIDE([input_arrays])</p>
+<p>Three Outside Up/Down (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3OUTSIDE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3STARSINSOUTH</p>
+<p>CDL3STARSINSOUTH([input_arrays])</p>
+<p>Three Stars In The South (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3STARSINSOUTH)</li>
+</ul>
+</dd>
+</dl>
+<p>CDL3WHITESOLDIERS</p>
+<p>CDL3WHITESOLDIERS([input_arrays])</p>
+<p>Three Advancing White Soldiers (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDL3WHITESOLDIERS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLABANDONEDBABY</p>
+<p>CDLABANDONEDBABY([input_arrays], [penetration=0.3])</p>
+<p>Abandoned Baby (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.3</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.3)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLABANDONEDBABY)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLADVANCEBLOCK</p>
+<p>CDLADVANCEBLOCK([input_arrays])</p>
+<p>Advance Block (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLADVANCEBLOCK)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLBELTHOLD</p>
+<p>CDLBELTHOLD([input_arrays])</p>
+<p>Belt-hold (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLBELTHOLD)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLBREAKAWAY</p>
+<p>CDLBREAKAWAY([input_arrays])</p>
+<p>Breakaway (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLBREAKAWAY)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLCLOSINGMARUBOZU</p>
+<p>CDLCLOSINGMARUBOZU([input_arrays])</p>
+<p>Closing Marubozu (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLCLOSINGMARUBOZU)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLCONCEALBABYSWALL</p>
+<p>CDLCONCEALBABYSWALL([input_arrays])</p>
+<p>Concealing Baby Swallow (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLCONCEALBABYSWALL)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLCOUNTERATTACK</p>
+<p>CDLCOUNTERATTACK([input_arrays])</p>
+<p>Counterattack (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLCOUNTERATTACK)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLDARKCLOUDCOVER</p>
+<p>CDLDARKCLOUDCOVER([input_arrays], [penetration=0.5])</p>
+<p>Dark Cloud Cover (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.5</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.5)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLDARKCLOUDCOVER)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLDOJI</p>
+<p>CDLDOJI([input_arrays])</p>
+<p>Doji (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLDOJI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLDOJISTAR</p>
+<p>CDLDOJISTAR([input_arrays])</p>
+<p>Doji Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLDOJISTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLDRAGONFLYDOJI</p>
+<p>CDLDRAGONFLYDOJI([input_arrays])</p>
+<p>Dragonfly Doji (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLDRAGONFLYDOJI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLENGULFING</p>
+<p>CDLENGULFING([input_arrays])</p>
+<p>Engulfing Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLENGULFING)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLEVENINGDOJISTAR</p>
+<p>CDLEVENINGDOJISTAR([input_arrays], [penetration=0.3])</p>
+<p>Evening Doji Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.3</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.3)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLEVENINGDOJISTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLEVENINGSTAR</p>
+<p>CDLEVENINGSTAR([input_arrays], [penetration=0.3])</p>
+<p>Evening Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.3</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.3)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLEVENINGSTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLGAPSIDESIDEWHITE</p>
+<p>CDLGAPSIDESIDEWHITE([input_arrays])</p>
+<p>Up/Down-gap side-by-side white lines (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLGAPSIDESIDEWHITE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLGRAVESTONEDOJI</p>
+<p>CDLGRAVESTONEDOJI([input_arrays])</p>
+<p>Gravestone Doji (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLGRAVESTONEDOJI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHAMMER</p>
+<p>CDLHAMMER([input_arrays])</p>
+<p>Hammer (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHAMMER)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHANGINGMAN</p>
+<p>CDLHANGINGMAN([input_arrays])</p>
+<p>Hanging Man (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHANGINGMAN)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHARAMI</p>
+<p>CDLHARAMI([input_arrays])</p>
+<p>Harami Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHARAMI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHARAMICROSS</p>
+<p>CDLHARAMICROSS([input_arrays])</p>
+<p>Harami Cross Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHARAMICROSS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHIGHWAVE</p>
+<p>CDLHIGHWAVE([input_arrays])</p>
+<p>High-Wave Candle (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHIGHWAVE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHIKKAKE</p>
+<p>CDLHIKKAKE([input_arrays])</p>
+<p>Hikkake Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHIKKAKE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHIKKAKEMOD</p>
+<p>CDLHIKKAKEMOD([input_arrays])</p>
+<p>Modified Hikkake Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHIKKAKEMOD)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLHOMINGPIGEON</p>
+<p>CDLHOMINGPIGEON([input_arrays])</p>
+<p>Homing Pigeon (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLHOMINGPIGEON)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLIDENTICAL3CROWS</p>
+<p>CDLIDENTICAL3CROWS([input_arrays])</p>
+<p>Identical Three Crows (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLIDENTICAL3CROWS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLINNECK</p>
+<p>CDLINNECK([input_arrays])</p>
+<p>In-Neck Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLINNECK)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLINVERTEDHAMMER</p>
+<p>CDLINVERTEDHAMMER([input_arrays])</p>
+<p>Inverted Hammer (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLINVERTEDHAMMER)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLKICKING</p>
+<p>CDLKICKING([input_arrays])</p>
+<p>Kicking (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLKICKING)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLKICKINGBYLENGTH</p>
+<p>CDLKICKINGBYLENGTH([input_arrays])</p>
+<p>Kicking - bull/bear determined by the longer marubozu (Pattern
+Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLKICKINGBYLENGTH)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLLADDERBOTTOM</p>
+<p>CDLLADDERBOTTOM([input_arrays])</p>
+<p>Ladder Bottom (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLLADDERBOTTOM)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLLONGLEGGEDDOJI</p>
+<p>CDLLONGLEGGEDDOJI([input_arrays])</p>
+<p>Long Legged Doji (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLLONGLEGGEDDOJI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLLONGLINE</p>
+<p>CDLLONGLINE([input_arrays])</p>
+<p>Long Line Candle (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLLONGLINE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLMARUBOZU</p>
+<p>CDLMARUBOZU([input_arrays])</p>
+<p>Marubozu (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLMARUBOZU)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLMATCHINGLOW</p>
+<p>CDLMATCHINGLOW([input_arrays])</p>
+<p>Matching Low (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLMATCHINGLOW)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLMATHOLD</p>
+<p>CDLMATHOLD([input_arrays], [penetration=0.5])</p>
+<p>Mat Hold (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.5</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.5)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLMATHOLD)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLMORNINGDOJISTAR</p>
+<p>CDLMORNINGDOJISTAR([input_arrays], [penetration=0.3])</p>
+<p>Morning Doji Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.3</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.3)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLMORNINGDOJISTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLMORNINGSTAR</p>
+<p>CDLMORNINGSTAR([input_arrays], [penetration=0.3])</p>
+<p>Morning Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>penetration: 0.3</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>penetration (0.3)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLMORNINGSTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLONNECK</p>
+<p>CDLONNECK([input_arrays])</p>
+<p>On-Neck Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLONNECK)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLPIERCING</p>
+<p>CDLPIERCING([input_arrays])</p>
+<p>Piercing Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLPIERCING)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLRICKSHAWMAN</p>
+<p>CDLRICKSHAWMAN([input_arrays])</p>
+<p>Rickshaw Man (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLRICKSHAWMAN)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLRISEFALL3METHODS</p>
+<p>CDLRISEFALL3METHODS([input_arrays])</p>
+<p>Rising/Falling Three Methods (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLRISEFALL3METHODS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSEPARATINGLINES</p>
+<p>CDLSEPARATINGLINES([input_arrays])</p>
+<p>Separating Lines (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSEPARATINGLINES)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSHOOTINGSTAR</p>
+<p>CDLSHOOTINGSTAR([input_arrays])</p>
+<p>Shooting Star (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSHOOTINGSTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSHORTLINE</p>
+<p>CDLSHORTLINE([input_arrays])</p>
+<p>Short Line Candle (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSHORTLINE)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSPINNINGTOP</p>
+<p>CDLSPINNINGTOP([input_arrays])</p>
+<p>Spinning Top (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSPINNINGTOP)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSTALLEDPATTERN</p>
+<p>CDLSTALLEDPATTERN([input_arrays])</p>
+<p>Stalled Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSTALLEDPATTERN)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLSTICKSANDWICH</p>
+<p>CDLSTICKSANDWICH([input_arrays])</p>
+<p>Stick Sandwich (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLSTICKSANDWICH)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLTAKURI</p>
+<p>CDLTAKURI([input_arrays])</p>
+<p>Takuri (Dragonfly Doji with very long lower shadow) (Pattern
+Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLTAKURI)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLTASUKIGAP</p>
+<p>CDLTASUKIGAP([input_arrays])</p>
+<p>Tasuki Gap (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLTASUKIGAP)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLTHRUSTING</p>
+<p>CDLTHRUSTING([input_arrays])</p>
+<p>Thrusting Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLTHRUSTING)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLTRISTAR</p>
+<p>CDLTRISTAR([input_arrays])</p>
+<p>Tristar Pattern (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLTRISTAR)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLUNIQUE3RIVER</p>
+<p>CDLUNIQUE3RIVER([input_arrays])</p>
+<p>Unique 3 River (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLUNIQUE3RIVER)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLUPSIDEGAP2CROWS</p>
+<p>CDLUPSIDEGAP2CROWS([input_arrays])</p>
+<p>Upside Gap Two Crows (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLUPSIDEGAP2CROWS)</li>
+</ul>
+</dd>
+</dl>
+<p>CDLXSIDEGAP3METHODS</p>
+<p>CDLXSIDEGAP3METHODS([input_arrays])</p>
+<p>Upside/Downside Gap Three Methods (Pattern Recognition)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘open’, ‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+<li>_candleplot</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (True)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - _plotskip (True)</li>
+<li>_candleplot: - marker (d) - fillstyle (full) - markersize (7.0) -
+ls () - _name (CDLXSIDEGAP3METHODS)</li>
+</ul>
+</dd>
+</dl>
+<p>CEIL</p>
+<p>CEIL([input_arrays])</p>
+<p>Vector Ceil (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>CMO</p>
+<p>CMO([input_arrays], [timeperiod=14])</p>
+<p>Chande Momentum Oscillator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>CORREL</p>
+<p>CORREL([input_arrays], [timeperiod=30])</p>
+<p>Pearson’s Correlation Coefficient (r) (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>COS</p>
+<p>COS([input_arrays])</p>
+<p>Vector Trigonometric Cos (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>COSH</p>
+<p>COSH([input_arrays])</p>
+<p>Vector Trigonometric Cosh (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>DEMA</p>
+<p>DEMA([input_arrays], [timeperiod=30])</p>
+<p>Double Exponential Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>DIV</p>
+<p>DIV([input_arrays])</p>
+<p>Vector Arithmetic Div (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>DX</p>
+<p>DX([input_arrays], [timeperiod=14])</p>
+<p>Directional Movement Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>EMA</p>
+<p>EMA([input_arrays], [timeperiod=30])</p>
+<p>Exponential Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>EXP</p>
+<p>EXP([input_arrays])</p>
+<p>Vector Arithmetic Exp (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>FLOOR</p>
+<p>FLOOR([input_arrays])</p>
+<p>Vector Floor (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_DCPERIOD</p>
+<p>HT_DCPERIOD([input_arrays])</p>
+<p>Hilbert Transform - Dominant Cycle Period (Cycle Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_DCPHASE</p>
+<p>HT_DCPHASE([input_arrays])</p>
+<p>Hilbert Transform - Dominant Cycle Phase (Cycle Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_PHASOR</p>
+<p>HT_PHASOR([input_arrays])</p>
+<p>Hilbert Transform - Phasor Components (Cycle Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>inphase quadrature</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>inphase</li>
+<li>quadrature</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>inphase: - ls (-)</li>
+<li>quadrature: - ls (–)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_SINE</p>
+<p>HT_SINE([input_arrays])</p>
+<p>Hilbert Transform - SineWave (Cycle Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>sine leadsine</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>sine</li>
+<li>leadsine</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>leadsine: - ls (–)</li>
+<li>sine: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_TRENDLINE</p>
+<p>HT_TRENDLINE([input_arrays])</p>
+<p>Hilbert Transform - Instantaneous Trendline (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>HT_TRENDMODE</p>
+<p>HT_TRENDMODE([input_arrays])</p>
+<p>Hilbert Transform - Trend vs Cycle Mode (Cycle Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>KAMA</p>
+<p>KAMA([input_arrays], [timeperiod=30])</p>
+<p>Kaufman Adaptive Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LINEARREG</p>
+<p>LINEARREG([input_arrays], [timeperiod=14])</p>
+<p>Linear Regression (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LINEARREG_ANGLE</p>
+<p>LINEARREG_ANGLE([input_arrays], [timeperiod=14])</p>
+<p>Linear Regression Angle (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LINEARREG_INTERCEPT</p>
+<p>LINEARREG_INTERCEPT([input_arrays], [timeperiod=14])</p>
+<p>Linear Regression Intercept (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LINEARREG_SLOPE</p>
+<p>LINEARREG_SLOPE([input_arrays], [timeperiod=14])</p>
+<p>Linear Regression Slope (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LN</p>
+<p>LN([input_arrays])</p>
+<p>Vector Log Natural (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>LOG10</p>
+<p>LOG10([input_arrays])</p>
+<p>Vector Log10 (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MA</p>
+<p>MA([input_arrays], [timeperiod=30], [matype=0])</p>
+<p>Moving average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30 matype: 0 (Simple Moving Average)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+<li>matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MACD</p>
+<p>MACD([input_arrays], [fastperiod=12], [slowperiod=26],
+[signalperiod=9])</p>
+<p>Moving Average Convergence/Divergence (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>fastperiod: 12 slowperiod: 26 signalperiod: 9</dd>
+<dt>Outputs:</dt>
+<dd>macd macdsignal macdhist</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>macd</li>
+<li>macdsignal</li>
+<li>macdhist</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastperiod (12)</li>
+<li>slowperiod (26)</li>
+<li>signalperiod (9)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>macdsignal: - ls (–)</li>
+<li>macd: - ls (-)</li>
+<li>macdhist: - _method (bar)</li>
+</ul>
+</dd>
+</dl>
+<p>MACDEXT</p>
+<p>MACDEXT([input_arrays], [fastperiod=12], [fastmatype=0],
+[slowperiod=26], [slowmatype=0], [signalperiod=9], [signalmatype=0])</p>
+<p>MACD with controllable MA type (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>fastperiod: 12 fastmatype: 0 slowperiod: 26 slowmatype: 0
+signalperiod: 9 signalmatype: 0</dd>
+<dt>Outputs:</dt>
+<dd>macd macdsignal macdhist</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>macd</li>
+<li>macdsignal</li>
+<li>macdhist</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastperiod (12)</li>
+<li>fastmatype (0)</li>
+<li>slowperiod (26)</li>
+<li>slowmatype (0)</li>
+<li>signalperiod (9)</li>
+<li>signalmatype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>macdsignal: - ls (–)</li>
+<li>macd: - ls (-)</li>
+<li>macdhist: - _method (bar)</li>
+</ul>
+</dd>
+</dl>
+<p>MACDFIX</p>
+<p>MACDFIX([input_arrays], [signalperiod=9])</p>
+<p>Moving Average Convergence/Divergence Fix 12/26 (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>signalperiod: 9</dd>
+<dt>Outputs:</dt>
+<dd>macd macdsignal macdhist</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>macd</li>
+<li>macdsignal</li>
+<li>macdhist</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>signalperiod (9)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>macdsignal: - ls (–)</li>
+<li>macd: - ls (-)</li>
+<li>macdhist: - _method (bar)</li>
+</ul>
+</dd>
+</dl>
+<p>MAMA</p>
+<p>MAMA([input_arrays], [fastlimit=0.5], [slowlimit=0.05])</p>
+<p>MESA Adaptive Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>fastlimit: 0.5 slowlimit: 0.05</dd>
+<dt>Outputs:</dt>
+<dd>mama fama</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>mama</li>
+<li>fama</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastlimit (0.5)</li>
+<li>slowlimit (0.05)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>mama: - ls (-)</li>
+<li>fama: - ls (–)</li>
+</ul>
+</dd>
+</dl>
+<p>MAVP</p>
+<p>MAVP([input_arrays], [minperiod=2], [maxperiod=30], [matype=0])</p>
+<p>Moving average with variable period (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray) periods: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>minperiod: 2 maxperiod: 30 matype: 0 (Simple Moving Average)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>minperiod (2)</li>
+<li>maxperiod (30)</li>
+<li>matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MAX</p>
+<p>MAX([input_arrays], [timeperiod=30])</p>
+<p>Highest value over a specified period (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MAXINDEX</p>
+<p>MAXINDEX([input_arrays], [timeperiod=30])</p>
+<p>Index of highest value over a specified period (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MEDPRICE</p>
+<p>MEDPRICE([input_arrays])</p>
+<p>Median Price (Price Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MFI</p>
+<p>MFI([input_arrays], [timeperiod=14])</p>
+<p>Money Flow Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’, ‘volume’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MIDPOINT</p>
+<p>MIDPOINT([input_arrays], [timeperiod=14])</p>
+<p>MidPoint over period (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MIDPRICE</p>
+<p>MIDPRICE([input_arrays], [timeperiod=14])</p>
+<p>Midpoint Price over period (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MIN</p>
+<p>MIN([input_arrays], [timeperiod=30])</p>
+<p>Lowest value over a specified period (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MININDEX</p>
+<p>MININDEX([input_arrays], [timeperiod=30])</p>
+<p>Index of lowest value over a specified period (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>integer (values are -100, 0 or 100)</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>integer</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>integer: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MINMAX</p>
+<p>MINMAX([input_arrays], [timeperiod=30])</p>
+<p>Lowest and highest values over a specified period (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>min max</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>min</li>
+<li>max</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>max: - ls (-)</li>
+<li>min: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MINMAXINDEX</p>
+<p>MINMAXINDEX([input_arrays], [timeperiod=30])</p>
+<p>Indexes of lowest and highest values over a specified period (Math
+Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>minidx maxidx</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>minidx</li>
+<li>maxidx</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>maxidx: - ls (-)</li>
+<li>minidx: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MINUS_DI</p>
+<p>MINUS_DI([input_arrays], [timeperiod=14])</p>
+<p>Minus Directional Indicator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MINUS_DM</p>
+<p>MINUS_DM([input_arrays], [timeperiod=14])</p>
+<p>Minus Directional Movement (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MOM</p>
+<p>MOM([input_arrays], [timeperiod=10])</p>
+<p>Momentum (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>MULT</p>
+<p>MULT([input_arrays])</p>
+<p>Vector Arithmetic Mult (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>NATR</p>
+<p>NATR([input_arrays], [timeperiod=14])</p>
+<p>Normalized Average True Range (Volatility Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>OBV</p>
+<p>OBV([input_arrays])</p>
+<p>On Balance Volume (Volume Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray) prices: [‘volume’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>PLUS_DI</p>
+<p>PLUS_DI([input_arrays], [timeperiod=14])</p>
+<p>Plus Directional Indicator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>PLUS_DM</p>
+<p>PLUS_DM([input_arrays], [timeperiod=14])</p>
+<p>Plus Directional Movement (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>PPO</p>
+<p>PPO([input_arrays], [fastperiod=12], [slowperiod=26], [matype=0])</p>
+<p>Percentage Price Oscillator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>fastperiod: 12 slowperiod: 26 matype: 0 (Simple Moving Average)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastperiod (12)</li>
+<li>slowperiod (26)</li>
+<li>matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ROC</p>
+<p>ROC([input_arrays], [timeperiod=10])</p>
+<p>Rate of change : ((price/prevPrice)-1)*100 (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ROCP</p>
+<p>ROCP([input_arrays], [timeperiod=10])</p>
+<p>Rate of change Percentage: (price-prevPrice)/prevPrice (Momentum
+Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ROCR</p>
+<p>ROCR([input_arrays], [timeperiod=10])</p>
+<p>Rate of change ratio: (price/prevPrice) (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ROCR100</p>
+<p>ROCR100([input_arrays], [timeperiod=10])</p>
+<p>Rate of change ratio 100 scale: (price/prevPrice)*100 (Momentum
+Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 10</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (10)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>RSI</p>
+<p>RSI([input_arrays], [timeperiod=14])</p>
+<p>Relative Strength Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SAR</p>
+<p>SAR([input_arrays], [acceleration=0.02], [maximum=0.2])</p>
+<p>Parabolic SAR (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>acceleration: 0.02 maximum: 0.2</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>acceleration (0.02)</li>
+<li>maximum (0.2)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SAREXT</p>
+<p>SAREXT([input_arrays], [startvalue=0], [offsetonreverse=0],
+[accelerationinitlong=0.02], [accelerationlong=0.02],
+[accelerationmaxlong=0.2], [accelerationinitshort=0.02],
+[accelerationshort=0.02], [accelerationmaxshort=0.2])</p>
+<p>Parabolic SAR - Extended (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’]</dd>
+<dt>Parameters:</dt>
+<dd>startvalue: 0 offsetonreverse: 0 accelerationinitlong: 0.02
+accelerationlong: 0.02 accelerationmaxlong: 0.2
+accelerationinitshort: 0.02 accelerationshort: 0.02
+accelerationmaxshort: 0.2</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>startvalue (0)</li>
+<li>offsetonreverse (0)</li>
+<li>accelerationinitlong (0.02)</li>
+<li>accelerationlong (0.02)</li>
+<li>accelerationmaxlong (0.2)</li>
+<li>accelerationinitshort (0.02)</li>
+<li>accelerationshort (0.02)</li>
+<li>accelerationmaxshort (0.2)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SIN</p>
+<p>SIN([input_arrays])</p>
+<p>Vector Trigonometric Sin (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SINH</p>
+<p>SINH([input_arrays])</p>
+<p>Vector Trigonometric Sinh (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SMA</p>
+<p>SMA([input_arrays], [timeperiod=30])</p>
+<p>Simple Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SQRT</p>
+<p>SQRT([input_arrays])</p>
+<p>Vector Square Root (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>STDDEV</p>
+<p>STDDEV([input_arrays], [timeperiod=5], [nbdev=1])</p>
+<p>Standard Deviation (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 5 nbdev: 1</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (5)</li>
+<li>nbdev (1)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>STOCH</p>
+<p>STOCH([input_arrays], [fastk_period=5], [slowk_period=3],
+[slowk_matype=0], [slowd_period=3], [slowd_matype=0])</p>
+<p>Stochastic (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>fastk_period: 5 slowk_period: 3 slowk_matype: 0 slowd_period: 3
+slowd_matype: 0</dd>
+<dt>Outputs:</dt>
+<dd>slowk slowd</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>slowk</li>
+<li>slowd</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastk_period (5)</li>
+<li>slowk_period (3)</li>
+<li>slowk_matype (0)</li>
+<li>slowd_period (3)</li>
+<li>slowd_matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>slowk: - ls (–)</li>
+<li>slowd: - ls (–)</li>
+</ul>
+</dd>
+</dl>
+<p>STOCHF</p>
+<p>STOCHF([input_arrays], [fastk_period=5], [fastd_period=3],
+[fastd_matype=0])</p>
+<p>Stochastic Fast (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>fastk_period: 5 fastd_period: 3 fastd_matype: 0</dd>
+<dt>Outputs:</dt>
+<dd>fastk fastd</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>fastk</li>
+<li>fastd</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>fastk_period (5)</li>
+<li>fastd_period (3)</li>
+<li>fastd_matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>fastk: - ls (-)</li>
+<li>fastd: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>STOCHRSI</p>
+<p>STOCHRSI([input_arrays], [timeperiod=14], [fastk_period=5],
+[fastd_period=3], [fastd_matype=0])</p>
+<p>Stochastic Relative Strength Index (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14 fastk_period: 5 fastd_period: 3 fastd_matype: 0</dd>
+<dt>Outputs:</dt>
+<dd>fastk fastd</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>fastk</li>
+<li>fastd</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+<li>fastk_period (5)</li>
+<li>fastd_period (3)</li>
+<li>fastd_matype (0)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>fastk: - ls (-)</li>
+<li>fastd: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SUB</p>
+<p>SUB([input_arrays])</p>
+<p>Vector Arithmetic Substraction (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price0: (any ndarray) price1: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>SUM</p>
+<p>SUM([input_arrays], [timeperiod=30])</p>
+<p>Summation (Math Operators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>T3</p>
+<p>T3([input_arrays], [timeperiod=5], [vfactor=0.7])</p>
+<p>Triple Exponential Moving Average (T3) (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 5 vfactor: 0.7</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (5)</li>
+<li>vfactor (0.7)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TAN</p>
+<p>TAN([input_arrays])</p>
+<p>Vector Trigonometric Tan (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TANH</p>
+<p>TANH([input_arrays])</p>
+<p>Vector Trigonometric Tanh (Math Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TEMA</p>
+<p>TEMA([input_arrays], [timeperiod=30])</p>
+<p>Triple Exponential Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TRANGE</p>
+<p>TRANGE([input_arrays])</p>
+<p>True Range (Volatility Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TRIMA</p>
+<p>TRIMA([input_arrays], [timeperiod=30])</p>
+<p>Triangular Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TRIX</p>
+<p>TRIX([input_arrays], [timeperiod=30])</p>
+<p>1-day Rate-Of-Change (ROC) of a Triple Smooth EMA (Momentum
+Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TSF</p>
+<p>TSF([input_arrays], [timeperiod=14])</p>
+<p>Time Series Forecast (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>TYPPRICE</p>
+<p>TYPPRICE([input_arrays])</p>
+<p>Typical Price (Price Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>ULTOSC</p>
+<p>ULTOSC([input_arrays], [timeperiod1=7], [timeperiod2=14],
+[timeperiod3=28])</p>
+<p>Ultimate Oscillator (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod1: 7 timeperiod2: 14 timeperiod3: 28</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod1 (7)</li>
+<li>timeperiod2 (14)</li>
+<li>timeperiod3 (28)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>VAR</p>
+<p>VAR([input_arrays], [timeperiod=5], [nbdev=1])</p>
+<p>Variance (Statistic Functions)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 5 nbdev: 1</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (5)</li>
+<li>nbdev (1)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>WCLPRICE</p>
+<p>WCLPRICE([input_arrays])</p>
+<p>Weighted Close Price (Price Transform)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>WILLR</p>
+<p>WILLR([input_arrays], [timeperiod=14])</p>
+<p>Williams’ %R (Momentum Indicators)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>prices: [‘high’, ‘low’, ‘close’]</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 14</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (14)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (True)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+<p>WMA</p>
+<p>WMA([input_arrays], [timeperiod=30])</p>
+<p>Weighted Moving Average (Overlap Studies)</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd>price: (any ndarray)</dd>
+<dt>Parameters:</dt>
+<dd>timeperiod: 30</dd>
+<dt>Outputs:</dt>
+<dd>real</dd>
+<dt>Lines:</dt>
+<dd><ul class="first last simple">
+<li>real</li>
+</ul>
+</dd>
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li>timeperiod (30)</li>
+</ul>
+</dd>
+<dt>PlotInfo:</dt>
+<dd><ul class="first last simple">
+<li>subplot (False)</li>
+<li>plot (True)</li>
+<li>plotskip (False)</li>
+<li>plotname ()</li>
+<li>plotforce (False)</li>
+<li>plotyhlines ([])</li>
+<li>plothlines ([])</li>
+<li>plotabove (False)</li>
+<li>plotymargin (0.0)</li>
+<li>plotlinelabels (False)</li>
+<li>plotmaster (None)</li>
+<li>plotyticks ([])</li>
+</ul>
+</dd>
+<dt>PlotLines:</dt>
+<dd><ul class="first last simple">
+<li>real: - ls (-)</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

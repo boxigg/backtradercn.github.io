@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plotting &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotting Date Ranges" href="ranges/plotting-date-ranges.html" />
+    <link rel="prev" title="Trade" href="../trade.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-plot">How to plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotted-elements">Plotted Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-options">Plotting Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#object-wide-plotting-options">Object-wide plotting options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-specific-plotting-options">Line specific plotting options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods-controlling-plotting">Methods controlling plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-wide-plotting-options">System-wide plotting options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<p>Although <em>backtesting</em> is meant to be an automated process based on
+mathematical calculations, it is often the case that one wants to actually
+visualize what’s going on. Be it with an existing algorithm which has undergone
+a backtesting run or looking at what really indicators (built-in or custom)
+deliver with the data.</p>
+<p>And because everything has a human being behind it, charting the data feeds,
+indicators, operations, evolution of cash and portfolio value can help the
+humans to better appreciate what’s going on, discard/modify/create ideas and
+whatever the human looking at the chart may do with the visual information.</p>
+<p>That’s why <em>backtrader</em>, using the facilities provided by <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>,
+provides built-in charting facilities.</p>
+<div class="section" id="how-to-plot">
+<h2>How to plot<a class="headerlink" href="#how-to-plot" title="Permalink to this headline">¶</a></h2>
+<p>Any backtesting run can be plotted with the invocation of a single method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Of course this is usually the last command issued like in this simple code
+which uses one of the sample data from the <em>backtrader</em> sources.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;../../datas/2005-2006-day-001.txt&#39;</span><span class="p">)</span>
+
+<span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And this yields the following chart.</p>
+<a class=""
+               data-lightbox="group-98dc562c-8f93-4b41-8876-eb3a5e2d62bc"
+               href="../_images/01-sample-code1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/01-sample-code1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The chart includes 3 <em>Observers</em> which in this case and given the lack of any
+trading are mostly pointless</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A <code class="docutils literal notranslate"><span class="pre">CashValue</span></code> observer which as the name implies keeps track of the
+<code class="docutils literal notranslate"><span class="pre">Cash</span></code> and total portolio <code class="docutils literal notranslate"><span class="pre">Value</span></code> (including cash) during the life of
+the backtesting run</p>
+</li>
+<li><p class="first">A <code class="docutils literal notranslate"><span class="pre">Trade</span></code> Observer which shows, at the end of a trade, the actual <em>Profit
+and Loss</em></p>
+<p>A trade is defined as opening a position and taking the position back to
+<code class="docutils literal notranslate"><span class="pre">0</span></code> (directly or crossing over from long to short or short to long)</p>
+</li>
+<li><p class="first">A <code class="docutils literal notranslate"><span class="pre">BuySell</span></code> observer which plots (on top of the prices) where <em>buy</em> and
+<em>sell</em> operations have taken place</p>
+</li>
+</ul>
+</div></blockquote>
+<p>These <em>3 Observers</em> are automatically added by <code class="docutils literal notranslate"><span class="pre">cerebro</span></code>, and are controlled
+with the <code class="docutils literal notranslate"><span class="pre">stdstats</span></code> parameter (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>). Do the following to
+disable them if you wish:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">(</span><span class="n">stdstats</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or later when <em>running</em> as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">stdstats</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plotted-elements">
+<h2>Plotted Elements<a class="headerlink" href="#plotted-elements" title="Permalink to this headline">¶</a></h2>
+<p>Although the <code class="docutils literal notranslate"><span class="pre">Observers</span></code> have already been mentioned above in the
+introduction, they are not the only elements to get plotted. These 3 things get
+plotted:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>Data Feeds</em> added to Cerebro with <code class="docutils literal notranslate"><span class="pre">adddata</span></code>, <code class="docutils literal notranslate"><span class="pre">replaydata</span></code> and
+<code class="docutils literal notranslate"><span class="pre">resampledata</span></code></p>
+</li>
+<li><p class="first"><em>Indicators</em> declared at strategy level (or added to cerebro with
+<code class="docutils literal notranslate"><span class="pre">addindicator</span></code> which is purely meant for experimentation purposes and has
+the indicator added to a dummy strategy)</p>
+</li>
+<li><p class="first"><em>Observers</em> added to cerebro with <code class="docutils literal notranslate"><span class="pre">addobserver</span></code></p>
+<p>The Observers are <em>lines</em> objects which run in sync with the <em>strategy</em> and
+have access to the entire ecosystem, to be able to track things like
+<code class="docutils literal notranslate"><span class="pre">Cash</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="plotting-options">
+<h2>Plotting Options<a class="headerlink" href="#plotting-options" title="Permalink to this headline">¶</a></h2>
+<p><em>Indicators</em> and <em>Observers</em> have several options that control how they have to
+be plotted on the chart. There are 3 big groups:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Options affecting the plotting behavior of the entire object</li>
+<li>Options affecting the plotting behavior of individual lines</li>
+<li>Options affecting the SYSTEM wide plotting options</li>
+</ul>
+</div></blockquote>
+<div class="section" id="object-wide-plotting-options">
+<h3>Object-wide plotting options<a class="headerlink" href="#object-wide-plotting-options" title="Permalink to this headline">¶</a></h3>
+<p>These are controlled by this data set in <em>Indicators</em> and <em>Observers</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotinfo</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">subplot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="n">plotskip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">plotabove</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">plotlinelabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">plotlinevalues</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">plotvaluetags</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">plotymargin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">plotyhlines</span><span class="o">=</span><span class="p">[],</span>
+                <span class="n">plotyticks</span><span class="o">=</span><span class="p">[],</span>
+                <span class="n">plothlines</span><span class="o">=</span><span class="p">[],</span>
+                <span class="n">plotforce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">plotmaster</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">plotylimited</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+           <span class="p">)</span>
+</pre></div>
+</div>
+<p>Although <code class="docutils literal notranslate"><span class="pre">plotinfo</span></code> is shown as a <code class="docutils literal notranslate"><span class="pre">dict</span></code> during class definition, the
+metaclass machinery of <em>backtrader</em> turns that into an object which is
+inherited and can undergo even multiple inheritance. Than means:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If a subclass changes for example a value like <code class="docutils literal notranslate"><span class="pre">subplot=True</span></code> to
+<code class="docutils literal notranslate"><span class="pre">subplot=False</span></code>, subclasses further down the hierarchy will have the
+latter as the default value for <code class="docutils literal notranslate"><span class="pre">subplot</span></code></li>
+</ul>
+</div></blockquote>
+<p>There are 2 methods of giving value to these parameters. Let’s look at a
+<code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> instantiation for the 1st method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sma</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;mysma&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As can be inferred from the example, any **kwargs not consumed by the
+<code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> constructor will be parsed (if possible) as
+<code class="docutils literal notranslate"><span class="pre">plotinfo</span></code> values. The <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> has a single parameter defined
+which is <code class="docutils literal notranslate"><span class="pre">period</span></code>. And this means that <code class="docutils literal notranslate"><span class="pre">plotname</span></code> will be matched against
+the parameter of the same name in <code class="docutils literal notranslate"><span class="pre">plotinfo</span></code>.</p>
+<p>The 2nd method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sma</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">sma</span><span class="o">.</span><span class="n">plotinfo</span><span class="o">.</span><span class="n">plotname</span> <span class="o">=</span> <span class="s1">&#39;mysma&#39;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">plotinfo</span></code> object instantiated along the <em>SimpleMovingAverage</em> can be
+accessed and the parameters inside can also be accessed with the standard
+<em>Python</em> dot notation. Easy and possibly clearer than the syntax abve.</p>
+<div class="section" id="the-meaning-of-the-options">
+<h4>The meaning of the options<a class="headerlink" href="#the-meaning-of-the-options" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plot</span></code>: whether the object has to be plotted</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">subplot</span></code>: whether to plot along the data or in an independent
+subchart. <em>Moving Averages</em> are an example of plotting over the
+data. <em>Stochastic</em> and <em>RSI</em> are examples of things plotted in a subchart
+on a different scale.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotname</span></code>: name to use on the chart instead of the <em>class</em> name. As in
+the example above <code class="docutils literal notranslate"><span class="pre">mysma</span></code> instead of <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotskip</span></code> (<strong>deprecated</strong>): and old alias of <code class="docutils literal notranslate"><span class="pre">plot</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotabove</span></code>: whether to plot above the data. Else plot below. This has
+only effect if <code class="docutils literal notranslate"><span class="pre">subplot=True</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotlinelabels</span></code>: whether to plot the names of the individudal lines
+along the data in the legend on the chart when <code class="docutils literal notranslate"><span class="pre">subplot=False</span></code></p>
+<p>Example: The <em>Bollinger Bands</em> have 3 lines but the indicator is plotted on
+top of the data. It seems sensible to have the legend only display a single
+name like <code class="docutils literal notranslate"><span class="pre">BollingerBands</span></code> rather than having the name of the 3
+individual lines displayed (<code class="docutils literal notranslate"><span class="pre">mid</span></code>, <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">bot</span></code>)</p>
+<p>A use case for this is the <code class="docutils literal notranslate"><span class="pre">BuySell</span></code> observer for which it makes sense to
+display the name of the 2 lines and its markers: <code class="docutils literal notranslate"><span class="pre">Buy</span></code> and <code class="docutils literal notranslate"><span class="pre">Sell</span></code> to
+make it clear for the end user what is what.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotlinevalues</span></code>: controls whether the legend for the lines in indicators
+and observers has the last plotted value. Can be controlled on a per-line
+basis with <code class="docutils literal notranslate"><span class="pre">_plotvalue</span></code> for each line</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotvaluetags</span></code>: controls whether a value tag with the last value is
+plotted on the right hand side of the line. Can be controlled on a per-line
+basis with <code class="docutils literal notranslate"><span class="pre">_plotvaluetag</span></code> for each line</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotymargin</span></code>: margin to add to the top and bottom of individual
+subcharts on the graph</p>
+<p>It is a percentage but 1 based. For example: 0.05 -&gt; 5%</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plothlines</span></code>: an <em>iterable</em> containing values (within the scale) at
+which <em>horizontal</em> lines have to be plotted.</p>
+<p>This for example helps for the classical indicators with <em>overbought</em>,
+<em>oversold</em> areas like the <code class="docutils literal notranslate"><span class="pre">RSI</span></code> which usually has lines plotted at <code class="docutils literal notranslate"><span class="pre">70</span></code>
+and <code class="docutils literal notranslate"><span class="pre">30</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotyticks</span></code>: an <em>iterable</em> containing values (within the scale) at
+which value ticks have to specifically be placed on the scale</p>
+<p>For example to force the scale to have a <code class="docutils literal notranslate"><span class="pre">50</span></code> to identify the mid point
+of the scale. Although this seems obvious, the indicators use an
+auto-scaling mechanism and the <code class="docutils literal notranslate"><span class="pre">50</span></code> may not be obviously be in the centre
+if an indicator with a <code class="docutils literal notranslate"><span class="pre">0-100</span></code> scale moves between 30-95 on a regular basis.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotyhlines</span></code>: an <em>iterable</em> containing values (within the scale) at
+which <em>horizontal</em> lines have to be plotted.</p>
+<p>This can take over both <code class="docutils literal notranslate"><span class="pre">plothlines</span></code> and <code class="docutils literal notranslate"><span class="pre">plotyticks</span></code>.</p>
+<p>If none of the above are defined, then where to place <em>horizontal</em> lines
+and <em>ticks</em> will be entirely controlled by this value</p>
+<p>If any of the above are defined they have precedence over the values
+present in this option</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotforce</span></code>: sometimes and thus the complex process of matching data
+feeds to indicators and bla, bla, bla … a custom indicator may fail to
+plot. This is a last resort mechanism to try to enforce plotting.</p>
+<p>Use it if all else fails</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotmaster</span></code>: an <em>Indicator</em>/<em>Observer</em> has a master which is the <em>data</em>
+on which is working. In some cases plotting it with a different master may
+be wished needed.</p>
+<p>A use case is the <code class="docutils literal notranslate"><span class="pre">PivotPoint</span></code> indicator which is calculated on
+<strong>Monthly</strong> data but is meant for <strong>Daily</strong> data. It only makes sense to
+plot it on the <em>daily</em> data which is where the indicator makes sense.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotylimited</span></code>: currently only applies to data feeds. If <code class="docutils literal notranslate"><span class="pre">True</span></code>
+(default), other lines on the data plot don’t change the scale. Example:
+Bollinger Bands (top and bottom) may be far away from the actual absolute
+minimum/maximum of the data feed. With <code class="docutils literal notranslate"><span class="pre">`plotlimited=True</span></code>, those bands
+remain out of the chart, because the data controls the scaling. If set to
+<code class="docutils literal notranslate"><span class="pre">False</span></code>, the bands affects the y-scale and become visible on the chart</p>
+<p>A use case is the <code class="docutils literal notranslate"><span class="pre">PivotPoint</span></code> indicator which is calculated on
+<strong>Monthly</strong> data but is meant for <strong>Daily</strong> data. It only makes sense to
+plot it on the <em>daily</em> data which is where the indicator makes sense.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="line-specific-plotting-options">
+<h3>Line specific plotting options<a class="headerlink" href="#line-specific-plotting-options" title="Permalink to this headline">¶</a></h3>
+<p><em>Indicators</em>/<em>Observers</em> have <em>lines</em> and how this <em>lines</em> are plotted can be
+influenced with the <code class="docutils literal notranslate"><span class="pre">plotlines</span></code> object. Most of options specified in
+<code class="docutils literal notranslate"><span class="pre">plotlines</span></code> are meant to be directly passed over to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> when
+plotting. The documentation relies therefore on examples of things that have
+been done.</p>
+<p><strong>IMPORTANT</strong>: The options are specified on a per-line basis.</p>
+<p>Some of the options are controlled directly by <em>backtrader</em>. These all start
+with an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>):</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_plotskip</span></code> (<em>boolean</em>) which indicates that plotting of a specific line
+has to be skipped if set to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_plotvalue</span></code> (<em>boolean</em>) to control if the legend of this line will
+contain the last plotted value (default is <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_plotvaluetag</span></code> (<em>boolean</em>) to control if a righ hand side tag with the
+last value is plotted (default is <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_name</span></code> (<em>string</em>) which changes the plot name of a specific line</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_samecolor</span></code> (<em>boolean</em>) this forces the next line to have the same color
+as the previous one avoiding the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> default mechanism of
+cycling trough a color map for each new plotted element</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_method</span></code> (<em>string</em>) which chooses the plotting method <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>
+will use for the element. If this is not specified, then the most basic
+<code class="docutils literal notranslate"><span class="pre">plot</span></code> method will be chosen.</p>
+<p>Example from <code class="docutils literal notranslate"><span class="pre">MACDHisto</span></code>. Here the <code class="docutils literal notranslate"><span class="pre">histo</span></code> line is plotted as a <code class="docutils literal notranslate"><span class="pre">bar</span></code>
+which is the industry de-facto standard. The following definition can be
+found in the definition of <code class="docutils literal notranslate"><span class="pre">MACDHisto</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;histo&#39;</span><span class="p">,)</span>
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">histo</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_method</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">alpha</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> are options for <em>matplotlib</em></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_fill_gt</span></code> / <code class="docutils literal notranslate"><span class="pre">_fill_lt</span></code></p>
+<p>Allow filling between the given line and:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Another line</li>
+<li>A numeric value</li>
+</ul>
+</div></blockquote>
+<p>The arguments is an iterable of 2 elements in which:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The 1st argument is a <em>string</em> (name of reference line) or a numeric
+value</p>
+<p>The filling will be done in between the own values and the values of
+the line or the numeric value</p>
+</li>
+<li><p class="first">The 2nd argument is either:</p>
+<ul class="simple">
+<li>A string with a colour name (<em>matplotlib</em> compatible) or hex
+specification (see <em>matloplit</em> examples)</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li>An iterable where the 1st element is the string/hex value for the
+colour and the second element is a numeric value specifying the alpha
+transparency (default: <code class="docutils literal notranslate"><span class="pre">0.20</span></code> controlled with <code class="docutils literal notranslate"><span class="pre">fillalpha</span></code> in a
+plotting scheme)</li>
+</ul>
+</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill for myline when above other_line with colour red</span>
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">myline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_fill_gt</span><span class="p">(</span><span class="s1">&#39;other_line&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="c1"># Fill for myline when above 50 with colour red</span>
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">myline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_fill_gt</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;red))</span>
+<span class="p">)</span>
+
+<span class="c1"># Fill for myline when above other_line with colour red and 50%</span>
+<span class="c1"># transparency (1.0 means &quot;no transparency&quot;)</span>
+
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">myline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_fill_gt</span><span class="p">(</span><span class="s1">&#39;other_line&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">)))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="passing-options-to-a-not-yet-known-line">
+<h4>Passing options to a not yet known line<a class="headerlink" href="#passing-options-to-a-not-yet-known-line" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li>Ue the name <code class="docutils literal notranslate"><span class="pre">_X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> stands for a digit in a zero-based index. This means
+that the options are for line <code class="docutils literal notranslate"><span class="pre">X</span></code></li>
+</ul>
+</div></blockquote>
+<p>A use case from <code class="docutils literal notranslate"><span class="pre">OscillatorMixIn</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_0</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="s1">&#39;osc&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>As the name implies, this is a <em>mixin</em> class intended to be used in multiple
+inheritance schemes (specifically on the right hand side). The <em>mixin</em> has no
+knowledge of the actual name of the 1st line (index is zero-based) from the
+other indicator that will be part of  the multiple inheritance mix.</p>
+<p>And that’s why the options are specified to be for: <code class="docutils literal notranslate"><span class="pre">_0</span></code>. After the
+subclassing has taken place the 1st line of the resulting class will have the
+name <code class="docutils literal notranslate"><span class="pre">osc</span></code> in plot.</p>
+</div>
+<div class="section" id="some-plotlines-examples">
+<h4>Some plotlines examples<a class="headerlink" href="#some-plotlines-examples" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">BuySell</span></code> observer has the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">buy</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="n">fillstyle</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">),</span>
+    <span class="n">sell</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fillstyle</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">buy</span></code> and <code class="docutils literal notranslate"><span class="pre">sell</span></code> lines have options which are passed directly to
+<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to define <em>marker</em>, <em>markersize</em>, <em>color</em> and <em>fillstyle</em>. All
+these options are defined in <em>matplotlib</em></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Trades</span></code> observer has the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pnlplus&#39;</span><span class="p">,</span> <span class="s1">&#39;pnlminus&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">pnlplus</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="s1">&#39;Positive&#39;</span><span class="p">,</span>
+                 <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+                 <span class="n">markersize</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">fillstyle</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">),</span>
+    <span class="n">pnlminus</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="s1">&#39;Negative&#39;</span><span class="p">,</span>
+                  <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                  <span class="n">markersize</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">fillstyle</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the names of the lines have been redefined from for example <code class="docutils literal notranslate"><span class="pre">pnlplus</span></code> to
+<code class="docutils literal notranslate"><span class="pre">Positive</span></code> by using <code class="docutils literal notranslate"><span class="pre">_name</span></code>. The rest of the options are for <em>matplotlib</em></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DrawDown</span></code> observer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;drawdown&#39;</span><span class="p">,</span> <span class="s1">&#39;maxdrawdown&#39;</span><span class="p">,)</span>
+
+<span class="o">...</span>
+
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">maxdrawdown</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_plotskip</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p>This one defines two lines to let the end users access not only the value of
+the current <code class="docutils literal notranslate"><span class="pre">drawdown</span></code> but also its maximum value (<code class="docutils literal notranslate"><span class="pre">maxdrawdown</span></code>). But the
+latter is not plotted due to <code class="docutils literal notranslate"><span class="pre">_plotskip=True</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">BollingerBands</span></code> indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">mid</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+    <span class="n">top</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_samecolor</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">bot</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_samecolor</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">mid</span></code> line will have a <em>dashed</em> style and the <code class="docutils literal notranslate"><span class="pre">top</span></code> and <code class="docutils literal notranslate"><span class="pre">bot</span></code>
+lines will have the same color as the <code class="docutils literal notranslate"><span class="pre">mid</span></code> line.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Stochastic</span></code> (defined in <code class="docutils literal notranslate"><span class="pre">_StochasticBase</span></code> and inherited):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;percK&#39;</span><span class="p">,</span> <span class="s1">&#39;percD&#39;</span><span class="p">,)</span>
+<span class="o">...</span>
+<span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">percD</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="s1">&#39;%D&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+                 <span class="n">percK</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="s1">&#39;%K&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The slower line <code class="docutils literal notranslate"><span class="pre">percD</span></code> is plotted with a <em>dashed</em> style. And the names of
+the lines are changed to include fancy <code class="docutils literal notranslate"><span class="pre">%</span></code> signs (<code class="docutils literal notranslate"><span class="pre">%K</span></code> and <code class="docutils literal notranslate"><span class="pre">%D</span></code>) which
+cannot be used in name definitions in <em>Python</em></p>
+</div>
+</div>
+<div class="section" id="methods-controlling-plotting">
+<h3>Methods controlling plotting<a class="headerlink" href="#methods-controlling-plotting" title="Permalink to this headline">¶</a></h3>
+<p>When dealing with <em>Indicators</em> and <em>Observers</em> the following methods are
+supported to further control plotting:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_plotlabel(self)</span></code></p>
+<p>Which should return a list of things to conform the labels which will be
+placed in between parentheses after the name of the <em>Indicators</em> or
+<em>Observer</em></p>
+<p>An example from the <code class="docutils literal notranslate"><span class="pre">RSI</span></code> indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_plotlabel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">plabels</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">]</span>
+    <span class="n">plabels</span> <span class="o">+=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">movav</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">notdefault</span><span class="p">(</span><span class="s1">&#39;movav&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">plabels</span>
+</pre></div>
+</div>
+<p>As can be seen this method returns:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">An <code class="docutils literal notranslate"><span class="pre">int</span></code> which indicates the period configured for the <code class="docutils literal notranslate"><span class="pre">RSI</span></code> and if
+the default moving average has been changed, the specific class</p>
+<p>In the background both will be converted to a string. In the case of
+the <em>class</em> an effort will be made to just print the name of the class
+rather than the complete <code class="docutils literal notranslate"><span class="pre">module.name</span></code> combination.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">_plotinit(self)</span></code></p>
+<p>Which is called at the beginning of plotting to do whatever specific
+initialization the indicator may need. Again, an example from <code class="docutils literal notranslate"><span class="pre">RSI</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_plotinit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">plotinfo</span><span class="o">.</span><span class="n">plotyhlines</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">upperband</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">lowerband</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here the code assigns a value to <code class="docutils literal notranslate"><span class="pre">plotyhlines</span></code> to have horizontal lines
+(the <code class="docutils literal notranslate"><span class="pre">hlines</span></code> part) plotted at specific <code class="docutils literal notranslate"><span class="pre">y</span></code> values.</p>
+<p>The values of the parameters <code class="docutils literal notranslate"><span class="pre">upperband</span></code> and <code class="docutils literal notranslate"><span class="pre">lowerband</span></code> are used for
+this, which cannot be known in advance, because the parameters can be
+changed by the end user</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="system-wide-plotting-options">
+<h3>System-wide plotting options<a class="headerlink" href="#system-wide-plotting-options" title="Permalink to this headline">¶</a></h3>
+<p>First the <em>signature</em> of <code class="docutils literal notranslate"><span class="pre">plot</span></code> within cerebro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plotter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numfigs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">iplot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Which means:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotter</span></code>: an object/class containing as attributes the options
+controlling the system wide plotting</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> is passed a default <code class="docutils literal notranslate"><span class="pre">PlotScheme</span></code> object (see below) will be
+instantiated</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">numfigs</span></code>: in how many independent charts a plot has to be broken</p>
+<p>Sometimes a chart contains too many bars and will not be easily readable if
+packed in a single figure. This breaks it down in as many pieces as
+requested</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">iplot</span></code>: automatically plot inline if running inside a Jupyter Notebook</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: the args will be used to change the values of the attributes
+of <code class="docutils literal notranslate"><span class="pre">plotter</span></code> or the default <code class="docutils literal notranslate"><span class="pre">PlotScheme</span></code> object created if no
+<code class="docutils literal notranslate"><span class="pre">plotter</span></code> is passed.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="plotscheme">
+<h4>PlotScheme<a class="headerlink" href="#plotscheme" title="Permalink to this headline">¶</a></h4>
+<p>This object contains all the options that contol system-wide plotting. The
+options are documented in the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PlotScheme</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># to have a tight packing on the chart wether only the x axis or also</span>
+        <span class="c1"># the y axis have (see matplotlib)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ytight</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># y-margin (top/bottom) for the subcharts. This will not overrule the</span>
+        <span class="c1"># option plotinfo.plotymargin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yadjust</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="c1"># Each new line is in z-order below the previous one. change it False</span>
+        <span class="c1"># to have lines paint above the previous line</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zdown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># Rotation of the date labes on the x axis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tickrotation</span> <span class="o">=</span> <span class="mi">15</span>
+
+        <span class="c1"># How many &quot;subparts&quot; takes a major chart (datas) in the overall chart</span>
+        <span class="c1"># This is proportional to the total number of subcharts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rowsmajor</span> <span class="o">=</span> <span class="mi">5</span>
+
+        <span class="c1"># How many &quot;subparts&quot; takes a minor chart (indicators/observers) in the</span>
+        <span class="c1"># overall chart. This is proportional to the total number of subcharts</span>
+        <span class="c1"># Together with rowsmajor, this defines a proportion ratio betwen data</span>
+        <span class="c1"># charts and indicators/observers charts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rowsminor</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># Distance in between subcharts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotdist</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Have a grid in the background of all charts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Default plotstyle for the OHLC bars which (line -&gt; line on close)</span>
+        <span class="c1"># Other options: &#39;bar&#39; and &#39;candle&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;line&#39;</span>
+
+        <span class="c1"># Default color for the &#39;line on close&#39; plot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
+        <span class="c1"># Default color for a bullish bar/candle (0.75 -&gt; intensity of gray)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">barup</span> <span class="o">=</span> <span class="s1">&#39;0.75&#39;</span>
+        <span class="c1"># Default color for a bearish bar/candle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bardown</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+        <span class="c1"># Level of transparency to apply to bars/cancles (NOT USED)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bartrans</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+        <span class="c1"># Wether the candlesticks have to be filled or be transparent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">barupfill</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bardownfill</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Wether the candlesticks have to be filled or be transparent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fillalpha</span> <span class="o">=</span> <span class="mf">0.20</span>
+
+        <span class="c1"># Wether to plot volume or not. Note: if the data in question has no</span>
+        <span class="c1"># volume values, volume plotting will be skipped even if this is True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Wether to overlay the volume on the data or use a separate subchart</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">voloverlay</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># Scaling of the volume to the data when plotting as overlay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volscaling</span> <span class="o">=</span> <span class="mf">0.33</span>
+        <span class="c1"># Pushing overlay volume up for better visibiliy. Experimentation</span>
+        <span class="c1"># needed if the volume and data overlap too much</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volpushup</span> <span class="o">=</span> <span class="mf">0.00</span>
+
+        <span class="c1"># Default colour for the volume of a bullish day</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volup</span> <span class="o">=</span> <span class="s1">&#39;#aaaaaa&#39;</span>  <span class="c1"># 0.66 of gray</span>
+        <span class="c1"># Default colour for the volume of a bearish day</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">voldown</span> <span class="o">=</span> <span class="s1">&#39;#cc6073&#39;</span>  <span class="c1"># (204, 96, 115)</span>
+        <span class="c1"># Transparency to apply to the volume when overlaying</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">voltrans</span> <span class="o">=</span> <span class="mf">0.50</span>
+
+        <span class="c1"># Transparency for text labels (NOT USED CURRENTLY)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subtxttrans</span> <span class="o">=</span> <span class="mf">0.66</span>
+        <span class="c1"># Default font text size for labels on the chart</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subtxtsize</span> <span class="o">=</span> <span class="mi">9</span>
+
+        <span class="c1"># Transparency for the legend (NOT USED CURRENTLY)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legendtrans</span> <span class="o">=</span> <span class="mf">0.25</span>
+        <span class="c1"># Wether indicators have a leged displaey in their charts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legendind</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># Location of the legend for indicators (see matplotlib)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legendindloc</span> <span class="o">=</span> <span class="s1">&#39;upper left&#39;</span>
+
+        <span class="c1"># Plot the last value of a line after the Object name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linevalues</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Plot a tag at the end of each line with the last value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valuetags</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Default color for horizontal lines (see plotinfo.plothlines)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hlinescolor</span> <span class="o">=</span> <span class="s1">&#39;0.66&#39;</span>  <span class="c1"># shade of gray</span>
+        <span class="c1"># Default style for horizontal lines</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hlinesstyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span>
+        <span class="c1"># Default width for horizontal lines</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hlineswidth</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+        <span class="c1"># Default color scheme: Tableau 10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lcolors</span> <span class="o">=</span> <span class="n">tableau10</span>
+
+        <span class="c1"># strftime Format string for the display of ticks on the x axis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fmt_x_ticks</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># strftime Format string for the display of data points values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fmt_x_data</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="colors-in-plotscheme">
+<h4>Colors in PlotScheme<a class="headerlink" href="#colors-in-plotscheme" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">PlotScheme</span></code> class defines a method which can be overriden in subclasses
+which returns the next color to be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">idx</span></code> is the current index to the line being plotted on a individual
+subchart. The <code class="docutils literal notranslate"><span class="pre">MACD</span></code> for example plots 3 lines and hence the <code class="docutils literal notranslate"><span class="pre">idx</span></code> variable
+will only have the following values: <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>. The next chart
+(maybe another indicator) will star the count again at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>The default color scheme used in <em>backtrader</em> uses (as seen above) is the
+<code class="docutils literal notranslate"><span class="pre">Tableau</span> <span class="pre">10</span> <span class="pre">Color</span> <span class="pre">Palette</span></code> with the index modified to be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tab10_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>By overriding the <code class="docutils literal notranslate"><span class="pre">color</span></code> method or passing a <code class="docutils literal notranslate"><span class="pre">lcolors</span></code> variable to
+<code class="docutils literal notranslate"><span class="pre">plot</span></code> (or in a subclass of <code class="docutils literal notranslate"><span class="pre">PlotScheme</span></code>) the colouring can be completely
+changed.</p>
+<p>The source code contains also the defintions for the <code class="docutils literal notranslate"><span class="pre">Tableau</span> <span class="pre">10</span> <span class="pre">Light</span></code> and
+the <code class="docutils literal notranslate"><span class="pre">Tableau</span> <span class="pre">20</span></code> color palettes.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

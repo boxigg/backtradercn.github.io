@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Commissions: Stocks vs Futures &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extending Commissions" href="../extending-commissions/commission-schemes-extended.html" />
+    <link rel="prev" title="Writer" href="../writer.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Commissions: Stocks vs Futures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#agnosticity">Agnosticity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-broker-shortcuts">Using the broker shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-meaning-of-the-setcommission-parameters">The meaning of the setcommission parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#two-examples-now-stocks-vs-futures">Two examples now: stocks vs futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-permanent-commission-schemes">Creating permanent Commission schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#now-a-real-comparison-with-a-sma-crossover">Now a “real” comparison with a SMA Crossover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commissions-for-futures">Commissions for futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commissions-for-stocks">Commissions for stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-code">The code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="commissions-stocks-vs-futures">
+<h1>Commissions: Stocks vs Futures<a class="headerlink" href="#commissions-stocks-vs-futures" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="agnosticity">
+<h2>Agnosticity<a class="headerlink" href="#agnosticity" title="Permalink to this headline">¶</a></h2>
+<p>Before going forward let’s remember that <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> tries to remain agnostic
+as to what the data represents. Different commission schemes can be applied to
+the same data set.</p>
+<p>Let’s see how it can be done.</p>
+</div>
+<div class="section" id="using-the-broker-shortcuts">
+<h2>Using the broker shortcuts<a class="headerlink" href="#using-the-broker-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>This keeps the end user away from <code class="docutils literal notranslate"><span class="pre">CommissionInfo</span></code> objects because a
+commission scheme can be <em>created/set</em> with a single function call. Within the
+regular <code class="docutils literal notranslate"><span class="pre">cerebro</span></code> creation/set-up process, just add a call to
+<code class="docutils literal notranslate"><span class="pre">setcommission</span></code> over the <code class="docutils literal notranslate"><span class="pre">broker</span></code> member attribute. The following call sets
+a usual commission scheme for <strong>Eurostoxx50</strong> futures when working with
+<em>Interactive Brokers</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">setcommission</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">2000.0</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since most users will usually just test a single instrument, that’s all that’s
+down to it. If you have given a <code class="docutils literal notranslate"><span class="pre">name</span></code> to your data feed, because several
+instruments are being considered simultaneously on a chart, this call can be
+slightly extended to look as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">setcommission</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">2000.0</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Eurostoxxx50&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case this on-the-fly commission scheme will only applied to instruments
+whose name matches <code class="docutils literal notranslate"><span class="pre">Eurostoxx50</span></code>.</p>
+</div>
+<div class="section" id="the-meaning-of-the-setcommission-parameters">
+<h2>The meaning of the setcommission parameters<a class="headerlink" href="#the-meaning-of-the-setcommission-parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">commission</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>)</p>
+<p>Monetary units in absolute or percentage terms each <strong>action</strong> costs.</p>
+<p>In the above example it is 2.0 euros per contract for a <code class="docutils literal notranslate"><span class="pre">buy</span></code> and again
+2.0 euros per contract for a <code class="docutils literal notranslate"><span class="pre">sell</span></code>.</p>
+<p>The important issue here is when to use absolute or percentage values.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">margin</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> (it is False, 0 or None for
+example) then it will be considered that <code class="docutils literal notranslate"><span class="pre">commission</span></code> expresses a
+percentage of the <code class="docutils literal notranslate"><span class="pre">price</span></code> times <code class="docutils literal notranslate"><span class="pre">size</span></code> operatin value</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">margin</span></code> is something else, it is considered the operations are
+happenning on a <code class="docutils literal notranslate"><span class="pre">futures</span></code> like intstrument and <code class="docutils literal notranslate"><span class="pre">commission</span></code> is a
+fixed price per <code class="docutils literal notranslate"><span class="pre">size</span></code> contracts</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">margin</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Margin money needed when operating with <code class="docutils literal notranslate"><span class="pre">futures</span></code> like instruments. As
+expressed above</p>
+<blockquote>
+<div><ul class="simple">
+<li>If a <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">margin</span></code> is set, the <code class="docutils literal notranslate"><span class="pre">commission</span></code> will be understood to
+be indicated in percentage and applied to <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">*</span> <span class="pre">size</span></code> components of
+a <code class="docutils literal notranslate"><span class="pre">buy</span></code> or <code class="docutils literal notranslate"><span class="pre">sell</span></code> operation</li>
+<li>If a <code class="docutils literal notranslate"><span class="pre">margin</span></code> is set, the <code class="docutils literal notranslate"><span class="pre">commission</span></code> will be understood to be a
+fixed value which is multiplied by the <code class="docutils literal notranslate"><span class="pre">size</span></code> component of <code class="docutils literal notranslate"><span class="pre">buy</span></code> or
+<code class="docutils literal notranslate"><span class="pre">sell</span></code> operation</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">mult</span></code> (default: 1.0)</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">future</span></code> like instruments this determines the multiplicator to apply
+to profit and loss calculations.</p>
+<p>This is what makes futures attractive and risky at the same time.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">name</span></code> (default: None)</p>
+<p>Limit the application of the commission scheme to instruments matching
+<code class="docutils literal notranslate"><span class="pre">name</span></code></p>
+<p>This can be set during the creation of a data feed.</p>
+<p>If left unset, the scheme will apply to any data present in the system.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="two-examples-now-stocks-vs-futures">
+<h2>Two examples now: stocks vs futures<a class="headerlink" href="#two-examples-now-stocks-vs-futures" title="Permalink to this headline">¶</a></h2>
+<p>The futures example from above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">setcommission</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">2000.0</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A example for stocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">setcommission</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>  <span class="c1"># 0.5% of the operation value</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The 2nd syntax doesn’t set <em>margin</em> and <em>mult</em> and <em>backtrader</em> attempts a
+smart approach by considering the commission to be <code class="docutils literal notranslate"><span class="pre">%</span></code> based.</p>
+<p class="last">To fully specify commission schemes, a subclass of <code class="docutils literal notranslate"><span class="pre">CommissionInfo</span></code> needs
+to be created</p>
+</div>
+</div>
+<div class="section" id="creating-permanent-commission-schemes">
+<h2>Creating permanent Commission schemes<a class="headerlink" href="#creating-permanent-commission-schemes" title="Permalink to this headline">¶</a></h2>
+<p>A more permanent commission scheme can be created by working directly with
+<code class="docutils literal notranslate"><span class="pre">CommissionInfo</span></code> classes. The user could choose to have this definition
+somewhere:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="n">commEurostoxx50</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">CommissionInfo</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">2000.0</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To later apply it in another Python module with <code class="docutils literal notranslate"><span class="pre">addcommissioninfo</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mycomm</span> <span class="k">import</span> <span class="n">commEurostoxx50</span>
+
+<span class="o">...</span>
+
+<span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">addcommissioninfo</span><span class="p">(</span><span class="n">commEuroStoxx50</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Eurostoxxx50&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CommissionInfo</span></code> is an object which uses a <code class="docutils literal notranslate"><span class="pre">params</span></code> declaration just like
+other objects in the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> environment. As such the above can be also
+expressed as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="k">class</span> <span class="nc">CommEurostoxx50</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">CommissionInfo</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">commission</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">2000.0</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And later:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mycomm</span> <span class="k">import</span> <span class="n">CommEurostoxx50</span>
+
+<span class="o">...</span>
+
+<span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">addcommissioninfoCommEuroStoxx50</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Eurostoxxx50&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="now-a-real-comparison-with-a-sma-crossover">
+<h2>Now a “real” comparison with a SMA Crossover<a class="headerlink" href="#now-a-real-comparison-with-a-sma-crossover" title="Permalink to this headline">¶</a></h2>
+<p>Using a SimpleMovingAverage crossover as the entry/exit signal the same data set
+is going to be tested with a <code class="docutils literal notranslate"><span class="pre">futures</span></code> like commission scheme and then with a
+<code class="docutils literal notranslate"><span class="pre">stocks</span></code> like one.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Futures positions could also not only be given the enter/exit behavior but a
+reversal behavior on each occassion. But this example is about comparing the
+commission schemes.</p>
+</div>
+<p>The code (see at the bottom for the full strategy) is the same and the
+scheme can be chosen before the strategy is defined.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">futures_like</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">futures_like</span><span class="p">:</span>
+    <span class="n">commission</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">mult</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">commission</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">mult</span> <span class="o">=</span> <span class="mf">0.005</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">1</span>
+
+</pre></div>
+</div>
+<p>Just set <code class="docutils literal notranslate"><span class="pre">futures_like</span></code> to false to run with the <code class="docutils literal notranslate"><span class="pre">stocks</span></code> like scheme.</p>
+<p>Some logging code has been added to evaluate the impact of the differrent
+commission schemes. Let’s concentrate on just the 2 first operations.</p>
+<p>For futures:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2006</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3757.59</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3754.13</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">2000.00</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">2.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3788.81</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3786.93</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">2000.00</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">2.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="n">OPERATION</span> <span class="n">PROFIT</span><span class="p">,</span> <span class="n">GROSS</span> <span class="mf">328.00</span><span class="p">,</span> <span class="n">NET</span> <span class="mf">324.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3860.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3863.57</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">2000.00</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">2.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3839.90</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3839.24</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">2000.00</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">2.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span> <span class="n">OPERATION</span> <span class="n">PROFIT</span><span class="p">,</span> <span class="n">GROSS</span> <span class="o">-</span><span class="mf">243.30</span><span class="p">,</span> <span class="n">NET</span> <span class="o">-</span><span class="mf">247.30</span>
+</pre></div>
+</div>
+<p>For stocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2006</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">09</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3757.59</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3754.13</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">3754.13</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">18.77</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3788.81</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3786.93</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">3786.93</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">18.93</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="n">OPERATION</span> <span class="n">PROFIT</span><span class="p">,</span> <span class="n">GROSS</span> <span class="mf">32.80</span><span class="p">,</span> <span class="n">NET</span> <span class="o">-</span><span class="mf">4.91</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3860.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">BUY</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3863.57</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">3863.57</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">19.32</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">CREATE</span><span class="p">,</span> <span class="mf">3839.90</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span> <span class="n">SELL</span> <span class="n">EXECUTED</span><span class="p">,</span> <span class="n">Price</span><span class="p">:</span> <span class="mf">3839.24</span><span class="p">,</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">3839.24</span><span class="p">,</span> <span class="n">Comm</span> <span class="mf">19.20</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span> <span class="n">OPERATION</span> <span class="n">PROFIT</span><span class="p">,</span> <span class="n">GROSS</span> <span class="o">-</span><span class="mf">24.33</span><span class="p">,</span> <span class="n">NET</span> <span class="o">-</span><span class="mf">62.84</span>
+</pre></div>
+</div>
+<p>The 1st operation has the following prices:</p>
+<blockquote>
+<div><ul class="simple">
+<li>BUY (Execution) -&gt; 3754.13 / SELL (Execution) -&gt; 3786.93<ul>
+<li>Futures Profit &amp; Loss (with commission): 324.0</li>
+<li>Stocks Profit &amp; Loss (with commission): -4.91</li>
+</ul>
+</li>
+</ul>
+<p>Hey!! Commission has fully eaten up any profit on the <code class="docutils literal notranslate"><span class="pre">stocks</span></code> operation
+but has only meant a small dent to the <code class="docutils literal notranslate"><span class="pre">futures</span></code> one.</p>
+</div></blockquote>
+<p>The 2nd operation:</p>
+<blockquote>
+<div><ul class="simple">
+<li>BUY (Execution) -&gt; <code class="docutils literal notranslate"><span class="pre">3863.57</span></code> / SELL (Execution) -&gt; <code class="docutils literal notranslate"><span class="pre">3389.24</span></code><ul>
+<li>Futures Profit &amp; Loss (with commission): <code class="docutils literal notranslate"><span class="pre">-247.30</span></code></li>
+<li>Stocks Profit &amp; Loss (with commission): <code class="docutils literal notranslate"><span class="pre">-62.84</span></code></li>
+</ul>
+</li>
+</ul>
+<p>The bite has been sensibly larger for this negative operation with <code class="docutils literal notranslate"><span class="pre">futures</span></code></p>
+</div></blockquote>
+<p>But:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Futures accumulated net profit &amp; loss: <code class="docutils literal notranslate"><span class="pre">324.00</span> <span class="pre">+</span> <span class="pre">(-247.30)</span> <span class="pre">=</span> <span class="pre">76.70</span></code></li>
+<li>Stocks accumulated net profit &amp; loss: <code class="docutils literal notranslate"><span class="pre">(-4.91)</span> <span class="pre">+</span> <span class="pre">(-62.84)</span> <span class="pre">=</span> <span class="pre">-67.75</span></code></li>
+</ul>
+</div></blockquote>
+<p>The accumulated effect can be seen on the charts below, where it can also be
+seen that at the end of the full year, futures have produced a larger profit,
+but have also suffered a larger drawdown (were deeper underwater)</p>
+<p>But the important thing: whether <code class="docutils literal notranslate"><span class="pre">futures</span></code> or <code class="docutils literal notranslate"><span class="pre">stocks</span></code> … <strong>it can be
+backtested.</strong></p>
+</div>
+<div class="section" id="commissions-for-futures">
+<h2>Commissions for futures<a class="headerlink" href="#commissions-for-futures" title="Permalink to this headline">¶</a></h2>
+<a class=""
+               data-lightbox="group-0563662c-f03d-45d6-a7ad-dcb2464a2ba6"
+               href="../_images/commission-futures1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/commission-futures1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="commissions-for-stocks">
+<h2>Commissions for stocks<a class="headerlink" href="#commissions-for-stocks" title="Permalink to this headline">¶</a></h2>
+<a class=""
+               data-lightbox="group-133d1419-7020-4690-baba-44efe03f6c75"
+               href="../_images/commission-stocks1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/commission-stocks1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="the-code">
+<h2>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.feeds</span> <span class="kn">as</span> <span class="nn">btfeeds</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="kn">as</span> <span class="nn">btind</span>
+
+
+<span class="n">futures_like</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">futures_like</span><span class="p">:</span>
+    <span class="n">commission</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">mult</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">commission</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">mult</span> <span class="o">=</span> <span class="mf">0.005</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">1</span>
+
+
+<span class="k">class</span> <span class="nc">SMACrossOver</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Logging function fot this strategy&#39;&#39;&#39;</span>
+        <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">datas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span> <span class="n">txt</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">notify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="n">order</span><span class="o">.</span><span class="n">Submitted</span><span class="p">,</span> <span class="n">order</span><span class="o">.</span><span class="n">Accepted</span><span class="p">]:</span>
+            <span class="c1"># Buy/Sell order submitted/accepted to/by broker - Nothing to do</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Check if an order has been completed</span>
+        <span class="c1"># Attention: broker could reject order if not enougth cash</span>
+        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="n">order</span><span class="o">.</span><span class="n">Completed</span><span class="p">,</span> <span class="n">order</span><span class="o">.</span><span class="n">Canceled</span><span class="p">,</span> <span class="n">order</span><span class="o">.</span><span class="n">Margin</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">isbuy</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+                    <span class="s1">&#39;BUY EXECUTED, Price: </span><span class="si">%.2f</span><span class="s1">, Cost: </span><span class="si">%.2f</span><span class="s1">, Comm </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span>
+                    <span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+                     <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                     <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">comm</span><span class="p">))</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">buyprice</span> <span class="o">=</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">buycomm</span> <span class="o">=</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">comm</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">opsize</span> <span class="o">=</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">size</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># Sell</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;SELL EXECUTED, Price: </span><span class="si">%.2f</span><span class="s1">, Cost: </span><span class="si">%.2f</span><span class="s1">, Comm </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+                          <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                          <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">comm</span><span class="p">))</span>
+
+                <span class="n">gross_pnl</span> <span class="o">=</span> <span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">buyprice</span><span class="p">)</span> <span class="o">*</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">opsize</span>
+
+                <span class="k">if</span> <span class="n">margin</span><span class="p">:</span>
+                    <span class="n">gross_pnl</span> <span class="o">*=</span> <span class="n">mult</span>
+
+                <span class="n">net_pnl</span> <span class="o">=</span> <span class="n">gross_pnl</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">buycomm</span> <span class="o">-</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">comm</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;OPERATION PROFIT, GROSS </span><span class="si">%.2f</span><span class="s1">, NET </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">gross_pnl</span><span class="p">,</span> <span class="n">net_pnl</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># &gt; 0 crossing up / &lt; 0 crossing down</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buysell_sig</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">CrossOver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">sma</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buysell_sig</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;BUY CREATE, </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>  <span class="c1"># keep order ref to avoid 2nd orders</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">buysell_sig</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;SELL CREATE, </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Create a cerebro entity</span>
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Add a strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">SMACrossOver</span><span class="p">)</span>
+
+    <span class="c1"># Create a Data Feed</span>
+    <span class="n">datapath</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;../../datas/2006-day-001.txt&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">)</span>
+
+    <span class="c1"># Add the Data Feed to Cerebro</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># set commission scheme -- CHANGE HERE TO PLAY</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">setcommission</span><span class="p">(</span>
+        <span class="n">commission</span><span class="o">=</span><span class="n">commission</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="n">margin</span><span class="p">,</span> <span class="n">mult</span><span class="o">=</span><span class="n">mult</span><span class="p">)</span>
+
+    <span class="c1"># Run over everything</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="c1"># Plot the result</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.CommInfoBase">
+<em class="property">class </em><code class="descclassname">backtrader.</code><code class="descname">CommInfoBase</code><a class="headerlink" href="#backtrader.CommInfoBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Class for the Commission Schemes.</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">commission</span></code> (def: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>): base commission value in percentage or
+monetary units</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">mult</span></code> (def <code class="docutils literal notranslate"><span class="pre">1.0</span></code>): multiplier applied to the asset for
+value/profit</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">margin</span></code> (def: <code class="docutils literal notranslate"><span class="pre">None</span></code>): amount of monetary units needed to
+open/hold an operation. It only applies if the final <code class="docutils literal notranslate"><span class="pre">_stocklike</span></code>
+attribute in the class is set to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">automargin</span></code> (def: <code class="docutils literal notranslate"><span class="pre">False</span></code>): Used by the method <code class="docutils literal notranslate"><span class="pre">get_margin</span></code>
+to automatically calculate the margin/guarantees needed with the
+following policy</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use param <code class="docutils literal notranslate"><span class="pre">margin</span></code> if param <code class="docutils literal notranslate"><span class="pre">automargin</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+<li>Use param <code class="docutils literal notranslate"><span class="pre">mult</span></code> * <code class="docutils literal notranslate"><span class="pre">price</span></code> if <code class="docutils literal notranslate"><span class="pre">automargin</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
+<li>Use param <code class="docutils literal notranslate"><span class="pre">automargin</span></code> * <code class="docutils literal notranslate"><span class="pre">price</span></code> if <code class="docutils literal notranslate"><span class="pre">automargin</span> <span class="pre">&gt;</span> <span class="pre">0</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">commtype</span></code> (def: <code class="docutils literal notranslate"><span class="pre">None</span></code>): Supported values are
+<code class="docutils literal notranslate"><span class="pre">CommInfoBase.COMM_PERC</span></code> (commission to be understood as %) and
+<code class="docutils literal notranslate"><span class="pre">CommInfoBase.COMM_FIXED</span></code> (commission to be understood as monetary
+units)</p>
+<p>The default value of <code class="docutils literal notranslate"><span class="pre">None</span></code> is a supported value to retain
+compatibility with the legacy <code class="docutils literal notranslate"><span class="pre">CommissionInfo</span></code> object. If
+<code class="docutils literal notranslate"><span class="pre">commtype</span></code> is set to None, then the following applies:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">margin</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>: Internal <code class="docutils literal notranslate"><span class="pre">_commtype</span></code> is set to
+<code class="docutils literal notranslate"><span class="pre">COMM_PERC</span></code> and <code class="docutils literal notranslate"><span class="pre">_stocklike</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> (Operating
+%-wise with Stocks)</li>
+<li><code class="docutils literal notranslate"><span class="pre">margin</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>: <code class="docutils literal notranslate"><span class="pre">_commtype</span></code> set to <code class="docutils literal notranslate"><span class="pre">COMM_FIXED</span></code> and
+<code class="docutils literal notranslate"><span class="pre">_stocklike</span></code> set to <code class="docutils literal notranslate"><span class="pre">False</span></code> (Operating with fixed rount-trip
+commission with Futures)</li>
+</ul>
+</div></blockquote>
+<p>If this param is set to something else than <code class="docutils literal notranslate"><span class="pre">None</span></code>, then it will be
+passed to the internal <code class="docutils literal notranslate"><span class="pre">_commtype</span></code> attribute and the same will be
+done with the param <code class="docutils literal notranslate"><span class="pre">stocklike</span></code> and the internal attribute
+<code class="docutils literal notranslate"><span class="pre">_stocklike</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stocklike</span></code> (def: <code class="docutils literal notranslate"><span class="pre">False</span></code>): Indicates if the instrument is
+Stock-like or Futures-like (see the <code class="docutils literal notranslate"><span class="pre">commtype</span></code> discussion above)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">percabs</span></code> (def: <code class="docutils literal notranslate"><span class="pre">False</span></code>): when <code class="docutils literal notranslate"><span class="pre">commtype</span></code> is set to COMM_PERC,
+whether the parameter <code class="docutils literal notranslate"><span class="pre">commission</span></code> has to be understood as XX% or
+0.XX</p>
+<p>If this param is <code class="docutils literal notranslate"><span class="pre">True</span></code>: 0.XX
+If this param is <code class="docutils literal notranslate"><span class="pre">False</span></code>: XX%</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">interest</span></code> (def: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>)</p>
+<p>If this is non-zero, this is the yearly interest charged for holding a
+short selling position. This is mostly meant for stock short-selling</p>
+<p>The formula: <code class="docutils literal notranslate"><span class="pre">days</span> <span class="pre">*</span> <span class="pre">price</span> <span class="pre">*</span> <span class="pre">abs(size)</span> <span class="pre">*</span> <span class="pre">(interest</span> <span class="pre">/</span> <span class="pre">365)</span></code></p>
+<p>It must be specified in absolute terms: 0.05 -&gt; 5%</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the behavior can be changed by overriding the method:
+<code class="docutils literal notranslate"><span class="pre">_get_credit_interest</span></code></p>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">interest_long</span></code> (def: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>Some products like ETFs get charged on interest for short and long
+positions. If ths is <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">interest</span></code> is non-zero the interest
+will be charged on both directions</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">leverage</span></code> (def: <code class="docutils literal notranslate"><span class="pre">1.0</span></code>)</p>
+<p>Amount of leverage for the asset with regards to the needed cash</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt>
+<code class="descname">- ``_stocklike``</code></dt>
+<dd><p>Final value to use for Stock-like/Futures-like behavior</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">- ``_commtype``</code></dt>
+<dd><p>Final value to use for PERC vs FIXED commissions</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">This two are used internally instead of the declared params to enable the</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">compatibility check described above for the legacy ``CommissionInfo``</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="backtrader.CommInfoBase.object">
+<code class="descname">object</code><a class="headerlink" href="#backtrader.CommInfoBase.object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="backtrader.CommissionInfo">
+<em class="property">class </em><code class="descclassname">backtrader.</code><code class="descname">CommissionInfo</code><a class="headerlink" href="#backtrader.CommissionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Class for the actual Commission Schemes.</p>
+<p>CommInfoBase was created to keep suppor for the original, incomplete,
+support provided by <em>backtrader</em>. New commission schemes derive from this
+class which subclasses <code class="docutils literal notranslate"><span class="pre">CommInfoBase</span></code>.</p>
+<p>The default value of <code class="docutils literal notranslate"><span class="pre">percabs</span></code> is also changed to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">percabs</span></code> (def: True): when <code class="docutils literal notranslate"><span class="pre">commtype</span></code> is set to COMM_PERC, whether
+the parameter <code class="docutils literal notranslate"><span class="pre">commission</span></code> has to be understood as XX% or 0.XX</p>
+<p>If this param is True: 0.XX
+If this param is False: XX%</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="backtrader.CommissionInfo.get_leverage">
+<code class="descname">get_leverage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.get_leverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the level of leverage allowed for this comission scheme</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.getsize">
+<code class="descname">getsize</code><span class="sig-paren">(</span><em>price</em>, <em>cash</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.getsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the needed size to meet a cash operation at a given price</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.getoperationcost">
+<code class="descname">getoperationcost</code><span class="sig-paren">(</span><em>size</em>, <em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.getoperationcost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the needed amount of cash an operation would cost</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.getvaluesize">
+<code class="descname">getvaluesize</code><span class="sig-paren">(</span><em>size</em>, <em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.getvaluesize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of size for given a price. For future-like
+objects it is fixed at size * margin</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.getvalue">
+<code class="descname">getvalue</code><span class="sig-paren">(</span><em>position</em>, <em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of a position given a price. For future-like
+objects it is fixed at size * margin</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.get_margin">
+<code class="descname">get_margin</code><span class="sig-paren">(</span><em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.get_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the actual margin/guarantees needed for a single item of the
+asset at the given price. The default implementation has this policy:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use param <code class="docutils literal notranslate"><span class="pre">margin</span></code> if param <code class="docutils literal notranslate"><span class="pre">automargin</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+<li>Use param <code class="docutils literal notranslate"><span class="pre">mult</span></code> * <code class="docutils literal notranslate"><span class="pre">price</span></code> if <code class="docutils literal notranslate"><span class="pre">automargin</span> <span class="pre">&lt;</span> <span class="pre">0</span></code></li>
+<li>Use param <code class="docutils literal notranslate"><span class="pre">automargin</span></code> * <code class="docutils literal notranslate"><span class="pre">price</span></code> if <code class="docutils literal notranslate"><span class="pre">automargin</span> <span class="pre">&gt;</span> <span class="pre">0</span></code></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.getcommission">
+<code class="descname">getcommission</code><span class="sig-paren">(</span><em>size</em>, <em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.getcommission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the commission of an operation at a given price</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo._getcommission">
+<code class="descname">_getcommission</code><span class="sig-paren">(</span><em>size</em>, <em>price</em>, <em>pseudoexec</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo._getcommission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the commission of an operation at a given price</p>
+<p>pseudoexec: if True the operation has not yet been executed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.profitandloss">
+<code class="descname">profitandloss</code><span class="sig-paren">(</span><em>size</em>, <em>price</em>, <em>newprice</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.profitandloss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return actual profit and loss a position has</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.cashadjust">
+<code class="descname">cashadjust</code><span class="sig-paren">(</span><em>size</em>, <em>price</em>, <em>newprice</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.cashadjust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates cash adjustment for a given price difference</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo.get_credit_interest">
+<code class="descname">get_credit_interest</code><span class="sig-paren">(</span><em>data</em>, <em>pos</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo.get_credit_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the credit due for short selling or product specific</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.CommissionInfo._get_credit_interest">
+<code class="descname">_get_credit_interest</code><span class="sig-paren">(</span><em>data</em>, <em>size</em>, <em>price</em>, <em>days</em>, <em>dt0</em>, <em>dt1</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.CommissionInfo._get_credit_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns  the cost in terms of credit interest charged by
+the broker.</p>
+<p>In the case of <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> this method will only be called if the
+parameter to the class <code class="docutils literal notranslate"><span class="pre">interest_long</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>The formulat for the calculation of the credit interest rate is:</p>
+<blockquote>
+<div>The formula: <code class="docutils literal notranslate"><span class="pre">days</span> <span class="pre">*</span> <span class="pre">price</span> <span class="pre">*</span> <span class="pre">abs(size)</span> <span class="pre">*</span> <span class="pre">(interest</span> <span class="pre">/</span> <span class="pre">365)</span></code></div></blockquote>
+<dl class="docutils">
+<dt>Params:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">data</span></code>: data feed for which interest is charged</li>
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code>: current position size. &gt; 0 for long positions and &lt; 0 for
+short positions (this parameter will not be <code class="docutils literal notranslate"><span class="pre">0</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">price</span></code>: current position price</li>
+<li><code class="docutils literal notranslate"><span class="pre">days</span></code>: number of days elapsed since last credit calculation
+(this is (dt0 - dt1).days)</li>
+<li><code class="docutils literal notranslate"><span class="pre">dt0</span></code>: (datetime.datetime) current datetime</li>
+<li><code class="docutils literal notranslate"><span class="pre">dt1</span></code>: (datetime.datetime) datetime of previous calculation</li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">dt0</span></code> and <code class="docutils literal notranslate"><span class="pre">dt1</span></code> are not used in the default implementation and are
+provided as extra input for overridden methods</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

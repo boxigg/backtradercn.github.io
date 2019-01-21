@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Indicator Development &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Observers and Statistics" href="observers-and-statistics/observers-and-statistics.html" />
+    <link rel="prev" title="Mixing Timeframes in Indicators" href="mixing-timeframes/indicators-mixing-timeframes.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Indicator Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#important-note-idempotence">Important note: Idempotence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-dummy-but-functional-indicator">A dummy (but functional) indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-automatic-minimum-period">Manual/Automatic Minimum Period</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-full-custom-indicator">A full custom indicator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="indicator-development">
+<h1>Indicator Development<a class="headerlink" href="#indicator-development" title="Permalink to this headline">¶</a></h1>
+<p>If anything (besides one or more winning Strategies) must ever be developed,
+this something is a custom Indicator.</p>
+<p>Such development within the platform is, according to the author, easy.</p>
+<p>The following is needed:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A class derived from Indicator (either directly or from an already existing
+subclass)</p>
+</li>
+<li><p class="first">Define the <em>lines</em> it will hold</p>
+<p>An indicator must at least have 1 line. If deriving from an existing one,
+the line(s) may have already be defined</p>
+</li>
+<li><p class="first">Optionally define parameters which can alter the behavior</p>
+</li>
+<li><p class="first">Optionally provided/customize some of the elements which enable sensible
+plotting of the indicators</p>
+</li>
+<li><p class="first">Provide a fully defined operation in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> with a binding
+(assignment) to the line(s) of the indicator or else provide <code class="docutils literal notranslate"><span class="pre">next</span></code> and
+(optionally) <code class="docutils literal notranslate"><span class="pre">once</span></code> methods</p>
+<p>If an indicator can be fully defined with logic/arithmetic operations during
+initialization and the result is assigned to the line: done</p>
+<p>Be it not the case, at least a <code class="docutils literal notranslate"><span class="pre">next</span></code> has to be provided where the indicator
+must assign a value to the line(s) at index 0</p>
+<p>Optimization of the calculation for the <strong>runonce</strong> mode (batch operation) can
+be achieved by providing a <em>once</em> method.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="important-note-idempotence">
+<h2>Important note: Idempotence<a class="headerlink" href="#important-note-idempotence" title="Permalink to this headline">¶</a></h2>
+<p>Indicators produce an output for each bar they receive. No assumption has to be
+made about how many times the same bar will be sent. Operations have to be
+idempotent.</p>
+<p>The rationale behind this:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The same bar (index-wise) can be sent many times with changing values
+(namely the changing value is the closing price)</li>
+</ul>
+</div></blockquote>
+<p>This enables, for example, “replaying” a daily session but using intraday data
+which could be made of 5 minutes bars.</p>
+<p>It could also allow the platform to get values from a live feed.</p>
+<div class="section" id="a-dummy-but-functional-indicator">
+<h3>A dummy (but functional) indicator<a class="headerlink" href="#a-dummy-but-functional-indicator" title="Permalink to this headline">¶</a></h3>
+<p>So can it be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DummyInd</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;dummyline&#39;</span><span class="p">,)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">dummyline</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Done! The indicator will output always the same value: either 0.0 or
+self.params.value if it happens to be greater than 0.0.</p>
+<p>The same indicator but using the next method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DummyInd</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;dummyline&#39;</span><span class="p">,)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">dummyline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Done! Same behavior.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Notice how in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> version <code class="docutils literal notranslate"><span class="pre">bt.Max</span></code> is used to assign to
+the Line object <code class="docutils literal notranslate"><span class="pre">self.lines.dummyline</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bt.Max</span></code> returns an <em>lines</em> object that is automatically iterated for
+each bar passed to the indicator.</p>
+<p>Had <code class="docutils literal notranslate"><span class="pre">max</span></code> been used instead, the assigment would have been
+pointless, because instead of a line, the indicator would have a
+member variable with a fixed value.</p>
+<p class="last">During <code class="docutils literal notranslate"><span class="pre">next</span></code> the work is done directly with floating point values
+and the standard <code class="docutils literal notranslate"><span class="pre">max</span></code> built-in can be used</p>
+</div>
+<p>Let’s recall that <code class="docutils literal notranslate"><span class="pre">self.lines.dummyline</span></code> is the long notation and that it can
+be shortened to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.l.dummyline</span></code></li>
+</ul>
+</div></blockquote>
+<p>and even to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.dummyline</span></code></li>
+</ul>
+</div></blockquote>
+<p>The latter being only possible if the code has not obscured this with a member
+attribute.</p>
+<p>The 3rd and last version provides an additional <code class="docutils literal notranslate"><span class="pre">once</span></code> method to optimize the
+calculation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DummyInd</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;dummyline&#39;</span><span class="p">,)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">dummyline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">once</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+       <span class="n">dummy_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">dummyline</span><span class="o">.</span><span class="n">array</span>
+
+       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+           <span class="n">dummy_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A lot more effective but developing the <code class="docutils literal notranslate"><span class="pre">once</span></code> method has forced to scratch beyond
+the surface. Actually the guts have been looked into.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> version is in any case the best:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Everything is confined to the initialization</li>
+<li><code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">once</span></code> (both optimized, because <code class="docutils literal notranslate"><span class="pre">bt.Max</span></code> already has them)
+are provided automatically with no need to play with indices and/or
+formulas</li>
+</ul>
+</div></blockquote>
+<p>Be it needed for development, the indicator can also override the methods
+associated to <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">once</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">prenext</span></code> and <code class="docutils literal notranslate"><span class="pre">nexstart</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">preonce</span></code> and <code class="docutils literal notranslate"><span class="pre">oncestart</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="manual-automatic-minimum-period">
+<h3>Manual/Automatic Minimum Period<a class="headerlink" href="#manual-automatic-minimum-period" title="Permalink to this headline">¶</a></h3>
+<p>If possible the platform will calculate it, but manual action may be needed.</p>
+<p>Here is a potential implementation of a <em>Simple Moving Average</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleMovingAverage1</span><span class="p">(</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sma&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">datasum</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">sma</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">datasum</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span>
+</pre></div>
+</div>
+<p>Although it seems sound, the platform doesn’t know what the minimum period is,
+even if the parameter is named “period” (the name could be misleading and some
+indicators receive several “period”s which have different usages)</p>
+<p>In this case <code class="docutils literal notranslate"><span class="pre">next</span></code> would be called already for the 1st bar and everthing
+would explode because get cannot return the needed <code class="docutils literal notranslate"><span class="pre">self.p.period</span></code>.</p>
+<p>Before solving the situation something has to be taken into account:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <cite>data feeds</cite> passed to the indicators may already carry a <strong>minimum
+period</strong></li>
+</ul>
+</div></blockquote>
+<p>The sample <em>SimpleMovingAverage</em> may be done on for example:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A regular data feed</p>
+<p>This has a default mininum period of 1 (just wait for the 1st bar that
+enters the system)</p>
+</li>
+<li><p class="first">Another Moving Average … and this in turn already has a <em>period</em></p>
+<p>If this is 20 and again our sample moving average has also 20, we end up
+with a minimum period of 40 bars</p>
+<p>Actually the internal calculation says 39 … because as soon as the first
+moving average has produced a bar this counts for the next moving average,
+which creates an overlapping bar, thus 39 are needed.</p>
+</li>
+<li><p class="first">Other indicators/objects which also carry periods</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Alleviating the situation is done as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleMovingAverage1</span><span class="p">(</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sma&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addminperiod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">datasum</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">sma</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">datasum</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">addminperiod</span></code> method is telling the system to take into account the extra
+<em>period</em> bars needed by this indicator to whatever minimum period there may be
+in existence.</p>
+<p>Sometimes this is absolutely not needed, if all calculations are done with
+objects which already communicate its period needs to the system.</p>
+<p>A quick <em>MACD</em> implementation with Histogram:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">backtrader.indicators</span> <span class="k">import</span> <span class="n">EMA</span>
+
+<span class="k">class</span> <span class="nc">MACD</span><span class="p">(</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;macd&#39;</span><span class="p">,</span> <span class="s1">&#39;signal&#39;</span><span class="p">,</span> <span class="s1">&#39;histo&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period_me1&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;period_me2&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;period_signal&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">me1</span> <span class="o">=</span> <span class="n">EMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period_me1</span><span class="p">)</span>
+        <span class="n">me2</span> <span class="o">=</span> <span class="n">EMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period_me2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">macd</span> <span class="o">=</span> <span class="n">me1</span> <span class="o">-</span> <span class="n">me2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="n">EMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">macd</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period_signal</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">histo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">macd</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">signal</span>
+</pre></div>
+</div>
+<p>Done! No need to think about mininum periods.</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">EMA</span></code> stands for <em>Exponential Moving Average</em> (a platform built-in alias)</p>
+<p>And this one (already in the platform) already states what it needs</p>
+</li>
+<li><p class="first">The named lines of the indicator “macd” and “signal” are being assigned
+objects which already carry declared (behind the scenes) periods</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>macd</cite> takes the period from the operation “me1 - me2” which has in turn
+take the maximum from the periods of me1 and me2 (which are both
+exponential moving averages with different periods)</li>
+<li><cite>signal</cite> takes directly the period of the Exponential Moving Average over
+macd. This EMA also takes into account the already existing macd period
+and the needed amount of samples (period_signal) to calculate itself</li>
+<li><cite>histo</cite> takes the maximum of the two operands “signal - macd”. Once both
+are ready can histo also produce a value</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="a-full-custom-indicator">
+<h2>A full custom indicator<a class="headerlink" href="#a-full-custom-indicator" title="Permalink to this headline">¶</a></h2>
+<p>Let’s develop a simple custom indicator which “indicates” if a moving average
+(which can be modified with a parameter) is above the given data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="k">as</span> <span class="nn">btind</span>
+
+<span class="k">class</span> <span class="nc">OverUnderMovAv</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;overunder&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">movav</span><span class="o">=</span><span class="n">btind</span><span class="o">.</span><span class="n">MovAv</span><span class="o">.</span><span class="n">Simple</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">movav</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">movav</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">overunder</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cmp</span><span class="p">(</span><span class="n">movav</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Done! The indicator will have a value of “1” if the average is above the data
+and “-1” if below.</p>
+<p>Be the data a regular data feed the 1s and -1s would be produced comparing with
+the close price.</p>
+<p>Although more can be seen in the <em>Plotting</em> section and to have a behaved and
+nice citizen in the plotting world, a couple of things can be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="k">as</span> <span class="nn">btind</span>
+
+<span class="k">class</span> <span class="nc">OverUnderMovAv</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;overunder&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">movav</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">MovAv</span><span class="o">.</span><span class="n">Simple</span><span class="p">)</span>
+
+    <span class="n">plotinfo</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="c1"># Add extra margins above and below the 1s and -1s</span>
+        <span class="n">plotymargin</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+
+        <span class="c1"># Plot a reference horizontal line at 1.0 and -1.0</span>
+        <span class="n">plothlines</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span>
+
+        <span class="c1"># Simplify the y scale to 1.0 and -1.0</span>
+        <span class="n">plotyticks</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+
+    <span class="c1"># Plot the line &quot;overunder&quot; (the only one) with dash style</span>
+    <span class="c1"># ls stands for linestyle and is directly passed to matplotlib</span>
+    <span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">overunder</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_plotlabel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># This method returns a list of labels that will be displayed</span>
+        <span class="c1"># behind the name of the indicator on the plot</span>
+
+        <span class="c1"># The period must always be there</span>
+        <span class="n">plabels</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">]</span>
+
+        <span class="c1"># Put only the moving average if it&#39;s not the default one</span>
+        <span class="n">plabels</span> <span class="o">+=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">movav</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">notdefault</span><span class="p">(</span><span class="s1">&#39;movav&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">plabels</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">movav</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">movav</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">overunder</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cmp</span><span class="p">(</span><span class="n">movav</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

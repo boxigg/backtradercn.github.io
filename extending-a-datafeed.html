@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Extending a Datafeed &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pandas DataFeed Example" href="pandas-datafeed/pandas-datafeed.html" />
+    <link rel="prev" title="Binary Datafeed Development" href="datafeed-develop-general/datafeed-develop-general.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extending a Datafeed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-that-extra-p-e-line">Plotting that extra P/E line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="extending-a-datafeed">
+<h1>Extending a Datafeed<a class="headerlink" href="#extending-a-datafeed" title="Permalink to this headline">¶</a></h1>
+<p>Issues in GitHub are actually pushing into finishing documentation parts or
+helping me to understand if <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> has the ease of use and flexibility I
+envisioned from the first moments and the decisions made along the way.</p>
+<p>In this case is <a class="reference external" href="https://github.com/mementum/backtrader/issues/9">Issue #9</a>.</p>
+<p>The question finally seems to boil down to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Can the end user easily extend the existing mechanisms to add extra
+information in the form of lines that gets passed along other existing price
+information spots like <code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code>, etc?</li>
+</ul>
+</div></blockquote>
+<p>As far as I understand the question the answer is: <strong>Yes</strong></p>
+<p>The poster seems to have these requirements (from <a class="reference external" href="https://github.com/mementum/backtrader/issues/6">Issue #6</a>):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A data source which is being parsed into CSV format</p>
+</li>
+<li><p class="first">Using <code class="docutils literal notranslate"><span class="pre">GenericCSVData</span></code> to load the information</p>
+<p>This generic csv support was developed in response to this <a class="reference external" href="https://github.com/mementum/backtrader/issues/6">Issue #6</a></p>
+</li>
+<li><p class="first">An extra field which apparently contains P/E information which needs to be
+passed along the parsed CSV Data</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Let’s build on the <a class="reference internal" href="datafeed-develop-csv.html#csv-data-feed-development"><span class="std std-ref">CSV Data Feed Development</span></a> and
+<a class="reference internal" href="datafeed.html#generic-csv-datafeed"><span class="std std-ref">GenericCSVData</span></a> example posts.</p>
+<p>Steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Assume the P/E information is being set in the CSV data which is parsed</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">GenericCSVData</span></code> as the base class</li>
+<li>Extend the existng lines (open/high/low/close/volumen/openinterest) with
+<code class="docutils literal notranslate"><span class="pre">pe</span></code></li>
+<li>Add a parameter to let the caller determine the column position of the P/E
+information</li>
+</ul>
+</div></blockquote>
+<p>The result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">backtrader.feeds</span> <span class="k">import</span> <span class="n">GenericCSVData</span>
+
+<span class="k">class</span> <span class="nc">GenericCSV_PE</span><span class="p">(</span><span class="n">GenericCSVData</span><span class="p">):</span>
+
+    <span class="c1"># Add a &#39;pe&#39; line to the inherited ones from the base class</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pe&#39;</span><span class="p">,)</span>
+
+    <span class="c1"># openinterest in GenericCSVData has index 7 ... add 1</span>
+    <span class="c1"># add the parameter to the parameters inherited from the base class</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;pe&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),)</span>
+</pre></div>
+</div>
+<p>And the job is done …</p>
+<p>Later and when using this data feed inside a strategy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="o">....</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">&gt;</span> <span class="mi">2000</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pe</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="c1"># TORA TORA TORA --- Get off this market</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">stake</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="section" id="plotting-that-extra-p-e-line">
+<h2>Plotting that extra P/E line<a class="headerlink" href="#plotting-that-extra-p-e-line" title="Permalink to this headline">¶</a></h2>
+<p>There is obviously no automated plot support for that extra line in the data
+feed.</p>
+<p>The best alternative would be to do a SimpleMovingAverage on that line and
+plot it in a separate axis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="k">as</span> <span class="nn">btind</span>
+
+<span class="o">....</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># The indicator autoregisters and will plot even if no obvious</span>
+        <span class="c1"># reference is kept to it in the class</span>
+        <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pe</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">subplot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">&gt;</span> <span class="mi">2000</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pe</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="c1"># TORA TORA TORA --- Get off this market</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">stake</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

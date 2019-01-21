@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Automating BackTesting &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Saving Memory" href="../memory-savings/memory-savings.html" />
+    <link rel="prev" title="Optimization improvements" href="../optimization-improvements.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Automating BackTesting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#applying-a-user-defined-strategy">Applying a User Defined Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-built-in-strategy">Using a built-in Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-no-strategy">Using no Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-analyzers">Adding Analyzers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-indicators-and-observers">Adding Indicators and Observers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-control">Plotting Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-of-the-script">Usage of the script</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="automating-backtesting">
+<h1>Automating BackTesting<a class="headerlink" href="#automating-backtesting" title="Permalink to this headline">¶</a></h1>
+<p>So far all <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> examples and working samples have started from scratch
+creating a main <strong>Python</strong> module which loads datas, strategies, observers and
+prepares cash and commission schemes.</p>
+<p>One of the goals of <em>algorithmic trading</em> is the automation of trading and given
+that bactrader is a <em>backtesting</em> platform intented to check trading algorithms
+(hence is an <em>algotrading</em> platform), automating the use of backtrader was an
+obvious goal.</p>
+<p>When installed <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> provides 2 entry points in the form of
+scripts/executables which which automates most tasks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">bt-run-py</span></code> a script which uses the codebase from the next item</li>
+</ul>
+<p>and</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">btrun</span></code> (executable)</p>
+<p>Entry point created by <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> during packaging. The executable
+offers advantages under Windows where in theory no errors about “path/file
+not found” will happen.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The description below applies equally to both tools.</p>
+<p><code class="docutils literal notranslate"><span class="pre">btrun</span></code> allows the end user to:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Say which data feeds have to be loaded</p>
+</li>
+<li><p class="first">Set the format to load the datas</p>
+</li>
+<li><p class="first">Specify the date range for the datas</p>
+</li>
+<li><p class="first">Pass parameters to Cerebro
+- Disable standard observers</p>
+<blockquote>
+<div><p>This was an original extra switch before the “Cerebro” parameters were
+implemented. As such and if a parameter to cerebro with regards to
+Standard Observers is passed, this will be ignored (parameter <code class="docutils literal notranslate"><span class="pre">stdstats</span></code>
+to Cerebro)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Load one or more observers (example: <code class="docutils literal notranslate"><span class="pre">DrawDown</span></code>) from the built-in ones or
+from a python module</p>
+</li>
+<li><p class="first">Set the cash and commission scheme parameters for the broker (commission,
+margin, mult)</p>
+</li>
+<li><p class="first">Enable plotting, controlling the amount of charts and style to present the
+data</p>
+</li>
+<li><p class="first">Add a parametrized writer to the system</p>
+</li>
+</ul>
+</div></blockquote>
+<p>And finally what should be the core competence:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Load a strategy (a built-in one or from a Python module)</li>
+<li>Pass parameters to the loaded strategy</li>
+</ul>
+</div></blockquote>
+<p>See below for the <strong>Usage</strong> of the script.</p>
+<div class="section" id="applying-a-user-defined-strategy">
+<h2>Applying a User Defined Strategy<a class="headerlink" href="#applying-a-user-defined-strategy" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider the following strategy which:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Simply loads a SimpleMovingAverage (default period 15)</li>
+<li>Prints outs</li>
+<li>Is in a file named <code class="docutils literal notranslate"><span class="pre">mymod.py</span></code></li>
+</ul>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="kn">as</span> <span class="nn">btind</span>
+
+
+<span class="k">class</span> <span class="nc">MyTest</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Logging function fot this strategy&#39;&#39;&#39;</span>
+        <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">dt</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">num2date</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span> <span class="n">txt</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ltxt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ltxt</span> <span class="o">%</span>
+                 <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">volume</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">openinterest</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Executing the strategy with the usual testing sample is easy:
+easy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="n">mymod</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>The chart output</p>
+<a class=""
+               data-lightbox="group-374005be-3aaa-485b-9bc5-9635a77ce922"
+               href="../_images/bt-run-mymod-no-params1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-mymod-no-params1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The console output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2006</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">20</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">3593.16</span><span class="p">,</span> <span class="mf">3612.37</span><span class="p">,</span> <span class="mf">3550.80</span><span class="p">,</span> <span class="mf">3550.80</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">23</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mf">3550.24</span><span class="p">,</span> <span class="mf">3550.24</span><span class="p">,</span> <span class="mf">3515.07</span><span class="p">,</span> <span class="mf">3544.31</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">24</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">3544.78</span><span class="p">,</span> <span class="mf">3553.16</span><span class="p">,</span> <span class="mf">3526.37</span><span class="p">,</span> <span class="mf">3532.68</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">25</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">3532.72</span><span class="p">,</span> <span class="mf">3578.00</span><span class="p">,</span> <span class="mf">3532.72</span><span class="p">,</span> <span class="mf">3578.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">22</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mf">4109.86</span><span class="p">,</span> <span class="mf">4109.86</span><span class="p">,</span> <span class="mf">4072.62</span><span class="p">,</span> <span class="mf">4073.50</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">27</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">253</span><span class="p">,</span> <span class="mf">4079.70</span><span class="p">,</span> <span class="mf">4134.86</span><span class="p">,</span> <span class="mf">4079.70</span><span class="p">,</span> <span class="mf">4134.86</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">28</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mf">4137.44</span><span class="p">,</span> <span class="mf">4142.06</span><span class="p">,</span> <span class="mf">4125.14</span><span class="p">,</span> <span class="mf">4130.66</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">29</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">4130.12</span><span class="p">,</span> <span class="mf">4142.01</span><span class="p">,</span> <span class="mf">4119.94</span><span class="p">,</span> <span class="mf">4119.94</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+</pre></div>
+</div>
+<p>Same strategy but:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Setting the parameter <code class="docutils literal notranslate"><span class="pre">period</span></code> to 50</li>
+</ul>
+</div></blockquote>
+<p>The command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">plot</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="n">mymod</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">period</span><span class="o">=</span><span class="mi">50</span>
+</pre></div>
+</div>
+<p>The chart output.</p>
+<a class=""
+               data-lightbox="group-ca171b36-b660-4708-8253-6e3200d7c10d"
+               href="../_images/bt-run-mymod-period-501.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-mymod-period-501.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">if no <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension is given, bt-run will add it.</p>
+</div>
+</div>
+<div class="section" id="using-a-built-in-strategy">
+<h2>Using a built-in Strategy<a class="headerlink" href="#using-a-built-in-strategy" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will slowly be including sample (textbook) strategies. Along with
+the <code class="docutils literal notranslate"><span class="pre">bt-run.py</span></code> script a standard <em>Simple Moving Average CrossOver</em> strategy
+is included. The name:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SMA_CrossOver</span></code></li>
+<li>Parameters<ul>
+<li><code class="docutils literal notranslate"><span class="pre">fast</span></code> (default <code class="docutils literal notranslate"><span class="pre">10</span></code>) period of the fast moving average</li>
+<li><code class="docutils literal notranslate"><span class="pre">slow</span></code> (default <code class="docutils literal notranslate"><span class="pre">30</span></code>) period of the slow moving average</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>The strategy buys if the fast moving average crosses up the fast and sells (only
+if it has bought before) upon the fast moving average crossing down the slow
+moving average.</p>
+<p>The code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="kn">as</span> <span class="nn">btind</span>
+
+
+<span class="k">class</span> <span class="nc">SMA_CrossOver</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;fast&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;slow&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">sma_fast</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">fast</span><span class="p">)</span>
+        <span class="n">sma_slow</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">slow</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buysig</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">CrossOver</span><span class="p">(</span><span class="n">sma_fast</span><span class="p">,</span> <span class="n">sma_slow</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buysig</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">buysig</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Standard execution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">plot</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="p">:</span><span class="n">SMA_CrossOver</span>
+</pre></div>
+</div>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">:</span></code>. The standard notation (see below) to load a strategy is:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">module:stragegy:kwargs</span></code></li>
+</ul>
+</div></blockquote>
+<p>With the following rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If module is there and strategy is specified, then that strategy will be
+used</li>
+<li>If module is there but no strategy is specified, the 1st strategy found in
+the module will be returned</li>
+<li>If no module is specified, “strategy” is assumed to refer to a strategy in
+the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> package</li>
+<li>If module and/or strategy are there, if kwargs are present they will be
+passed to the corresponding strategy</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The same notation and rules apply to <code class="docutils literal notranslate"><span class="pre">--observer</span></code>, <code class="docutils literal notranslate"><span class="pre">--analyzer</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--indicator</span></code> options</p>
+<p class="last">Obviously for the corresponding object types</p>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-440ca6cb-17d3-4653-9e4b-3873ccab50c7"
+               href="../_images/bt-run-sma-crossover1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-sma-crossover1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>One last example adding commission schemes, cash and changing the parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">plot</span> \
+      <span class="o">--</span><span class="n">cash</span> <span class="mi">20000</span> \
+      <span class="o">--</span><span class="n">commission</span> <span class="mf">2.0</span> \
+      <span class="o">--</span><span class="n">mult</span> <span class="mi">10</span> \
+      <span class="o">--</span><span class="n">margin</span> <span class="mi">2000</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="p">:</span><span class="n">SMA_CrossOver</span><span class="p">:</span><span class="n">fast</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">slow</span><span class="o">=</span><span class="mi">20</span>
+</pre></div>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-533988bc-251f-4aaa-8799-1a3db72efec6"
+               href="../_images/bt-run-sma-crossover-params-commission1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-sma-crossover-params-commission1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>We have backtested the strategy:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Changing the moving average periods</p>
+</li>
+<li><p class="first">Setting a new starting cash</p>
+</li>
+<li><p class="first">Putting a commission scheme in place for a futures-like instrument</p>
+<p>See the continuous variations in cash with each bar, as cash is adjusted for
+the futures-like instrument daily changes</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="using-no-strategy">
+<h2>Using no Strategy<a class="headerlink" href="#using-no-strategy" title="Permalink to this headline">¶</a></h2>
+<p>This is a an over-statement. A strategy will be applied, but you can ommit any
+kind of strategy and a default backtrader.Strategy will be added.</p>
+<p>Analyzers, Observers and Indicators will be automatically injected in the strategy.</p>
+<p>An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">cash</span> <span class="mi">20000</span> \
+      <span class="o">--</span><span class="n">commission</span> <span class="mf">2.0</span> \
+      <span class="o">--</span><span class="n">mult</span> <span class="mi">10</span> \
+      <span class="o">--</span><span class="n">margin</span> <span class="mi">2000</span> \
+      <span class="o">--</span><span class="n">nostdstats</span> \
+      <span class="o">--</span><span class="n">observer</span> <span class="p">:</span><span class="n">Broker</span>
+</pre></div>
+</div>
+<p>This will do not much but serves the purpose:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A default backtrader.Strategy is added in the background</li>
+<li>Cerebro will not instantiate the regular <code class="docutils literal notranslate"><span class="pre">stdstats</span></code> observers (Broker,
+BuySell, Trades)</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">Broker</span></code> observer is added manually</li>
+</ul>
+</div></blockquote>
+<p>As mentioned above, the <code class="docutils literal notranslate"><span class="pre">nostdstats</span></code> is a legacy parameter. Newer versions of
+<code class="docutils literal notranslate"><span class="pre">btrun</span></code> can pass parameters directly to <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code>. An equivalent invocation
+would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">cash</span> <span class="mi">20000</span> \
+      <span class="o">--</span><span class="n">commission</span> <span class="mf">2.0</span> \
+      <span class="o">--</span><span class="n">mult</span> <span class="mi">10</span> \
+      <span class="o">--</span><span class="n">margin</span> <span class="mi">2000</span> \
+      <span class="o">--</span><span class="n">cerebro</span> <span class="n">stdstats</span><span class="o">=</span><span class="kc">False</span> \
+      <span class="o">--</span><span class="n">observer</span> <span class="p">:</span><span class="n">Broker</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-analyzers">
+<h2>Adding Analyzers<a class="headerlink" href="#adding-analyzers" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">btrun</span></code> also supports adding <code class="docutils literal notranslate"><span class="pre">Analyzers</span></code> with the same syntax used for the
+strategies to choose between internal/external analyzers.</p>
+<p>Example with a <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> analysis for the years 2005-2006:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2005</span><span class="o">-</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="p">:</span><span class="n">SMA_CrossOver</span> \
+      <span class="o">--</span><span class="n">analyzer</span> <span class="p">:</span><span class="n">SharpeRatio</span>
+</pre></div>
+</div>
+<p>The console output is <strong>nothing</strong>.</p>
+<p>If a printout of the <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> results is wished, it must be specified with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">--pranalyzer</span></code> which defaults to calling the next one (unless the Analyzer
+has overriden the proper method)</li>
+<li><code class="docutils literal notranslate"><span class="pre">--ppranalyzer</span></code> which uses the <code class="docutils literal notranslate"><span class="pre">pprint</span></code> module to print the results</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The two printing options were implemented before <code class="docutils literal notranslate"><span class="pre">writers</span></code> were part of
+backtrader. Adding a writer without csv output will achieve the same (and the
+output has been improved)</p>
+</div>
+<p>Extending the example from above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2005</span><span class="o">-</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="p">:</span><span class="n">SMA_CrossOver</span> \
+      <span class="o">--</span><span class="n">analyzer</span> <span class="p">:</span><span class="n">SharpeRatio</span> \
+      <span class="o">--</span><span class="n">plot</span> \
+      <span class="o">--</span><span class="n">pranalyzer</span>
+
+<span class="o">====================</span>
+<span class="o">==</span> <span class="n">Analyzers</span>
+<span class="o">====================</span>
+<span class="c1">##########</span>
+<span class="n">sharperatio</span>
+<span class="c1">##########</span>
+<span class="p">{</span><span class="s1">&#39;sharperatio&#39;</span><span class="p">:</span> <span class="mf">11.647332609673256</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Good strategy!!! (Pure luck for the example actually which also bears no
+commissions)</p>
+<p>The chart (which simply shows the Analyzer is not in the plot, because Analyzers
+cannot be plotted, they aren’t lines objects)</p>
+<a class=""
+               data-lightbox="group-602aca0b-3744-498a-9f99-8ce00908b9ad"
+               href="../_images/bt-run-sma-crossover-sharpe1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-sma-crossover-sharpe1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The same example but using a <code class="docutils literal notranslate"><span class="pre">writer</span></code> argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2005</span><span class="o">-</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">strategy</span> <span class="p">:</span><span class="n">SMA_CrossOver</span> \
+      <span class="o">--</span><span class="n">analyzer</span> <span class="p">:</span><span class="n">SharpeRatio</span> \
+      <span class="o">--</span><span class="n">plot</span> \
+      <span class="o">--</span><span class="n">writer</span>
+
+<span class="o">===============================================================================</span>
+<span class="n">Cerebro</span><span class="p">:</span>
+  <span class="o">-----------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">Datas</span><span class="p">:</span>
+    <span class="o">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
+    <span class="o">-</span> <span class="n">Data0</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">Name</span><span class="p">:</span> <span class="mi">2005</span><span class="o">-</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mi">001</span>
+      <span class="o">-</span> <span class="n">Timeframe</span><span class="p">:</span> <span class="n">Days</span>
+      <span class="o">-</span> <span class="n">Compression</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="o">-----------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">Strategies</span><span class="p">:</span>
+    <span class="o">+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
+    <span class="o">-</span> <span class="n">SMA_CrossOver</span><span class="p">:</span>
+      <span class="o">*************************************************************************</span>
+      <span class="o">-</span> <span class="n">Params</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">fast</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="o">-</span> <span class="n">slow</span><span class="p">:</span> <span class="mi">30</span>
+        <span class="o">-</span> <span class="n">_movav</span><span class="p">:</span> <span class="n">SMA</span>
+      <span class="o">*************************************************************************</span>
+      <span class="o">-</span> <span class="n">Indicators</span><span class="p">:</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">SMA</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Lines</span><span class="p">:</span> <span class="n">sma</span>
+          <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">period</span><span class="p">:</span> <span class="mi">30</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">CrossOver</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Lines</span><span class="p">:</span> <span class="n">crossover</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span> <span class="kc">None</span>
+      <span class="o">*************************************************************************</span>
+      <span class="o">-</span> <span class="n">Observers</span><span class="p">:</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">Broker</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Lines</span><span class="p">:</span> <span class="n">cash</span><span class="p">,</span> <span class="n">value</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">BuySell</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Lines</span><span class="p">:</span> <span class="n">buy</span><span class="p">,</span> <span class="n">sell</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">Trades</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Lines</span><span class="p">:</span> <span class="n">pnlplus</span><span class="p">,</span> <span class="n">pnlminus</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span> <span class="kc">None</span>
+      <span class="o">*************************************************************************</span>
+      <span class="o">-</span> <span class="n">Analyzers</span><span class="p">:</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">Value</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Begin</span><span class="p">:</span> <span class="mf">10000.0</span>
+          <span class="o">-</span> <span class="n">End</span><span class="p">:</span> <span class="mf">10496.68</span>
+        <span class="o">.......................................................................</span>
+        <span class="o">-</span> <span class="n">SharpeRatio</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">Params</span><span class="p">:</span> <span class="kc">None</span>
+          <span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+          <span class="o">-</span> <span class="n">Analysis</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">sharperatio</span><span class="p">:</span> <span class="mf">11.6473326097</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-indicators-and-observers">
+<h2>Adding Indicators and Observers<a class="headerlink" href="#adding-indicators-and-observers" title="Permalink to this headline">¶</a></h2>
+<p>As with <code class="docutils literal notranslate"><span class="pre">Strategies</span></code> and <code class="docutils literal notranslate"><span class="pre">Analyzers</span></code> btrun can also add:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Indicators</span></code></li>
+</ul>
+</div></blockquote>
+<p>and</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Observers</span></code></li>
+</ul>
+</div></blockquote>
+<p>The syntax is exactly the same as seen above when adding a <code class="docutils literal notranslate"><span class="pre">Broker</span></code> observer.</p>
+<p>Let’s repeat the example but adding a <code class="docutils literal notranslate"><span class="pre">Stochastic</span></code>, the <code class="docutils literal notranslate"><span class="pre">Broker</span></code> and having
+a look at the plot (we’ll change some parameters):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">nostdstats</span> \
+      <span class="o">--</span><span class="n">observer</span> <span class="p">:</span><span class="n">Broker</span> \
+      <span class="o">--</span><span class="n">indicator</span> <span class="p">:</span><span class="n">Stochastic</span><span class="p">:</span><span class="n">period_dslow</span><span class="o">=</span><span class="mi">5</span> \
+      <span class="o">--</span><span class="n">plot</span>
+</pre></div>
+</div>
+<p>The chart</p>
+<a class=""
+               data-lightbox="group-5a512767-2e8a-4d60-87ea-8074486ab434"
+               href="../_images/bt-run-observer-indicator1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-observer-indicator1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="plotting-control">
+<h2>Plotting Control<a class="headerlink" href="#plotting-control" title="Permalink to this headline">¶</a></h2>
+<p>Most of the above examples have used the following option:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">--plot</span></code> which has activated the creation a default plot</li>
+</ul>
+</div></blockquote>
+<p>More control can be achieved by adding <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> to the <code class="docutils literal notranslate"><span class="pre">--plot</span></code>
+option</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">--plot</span> <span class="pre">style=&quot;candle&quot;</span></code> for example to plot with candlesticks instead of
+plotting with a <code class="docutils literal notranslate"><span class="pre">LineOnClose</span></code> style (which is the plotting default)</li>
+</ul>
+</div></blockquote>
+<p>The invocation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btrun</span> <span class="o">--</span><span class="n">csvformat</span> <span class="n">btcsv</span> \
+      <span class="o">--</span><span class="n">data</span> <span class="o">../../</span><span class="n">datas</span><span class="o">/</span><span class="mi">2006</span><span class="o">-</span><span class="n">day</span><span class="o">-</span><span class="mf">001.</span><span class="n">txt</span> \
+      <span class="o">--</span><span class="n">nostdstats</span> \
+      <span class="o">--</span><span class="n">observer</span> <span class="p">:</span><span class="n">Broker</span> \
+      <span class="o">--</span><span class="n">indicator</span> <span class="p">:</span><span class="n">Stochastic</span><span class="p">:</span><span class="n">period_dslow</span><span class="o">=</span><span class="mi">5</span> \
+      <span class="o">--</span><span class="n">plot</span> <span class="n">style</span><span class="o">=</span>\<span class="s2">&quot;candle</span><span class="se">\&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The quotes around <code class="docutils literal notranslate"><span class="pre">candle</span></code> are quoted with backslashed <code class="docutils literal notranslate"><span class="pre">\</span></code> because the
+example is being run in a bash shell which removes that before passing the
+arguments to the script.</p>
+<p class="last">Backslash quoting is needed in this case to ensure “bar” makes it to the
+script and can be evaluated as a string</p>
+</div>
+<p>The chart</p>
+<a class=""
+               data-lightbox="group-d1e7bccb-cbb4-4de9-90d3-4bf0c6bfa046"
+               href="../_images/bt-run-plot-candle1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/bt-run-plot-candle1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="usage-of-the-script">
+<h2>Usage of the script<a class="headerlink" href="#usage-of-the-script" title="Permalink to this headline">¶</a></h2>
+<p>Directly from the script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ btrun --help
+usage: btrun-script.py [-h] --data DATA [--cerebro [kwargs]] [--nostdstats]
+                       [--format {yahoocsv_unreversed,vchart,vchartcsv,yahoo,mt4csv,ibdata,sierracsv,yahoocsv,btcsv,vcdata}]
+                       [--fromdate FROMDATE] [--todate TODATE]
+                       [--timeframe {microseconds,seconds,weeks,months,minutes,days,years}]
+                       [--compression COMPRESSION]
+                       [--resample RESAMPLE | --replay REPLAY]
+                       [--strategy module:name:kwargs]
+                       [--signal module:signaltype:name:kwargs]
+                       [--observer module:name:kwargs]
+                       [--analyzer module:name:kwargs]
+                       [--pranalyzer | --ppranalyzer]
+                       [--indicator module:name:kwargs] [--writer [kwargs]]
+                       [--cash CASH] [--commission COMMISSION]
+                       [--margin MARGIN] [--mult MULT] [--interest INTEREST]
+                       [--interest_long] [--slip_perc SLIP_PERC]
+                       [--slip_fixed SLIP_FIXED] [--slip_open]
+                       [--no-slip_match] [--slip_out] [--flush]
+                       [--plot [kwargs]]
+
+Backtrader Run Script
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --resample RESAMPLE, -rs RESAMPLE
+                        resample with timeframe:compression values
+  --replay REPLAY, -rp REPLAY
+                        replay with timeframe:compression values
+  --pranalyzer, -pralyzer
+                        Automatically print analyzers
+  --ppranalyzer, -ppralyzer
+                        Automatically PRETTY print analyzers
+  --plot [kwargs], -p [kwargs]
+                        Plot the read data applying any kwargs passed
+
+                        For example:
+
+                          --plot style=&quot;candle&quot; (to plot candlesticks)
+
+Data options:
+  --data DATA, -d DATA  Data files to be added to the system
+
+Cerebro options:
+  --cerebro [kwargs], -cer [kwargs]
+                        The argument can be specified with the following form:
+
+                          - kwargs
+
+                            Example: &quot;preload=True&quot; which set its to True
+
+                        The passed kwargs will be passed directly to the cerebro
+                        instance created for the execution
+
+                        The available kwargs to cerebro are:
+                          - preload (default: True)
+                          - runonce (default: True)
+                          - maxcpus (default: None)
+                          - stdstats (default: True)
+                          - live (default: False)
+                          - exactbars (default: False)
+                          - preload (default: True)
+                          - writer (default False)
+                          - oldbuysell (default False)
+                          - tradehistory (default False)
+  --nostdstats          Disable the standard statistics observers
+  --format {yahoocsv_unreversed,vchart,vchartcsv,yahoo,mt4csv,ibdata,sierracsv,yahoocsv,btcsv,vcdata}, --csvformat {yahoocsv_unreversed,vchart,vchartcsv,yahoo,mt4csv,ibdata,sierracsv,yahoocsv,btcsv,vcdata}, -c {yahoocsv_unreversed,vchart,vchartcsv,yahoo,mt4csv,ibdata,sierracsv,yahoocsv,btcsv,vcdata}
+                        CSV Format
+  --fromdate FROMDATE, -f FROMDATE
+                        Starting date in YYYY-MM-DD[THH:MM:SS] format
+  --todate TODATE, -t TODATE
+                        Ending date in YYYY-MM-DD[THH:MM:SS] format
+  --timeframe {microseconds,seconds,weeks,months,minutes,days,years}, -tf {microseconds,seconds,weeks,months,minutes,days,years}
+                        Ending date in YYYY-MM-DD[THH:MM:SS] format
+  --compression COMPRESSION, -cp COMPRESSION
+                        Ending date in YYYY-MM-DD[THH:MM:SS] format
+
+Strategy options:
+  --strategy module:name:kwargs, -st module:name:kwargs
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - module:classname:kwargs
+
+                            Example: mymod:myclass:a=1,b=2
+
+                        kwargs is optional
+
+                        If module is omitted then class name will be sought in
+                        the built-in strategies module. Such as in:
+
+                          - :name:kwargs or :name
+
+                        If name is omitted, then the 1st strategy found in the mod
+                        will be used. Such as in:
+
+                          - module or module::kwargs
+
+Signals:
+  --signal module:signaltype:name:kwargs, -sig module:signaltype:name:kwargs
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - signaltype:module:signaltype:classname:kwargs
+
+                            Example: longshort+mymod:myclass:a=1,b=2
+
+                        signaltype may be ommited: longshort will be used
+
+                            Example: mymod:myclass:a=1,b=2
+
+                        kwargs is optional
+
+                        signaltype will be uppercased to match the defintions
+                        fromt the backtrader.signal module
+
+                        If module is omitted then class name will be sought in
+                        the built-in signals module. Such as in:
+
+                          - LONGSHORT::name:kwargs or :name
+
+                        If name is omitted, then the 1st signal found in the mod
+                        will be used. Such as in:
+
+                          - module or module:::kwargs
+
+Observers and statistics:
+  --observer module:name:kwargs, -ob module:name:kwargs
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - module:classname:kwargs
+
+                            Example: mymod:myclass:a=1,b=2
+
+                        kwargs is optional
+
+                        If module is omitted then class name will be sought in
+                        the built-in observers module. Such as in:
+
+                          - :name:kwargs or :name
+
+                        If name is omitted, then the 1st observer found in the
+                        will be used. Such as in:
+
+                          - module or module::kwargs
+
+Analyzers:
+  --analyzer module:name:kwargs, -an module:name:kwargs
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - module:classname:kwargs
+
+                            Example: mymod:myclass:a=1,b=2
+
+                        kwargs is optional
+
+                        If module is omitted then class name will be sought in
+                        the built-in analyzers module. Such as in:
+
+                          - :name:kwargs or :name
+
+                        If name is omitted, then the 1st analyzer found in the
+                        will be used. Such as in:
+
+                          - module or module::kwargs
+
+Indicators:
+  --indicator module:name:kwargs, -ind module:name:kwargs
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - module:classname:kwargs
+
+                            Example: mymod:myclass:a=1,b=2
+
+                        kwargs is optional
+
+                        If module is omitted then class name will be sought in
+                        the built-in analyzers module. Such as in:
+
+                          - :name:kwargs or :name
+
+                        If name is omitted, then the 1st analyzer found in the
+                        will be used. Such as in:
+
+                          - module or module::kwargs
+
+Writers:
+  --writer [kwargs], -wr [kwargs]
+                        This option can be specified multiple times.
+
+                        The argument can be specified with the following form:
+
+                          - kwargs
+
+                            Example: a=1,b=2
+
+                        kwargs is optional
+
+                        It creates a system wide writer which outputs run data
+
+                        Please see the documentation for the available kwargs
+
+Cash and Commission Scheme Args:
+  --cash CASH, -cash CASH
+                        Cash to set to the broker
+  --commission COMMISSION, -comm COMMISSION
+                        Commission value to set
+  --margin MARGIN, -marg MARGIN
+                        Margin type to set
+  --mult MULT, -mul MULT
+                        Multiplier to use
+  --interest INTEREST   Credit Interest rate to apply (0.0x)
+  --interest_long       Apply credit interest to long positions
+  --slip_perc SLIP_PERC
+                        Enable slippage with a percentage value
+  --slip_fixed SLIP_FIXED
+                        Enable slippage with a fixed point value
+  --slip_open           enable slippage for when matching opening prices
+  --no-slip_match       Disable slip_match, ie: matching capped at
+                        high-low if slippage goes over those limits
+  --slip_out            with slip_match enabled, match outside high-low
+  --flush               flush the output - useful under win32 systems
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>StopTrail(Limit) &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bracket Orders" href="../bracket/bracket.html" />
+    <link rel="prev" title="OCO orders" href="../oco/oco.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="stoptrail-limit">
+<h1>StopTrail(Limit)<a class="headerlink" href="#stoptrail-limit" title="Permalink to this headline">¶</a></h1>
+<p>Release <code class="docutils literal notranslate"><span class="pre">1.9.35.116</span></code> adds the <code class="docutils literal notranslate"><span class="pre">StopTrail</span></code> and <code class="docutils literal notranslate"><span class="pre">StopTrailLimit</span></code> order
+execution types to the backtesting arsenal.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is only implemented in backtesting and there isn’t yet an
+implementation for live brokers</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Updated with release <code class="docutils literal notranslate"><span class="pre">1.9.36.116</span></code>. Interactive Brokers support for
+<code class="docutils literal notranslate"><span class="pre">StopTrail</span></code>, <code class="docutils literal notranslate"><span class="pre">StopTrailLimit</span></code> and <code class="docutils literal notranslate"><span class="pre">OCO</span></code>.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">OCO</span></code> Specify always the 1st order in a group as parameter
+<code class="docutils literal notranslate"><span class="pre">oco</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">StopTrailLimit</span></code>: the broker simulation and the <code class="docutils literal notranslate"><span class="pre">IB</span></code> broker
+have the asme behavior. Specify: <code class="docutils literal notranslate"><span class="pre">price</span></code> as the initial stop
+trigger price (specify also <code class="docutils literal notranslate"><span class="pre">trailamount</span></code>) and then <code class="docutils literal notranslate"><span class="pre">plimi</span></code>
+as the initial limit price. The difference between the two will
+determine the <code class="docutils literal notranslate"><span class="pre">limitoffset</span></code> (the distance at which the limit
+price remains from the stop trigger price)</li>
+</ul>
+</div></blockquote>
+</div>
+<p>The usage pattern is fully integrated into the standard <code class="docutils literal notranslate"><span class="pre">buy</span></code>, <code class="docutils literal notranslate"><span class="pre">sell</span></code> and
+<code class="docutils literal notranslate"><span class="pre">close</span></code> market operation methods of the strategy instances. To notice:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Indicate which execution type is wished as in <code class="docutils literal notranslate"><span class="pre">exectype=bt.Order.StopTrail</span></code></li>
+<li>And whether the trailing price must be calculated with a fixed distance or
+with a percentage based distance<ul>
+<li>Fixed distance: <code class="docutils literal notranslate"><span class="pre">trailamount=10</span></code></li>
+<li>Percentage based distance: <code class="docutils literal notranslate"><span class="pre">trailpercent=0.02</span></code> (i.e.: <code class="docutils literal notranslate"><span class="pre">2%</span></code>)</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>If one has entered the market long by issuing a <code class="docutils literal notranslate"><span class="pre">buy</span></code>, this is what a
+<code class="docutils literal notranslate"><span class="pre">sell</span></code> with <code class="docutils literal notranslate"><span class="pre">StopTrail</span></code> and <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> does:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If no <code class="docutils literal notranslate"><span class="pre">price</span></code> is specified, the latest <code class="docutils literal notranslate"><span class="pre">close</span></code> price is used</li>
+<li><code class="docutils literal notranslate"><span class="pre">trailamount</span></code> is substracted from the price to find the <code class="docutils literal notranslate"><span class="pre">stop</span></code> (or
+trigger) price</li>
+<li>The next iteration of the <em>broker</em> checks if the trigger price has been
+reached<ul>
+<li>If <strong>Yes</strong>: the order is executed with a <code class="docutils literal notranslate"><span class="pre">Market</span></code> execution type
+approach</li>
+<li>If <strong>No</strong>, the <code class="docutils literal notranslate"><span class="pre">stop</span></code> price is recalculated by using the latest
+<code class="docutils literal notranslate"><span class="pre">close</span></code> price and substracting the <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> distance<ul>
+<li>If the new price goes up, it is updated</li>
+<li>If the new price would go down (or not change at all), it is discarded</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>That is: the trailing stop price follows the price upwards, but remains fixed
+if the prices start falling, to potentially secure a profit.</p>
+<p>If one had entered the market with a <code class="docutils literal notranslate"><span class="pre">sell</span></code>, then issuing a <code class="docutils literal notranslate"><span class="pre">buy</span></code> order
+with <code class="docutils literal notranslate"><span class="pre">StopTrail</span></code> simply does the opposite, i.e.: prices are followed
+downwards.</p>
+<p>Some usage patterns</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a StopTrail going downwards</span>
+<span class="c1"># last price will be used as reference</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">trailamount</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">10.50</span><span class="p">,</span> <span class="n">trailamount</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="c1"># For a StopTrail going upwards</span>
+<span class="c1"># last price will be used as reference</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">trailamount</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">10.50</span><span class="p">,</span> <span class="n">trailamount</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One can also specify <code class="docutils literal notranslate"><span class="pre">trailpercent</span></code> instead of <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> and the
+distance to the price will be calculated as a percentage of the price</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a StopTrail going downwards with 2% distance</span>
+<span class="c1"># last price will be used as reference</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">10.50</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">02</span><span class="p">)</span>
+
+<span class="c1"># For a StopTrail going upwards with 2% difference</span>
+<span class="c1"># last price will be used as reference</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">10.50</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a <code class="docutils literal notranslate"><span class="pre">StopTrailLimit</span></code></p>
+<blockquote>
+<div><ul>
+<li><p class="first">The only difference is what happens when the trailing stop price is
+triggered.</p>
+</li>
+<li><p class="first">In this case the order is executed as a <code class="docutils literal notranslate"><span class="pre">Limit</span></code> order (the same behavior
+a <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> order has, but in this case with a dynamic triggering price)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">one has to specify <code class="docutils literal notranslate"><span class="pre">plimit=x.x</span></code> to <code class="docutils literal notranslate"><span class="pre">buy</span></code> or <code class="docutils literal notranslate"><span class="pre">sell</span></code>, which
+will be the <em>limit</em> price</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the <em>limit</em> price is not changed dynamically like the
+stop/trigger price</p>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p>An example is always worth a thousand words and hence the usual <em>backtrader</em>
+sample, which</p>
+<blockquote>
+<div><ul class="simple">
+<li>Uses a moving average crossing up to enter the market long</li>
+<li>Uses a trailing stop to exit the market</li>
+</ul>
+</div></blockquote>
+<p>The execution with <code class="docutils literal notranslate"><span class="pre">50</span></code> points of fixed price distance</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./trail.py --plot --strat trailamount=50.0
+</pre></div>
+</div>
+<p>Which produces the following chart</p>
+<a class=""
+               data-lightbox="group-de2f0fd8-4912-4974-a0bf-8e76262ea5af"
+               href="../../_images/stoptrail-501.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/stoptrail-501.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>And the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**************************************************</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="mf">3075.76</span><span class="p">,</span><span class="mf">3025.76</span><span class="p">,</span><span class="mf">3025.76</span>
+<span class="o">----------</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mf">3086.95</span><span class="p">,</span><span class="mf">3036.95</span><span class="p">,</span><span class="mf">3036.95</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mf">3068.55</span><span class="p">,</span><span class="mf">3036.95</span><span class="p">,</span><span class="mf">3018.55</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">17</span><span class="p">,</span><span class="mf">3067.34</span><span class="p">,</span><span class="mf">3036.95</span><span class="p">,</span><span class="mf">3017.34</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mf">3072.04</span><span class="p">,</span><span class="mf">3036.95</span><span class="p">,</span><span class="mf">3022.04</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">3063.64</span><span class="p">,</span><span class="mf">3036.95</span><span class="p">,</span><span class="mf">3013.64</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">**************************************************</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span><span class="mf">3051.79</span><span class="p">,</span><span class="mf">3001.79</span><span class="p">,</span><span class="mf">3001.79</span>
+<span class="o">----------</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">3050.45</span><span class="p">,</span><span class="mf">3001.79</span><span class="p">,</span><span class="mf">3000.45</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span><span class="mf">3070.98</span><span class="p">,</span><span class="mf">3020.98</span><span class="p">,</span><span class="mf">3020.98</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mf">3066.55</span><span class="p">,</span><span class="mf">3020.98</span><span class="p">,</span><span class="mf">3016.55</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mf">3059.84</span><span class="p">,</span><span class="mf">3020.98</span><span class="p">,</span><span class="mf">3009.84</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">26</span><span class="p">,</span><span class="mf">3086.08</span><span class="p">,</span><span class="mf">3036.08</span><span class="p">,</span><span class="mf">3036.08</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">27</span><span class="p">,</span><span class="mf">3084.0</span><span class="p">,</span><span class="mf">3036.08</span><span class="p">,</span><span class="mf">3034.0</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mf">3096.54</span><span class="p">,</span><span class="mf">3046.54</span><span class="p">,</span><span class="mf">3046.54</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span><span class="p">,</span><span class="mf">3076.75</span><span class="p">,</span><span class="mf">3046.54</span><span class="p">,</span><span class="mf">3026.75</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mf">3125.88</span><span class="p">,</span><span class="mf">3075.88</span><span class="p">,</span><span class="mf">3075.88</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span><span class="mf">3131.03</span><span class="p">,</span><span class="mf">3081.03</span><span class="p">,</span><span class="mf">3081.03</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">03</span><span class="p">,</span><span class="mf">3114.27</span><span class="p">,</span><span class="mf">3081.03</span><span class="p">,</span><span class="mf">3064.27</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">06</span><span class="p">,</span><span class="mf">3099.2</span><span class="p">,</span><span class="mf">3081.03</span><span class="p">,</span><span class="mf">3049.2</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">07</span><span class="p">,</span><span class="mf">3134.82</span><span class="p">,</span><span class="mf">3084.82</span><span class="p">,</span><span class="mf">3084.82</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span><span class="mf">3125.59</span><span class="p">,</span><span class="mf">3084.82</span><span class="p">,</span><span class="mf">3075.59</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">09</span><span class="p">,</span><span class="mf">3122.93</span><span class="p">,</span><span class="mf">3084.82</span><span class="p">,</span><span class="mf">3072.93</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mf">3143.85</span><span class="p">,</span><span class="mf">3093.85</span><span class="p">,</span><span class="mf">3093.85</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span><span class="mf">3159.83</span><span class="p">,</span><span class="mf">3109.83</span><span class="p">,</span><span class="mf">3109.83</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="mf">3162.86</span><span class="p">,</span><span class="mf">3112.86</span><span class="p">,</span><span class="mf">3112.86</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mf">3147.55</span><span class="p">,</span><span class="mf">3112.86</span><span class="p">,</span><span class="mf">3097.55</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mf">3160.09</span><span class="p">,</span><span class="mf">3112.86</span><span class="p">,</span><span class="mf">3110.09</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">17</span><span class="p">,</span><span class="mf">3178.48</span><span class="p">,</span><span class="mf">3128.48</span><span class="p">,</span><span class="mf">3128.48</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">3162.14</span><span class="p">,</span><span class="mf">3128.48</span><span class="p">,</span><span class="mf">3112.14</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">3179.62</span><span class="p">,</span><span class="mf">3129.62</span><span class="p">,</span><span class="mf">3129.62</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">22</span><span class="p">,</span><span class="mf">3182.08</span><span class="p">,</span><span class="mf">3132.08</span><span class="p">,</span><span class="mf">3132.08</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span><span class="mf">3190.8</span><span class="p">,</span><span class="mf">3140.8</span><span class="p">,</span><span class="mf">3140.8</span>
+<span class="mi">2005</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mf">3161.0</span><span class="p">,</span><span class="mf">3140.8</span><span class="p">,</span><span class="mf">3111.0</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">**************************************************</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span><span class="mf">4100.48</span><span class="p">,</span><span class="mf">4050.48</span><span class="p">,</span><span class="mf">4050.48</span>
+<span class="o">----------</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">4118.54</span><span class="p">,</span><span class="mf">4068.54</span><span class="p">,</span><span class="mf">4068.54</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">4112.1</span><span class="p">,</span><span class="mf">4068.54</span><span class="p">,</span><span class="mf">4062.1</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">22</span><span class="p">,</span><span class="mf">4073.5</span><span class="p">,</span><span class="mf">4068.54</span><span class="p">,</span><span class="mf">4023.5</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">27</span><span class="p">,</span><span class="mf">4134.86</span><span class="p">,</span><span class="mf">4084.86</span><span class="p">,</span><span class="mf">4084.86</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mf">4130.66</span><span class="p">,</span><span class="mf">4084.86</span><span class="p">,</span><span class="mf">4080.66</span>
+<span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">29</span><span class="p">,</span><span class="mf">4119.94</span><span class="p">,</span><span class="mf">4084.86</span><span class="p">,</span><span class="mf">4069.94</span>
+</pre></div>
+</div>
+<p>Rather than waiting for the usual cross down pattern the system uses the
+trailing stop to exit the market. Let’s see the 1st operation for example</p>
+<blockquote>
+<div><ul class="simple">
+<li>Closing price when entering long: <code class="docutils literal notranslate"><span class="pre">3075.76</span></code></li>
+<li>System calculated trail stop price: <code class="docutils literal notranslate"><span class="pre">3025.76</span></code> (which is <code class="docutils literal notranslate"><span class="pre">50</span></code> units away)</li>
+<li>Sample calculated trail stop price: <code class="docutils literal notranslate"><span class="pre">3025.76</span></code> (last price shown in each
+line)</li>
+</ul>
+</div></blockquote>
+<p>After this first calculation:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The closing price goes up to <code class="docutils literal notranslate"><span class="pre">3086.95</span></code> and the stop price is adjusted to
+<code class="docutils literal notranslate"><span class="pre">3036.95</span></code></li>
+<li>The following closing prices don’t exceed <code class="docutils literal notranslate"><span class="pre">3086.95</span></code> and the trigger price
+doesn’t change</li>
+</ul>
+</div></blockquote>
+<p>The same pattern can be seen in the other 2 operations.</p>
+<p>For the sake of comparison, an execution with just <code class="docutils literal notranslate"><span class="pre">30</span></code> points of fixed
+distance (just the chart)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./trail.py --plot --strat trailamount=30.0
+</pre></div>
+</div>
+<p>And the chart</p>
+<a class=""
+               data-lightbox="group-dd39af74-d584-436f-96f1-311476c3c774"
+               href="../../_images/stoptrail-301.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/stoptrail-301.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Followed by one last execution with <code class="docutils literal notranslate"><span class="pre">trailpercent=0.02</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./trail.py --plot --strat trailpercent=0.02
+</pre></div>
+</div>
+<p>The corresponding chart.</p>
+<a class=""
+               data-lightbox="group-edb7fc65-ca19-445d-a760-788d228f2495"
+               href="../../_images/stoptrail-percent-21.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/stoptrail-percent-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The sample usage</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./trail.py --help
+usage: trail.py [-h] [--data0 DATA0] [--fromdate FROMDATE] [--todate TODATE]
+                [--cerebro kwargs] [--broker kwargs] [--sizer kwargs]
+                [--strat kwargs] [--plot [kwargs]]
+
+StopTrail Sample
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --data0 DATA0        Data to read in (default:
+                       ../../datas/2005-2006-day-001.txt)
+  --fromdate FROMDATE  Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --todate TODATE      Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --cerebro kwargs     kwargs in key=value format (default: )
+  --broker kwargs      kwargs in key=value format (default: )
+  --sizer kwargs       kwargs in key=value format (default: )
+  --strat kwargs       kwargs in key=value format (default: )
+  --plot [kwargs]      kwargs in key=value format (default: )
+</pre></div>
+</div>
+<p>The sample code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">ma</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">,</span>
+        <span class="n">p1</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">p2</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+        <span class="n">stoptype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">StopTrail</span><span class="p">,</span>
+        <span class="n">trailamount</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">trailpercent</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ma1</span><span class="p">,</span> <span class="n">ma2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ma</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ma</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crup</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">CrossUp</span><span class="p">(</span><span class="n">ma1</span><span class="p">,</span> <span class="n">ma2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">crup</span><span class="p">:</span>
+                <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">exectype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">stoptype</span><span class="p">,</span>
+                                   <span class="n">trailamount</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailamount</span><span class="p">,</span>
+                                   <span class="n">trailpercent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailpercent</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailamount</span><span class="p">:</span>
+                <span class="n">tcheck</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailamount</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tcheck</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailpercent</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                          <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="o">.</span><span class="n">created</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> <span class="n">tcheck</span><span class="p">])</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailamount</span><span class="p">:</span>
+                <span class="n">tcheck</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailamount</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tcheck</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">trailpercent</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                          <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="o">.</span><span class="n">created</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> <span class="n">tcheck</span><span class="p">])</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;StopTrail Sample&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/2005-2006-day-001.txt&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

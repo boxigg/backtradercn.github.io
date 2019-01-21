@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Strategy &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sizers - Smart Staking" href="sizers/sizers.html" />
+    <link rel="prev" title="Cheat On Open" href="cerebro/cheat-on-open/cheat-on-open.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Strategy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-buy-sell-close">How to Buy/Sell/Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#information-bits">Information Bits:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#member-attributes">Member Attributes:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#member-attributes-meant-for-statistics-observers-analyzers">Member Attributes (meant for statistics/observers/analyzers):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference-strategy">Reference: Strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="strategy">
+<h1>Strategy<a class="headerlink" href="#strategy" title="Permalink to this headline">¶</a></h1>
+<p>A <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> instance is the pumping heart and controlling brain of
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code>. A <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> is the same for the platform user.</p>
+<p>The <em>Strategy’s</em> expressed lifecycle in methods</p>
+<blockquote>
+<div><ol class="arabic" start="0">
+<li><p class="first">Conception: <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p>
+<p>This is obviously invoked during instantiation: <code class="docutils literal notranslate"><span class="pre">indicators</span></code> will be
+created here and other needed attribute. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>A strategy can be interrupted during <em>birth</em> by raising a
+<code class="docutils literal notranslate"><span class="pre">StrategySkipError</span></code> exception from the module <code class="docutils literal notranslate"><span class="pre">backtrader.errors</span></code></p>
+<p class="last">This will avoid going through the strategy during a backtesting. See
+the section <code class="docutils literal notranslate"><span class="pre">Exceptions</span></code></p>
+</div>
+</li>
+<li><p class="first">Birth: <code class="docutils literal notranslate"><span class="pre">start</span></code></p>
+<p>The world (<code class="docutils literal notranslate"><span class="pre">cerebro</span></code>) tells the strategy is time to start kicking. A
+default empty method exists.</p>
+</li>
+<li><p class="first">Childhood: <code class="docutils literal notranslate"><span class="pre">prenext</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">indicators</span></code> declared during conception will have put constraints on how
+long the strategy needs to mature: this is called the <code class="docutils literal notranslate"><span class="pre">minimum</span>
+<span class="pre">period</span></code>. Above <code class="docutils literal notranslate"><span class="pre">__init__</span></code> created a <em>SimpleMovingAverage</em> with a
+<code class="docutils literal notranslate"><span class="pre">period=15</span></code>.</p>
+<p>As long as the syste has seen less than <code class="docutils literal notranslate"><span class="pre">15</span></code> bars, <code class="docutils literal notranslate"><span class="pre">prenext</span></code> will be
+called (there is a default method which is a no-op)</p>
+</li>
+<li><p class="first">Adulthood: <code class="docutils literal notranslate"><span class="pre">next</span></code></p>
+<p>Once the system has seen <code class="docutils literal notranslate"><span class="pre">15</span></code> bars and the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> has a
+buffer large enough to start producing values, the strategy is mature
+enough to really execute.</p>
+<p>There is a <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> method which is called exactly <em>once</em>, to mark
+the switch from <code class="docutils literal notranslate"><span class="pre">prenext</span></code> to <code class="docutils literal notranslate"><span class="pre">next</span></code>. The default implementation of
+<code class="docutils literal notranslate"><span class="pre">nextstart</span></code> is to simply call <code class="docutils literal notranslate"><span class="pre">next</span></code></p>
+</li>
+<li><p class="first">Reproduction: <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>Ok, strategies do not really reproduce. But in a sense they do, because
+the system will instantiate them several times if <em>optimizing</em> (with
+different parameters)</p>
+</li>
+<li><p class="first">Death: <code class="docutils literal notranslate"><span class="pre">stop</span></code></p>
+<p>The system tells the strategy the time to come to a reset and put things
+in order has come. A default empty method exists.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>In most cases and for regular usage patterns this will look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="c1"># Do something</span>
+            <span class="k">pass</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="c1"># Do something else</span>
+            <span class="k">pass</span>
+</pre></div>
+</div>
+<p>In this snippet:</p>
+<blockquote>
+<div><ul class="simple">
+<li>During <code class="docutils literal notranslate"><span class="pre">__init__</span></code> an attribute is assigned an indicator</li>
+<li>The default empty <code class="docutils literal notranslate"><span class="pre">start</span></code> method is not overriden</li>
+<li><code class="docutils literal notranslate"><span class="pre">prenext</span></code> and <code class="docutils literal notranslate"><span class="pre">nexstart</span></code> are not overriden</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">next</span></code> the value of the indicator is compared against the closing
+price to do something</li>
+<li>The default empty <code class="docutils literal notranslate"><span class="pre">stop</span></code> method is not overriden</li>
+</ul>
+</div></blockquote>
+<p>Strategies, like a trader in the real world, will get notified when events take
+place. Actually once per <code class="docutils literal notranslate"><span class="pre">next</span></code> cycle in the backtesting process. The
+strategy will:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">be notified through <code class="docutils literal notranslate"><span class="pre">notify_order(order)</span></code> of any status change in an
+order</p>
+</li>
+<li><p class="first">be notified through <code class="docutils literal notranslate"><span class="pre">notify_trade(trade)</span></code> of any
+opening/updating/closing trade</p>
+</li>
+<li><p class="first">be notified through <code class="docutils literal notranslate"><span class="pre">notify_cashvalue(cash,</span> <span class="pre">value)</span></code> of the current cash
+and portfolio in the broker</p>
+</li>
+<li><p class="first">be notified through <code class="docutils literal notranslate"><span class="pre">notify_fund(cash,</span> <span class="pre">value,</span> <span class="pre">fundvalue,</span> <span class="pre">shares)</span></code> of the
+current cash and portfolio in the broker and tradking of fundvalue and
+shares</p>
+</li>
+<li><p class="first">Events (implementation specific) via <code class="docutils literal notranslate"><span class="pre">notify_store(msg,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></p>
+<p>See <a class="reference internal" href="cerebro.html"><span class="doc">Cerebro</span></a> for an explanation on the <em>store</em> notifications. These
+will delivered to the strategy even if they have also been delivered to a
+<code class="docutils literal notranslate"><span class="pre">cerebro</span></code> instance (with an overriden <code class="docutils literal notranslate"><span class="pre">notify_store</span></code> method or via a
+<em>callback</em>)</p>
+</li>
+</ul>
+</div></blockquote>
+<p>And <em>Strategies</em> also like traders have the chance to operate in the market
+during the <code class="docutils literal notranslate"><span class="pre">next</span></code> method to try to achieve profit with</p>
+<blockquote>
+<div><ul class="simple">
+<li>the <code class="docutils literal notranslate"><span class="pre">buy</span></code> method to go long or reduce/close a short position</li>
+<li>the <code class="docutils literal notranslate"><span class="pre">sell</span></code> method to go short or reduce/close a long position</li>
+<li>the <code class="docutils literal notranslate"><span class="pre">close</span></code> method to obviously close an existing position</li>
+<li>the <code class="docutils literal notranslate"><span class="pre">cancel</span></code> method to cancel a not yet executed order</li>
+</ul>
+</div></blockquote>
+<div class="section" id="how-to-buy-sell-close">
+<h2>How to Buy/Sell/Close<a class="headerlink" href="#how-to-buy-sell-close" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Buy</span></code> and <code class="docutils literal notranslate"><span class="pre">Sell</span></code> methods generate orders. When invoked they return an
+<code class="docutils literal notranslate"><span class="pre">Order</span></code> (or subclass) instance that can be used as a reference. This order
+has a unique <code class="docutils literal notranslate"><span class="pre">ref</span></code> identifier that can be used for comparison</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Subclasses of <code class="docutils literal notranslate"><span class="pre">Order</span></code> for speficic broker implementations may carry
+additional <em>unique identifiers</em> provided by the broker.</p>
+</div>
+<p>To create the order use the following parameters:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">data</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>For which data the order has to be created. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then the
+first data in the system, <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span> <span class="pre">or</span> <span class="pre">self.data0</span></code> (aka
+<code class="docutils literal notranslate"><span class="pre">self.data</span></code>) will be used</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">size</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Size to use (positive) of units of data to use for the order.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> the <code class="docutils literal notranslate"><span class="pre">sizer</span></code> instance retrieved via <code class="docutils literal notranslate"><span class="pre">getsizer</span></code> will
+be used to determine the size.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">price</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Price to use (live brokers may place restrictions on the actual
+format if it does not comply to minimum tick size requirements)</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is valid for <code class="docutils literal notranslate"><span class="pre">Market</span></code> and <code class="docutils literal notranslate"><span class="pre">Close</span></code> orders (the market
+determines the price)</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders this value
+determines the trigger point (in the case of <code class="docutils literal notranslate"><span class="pre">Limit</span></code> the trigger
+is obviously at which price the order should be matched)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plimit</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Only applicable to <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders. This is the price at which
+to set the implicit <em>Limit</em> order, once the <em>Stop</em> has been
+triggered (for which <code class="docutils literal notranslate"><span class="pre">price</span></code> has been used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">exectype</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>. A market order will be executed
+with the next available price. In backtesting it will be the
+opening price of the next bar</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Limit</span></code>. An order which can only be executed at the given
+<code class="docutils literal notranslate"><span class="pre">price</span></code> or better</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Stop</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed like an <code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> order</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopLimit</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed as an implicit <em>Limit</em> order with price given by
+<code class="docutils literal notranslate"><span class="pre">pricelimit</span></code></li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">valid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code>: this generates an order that will not expire (aka
+<em>Good til cancel</em>) and remain in the market until matched or
+canceled. In reality brokers tend to impose a temporal limit,
+but this is usually so far away in time to consider it as not
+expiring</li>
+<li><code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> instance: the date
+will be used to generate an order valid until the given
+datetime (aka <em>good til date</em>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">timedelta()</span></code>: a day valid until
+the <em>End of the Session</em> (aka <em>day</em> order) will be generated</li>
+<li><code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">value</span></code>: This is assumed to be a value corresponding
+to a datetime in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> coding (the one used by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code>) and will used to generate an order valid until
+that time (<em>good til date</em>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradeid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p>
+<p>This is an internal value applied by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> to keep track
+of overlapping trades on the same asset. This <code class="docutils literal notranslate"><span class="pre">tradeid</span></code> is sent
+back to the <em>strategy</em> when notifying changes to the status of the
+orders.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: additional broker implementations may support extra
+parameters. <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will pass the <em>kwargs</em> down to the
+created order objects</p>
+<p>Example: if the 4 order execution types directly supported by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code> are not enough, in the case of for example
+<em>Interactive Brokers</em> the following could be passed as <em>kwargs</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orderType</span><span class="o">=</span><span class="s1">&#39;LIT&#39;</span><span class="p">,</span> <span class="n">lmtPrice</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">auxPrice</span><span class="o">=</span><span class="mf">9.8</span>
+</pre></div>
+</div>
+<p>This would override the settings created by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> and
+generate a <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">IF</span> <span class="pre">TOUCHED</span></code> order with a <em>touched</em> price of 9.8
+and a <em>limit</em> price of 10.0.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="information-bits">
+<h2>Information Bits:<a class="headerlink" href="#information-bits" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">A Strategy has a <em>length</em> which is always equal to that of the main
+data (<code class="docutils literal notranslate"><span class="pre">datas[0]</span></code>) and can of course be gotten with <code class="docutils literal notranslate"><span class="pre">len(self)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">next</span></code> can be called without changes in <em>length</em> if data is being
+replayed or a live feed is being passed and new ticks for the same
+point in time (length) are arriving</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="member-attributes">
+<h2>Member Attributes:<a class="headerlink" href="#member-attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">env</span></code>: the cerebro entity in which this Strategy lives</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">datas</span></code>: array of data feeds which have been passed to cerebro</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">data/data0</span></code> is an alias for datas[0]</li>
+<li><code class="docutils literal notranslate"><span class="pre">dataX</span></code> is an alias for datas[X]</li>
+</ul>
+<p><em>data feeds</em> can also be accessed by name (see the reference) if one has been
+assigned to it</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">dnames</span></code>: an alternative to reach the data feeds by name (either with
+<code class="docutils literal notranslate"><span class="pre">[name]</span></code> or with <code class="docutils literal notranslate"><span class="pre">.name</span></code> notation)</p>
+<p>For example if resampling a data like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">YahooFinanceData</span><span class="p">(</span><span class="n">datname</span><span class="o">=</span><span class="s1">&#39;YHOO&#39;</span><span class="p">,</span> <span class="n">fromdate</span><span class="o">=...</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;days&#39;</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">resampledata</span><span class="p">(</span><span class="n">data0</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Weeks</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;weeks&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Later in the strategy one can create indicators on each like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">smadays</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dnames</span><span class="o">.</span><span class="n">days</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># or self.dnames[&#39;days&#39;]</span>
+<span class="n">smaweeks</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dnames</span><span class="o">.</span><span class="n">weeks</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># or self.dnames[&#39;weeks&#39;]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">broker</span></code>: reference to the broker associated to this strategy
+(received from cerebro)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stats</span></code>: list/named tuple-like sequence holding the Observers created by
+cerebro for this strategy</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">analyzers</span></code>: list/named tuple-like sequence holding the Analyzers created
+by cerebro for this strategy</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">position</span></code>: actually a property which gives the current position for
+<code class="docutils literal notranslate"><span class="pre">data0</span></code>.</p>
+<p>Methods to retrieve all possitions are available (see the reference)</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="member-attributes-meant-for-statistics-observers-analyzers">
+<h2>Member Attributes (meant for statistics/observers/analyzers):<a class="headerlink" href="#member-attributes-meant-for-statistics-observers-analyzers" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">_orderspending</span></code>: list of orders which will be notified to the
+strategy before <code class="docutils literal notranslate"><span class="pre">next</span></code> is called</li>
+<li><code class="docutils literal notranslate"><span class="pre">_tradespending</span></code>: list of trades which will be notified to the
+strategy before <code class="docutils literal notranslate"><span class="pre">next</span></code> is called</li>
+<li><code class="docutils literal notranslate"><span class="pre">_orders</span></code>: list of order which have been already notified. An order
+can be several times in the list with different statuses and different
+execution bits. The list is menat to keep the history.</li>
+<li><code class="docutils literal notranslate"><span class="pre">_trades</span></code>: list of order which have been already notified. A trade
+can be several times in the list just like an order.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Bear in mind that <code class="docutils literal notranslate"><span class="pre">prenext</span></code>, <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> and <code class="docutils literal notranslate"><span class="pre">next</span></code> can be called
+several times for the same point in time (ticks updating prices for the daily
+bar, when a daily timeframe is in use)</p>
+</div>
+</div>
+<div class="section" id="reference-strategy">
+<h2>Reference: Strategy<a class="headerlink" href="#reference-strategy" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.Strategy">
+<em class="property">class </em><code class="descclassname">backtrader.</code><code class="descname">Strategy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class to be subclassed for user defined strategies.</p>
+<dl class="method">
+<dt id="backtrader.Strategy.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will be called for all remaining data points when the
+minimum period for all datas/indicators have been meet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.nextstart">
+<code class="descname">nextstart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.nextstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will be called once, exactly when the minimum period for
+all datas/indicators have been meet. The default behavior is to call
+next</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.prenext">
+<code class="descname">prenext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.prenext" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will be called before the minimum period of all
+datas/indicators have been meet for the strategy to start executing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called right before the backtesting is about to be started.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called right before the backtesting is about to be stopped</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_order">
+<code class="descname">notify_order</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives an order whenever there has been a change in one</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_trade">
+<code class="descname">notify_trade</code><span class="sig-paren">(</span><em>trade</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_trade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a trade whenever there has been a change in one</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_cashvalue">
+<code class="descname">notify_cashvalue</code><span class="sig-paren">(</span><em>cash</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_cashvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives the current fund value, value status of the strategy’s broker</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_fund">
+<code class="descname">notify_fund</code><span class="sig-paren">(</span><em>cash</em>, <em>value</em>, <em>fundvalue</em>, <em>shares</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_fund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives the current cash, value, fundvalue and fund shares</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_store">
+<code class="descname">notify_store</code><span class="sig-paren">(</span><em>msg</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a notification from a store provider</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.buy">
+<code class="descname">buy</code><span class="sig-paren">(</span><em>data=None</em>, <em>size=None</em>, <em>price=None</em>, <em>plimit=None</em>, <em>exectype=None</em>, <em>valid=None</em>, <em>tradeid=0</em>, <em>oco=None</em>, <em>trailamount=None</em>, <em>trailpercent=None</em>, <em>parent=None</em>, <em>transmit=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.buy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a buy (long) order and send it to the broker</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">data</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>For which data the order has to be created. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then the
+first data in the system, <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span> <span class="pre">or</span> <span class="pre">self.data0</span></code> (aka
+<code class="docutils literal notranslate"><span class="pre">self.data</span></code>) will be used</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">size</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Size to use (positive) of units of data to use for the order.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> the <code class="docutils literal notranslate"><span class="pre">sizer</span></code> instance retrieved via <code class="docutils literal notranslate"><span class="pre">getsizer</span></code> will
+be used to determine the size.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">price</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Price to use (live brokers may place restrictions on the actual
+format if it does not comply to minimum tick size requirements)</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is valid for <code class="docutils literal notranslate"><span class="pre">Market</span></code> and <code class="docutils literal notranslate"><span class="pre">Close</span></code> orders (the market
+determines the price)</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders this value
+determines the trigger point (in the case of <code class="docutils literal notranslate"><span class="pre">Limit</span></code> the trigger
+is obviously at which price the order should be matched)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plimit</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Only applicable to <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders. This is the price at which
+to set the implicit <em>Limit</em> order, once the <em>Stop</em> has been
+triggered (for which <code class="docutils literal notranslate"><span class="pre">price</span></code> has been used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">trailamount</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>If the order type is StopTrail or StopTrailLimit, this is an
+absolute amount which determines the distance to the price (below
+for a Sell order and above for a buy order) to keep the trailing
+stop</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">trailpercent</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>If the order type is StopTrail or StopTrailLimit, this is a
+percentage amount which determines the distance to the price (below
+for a Sell order and above for a buy order) to keep the trailing
+stop (if <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> is also specified it will be used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">exectype</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>. A market order will be executed
+with the next available price. In backtesting it will be the
+opening price of the next bar</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Limit</span></code>. An order which can only be executed at the given
+<code class="docutils literal notranslate"><span class="pre">price</span></code> or better</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Stop</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed like an <code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> order</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopLimit</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed as an implicit <em>Limit</em> order with price given by
+<code class="docutils literal notranslate"><span class="pre">pricelimit</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Close</span></code>. An order which can only be executed with the
+closing price of the session (usually during a closing auction)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopTrail</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code>
+minus <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> (or <code class="docutils literal notranslate"><span class="pre">trailpercent</span></code>) and which is updated
+if the price moves away from the stop</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopTrailLimit</span></code>. An order which is triggered at
+<code class="docutils literal notranslate"><span class="pre">price</span></code> minus <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> (or <code class="docutils literal notranslate"><span class="pre">trailpercent</span></code>) and which
+is updated if the price moves away from the stop</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">valid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code>: this generates an order that will not expire (aka
+<em>Good till cancel</em>) and remain in the market until matched or
+canceled. In reality brokers tend to impose a temporal limit,
+but this is usually so far away in time to consider it as not
+expiring</li>
+<li><code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> instance: the date
+will be used to generate an order valid until the given
+datetime (aka <em>good till date</em>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">timedelta()</span></code>: a day valid until
+the <em>End of the Session</em> (aka <em>day</em> order) will be generated</li>
+<li><code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">value</span></code>: This is assumed to be a value corresponding
+to a datetime in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> coding (the one used by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code>) and will used to generate an order valid until
+that time (<em>good till date</em>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradeid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p>
+<p>This is an internal value applied by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> to keep track
+of overlapping trades on the same asset. This <code class="docutils literal notranslate"><span class="pre">tradeid</span></code> is sent
+back to the <em>strategy</em> when notifying changes to the status of the
+orders.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oco</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Another <code class="docutils literal notranslate"><span class="pre">order</span></code> instance. This order will become part of an OCO
+(Order Cancel Others) group. The execution of one of the orders,
+immediately cancels all others in the same group</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">parent</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Controls the relationship of a group of orders, for example a buy
+which is bracketed by a high-side limit sell and a low side stop
+sell. The high/low side orders remain inactive until the parent
+order has been either executed (they become active) or is
+canceled/expires (the children are also canceled) bracket orders
+have the same size</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">transmit</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>Indicates if the order has to be <strong>transmitted</strong>, ie: not only
+placed in the broker but also issued. This is meant for example to
+control bracket orders, in which one disables the transmission for
+the parent and 1st set of children and activates it for the last
+children, which triggers the full placement of all bracket orders.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: additional broker implementations may support extra
+parameters. <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will pass the <em>kwargs</em> down to the
+created order objects</p>
+<p>Example: if the 4 order execution types directly supported by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code> are not enough, in the case of for example
+<em>Interactive Brokers</em> the following could be passed as <em>kwargs</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orderType</span><span class="o">=</span><span class="s1">&#39;LIT&#39;</span><span class="p">,</span> <span class="n">lmtPrice</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">auxPrice</span><span class="o">=</span><span class="mf">9.8</span>
+</pre></div>
+</div>
+<p>This would override the settings created by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> and
+generate a <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">IF</span> <span class="pre">TOUCHED</span></code> order with a <em>touched</em> price of 9.8
+and a <em>limit</em> price of 10.0.</p>
+</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>the submitted order</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.sell">
+<code class="descname">sell</code><span class="sig-paren">(</span><em>data=None</em>, <em>size=None</em>, <em>price=None</em>, <em>plimit=None</em>, <em>exectype=None</em>, <em>valid=None</em>, <em>tradeid=0</em>, <em>oco=None</em>, <em>trailamount=None</em>, <em>trailpercent=None</em>, <em>parent=None</em>, <em>transmit=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.sell" title="Permalink to this definition">¶</a></dt>
+<dd><p>To create a selll (short) order and send it to the broker</p>
+<p>See the documentation for <code class="docutils literal notranslate"><span class="pre">buy</span></code> for an explanation of the parameters</p>
+<p>Returns: the submitted order</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.close">
+<code class="descname">close</code><span class="sig-paren">(</span><em>data=None</em>, <em>size=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Counters a long/short position closing it</p>
+<p>See the documentation for <code class="docutils literal notranslate"><span class="pre">buy</span></code> for an explanation of the parameters</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code>: automatically calculated from the existing position if
+not provided (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) by the caller</li>
+</ul>
+</div>
+<p>Returns: the submitted order</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.cancel">
+<code class="descname">cancel</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancels the order in the broker</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.buy_bracket">
+<code class="descname">buy_bracket</code><span class="sig-paren">(</span><em>data=None</em>, <em>size=None</em>, <em>price=None</em>, <em>plimit=None</em>, <em>exectype=2</em>, <em>valid=None</em>, <em>tradeid=0</em>, <em>trailamount=None</em>, <em>trailpercent=None</em>, <em>oargs={}</em>, <em>stopprice=None</em>, <em>stopexec=3</em>, <em>stopargs={}</em>, <em>limitprice=None</em>, <em>limitexec=2</em>, <em>limitargs={}</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.buy_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a bracket order group (low side - buy order - high side). The
+default behavior is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Issue a <strong>buy</strong> order with execution <code class="docutils literal notranslate"><span class="pre">Limit</span></code></li>
+<li>Issue a <em>low side</em> bracket <strong>sell</strong> order with execution <code class="docutils literal notranslate"><span class="pre">Stop</span></code></li>
+<li>Issue a <em>high side</em> bracket <strong>sell</strong> order with execution
+<code class="docutils literal notranslate"><span class="pre">Limit</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>See below for the different parameters</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">data</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>For which data the order has to be created. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then the
+first data in the system, <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span> <span class="pre">or</span> <span class="pre">self.data0</span></code> (aka
+<code class="docutils literal notranslate"><span class="pre">self.data</span></code>) will be used</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">size</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Size to use (positive) of units of data to use for the order.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> the <code class="docutils literal notranslate"><span class="pre">sizer</span></code> instance retrieved via <code class="docutils literal notranslate"><span class="pre">getsizer</span></code> will
+be used to determine the size.</p>
+<p><strong>Note</strong>: The same size is applied to all 3 orders of the bracket</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">price</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Price to use (live brokers may place restrictions on the actual
+format if it does not comply to minimum tick size requirements)</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is valid for <code class="docutils literal notranslate"><span class="pre">Market</span></code> and <code class="docutils literal notranslate"><span class="pre">Close</span></code> orders (the market
+determines the price)</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders this value
+determines the trigger point (in the case of <code class="docutils literal notranslate"><span class="pre">Limit</span></code> the trigger
+is obviously at which price the order should be matched)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plimit</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Only applicable to <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders. This is the price at which
+to set the implicit <em>Limit</em> order, once the <em>Stop</em> has been
+triggered (for which <code class="docutils literal notranslate"><span class="pre">price</span></code> has been used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">trailamount</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>If the order type is StopTrail or StopTrailLimit, this is an
+absolute amount which determines the distance to the price (below
+for a Sell order and above for a buy order) to keep the trailing
+stop</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">trailpercent</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>If the order type is StopTrail or StopTrailLimit, this is a
+percentage amount which determines the distance to the price (below
+for a Sell order and above for a buy order) to keep the trailing
+stop (if <code class="docutils literal notranslate"><span class="pre">trailamount</span></code> is also specified it will be used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">exectype</span></code> (default: <code class="docutils literal notranslate"><span class="pre">bt.Order.Limit</span></code>)</p>
+<p>Possible values: (see the documentation for the method <code class="docutils literal notranslate"><span class="pre">buy</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">valid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values: (see the documentation for the method <code class="docutils literal notranslate"><span class="pre">buy</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradeid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p>
+<p>Possible values: (see the documentation for the method <code class="docutils literal notranslate"><span class="pre">buy</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oargs</span></code> (default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
+<p>Specific keyword arguments (in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>) to pass to the main side
+order. Arguments from the default <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> will be applied on
+top of this.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: additional broker implementations may support extra
+parameters. <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will pass the <em>kwargs</em> down to the
+created order objects</p>
+<p>Possible values: (see the documentation for the method <code class="docutils literal notranslate"><span class="pre">buy</span></code></p>
+<p><strong>Note</strong>: this <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> will be applied to the 3 orders of a
+bracket. See below for specific keyword arguments for the low and
+high side orders</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stopprice</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Specific price for the <em>low side</em> stop order</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stopexec</span></code> (default: <code class="docutils literal notranslate"><span class="pre">bt.Order.Stop</span></code>)</p>
+<p>Specific execution type for the <em>low side</em> order</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stopargs</span></code> (default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
+<p>Specific keyword arguments (in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>) to pass to the low side
+order. Arguments from the default <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> will be applied on
+top of this.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">limitprice</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Specific price for the <em>high side</em> stop order</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stopexec</span></code> (default: <code class="docutils literal notranslate"><span class="pre">bt.Order.Limit</span></code>)</p>
+<p>Specific execution type for the <em>high side</em> order</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">limitargs</span></code> (default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
+<p>Specific keyword arguments (in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>) to pass to the high side
+order. Arguments from the default <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> will be applied on
+top of this.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>High/Low Side orders can be suppressed by using:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">limitexec=None</span></code> to suppress the <em>high side</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">stopexec=None</span></code> to suppress the <em>low side</em></li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>A list containing the 3 orders [order, stop side, limit side]</li>
+<li>If high/low orders have been suppressed the return value will still
+contain 3 orders, but those suppressed will have a value of
+<code class="docutils literal notranslate"><span class="pre">None</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.sell_bracket">
+<code class="descname">sell_bracket</code><span class="sig-paren">(</span><em>data=None</em>, <em>size=None</em>, <em>price=None</em>, <em>plimit=None</em>, <em>exectype=2</em>, <em>valid=None</em>, <em>tradeid=0</em>, <em>trailamount=None</em>, <em>trailpercent=None</em>, <em>oargs={}</em>, <em>stopprice=None</em>, <em>stopexec=3</em>, <em>stopargs={}</em>, <em>limitprice=None</em>, <em>limitexec=2</em>, <em>limitargs={}</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.sell_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a bracket order group (low side - buy order - high side). The
+default behavior is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Issue a <strong>sell</strong> order with execution <code class="docutils literal notranslate"><span class="pre">Limit</span></code></li>
+<li>Issue a <em>high side</em> bracket <strong>buy</strong> order with execution <code class="docutils literal notranslate"><span class="pre">Stop</span></code></li>
+<li>Issue a <em>low side</em> bracket <strong>buy</strong> order with execution <code class="docutils literal notranslate"><span class="pre">Limit</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>See <code class="docutils literal notranslate"><span class="pre">bracket_buy</span></code> for the meaning of the parameters</p>
+<p>High/Low Side orders can be suppressed by using:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">stopexec=None</span></code> to suppress the <em>high side</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">limitexec=None</span></code> to suppress the <em>low side</em></li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li>A list containing the 3 orders [order, stop side, limit side]</li>
+<li>If high/low orders have been suppressed the return value will still
+contain 3 orders, but those suppressed will have a value of
+<code class="docutils literal notranslate"><span class="pre">None</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.order_target_size">
+<code class="descname">order_target_size</code><span class="sig-paren">(</span><em>data=None</em>, <em>target=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.order_target_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to rebalance a position to have final size of <code class="docutils literal notranslate"><span class="pre">target</span></code></p>
+<p>The current <code class="docutils literal notranslate"><span class="pre">position</span></code> size is taken into account as the start point
+to achieve <code class="docutils literal notranslate"><span class="pre">target</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">pos.size</span></code> -&gt; buy <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">-</span> <span class="pre">pos.size</span></code></li>
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">pos.size</span></code> -&gt; sell <code class="docutils literal notranslate"><span class="pre">pos.size</span> <span class="pre">-</span> <span class="pre">target</span></code></li>
+</ul>
+</div></blockquote>
+<p>It returns either:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The generated order</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code> if no order has been issued (<code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">==</span> <span class="pre">position.size</span></code>)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.order_target_value">
+<code class="descname">order_target_value</code><span class="sig-paren">(</span><em>data=None</em>, <em>target=0.0</em>, <em>price=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.order_target_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to rebalance a position to have final value of
+<code class="docutils literal notranslate"><span class="pre">target</span></code></p>
+<p>The current <code class="docutils literal notranslate"><span class="pre">value</span></code> is taken into account as the start point to
+achieve <code class="docutils literal notranslate"><span class="pre">target</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>If no <code class="docutils literal notranslate"><span class="pre">target</span></code> then close postion on data</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">value</span></code> then buy on data</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">value</span></code> then sell on data</li>
+</ul>
+</div></blockquote>
+<p>It returns either:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The generated order</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code> if no order has been issued</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.order_target_percent">
+<code class="descname">order_target_percent</code><span class="sig-paren">(</span><em>data=None</em>, <em>target=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.order_target_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to rebalance a position to have final value of
+<code class="docutils literal notranslate"><span class="pre">target</span></code> percentage of current portfolio <code class="docutils literal notranslate"><span class="pre">value</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">target</span></code> is expressed in decimal: <code class="docutils literal notranslate"><span class="pre">0.05</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">5%</span></code></p>
+<p>It uses <code class="docutils literal notranslate"><span class="pre">order_target_value</span></code> to execute the order.</p>
+<p class="rubric">Example</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">target=0.05</span></code> and portfolio value is <code class="docutils literal notranslate"><span class="pre">100</span></code></li>
+<li>The <code class="docutils literal notranslate"><span class="pre">value</span></code> to be reached is <code class="docutils literal notranslate"><span class="pre">0.05</span> <span class="pre">*</span> <span class="pre">100</span> <span class="pre">=</span> <span class="pre">5</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">5</span></code> is passed as the <code class="docutils literal notranslate"><span class="pre">target</span></code> value to <code class="docutils literal notranslate"><span class="pre">order_target_value</span></code></li>
+</ul>
+<p>The current <code class="docutils literal notranslate"><span class="pre">value</span></code> is taken into account as the start point to
+achieve <code class="docutils literal notranslate"><span class="pre">target</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">position.size</span></code> is used to determine if a position is <code class="docutils literal notranslate"><span class="pre">long</span></code> /
+<code class="docutils literal notranslate"><span class="pre">short</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">value</span></code>
+- buy if <code class="docutils literal notranslate"><span class="pre">pos.size</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> (Increase a long position)
+- sell if <code class="docutils literal notranslate"><span class="pre">pos.size</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> (Increase a short position)</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">target</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">value</span></code>
+- sell if <code class="docutils literal notranslate"><span class="pre">pos.size</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> (Decrease a long position)
+- buy if <code class="docutils literal notranslate"><span class="pre">pos.size</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> (Decrease a short position)</li>
+</ul>
+</div></blockquote>
+<p>It returns either:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The generated order</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code> if no order has been issued (<code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">==</span> <span class="pre">position.size</span></code>)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getsizer">
+<code class="descname">getsizer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getsizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sizer which is in used if automatic statke calculation is
+used</p>
+<p>Also available as <code class="docutils literal notranslate"><span class="pre">sizer</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.setsizer">
+<code class="descname">setsizer</code><span class="sig-paren">(</span><em>sizer</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.setsizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the default (fixed stake) sizer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getsizing">
+<code class="descname">getsizing</code><span class="sig-paren">(</span><em>data=None</em>, <em>isbuy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getsizing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the stake calculated by the sizer instance for the current
+situation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getposition">
+<code class="descname">getposition</code><span class="sig-paren">(</span><em>data=None</em>, <em>broker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current position for a given data in a given broker.</p>
+<p>If both are None, the main data and the default broker will be used</p>
+<p>A property <code class="docutils literal notranslate"><span class="pre">position</span></code> is also available</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getpositionbyname">
+<code class="descname">getpositionbyname</code><span class="sig-paren">(</span><em>name=None</em>, <em>broker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getpositionbyname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current position for a given name in a given broker.</p>
+<p>If both are None, the main data and the default broker will be used</p>
+<p>A property <code class="docutils literal notranslate"><span class="pre">positionbyname</span></code> is also available</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getpositionsbyname">
+<code class="descname">getpositionsbyname</code><span class="sig-paren">(</span><em>broker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getpositionsbyname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current by name positions directly from the broker</p>
+<p>If the given <code class="docutils literal notranslate"><span class="pre">broker</span></code> is None, the default broker will be used</p>
+<p>A property <code class="docutils literal notranslate"><span class="pre">positionsbyname</span></code> is also available</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getdatanames">
+<code class="descname">getdatanames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getdatanames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the existing data names</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.getdatabyname">
+<code class="descname">getdatabyname</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.getdatabyname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a given data by name using the environment (cerebro)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.add_timer">
+<code class="descname">add_timer</code><span class="sig-paren">(</span><em>when</em>, <em>offset=datetime.timedelta(0)</em>, <em>repeat=datetime.timedelta(0)</em>, <em>weekdays=[]</em>, <em>weekcarry=False</em>, <em>monthdays=[]</em>, <em>monthcarry=True</em>, <em>allow=None</em>, <em>tzdata=None</em>, <em>cheat=False</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.add_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Note</strong>: can be called during <code class="docutils literal notranslate"><span class="pre">__init__</span></code> or <code class="docutils literal notranslate"><span class="pre">start</span></code></p>
+<p>Schedules a timer to invoke either a specified callback or the
+<code class="docutils literal notranslate"><span class="pre">notify_timer</span></code> of one or more strategies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>when</strong> (<em>-</em>) – <p>can be</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">datetime.time</span></code> instance (see below <code class="docutils literal notranslate"><span class="pre">tzdata</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_START</span></code> to reference a session start</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_END</span></code> to reference a session end</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance<p>Used to offset the value <code class="docutils literal notranslate"><span class="pre">when</span></code>. It has a meaningful use in
+combination with <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> and <code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code>, to indicated
+things like a timer being called <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">minutes</span></code> after the session
+start.</p>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">repeat</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance<p>Indicates if after a 1st call, further calls will be scheduled
+within the same session at the scheduled <code class="docutils literal notranslate"><span class="pre">repeat</span></code> delta</p>
+<p>Once the timer goes over the end of the session it is reset to the
+original value for <code class="docutils literal notranslate"><span class="pre">when</span></code></p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">weekdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days (iso codes, Monday is 1, Sunday is 7) the timers can
+be actually invoked<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">weekcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>). If <code class="docutils literal notranslate"><span class="pre">True</span></code> and the weekday was
+not seen (ex: trading holiday), the timer will be executed on the
+next day (even if in a new week)</li>
+<li><code class="docutils literal notranslate"><span class="pre">monthdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days of the month a timer has to be executed. For example
+always on day <em>15</em> of the month<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">monthcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>). If the day was not seen
+(weekend, trading holiday), the timer will be executed on the next
+available day.</li>
+<li><code class="docutils literal notranslate"><span class="pre">allow</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>). A callback which receives a
+<cite>datetime.date`</cite> instance and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the date is
+allowed for timers or else returns <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">tzdata</span></code> which can be either <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), a <code class="docutils literal notranslate"><span class="pre">pytz</span></code>
+instance or a <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance.<p><code class="docutils literal notranslate"><span class="pre">None</span></code>: <code class="docutils literal notranslate"><span class="pre">when</span></code> is interpreted at face value (which translates
+to handling it as if it where UTC even if it’s not)</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being specified
+in the local time specified by the timezone instance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being
+specified in the local time specified by the <code class="docutils literal notranslate"><span class="pre">tz</span></code> parameter of
+the data feed instance.</p>
+<dl class="docutils">
+<dt><strong>Note</strong>: If <code class="docutils literal notranslate"><span class="pre">when</span></code> is either <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> or</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code> and <code class="docutils literal notranslate"><span class="pre">tzdata</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the 1st <em>data feed</em>
+in the system (aka <code class="docutils literal notranslate"><span class="pre">self.data0</span></code>) will be used as the reference
+to find out the session times.</dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">cheat</span></code> (default <code class="docutils literal notranslate"><span class="pre">False</span></code>) if <code class="docutils literal notranslate"><span class="pre">True</span></code> the timer will be called
+before the broker has a chance to evaluate the orders. This opens
+the chance to issue orders based on opening price for example right
+before the session starts</li>
+<li><code class="docutils literal notranslate"><span class="pre">*args</span></code>: any extra args will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: any extra kwargs will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return Value:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The created timer</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Strategy.notify_timer">
+<code class="descname">notify_timer</code><span class="sig-paren">(</span><em>timer</em>, <em>when</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Strategy.notify_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a timer notification where <code class="docutils literal notranslate"><span class="pre">timer</span></code> is the timer which was
+returned by <code class="docutils literal notranslate"><span class="pre">add_timer</span></code>, and <code class="docutils literal notranslate"><span class="pre">when</span></code> is the calling time. <code class="docutils literal notranslate"><span class="pre">args</span></code>
+and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are any additional arguments passed to <code class="docutils literal notranslate"><span class="pre">add_timer</span></code></p>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">when</span></code> time can be later, but the system may have not be
+able to call the timer before. This value is the timer value and no the
+system time.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

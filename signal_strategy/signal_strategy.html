@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Strategy with Signals &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Broker" href="../broker.html" />
+    <link rel="prev" title="Target Orders" href="../order_target/order_target.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Strategy with Signals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initial-faq">Initial <em>FAQ</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals-technicalities"><em>Signals</em> technicalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals-indications"><em>Signals</em> indications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals-types"><em>Signals</em> Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accumulation-and-order-concurrency">Accumulation and Order Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-sample">The sample</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#first-run-long-and-short">First run: long and short</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#second-run-long-only">Second run: long only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#third-run-short-only">Third run: short only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fourth-run-long-longexit">Fourth run: long + longexit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-code">The code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="strategy-with-signals">
+<h1>Strategy with Signals<a class="headerlink" href="#strategy-with-signals" title="Permalink to this headline">¶</a></h1>
+<p>Operating <em>backtrader</em> is also possible without having to write a
+<em>Strategy</em>. Although this is the preferred way, due to the object hierarchy
+which makes up the machinery, using <em>Signals</em> is also possible.</p>
+<p>Quick summary:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Instead of writing a <em>Strategy</em> class, instantiating <em>Indicators</em>, writing
+the <em>buy/sell</em> logic …</li>
+<li>The end user add <em>Signals</em> (indicators anyhow) and the rest is done in the
+background</li>
+</ul>
+</div></blockquote>
+<p>Quick example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">OneOfTheFeeds</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;mydataname&#39;</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">cerebro</span><span class="o">.</span><span class="n">add_signal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONGSHORT</span><span class="p">,</span> <span class="n">MySignal</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Et voilá!.</p>
+<p>Of course the <em>Signal</em> itself is missing. Let’s define a very dumb <em>Signal</em>
+which yields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Long</span></code> indication if the <code class="docutils literal notranslate"><span class="pre">close</span></code> price is above a <em>Simple Moving
+Average</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">Short</span></code> indication if the <code class="docutils literal notranslate"><span class="pre">close</span></code> price is below a <em>Simple Moving
+Average</em></li>
+</ul>
+</div></blockquote>
+<p>The definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MySignal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And now it is really done. When <code class="docutils literal notranslate"><span class="pre">run</span></code> is executed <em>Cerebro</em> will take care of
+instantiating a special <em>Strategy</em> instance which knows what to do with the
+<em>Signals</em>.</p>
+<div class="section" id="initial-faq">
+<h2>Initial <em>FAQ</em><a class="headerlink" href="#initial-faq" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">How is the volume of <em>buy</em>/<em>sell</em> operations determined?</p>
+<p>A <em>cerebro</em> instance adds automatically a <code class="docutils literal notranslate"><span class="pre">FixedSize</span></code> sizer to
+strategies. The end user can change the sizer to alter the policy with
+<code class="docutils literal notranslate"><span class="pre">cerebro.addsizer</span></code></p>
+</li>
+<li><p class="first">How are orders executed?</p>
+<p>The execution type is <code class="docutils literal notranslate"><span class="pre">Market</span></code> and the validity is <em>Good Until Canceled</em></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="signals-technicalities">
+<h2><em>Signals</em> technicalities<a class="headerlink" href="#signals-technicalities" title="Permalink to this headline">¶</a></h2>
+<p>From a technical and theoretical point of view can be as described:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A callable that returns another <em>object</em> when called (only once)</p>
+<p>This is in most cases the instantiation of a class, but must not be</p>
+</li>
+<li><p class="first">Supports the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> interface. The only requested <em>key</em>/<em>index</em>
+will be <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+<p>From a practical point of view and looking at the example above a <em>Signal</em> is:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A <em>lines</em> object from the <em>backtrader</em> ecosystem, mostly an <em>Indicator</em></p>
+<p>This helps when using other <em>Indicators</em> like when in the example the <em>Simple
+Moving Average</em> is used.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="signals-indications">
+<h2><em>Signals</em> indications<a class="headerlink" href="#signals-indications" title="Permalink to this headline">¶</a></h2>
+<p>The <em>signals</em> delivers indications when queried with <code class="docutils literal notranslate"><span class="pre">signal[0]</span></code> and the
+meaning is:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">indication</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">indication</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">0</span></code> -&gt; <em>No indication</em></li>
+</ul>
+</div></blockquote>
+<p>The example does simple arithmetic with <code class="docutils literal notranslate"><span class="pre">self.data</span> <span class="pre">-</span> <span class="pre">SMA</span></code> and:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Issues a <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">indication</span></code> when the <code class="docutils literal notranslate"><span class="pre">data</span></code> is above the <code class="docutils literal notranslate"><span class="pre">SMA</span></code></li>
+<li>Issues a <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">indication</span></code> when the <code class="docutils literal notranslate"><span class="pre">data</span></code> is below the <code class="docutils literal notranslate"><span class="pre">SMA</span></code></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When no specific price field is indicated for the <code class="docutils literal notranslate"><span class="pre">data</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">close</span></code> price is the reference price is.</p>
+</div>
+</div>
+<div class="section" id="signals-types">
+<h2><em>Signals</em> Types<a class="headerlink" href="#signals-types" title="Permalink to this headline">¶</a></h2>
+<p>The <em>constants</em> indicated below as seen in the example above, are directly
+available from the main <em>backtrader</em> module as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONG</span>
+</pre></div>
+</div>
+<p>There are 5 types of <em>Signals</em>, broken in 2 groups.</p>
+<p><strong>Main Group</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LONGSHORT</span></code>: both <code class="docutils literal notranslate"><span class="pre">long</span></code> and <code class="docutils literal notranslate"><span class="pre">short</span></code> indications from this signal
+are taken</li>
+<li><code class="docutils literal notranslate"><span class="pre">LONG</span></code>:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">long</span></code> indications are taken to go long</li>
+<li><code class="docutils literal notranslate"><span class="pre">short</span></code> indications are taken to <em>close</em> the long position. But:<ul>
+<li>If a <code class="docutils literal notranslate"><span class="pre">LONGEXIT</span></code> (see below) signal is in the system it will be
+used to exit the long</li>
+<li>If a <code class="docutils literal notranslate"><span class="pre">SHORT</span></code> signal is available and no <code class="docutils literal notranslate"><span class="pre">LONGEXIT</span></code> is available
+, it will be used to close a <code class="docutils literal notranslate"><span class="pre">long</span></code> before opening a <code class="docutils literal notranslate"><span class="pre">short</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">SHORT</span></code>:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">short</span></code> indications are taken to go short</li>
+<li><code class="docutils literal notranslate"><span class="pre">long</span></code> indications are taken to <em>close</em> the short position. But:<ul>
+<li>If a <code class="docutils literal notranslate"><span class="pre">SHORTEXIT</span></code> (see below) signal is in the system it will be
+used to exit the short</li>
+<li>If a <code class="docutils literal notranslate"><span class="pre">LONG</span></code> signal is available and no <code class="docutils literal notranslate"><span class="pre">SHORTEXIT</span></code> is available
+, it will be used to close a <code class="docutils literal notranslate"><span class="pre">short</span></code> before opening a <code class="docutils literal notranslate"><span class="pre">long</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>Exit Group</strong>:</p>
+<blockquote>
+<div><p>This 2 signals are meant to override others and provide criteria for
+exitins a <code class="docutils literal notranslate"><span class="pre">long</span></code> / <code class="docutils literal notranslate"><span class="pre">short</span></code> position</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LONGEXIT</span></code>: <code class="docutils literal notranslate"><span class="pre">short</span></code> indications are taken to exit <code class="docutils literal notranslate"><span class="pre">long</span></code>
+positions</li>
+<li><code class="docutils literal notranslate"><span class="pre">SHORTEXIT</span></code>: <code class="docutils literal notranslate"><span class="pre">long</span></code> indications are taken to exit <code class="docutils literal notranslate"><span class="pre">short</span></code>
+positions</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="accumulation-and-order-concurrency">
+<h2>Accumulation and Order Concurrency<a class="headerlink" href="#accumulation-and-order-concurrency" title="Permalink to this headline">¶</a></h2>
+<p>The sample <em>Signal</em> shown above will issue <em>long</em> and <em>short</em> indications on a
+constant basis, because it simply substracts the <code class="docutils literal notranslate"><span class="pre">SMA</span></code> value from the
+<code class="docutils literal notranslate"><span class="pre">close</span></code> price and this will always be either <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">0</span></code> ( <code class="docutils literal notranslate"><span class="pre">0</span></code> is
+mathematically possible, but unlikely to really happen)</p>
+<p>This would lead to a continuous generation of <em>orders</em> that would produce 2
+situations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Accumulation</span></code>: even if already in the market, the <em>signals</em> would
+produce new orders which would increase the possition in the market</li>
+<li><code class="docutils literal notranslate"><span class="pre">Concurrency</span></code>: new orders would be generated without waiting for the
+execution of other orders</li>
+</ul>
+</div></blockquote>
+<p>To avoid this the default behavior is:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>To Not Accumulate</em></li>
+<li><em>To Not allow Concurrency</em></li>
+</ul>
+</div></blockquote>
+<p>Should any of these two behaviors be wished, this can be controlled via
+<code class="docutils literal notranslate"><span class="pre">cerebro</span></code> with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">cerebro.signal_accumulate(True)</span></code> (or <code class="docutils literal notranslate"><span class="pre">False</span></code> to re-disable it)</li>
+<li><code class="docutils literal notranslate"><span class="pre">cerebro.signal_concurrency(True)</span></code> (or <code class="docutils literal notranslate"><span class="pre">False</span></code> to re-disable it)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-sample">
+<h2>The sample<a class="headerlink" href="#the-sample" title="Permalink to this headline">¶</a></h2>
+<p>The <em>backtrader</em> sources contain a sample to test the functionality.</p>
+<p>Main signal to be used.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SMACloseSignal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>And the <em>Exit Signal</em> in case the option is specified.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SMAExitSignal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;p1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p2&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sma1</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+        <span class="n">sma2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="n">sma1</span> <span class="o">-</span> <span class="n">sma2</span>
+
+</pre></div>
+</div>
+<div class="section" id="first-run-long-and-short">
+<h3>First run: long and short<a class="headerlink" href="#first-run-long-and-short" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./signals-strategy.py --plot --signal longshort
+</pre></div>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-01bc4dc4-ffd6-4bff-8e8d-81365d1785e2"
+               href="../_images/signal-longshort1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/signal-longshort1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>To notice:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <em>Signal</em> is plotted. This is normal given it is simply an indicator and
+the plotting rules for it apply</li>
+<li>The strategy is really <code class="docutils literal notranslate"><span class="pre">long</span></code> and <code class="docutils literal notranslate"><span class="pre">short</span></code>. This can be seen because the
+<em>cash</em> level never goes back to be the <em>value</em> level</li>
+<li>Side note: even for a dumb idea … (and without commission) the strategy
+hasn’t lost money …</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="second-run-long-only">
+<h3>Second run: long only<a class="headerlink" href="#second-run-long-only" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./signals-strategy.py --plot --signal longonly
+</pre></div>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-ad8670e6-9cd8-4dac-b859-3b9f7b1ada3a"
+               href="../_images/signal-longonly1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/signal-longonly1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>To notice:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Here the cash level goes back to be the <em>value</em> level after each <em>sell</em>,
+which means the strategy is out of the market</li>
+<li>Side note: Again no money has been lost …</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="third-run-short-only">
+<h3>Third run: short only<a class="headerlink" href="#third-run-short-only" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./signals-strategy.py --plot --signal shortonly
+</pre></div>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-34703c49-3566-407f-a49a-67b6deef3bb9"
+               href="../_images/signal-shortonly1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/signal-shortonly1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>To notice:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The 1st operation is a <em>sell</em> as expected and takes place later than the
+1st operation in the 2 examples above. Not until the <code class="docutils literal notranslate"><span class="pre">close</span></code> is below
+the <code class="docutils literal notranslate"><span class="pre">SMA</span></code> and the simple substraction yields a minus</li>
+<li>Here the cash level goes back to be the <em>value</em> level after each <em>buy</em>,
+which means the strategy is out of the market</li>
+<li>Side note: Finally the system loses money</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fourth-run-long-longexit">
+<h3>Fourth run: long + longexit<a class="headerlink" href="#fourth-run-long-longexit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./signals-strategy.py --plot --signal longonly --exitsignal longexit
+</pre></div>
+</div>
+<p>The output</p>
+<a class=""
+               data-lightbox="group-c6952a0d-4e0d-45de-bdfb-ceb0df4fed2f"
+               href="../_images/signal-long-longexit1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/signal-long-longexit1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>To notice:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Many of the trades are the same, but some are interrupted earlier because
+the fast moving average in the <em>exit</em> signal crosses the slow moving average
+to the downside</li>
+<li>The system shows its <em>longonly</em> property with the cash becoming the value
+at the end of each trade</li>
+<li>Side note: Again money is made … even with some modified trades</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./signals-strategy.py --help
+usage: signals-strategy.py [-h] [--data DATA] [--fromdate FROMDATE]
+                           [--todate TODATE] [--cash CASH]
+                           [--smaperiod SMAPERIOD] [--exitperiod EXITPERIOD]
+                           [--signal {longshort,longonly,shortonly}]
+                           [--exitsignal {longexit,shortexit}]
+                           [--plot [kwargs]]
+
+Sample for Signal concepts
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data DATA           Specific data to be read in (default:
+                        ../../datas/2005-2006-day-001.txt)
+  --fromdate FROMDATE   Starting date in YYYY-MM-DD format (default: None)
+  --todate TODATE       Ending date in YYYY-MM-DD format (default: None)
+  --cash CASH           Cash to start with (default: 50000)
+  --smaperiod SMAPERIOD
+                        Period for the moving average (default: 30)
+  --exitperiod EXITPERIOD
+                        Period for the exit control SMA (default: 5)
+  --signal {longshort,longonly,shortonly}
+                        Signal type to use for the main signal (default:
+                        longshort)
+  --exitsignal {longexit,shortexit}
+                        Signal type to use for the exit signal (default: None)
+  --plot [kwargs], -p [kwargs]
+                        Plot the read data applying any kwargs passed For
+                        example: --plot style=&quot;candle&quot; (to plot candles)
+                        (default: None)
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-code">
+<h3>The code<a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+<span class="n">MAINSIGNALS</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">(</span>
+    <span class="p">((</span><span class="s1">&#39;longshort&#39;</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONGSHORT</span><span class="p">),</span>
+     <span class="p">(</span><span class="s1">&#39;longonly&#39;</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONG</span><span class="p">),</span>
+     <span class="p">(</span><span class="s1">&#39;shortonly&#39;</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_SHORT</span><span class="p">),)</span>
+<span class="p">)</span>
+
+
+<span class="n">EXITSIGNALS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;longexit&#39;</span><span class="p">:</span> <span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONGEXIT</span><span class="p">,</span>
+    <span class="s1">&#39;shortexit&#39;</span><span class="p">:</span> <span class="n">bt</span><span class="o">.</span><span class="n">SIGNAL_LONGEXIT</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">SMACloseSignal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">SMAExitSignal</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;p1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p2&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sma1</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+        <span class="n">sma2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="n">sma1</span> <span class="o">-</span> <span class="n">sma2</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">set_cash</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">cash</span><span class="p">)</span>
+
+    <span class="n">dkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">fromdate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fromdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">fromdate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fromdate</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">todate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">todate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">todate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;todate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">todate</span>
+
+    <span class="c1"># if dataset is None, args.data has been given</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">dkwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">add_signal</span><span class="p">(</span><span class="n">MAINSIGNALS</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">signal</span><span class="p">],</span>
+                       <span class="n">SMACloseSignal</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">smaperiod</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">exitsignal</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">add_signal</span><span class="p">(</span><span class="n">EXITSIGNALS</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">exitsignal</span><span class="p">],</span>
+                           <span class="n">SMAExitSignal</span><span class="p">,</span>
+                           <span class="n">p1</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">exitperiod</span><span class="p">,</span>
+                           <span class="n">p2</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">smaperiod</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>
+        <span class="n">pkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">True</span><span class="p">:</span>  <span class="c1"># evals to True but is not True</span>
+            <span class="n">npkwargs</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>  <span class="c1"># args were passed</span>
+            <span class="n">pkwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">npkwargs</span><span class="p">)</span>
+
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">pkwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample for Signal concepts&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/2005-2006-day-001.txt&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Specific data to be read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Starting date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Ending date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cash&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Cash to start with&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--smaperiod&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Period for the moving average&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--exitperiod&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Period for the exit control SMA&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--signal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="n">MAINSIGNALS</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">choices</span><span class="o">=</span><span class="n">MAINSIGNALS</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Signal type to use for the main signal&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--exitsignal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">EXITSIGNALS</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Signal type to use for the exit signal&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Plot options</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Plot the read data applying any kwargs passed</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;For example:</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;  --plot style=&quot;candle&quot; (to plot candles)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">pargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

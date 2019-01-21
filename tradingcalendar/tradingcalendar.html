@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Trading Calendar &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Resampling" href="../data-resampling/data-resampling.html" />
+    <link rel="prev" title="Pandas DataFeed Example" href="../pandas-datafeed/pandas-datafeed.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trading Calendar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#trading-calendar-interface">Trading Calendar Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementations">Implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pandasmarketcalendar">PandasMarketCalendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tradingcalendar">TradingCalendar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-pattern">Usage pattern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-trading-calendar">Global Trading Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#per-data-feed">Per data-feed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#daily-to-weekly">Daily to Weekly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minutes-to-daily">Minutes to Daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extra-bonus-for-the-strategy">Extra bonus for the strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage-tcal-py">Sample usage (tcal.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage-tcal-intra-py">Sample usage (tcal-intra.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code-tcal-py">Sample Code (tcal.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code-tcal-intra-py">Sample Code (tcal-intra.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="trading-calendar">
+<h1>Trading Calendar<a class="headerlink" href="#trading-calendar" title="Permalink to this headline">¶</a></h1>
+<p>Release <code class="docutils literal notranslate"><span class="pre">1.9.42.116</span></code> adds support for <em>Trading Calendars</em>. This is useful
+when resampling in for example the following scenarios:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Daily to Weekly resampling can now deliver the weekly bar together with the
+last bar of the week.</p>
+<p>This is so because the trading calendar identifies the <em>next trading</em> day
+and the <em>last trading day</em> of the week can be identified in advance</p>
+</li>
+<li><p class="first">Sub-daily to Daily resampling when the end of the session is not the
+regular one (which can already be specified to the data feed)</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="trading-calendar-interface">
+<h2>Trading Calendar Interface<a class="headerlink" href="#trading-calendar-interface" title="Permalink to this headline">¶</a></h2>
+<p>There is a base class <code class="docutils literal notranslate"><span class="pre">TradingCalendarBase</span></code> which is used as a base for any
+trading calendar. It defines two (2) methods which have to be overridden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TradingCalendarBase</span><span class="p">(</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">MetaParams</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
+    <span class="k">def</span> <span class="nf">_nextday</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Returns the next trading day (datetime/date instance) after ``day``</span>
+<span class="sd">        (datetime/date instance) and the isocalendar components</span>
+
+<span class="sd">        The return value is a tuple with 2 components: (nextday, (y, w, d))</span>
+<span class="sd">        where (y, w, d)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Returns a tuple with the opening and closing times (``datetime.time``)</span>
+<span class="sd">        for the given ``date`` (``datetime/date`` instance)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementations">
+<h2>Implementations<a class="headerlink" href="#implementations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pandasmarketcalendar">
+<h3>PandasMarketCalendar<a class="headerlink" href="#pandasmarketcalendar" title="Permalink to this headline">¶</a></h3>
+<p>This implementation is based on a neat package which is a spin-off of initial
+functionality available from Quantopian. The packages is at:
+<a class="reference external" href="https://github.com/rsheftel/pandas_market_calendars">pandas_market_calendars</a> and can be easily
+installed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas_market_calendars</span>
+</pre></div>
+</div>
+<p>The implementation features the following interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PandasMarketCalendar</span><span class="p">(</span><span class="n">TradingCalendarBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Wrapper of ``pandas_market_calendars`` for a trading calendar. The package</span>
+<span class="sd">    ``pandas_market_calendar`` must be installed</span>
+
+<span class="sd">    Params:</span>
+
+<span class="sd">      - ``calendar`` (default ``None``)</span>
+
+<span class="sd">        The param ``calendar`` accepts the following:</span>
+
+<span class="sd">        - string: the name of one of the calendars supported, for example</span>
+<span class="sd">          `NYSE`. The wrapper will attempt to get a calendar instance</span>
+
+<span class="sd">        - calendar instance: as returned by ``get_calendar(&#39;NYSE&#39;)``</span>
+
+<span class="sd">      - ``cachesize`` (default ``365``)</span>
+
+<span class="sd">        Number of days to cache in advance for lookup</span>
+
+<span class="sd">    See also:</span>
+
+<span class="sd">      - https://github.com/rsheftel/pandas_market_calendars</span>
+
+<span class="sd">      - http://pandas-market-calendars.readthedocs.io/</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># A pandas_market_calendars instance or exch name</span>
+        <span class="p">(</span><span class="s1">&#39;cachesize&#39;</span><span class="p">,</span> <span class="mi">365</span><span class="p">),</span>  <span class="c1"># Number of days to cache in advance</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tradingcalendar">
+<h3>TradingCalendar<a class="headerlink" href="#tradingcalendar" title="Permalink to this headline">¶</a></h3>
+<p>This implementation allows to construct a calendar using self-gathered
+information by specifying the holidays, early days, non-trading weekdays and
+the opening and closing session times:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TradingCalendar</span><span class="p">(</span><span class="n">TradingCalendarBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Wrapper of ``pandas_market_calendars`` for a trading calendar. The package</span>
+<span class="sd">    ``pandas_market_calendar`` must be installed</span>
+
+<span class="sd">    Params:</span>
+
+<span class="sd">      - ``open`` (default ``time.min``)</span>
+
+<span class="sd">        Regular start of the session</span>
+
+<span class="sd">      - ``close`` (default ``time.max``)</span>
+
+<span class="sd">        Regular end of the session</span>
+
+<span class="sd">      - ``holidays`` (default ``[]``)</span>
+
+<span class="sd">        List of non-trading days (``datetime.datetime`` instances)</span>
+
+<span class="sd">      - ``earlydays`` (default ``[]``)</span>
+
+<span class="sd">        List of tuples determining the date and opening/closing times of days</span>
+<span class="sd">        which do not conform to the regular trading hours where each tuple has</span>
+<span class="sd">        (``datetime.datetime``, ``datetime.time``, ``datetime.time`` )</span>
+
+<span class="sd">      - ``offdays`` (default ``ISOWEEKEND``)</span>
+
+<span class="sd">        A list of weekdays in ISO format (Monday: 1 -&gt; Sunday: 7) in which the</span>
+<span class="sd">        market doesn&#39;t trade. This is usually Saturday and Sunday and hence the</span>
+<span class="sd">        default</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="n">_time_max</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;holidays&#39;</span><span class="p">,</span> <span class="p">[]),</span>  <span class="c1"># list of non trading days (date)</span>
+        <span class="p">(</span><span class="s1">&#39;earlydays&#39;</span><span class="p">,</span> <span class="p">[]),</span>  <span class="c1"># list of tuples (date, opentime, closetime)</span>
+        <span class="p">(</span><span class="s1">&#39;offdays&#39;</span><span class="p">,</span> <span class="n">ISOWEEKEND</span><span class="p">),</span>  <span class="c1"># list of non trading (isoweekdays)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage-pattern">
+<h2>Usage pattern<a class="headerlink" href="#usage-pattern" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-trading-calendar">
+<h3>Global Trading Calendar<a class="headerlink" href="#global-trading-calendar" title="Permalink to this headline">¶</a></h3>
+<p>Via <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> one can add a global calendar which is the default for all data
+feeds, unless one is specified for the data feed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addcalendar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cal</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Adds a global trading calendar to the system. Individual data feeds</span>
+<span class="sd">    may have separate calendars which override the global one</span>
+
+<span class="sd">    ``cal`` can be an instance of ``TradingCalendar`` a string or an</span>
+<span class="sd">    instance of ``pandas_market_calendars``. A string will be will be</span>
+<span class="sd">    instantiated as a ``PandasMarketCalendar`` (which needs the module</span>
+<span class="sd">    ``pandas_market_calendar`` installed in the system.</span>
+
+<span class="sd">    If a subclass of `TradingCalendarBase` is passed (not an instance) it</span>
+<span class="sd">    will be instantiated</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="per-data-feed">
+<h3>Per data-feed<a class="headerlink" href="#per-data-feed" title="Permalink to this headline">¶</a></h3>
+<p>By specifying a <code class="docutils literal notranslate"><span class="pre">calendar</span></code> parameter following the same conventions as
+described above in <code class="docutils literal notranslate"><span class="pre">addcalendar</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">YahooFinanceData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;YHOO&#39;</span><span class="p">,</span> <span class="n">calendar</span><span class="o">=</span><span class="s1">&#39;NYSE&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="daily-to-weekly">
+<h3>Daily to Weekly<a class="headerlink" href="#daily-to-weekly" title="Permalink to this headline">¶</a></h3>
+<p>Let’s have a look at a sample run of the code that can be found below. In 2016,
+Easter Friday (2016-03-25) was a holiday also in the <code class="docutils literal notranslate"><span class="pre">NYSE</span></code>. If the sample is
+run with no trading calendar, let’s see what happens around that date.</p>
+<p>In this case the resampling is being done from daily to weekly (using <code class="docutils literal notranslate"><span class="pre">YHOO</span></code>
+and the daily data for 2016):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal.py
+
+...
+Strategy len 56 datetime 2016-03-23 Data0 len 56 datetime 2016-03-23 Data1 len 11 datetime 2016-03-18
+Strategy len 57 datetime 2016-03-24 Data0 len 57 datetime 2016-03-24 Data1 len 11 datetime 2016-03-18
+Strategy len 58 datetime 2016-03-28 Data0 len 58 datetime 2016-03-28 Data1 len 12 datetime 2016-03-24
+...
+</pre></div>
+</div>
+<p>In this output, the 1st date is the accounting made by the strategy. The 2nd
+date is that of the daily</p>
+<p>The week ends, as expected, on 2016-03-24 (Thursday), but without a trading
+calendar the resampling code cannot know it and the resampled bar with date
+2016-03-18 (the week before) is delivered. When the trading moves on to
+2016-03-28 (Monday), the resampler detects the week change and delivers a
+resampled bar for 2016-03-24.</p>
+<p>The same but run with a <code class="docutils literal notranslate"><span class="pre">PandasMarketCalendar</span></code> for <code class="docutils literal notranslate"><span class="pre">NYSE</span></code> (and adding a plot)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal.py --plot --pandascal NYSE
+
+...
+Strategy len 56 datetime 2016-03-23 Data0 len 56 datetime 2016-03-23 Data1 len 11 datetime 2016-03-18
+Strategy len 57 datetime 2016-03-24 Data0 len 57 datetime 2016-03-24 Data1 len 12 datetime 2016-03-24
+Strategy len 58 datetime 2016-03-28 Data0 len 58 datetime 2016-03-28 Data1 len 12 datetime 2016-03-24
+...
+</pre></div>
+</div>
+<p>There is a change! Thanks to the calendar the resampler knows the week is over
+on 2016-03-24 and delivers the corresponding weekly resampled bar for
+2016-03-24 on the same day.</p>
+<p>And the plot.</p>
+<a class=""
+               data-lightbox="group-42ed5973-f64c-4437-abf8-583f696c9abe"
+               href="../_images/dayly-weekly-calendar1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/dayly-weekly-calendar1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Since the information may not necessarily be available for each and every
+market, one can also craft the calendar. For the <code class="docutils literal notranslate"><span class="pre">NYSE</span></code> and <code class="docutils literal notranslate"><span class="pre">2016</span></code> it looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NYSE_2016</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TradingCalendar</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">holidays</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Easter Friday (2016-03-25) is listed as one of the holidays. Running the sample
+now:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal.py --plot --owncal
+
+...
+Strategy len 56 datetime 2016-03-23 Data0 len 56 datetime 2016-03-23 Data1 len 11 datetime 2016-03-18
+Strategy len 57 datetime 2016-03-24 Data0 len 57 datetime 2016-03-24 Data1 len 12 datetime 2016-03-24
+Strategy len 58 datetime 2016-03-28 Data0 len 58 datetime 2016-03-28 Data1 len 12 datetime 2016-03-24
+...
+</pre></div>
+</div>
+<p>And the same result has been obtained with the crafted calendar definition.</p>
+</div>
+<div class="section" id="minutes-to-daily">
+<h3>Minutes to Daily<a class="headerlink" href="#minutes-to-daily" title="Permalink to this headline">¶</a></h3>
+<p>Using some private intraday data and the knowledge that the market closed early
+on 2016-11-25 (the day after Thanksgiving the market closed at 13:00 in
+<code class="docutils literal notranslate"><span class="pre">US/Eastern</span></code> timezone), another test run, this time with the 2nd
+sample.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The source data is taken directly from the displayed data and is in
+<code class="docutils literal notranslate"><span class="pre">CET</span></code> timeozone even if the asset in question, <code class="docutils literal notranslate"><span class="pre">YHOO</span></code> trades in
+the USA. The <code class="docutils literal notranslate"><span class="pre">tzinput='CET'</span></code> and <code class="docutils literal notranslate"><span class="pre">tz='US/Eastern'</span></code> is used in the
+code for the data feed to let the platform appropriately transform
+the input and display the output</p>
+</div>
+<p>First with no trading calendar</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal-intra.py
+
+...
+Strategy len 6838 datetime 2016-11-25 18:00:00 Data0 len 6838 datetime 2016-11-25 13:00:00 Data1 len 21 datetime 2016-11-23 16:00:00
+Strategy len 6839 datetime 2016-11-25 18:01:00 Data0 len 6839 datetime 2016-11-25 13:01:00 Data1 len 21 datetime 20 16-11-23 16:00:00
+Strategy len 6840 datetime 2016-11-28 14:31:00 Data0 len 6840 datetime 2016-11-28 09:31:00 Data1 len 22 datetime 2016-11-25 16:00:00
+Strategy len 6841 datetime 2016-11-28 14:32:00 Data0 len 6841 datetime 2016-11-28 09:32:00 Data1 len 22 datetime 2016-11-25 16:00:00
+...
+</pre></div>
+</div>
+<p>As expected the day closes early at <code class="docutils literal notranslate"><span class="pre">13:00</span></code>, but the resampler doesn’t know
+it (the official session ends at <code class="docutils literal notranslate"><span class="pre">16:00</span></code>) and keeps on delivering the
+resampled daily bar from the previous day (2016-11-23) and the new resampled daily bar is first
+delivered during the next trading day (2016-11-28) with a date of 2016-11-25.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The data has an extra minute bar at <code class="docutils literal notranslate"><span class="pre">13:01</span></code> which is probably due
+to the auction process offering a last price after the market closing
+time.</p>
+<p>We could add a filter to the stream to filter out the bars outside of
+the session times (the filter would find it out from the trading
+calendar)</p>
+<p class="last">But that’s not the point of this sample.</p>
+</div>
+<p>The same run with a <code class="docutils literal notranslate"><span class="pre">PandasMarketCalendar</span></code> instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal-intra.py --pandascal NYSE
+
+...
+Strategy len 6838 datetime 2016-11-25 18:00:00 Data0 len 6838 datetime 2016-11-25 13:00:00 Data1 len 15 datetime 2016-11-25 13:00:00
+Strategy len 6839 datetime 2016-11-25 18:01:00 Data0 len 6839 datetime 2016-11-25 13:01:00 Data1 len 15 datetime 2016-11-25 13:00:00
+Strategy len 6840 datetime 2016-11-28 14:31:00 Data0 len 6840 datetime 2016-11-28 09:31:00 Data1 len 15 datetime 2016-11-25 13:00:00
+Strategy len 6841 datetime 2016-11-28 14:32:00 Data0 len 6841 datetime 2016-11-28 09:32:00 Data1 len 15 datetime 2016-11-25 13:00:00
+...
+</pre></div>
+</div>
+<p>And now the daily bar for 2016-11-25 is delivered when the intraday 1-minute
+feed hits 2016-11-25 at 13:00 (let’s disregard the 13:01 bar), because the
+trading calendar is telling the resampling code that the day is over.</p>
+<p>Let’s add a crafted definition. The same as before but extending it with some <code class="docutils literal notranslate"><span class="pre">earlydays</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NYSE_2016</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TradingCalendar</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">holidays</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">earlydays</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+             <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="p">],</span>
+        <span class="nb">open</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="n">close</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal-intra.py --owncal
+
+...
+Strategy len 6838 datetime 2016-11-25 18:00:00 Data0 len 6838 datetime 2016-11-25 13:00:00 Data1 len 15 datetime 2016-11-23 16:00:00
+Strategy len 6839 datetime 2016-11-25 18:01:00 Data0 len 6839 datetime 2016-11-25 13:01:00 Data1 len 16 datetime 2016-11-25 13:01:00
+Strategy len 6840 datetime 2016-11-28 14:31:00 Data0 len 6840 datetime 2016-11-28 09:31:00 Data1 len 16 datetime 2016-11-25 13:01:00
+Strategy len 6841 datetime 2016-11-28 14:32:00 Data0 len 6841 datetime 2016-11-28 09:32:00 Data1 len 16 datetime 2016-11-25 13:01:00
+...
+</pre></div>
+</div>
+<p>The avid reader will notice that the crafted definition contains has defined
+<code class="docutils literal notranslate"><span class="pre">13:01</span></code> (with <code class="docutils literal notranslate"><span class="pre">datetime.time(13,</span> <span class="pre">1)</span></code>) as the end of session for our short
+day of 2016-11-25. This is only to show how the crafted <code class="docutils literal notranslate"><span class="pre">TradingCalendar</span></code> can
+help into fitting things.</p>
+<p>Now the daily resampled bar for 2016-11-25 is delivered together with the
+1-minute bar at 13:01.</p>
+</div>
+<div class="section" id="extra-bonus-for-the-strategy">
+<h3>Extra bonus for the strategy<a class="headerlink" href="#extra-bonus-for-the-strategy" title="Permalink to this headline">¶</a></h3>
+<p>The first <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, the one belonging to the strategy, is always in a
+different timezone which is actually <code class="docutils literal notranslate"><span class="pre">UTC</span></code>. Also with this release
+<code class="docutils literal notranslate"><span class="pre">1.9.42.116</span></code> this can be synchronized. The following parameter has been added to
+<code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> (use either during instantiation or with <code class="docutils literal notranslate"><span class="pre">cerebro.run</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- ``tz`` (default: ``None``)
+
+  Adds a global timezone for strategies. The argument ``tz`` can be
+
+    - ``None``: in this case the datetime displayed by strategies will be
+      in UTC, which has been always the standard behavior
+
+    - ``pytz`` instance. It will be used as such to convert UTC times to
+      the chosen timezone
+
+    - ``string``. Instantiating a ``pytz`` instance will be attempted.
+
+    - ``integer``. Use, for the strategy, the same timezone as the
+      corresponding ``data`` in the ``self.datas`` iterable (``0`` would
+      use the timezone from ``data0``)
+</pre></div>
+</div>
+<p>It is also supported with the <code class="docutils literal notranslate"><span class="pre">cerebro.addtz</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addtz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tz</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This can also be done with the parameter ``tz``</span>
+
+<span class="sd">    Adds a global timezone for strategies. The argument ``tz`` can be</span>
+
+<span class="sd">      - ``None``: in this case the datetime displayed by strategies will be</span>
+<span class="sd">        in UTC, which has been always the standard behavior</span>
+
+<span class="sd">      - ``pytz`` instance. It will be used as such to convert UTC times to</span>
+<span class="sd">        the chosen timezone</span>
+
+<span class="sd">      - ``string``. Instantiating a ``pytz`` instance will be attempted.</span>
+
+<span class="sd">      - ``integer``. Use, for the strategy, the same timezone as the</span>
+<span class="sd">        corresponding ``data`` in the ``self.datas`` iterable (``0`` would</span>
+<span class="sd">        use the timezone from ``data0``)</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Repeating the last run of the intraday sample and using <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">tz</span></code>
+(synchronize with the timezone of <code class="docutils literal notranslate"><span class="pre">data0</span></code>) the following is the output
+focusing on the same dates and times as above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal-intra.py --owncal --cerebro tz=0
+
+...
+Strategy len 6838 datetime 2016-11-25 13:00:00 Data0 len 6838 datetime 2016-11-25 13:00:00 Data1 len 15 datetime 2016-11-23 16:00:00
+Strategy len 6839 datetime 2016-11-25 13:01:00 Data0 len 6839 datetime 2016-11-25 13:01:00 Data1 len 16 datetime 2016-11-25 13:01:00
+Strategy len 6840 datetime 2016-11-28 09:31:00 Data0 len 6840 datetime 2016-11-28 09:31:00 Data1 len 16 datetime 2016-11-25 13:01:00
+Strategy len 6841 datetime 2016-11-28 09:32:00 Data0 len 6841 datetime 2016-11-28 09:32:00 Data1 len 16 datetime 2016-11-25 13:01:00
+...
+</pre></div>
+</div>
+<p>The timestamp is now timezone aligned.</p>
+</div>
+</div>
+<div class="section" id="sample-usage-tcal-py">
+<h2>Sample usage (tcal.py)<a class="headerlink" href="#sample-usage-tcal-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal.py --help
+usage: tcal.py [-h] [--data0 DATA0] [--offline] [--fromdate FROMDATE]
+               [--todate TODATE] [--cerebro kwargs] [--broker kwargs]
+               [--sizer kwargs] [--strat kwargs] [--plot [kwargs]]
+               [--pandascal PANDASCAL | --owncal]
+               [--timeframe {Weeks,Months,Years}]
+
+Trading Calendar Sample
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data0 DATA0         Data to read in (default: YHOO)
+  --offline             Read from disk with same name as ticker (default:
+                        False)
+  --fromdate FROMDATE   Date[time] in YYYY-MM-DD[THH:MM:SS] format (default:
+                        2016-01-01)
+  --todate TODATE       Date[time] in YYYY-MM-DD[THH:MM:SS] format (default:
+                        2016-12-31)
+  --cerebro kwargs      kwargs in key=value format (default: )
+  --broker kwargs       kwargs in key=value format (default: )
+  --sizer kwargs        kwargs in key=value format (default: )
+  --strat kwargs        kwargs in key=value format (default: )
+  --plot [kwargs]       kwargs in key=value format (default: )
+  --pandascal PANDASCAL
+                        Name of trading calendar to use (default: )
+  --owncal              Apply custom NYSE 2016 calendar (default: False)
+  --timeframe {Weeks,Months,Years}
+                        Timeframe to resample to (default: Weeks)
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-usage-tcal-intra-py">
+<h2>Sample usage (tcal-intra.py)<a class="headerlink" href="#sample-usage-tcal-intra-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./tcal-intra.py --help
+usage: tcal-intra.py [-h] [--data0 DATA0] [--fromdate FROMDATE]
+                     [--todate TODATE] [--cerebro kwargs] [--broker kwargs]
+                     [--sizer kwargs] [--strat kwargs] [--plot [kwargs]]
+                     [--pandascal PANDASCAL | --owncal] [--timeframe {Days}]
+
+Trading Calendar Sample
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data0 DATA0         Data to read in (default: yhoo-2016-11.csv)
+  --fromdate FROMDATE   Date[time] in YYYY-MM-DD[THH:MM:SS] format (default:
+                        2016-01-01)
+  --todate TODATE       Date[time] in YYYY-MM-DD[THH:MM:SS] format (default:
+                        2016-12-31)
+  --cerebro kwargs      kwargs in key=value format (default: )
+  --broker kwargs       kwargs in key=value format (default: )
+  --sizer kwargs        kwargs in key=value format (default: )
+  --strat kwargs        kwargs in key=value format (default: )
+  --plot [kwargs]       kwargs in key=value format (default: )
+  --pandascal PANDASCAL
+                        Name of trading calendar to use (default: )
+  --owncal              Apply custom NYSE 2016 calendar (default: False)
+  --timeframe {Days}    Timeframe to resample to (default: Days)
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-code-tcal-py">
+<h2>Sample Code (tcal.py)<a class="headerlink" href="#sample-code-tcal-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">NYSE_2016</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TradingCalendar</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">holidays</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Duration:&#39;</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Strategy len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data0 len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data1 len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="n">YahooData</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">YahooFinanceData</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">offline</span><span class="p">:</span>
+        <span class="n">YahooData</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">YahooFinanceCSVData</span>  <span class="c1"># change to read file</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">YahooData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="n">d1</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">resampledata</span><span class="p">(</span><span class="n">data0</span><span class="p">,</span>
+                              <span class="n">timeframe</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">timeframe</span><span class="p">))</span>
+    <span class="n">d1</span><span class="o">.</span><span class="n">plotinfo</span><span class="o">.</span><span class="n">plotmaster</span> <span class="o">=</span> <span class="n">data0</span>
+    <span class="n">d1</span><span class="o">.</span><span class="n">plotinfo</span><span class="o">.</span><span class="n">sameaxis</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">pandascal</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">addcalendar</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pandascal</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">owncal</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">addcalendar</span><span class="p">(</span><span class="n">NYSE_2016</span><span class="p">)</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;Trading Calendar Sample&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;YHOO&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--offline&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Read from disk with same name as ticker&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2016-01-01&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2016-12-31&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">pgroup</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">pgroup</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--pandascal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of trading calendar to use&#39;</span><span class="p">)</span>
+
+    <span class="n">pgroup</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--owncal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Apply custom NYSE 2016 calendar&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--timeframe&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Weeks&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Weeks&#39;</span><span class="p">,</span> <span class="s1">&#39;Months&#39;</span><span class="p">,</span> <span class="s1">&#39;Years&#39;</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Timeframe to resample to&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-code-tcal-intra-py">
+<h2>Sample Code (tcal-intra.py)<a class="headerlink" href="#sample-code-tcal-intra-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">NYSE_2016</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TradingCalendar</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">holidays</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+            <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">earlydays</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+             <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="p">],</span>
+        <span class="nb">open</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="n">close</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Strategy len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data0 len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data1 len {} datetime {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="c1"># kwargs = dict(tz=&#39;US/Eastern&#39;)</span>
+    <span class="c1"># import pytz</span>
+    <span class="c1"># tz = tzinput = pytz.timezone(&#39;Europe/Berlin&#39;)</span>
+    <span class="n">tzinput</span> <span class="o">=</span> <span class="s1">&#39;Europe/Berlin&#39;</span>
+    <span class="c1"># tz = tzinput</span>
+    <span class="n">tz</span> <span class="o">=</span> <span class="s1">&#39;US/Eastern&#39;</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tzinput</span><span class="o">=</span><span class="n">tzinput</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="n">d1</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">resampledata</span><span class="p">(</span><span class="n">data0</span><span class="p">,</span>
+                              <span class="n">timeframe</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">timeframe</span><span class="p">))</span>
+    <span class="c1"># d1.plotinfo.plotmaster = data0</span>
+    <span class="c1"># d1.plotinfo.sameaxis = False</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">pandascal</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">addcalendar</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pandascal</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">owncal</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">addcalendar</span><span class="p">(</span><span class="n">NYSE_2016</span><span class="p">())</span>  <span class="c1"># or NYSE_2016() to pass an instance</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;Trading Calendar Sample&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;yhoo-2016-11.csv&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2016-01-01&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2016-12-31&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">pgroup</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">pgroup</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--pandascal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of trading calendar to use&#39;</span><span class="p">)</span>
+
+    <span class="n">pgroup</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--owncal&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Apply custom NYSE 2016 calendar&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--timeframe&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Days&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Days&#39;</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Timeframe to resample to&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

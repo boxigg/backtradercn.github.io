@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pyfolio Integration &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Writer" href="../../writer.html" />
+    <link rel="prev" title="PyFolio Overview" href="../pyfolio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pyfolio Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#no-pyfolio">No PyFolio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-pyfolio-run">A PyFolio run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="pyfolio-integration">
+<h1>Pyfolio Integration<a class="headerlink" href="#pyfolio-integration" title="Permalink to this headline">¶</a></h1>
+<p>The integration of a <em>portfolio</em> tool, namely <code class="docutils literal notranslate"><span class="pre">pyfolio</span></code>, came up with in
+<a class="reference external" href="https://github.com/mementum/backtrader/issues/108">Ticket #108</a>.</p>
+<p>A first look at the tutorial deemed it as difficult, given the tight
+integration amongst <code class="docutils literal notranslate"><span class="pre">zipline</span></code> and <code class="docutils literal notranslate"><span class="pre">pyfolio</span></code>, but the sample <em>test</em> data
+available with <code class="docutils literal notranslate"><span class="pre">pyfolio</span></code> for some other uses is actually pretty useful to
+decode what’s running behind the scenes and hence the wonder of integration.</p>
+<p>Most of the pieces were already in-place in <em>backtrader</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Analyzer infrastructure</li>
+<li>Children analyzer</li>
+<li>A TimeReturn analyzer</li>
+</ul>
+</div></blockquote>
+<p>Only a main <code class="docutils literal notranslate"><span class="pre">PyFolio</span></code> analyzer and 3 easy <em>children</em> analyzer are
+needed. Plus a method that relies on one of the dependencies already needed by
+<code class="docutils literal notranslate"><span class="pre">pyfolio</span></code> which is <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>The most challenging part … “getting all the dependencies right”.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Update of <code class="docutils literal notranslate"><span class="pre">pandas</span></code></li>
+<li>Update of <code class="docutils literal notranslate"><span class="pre">numpy</span></code></li>
+<li>Update of <code class="docutils literal notranslate"><span class="pre">scikit-lean</span></code></li>
+<li>Update of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></li>
+</ul>
+</div></blockquote>
+<p>Under Unix-like environments with a <em>C</em> compiler it’s all about time. Under
+Windows and even with the specific <em>Microsoft</em> compiler installed (in this case
+the chain for <em>Python 2.7</em>) things failed. But a well known site with a
+collection of up-to-date packages for <em>Windows</em> helped. Visit it if you ever
+need it:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a></li>
+</ul>
+</div></blockquote>
+<p>The integration wouldn’t be complete if it wasn’t tested and that’s why the
+usual sample is as always present.</p>
+<div class="section" id="no-pyfolio">
+<h2>No PyFolio<a class="headerlink" href="#no-pyfolio" title="Permalink to this headline">¶</a></h2>
+<p>The sample uses <code class="docutils literal notranslate"><span class="pre">random.randint</span></code> to decide when to <em>buy</em>/<em>sell</em>, so this is
+simply a check that things are working:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pyfoliotest.py --printout --no-pyfolio --plot
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Len</span><span class="p">,</span><span class="n">Datetime</span><span class="p">,</span><span class="n">Open</span><span class="p">,</span><span class="n">High</span><span class="p">,</span><span class="n">Low</span><span class="p">,</span><span class="n">Close</span><span class="p">,</span><span class="n">Volume</span><span class="p">,</span><span class="n">OpenInterest</span>
+<span class="mi">0001</span><span class="p">,</span><span class="mi">2005</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="mf">38.36</span><span class="p">,</span><span class="mf">38.90</span><span class="p">,</span><span class="mf">37.65</span><span class="p">,</span><span class="mf">38.18</span><span class="p">,</span><span class="mf">25482800.00</span><span class="p">,</span><span class="mf">0.00</span>
+<span class="n">BUY</span>  <span class="mi">1000</span> <span class="o">@%</span><span class="mf">23.58</span>
+<span class="mi">0002</span><span class="p">,</span><span class="mi">2005</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="mf">38.45</span><span class="p">,</span><span class="mf">38.54</span><span class="p">,</span><span class="mf">36.46</span><span class="p">,</span><span class="mf">36.58</span><span class="p">,</span><span class="mf">26625300.00</span><span class="p">,</span><span class="mf">0.00</span>
+<span class="n">BUY</span>  <span class="mi">1000</span> <span class="o">@%</span><span class="mf">36.58</span>
+<span class="n">SELL</span> <span class="mi">500</span> <span class="o">@%</span><span class="mf">22.47</span>
+<span class="mi">0003</span><span class="p">,</span><span class="mi">2005</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="mf">36.69</span><span class="p">,</span><span class="mf">36.98</span><span class="p">,</span><span class="mf">36.06</span><span class="p">,</span><span class="mf">36.13</span><span class="p">,</span><span class="mf">18469100.00</span><span class="p">,</span><span class="mf">0.00</span>
+<span class="o">...</span>
+<span class="n">SELL</span> <span class="mi">500</span> <span class="o">@%</span><span class="mf">37.51</span>
+<span class="mi">0502</span><span class="p">,</span><span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">28</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="mf">25.62</span><span class="p">,</span><span class="mf">25.72</span><span class="p">,</span><span class="mf">25.30</span><span class="p">,</span><span class="mf">25.36</span><span class="p">,</span><span class="mf">11908400.00</span><span class="p">,</span><span class="mf">0.00</span>
+<span class="mi">0503</span><span class="p">,</span><span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">29</span><span class="n">T23</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="mf">25.42</span><span class="p">,</span><span class="mf">25.82</span><span class="p">,</span><span class="mf">25.33</span><span class="p">,</span><span class="mf">25.54</span><span class="p">,</span><span class="mf">16297800.00</span><span class="p">,</span><span class="mf">0.00</span>
+<span class="n">SELL</span> <span class="mi">250</span> <span class="o">@%</span><span class="mf">17.14</span>
+<span class="n">SELL</span> <span class="mi">250</span> <span class="o">@%</span><span class="mf">37.01</span>
+</pre></div>
+</div>
+<a class=""
+               data-lightbox="group-9680941a-6683-41a7-a94b-69b951077c76"
+               href="../../_images/sample-run-no-pyfolio1.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/sample-run-no-pyfolio1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>There a 3 datas and several <em>buy</em> and <em>sell</em> operations are randomly chosen and
+scattered over the 2 year default life of the test run</p>
+</div>
+<div class="section" id="a-pyfolio-run">
+<h2>A PyFolio run<a class="headerlink" href="#a-pyfolio-run" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pyfolio</span></code> things work well when running inside a <em>Jupyter Notebook</em> including
+inline plotting. Here is the <em>notebook</em></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">runstrat</span></code> gets here <cite>[]</cite> as argument to run with default arguments
+and skip arguments passed by the <em>notebook</em> itself</p>
+</div>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;printout&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;stake&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">printout</span><span class="p">:</span>
+            <span class="n">txtfields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Len&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Datetime&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Open&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;High&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Low&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Close&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">)</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;OpenInterest&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txtfields</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">printout</span><span class="p">:</span>
+            <span class="c1"># Print only 1st data ... is just a check that things are running</span>
+            <span class="n">txtfields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">low</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">volume</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">txtfields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="o">.</span><span class="n">openinterest</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txtfields</span><span class="p">))</span>
+
+        <span class="c1"># Data 0</span>
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datas</span><span class="p">:</span>
+            <span class="n">toss</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">curpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getposition</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">curpos</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">toss</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="n">curpos</span><span class="o">.</span><span class="n">size</span> <span class="o">//</span> <span class="mi">2</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">printout</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SELL </span><span class="si">{}</span><span class="s1"> @%</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+            <span class="k">elif</span> <span class="n">toss</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">stake</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">printout</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BUY  </span><span class="si">{}</span><span class="s1"> @%</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">stake</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">set_cash</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">cash</span><span class="p">)</span>
+
+    <span class="n">dkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">fromdate</span><span class="p">:</span>
+        <span class="n">fromdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">fromdate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fromdate</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">todate</span><span class="p">:</span>
+        <span class="n">todate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">todate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;todate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">todate</span>
+
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">dkwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Data0&#39;</span><span class="p">)</span>
+
+    <span class="n">data1</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data1</span><span class="p">,</span> <span class="o">**</span><span class="n">dkwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Data1&#39;</span><span class="p">)</span>
+
+    <span class="n">data2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data2</span><span class="p">,</span> <span class="o">**</span><span class="n">dkwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Data2&#39;</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="n">printout</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">printout</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_pyfolio</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">addanalyzer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">analyzers</span><span class="o">.</span><span class="n">PyFolio</span><span class="p">,</span> <span class="n">_name</span><span class="o">=</span><span class="s1">&#39;pyfolio&#39;</span><span class="p">)</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_pyfolio</span><span class="p">:</span>
+        <span class="n">strat</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">pyfoliozer</span> <span class="o">=</span> <span class="n">strat</span><span class="o">.</span><span class="n">analyzers</span><span class="o">.</span><span class="n">getbyname</span><span class="p">(</span><span class="s1">&#39;pyfolio&#39;</span><span class="p">)</span>
+
+        <span class="n">returns</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">transactions</span><span class="p">,</span> <span class="n">gross_lev</span> <span class="o">=</span> <span class="n">pyfoliozer</span><span class="o">.</span><span class="n">get_pf_items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">printout</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- RETURNS&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- POSITIONS&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- TRANSACTIONS&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">transactions</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- GROSS LEVERAGE&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">gross_lev</span><span class="p">)</span>
+
+        <span class="kn">import</span> <span class="nn">pyfolio</span> <span class="k">as</span> <span class="nn">pf</span>
+        <span class="n">pf</span><span class="o">.</span><span class="n">create_full_tear_sheet</span><span class="p">(</span>
+            <span class="n">returns</span><span class="p">,</span>
+            <span class="n">positions</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+            <span class="n">transactions</span><span class="o">=</span><span class="n">transactions</span><span class="p">,</span>
+            <span class="n">gross_lev</span><span class="o">=</span><span class="n">gross_lev</span><span class="p">,</span>
+            <span class="n">live_start_date</span><span class="o">=</span><span class="s1">&#39;2005-05-01&#39;</span><span class="p">,</span>
+            <span class="n">round_trips</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_style</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample for pivot point and cross plotting&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/yhoo-1996-2015.txt&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to be read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data1&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/orcl-1995-2014.txt&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to be read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data2&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/nvda-1999-2014.txt&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to be read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2005-01-01&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Starting date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2006-12-31&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Ending date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--printout&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Print data lines&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cash&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Cash to start with&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Plot the result&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot-style&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;candle&#39;</span><span class="p">,</span> <span class="s1">&#39;line&#39;</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Plot style&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-pyfolio&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Do not do pyfolio things&#39;</span><span class="p">))</span>
+
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">aargs</span> <span class="o">=</span> <span class="n">args</span> <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">aargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">runstrat</span><span class="p">([])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Entire</span> <span class="n">data</span> <span class="n">start</span> <span class="n">date</span><span class="p">:</span> <span class="mi">2005</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span>
+<span class="n">Entire</span> <span class="n">data</span> <span class="n">end</span> <span class="n">date</span><span class="p">:</span> <span class="mi">2006</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">29</span>
+
+
+<span class="n">Out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">Sample</span> <span class="n">Months</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">Backtest</span> <span class="n">Months</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Performance statistics</th>
+      <th>All history</th>
+      <th>Backtest</th>
+      <th>Out of sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>annual_return</th>
+      <td>0.06</td>
+      <td>-0.05</td>
+      <td>0.08</td>
+    </tr>
+    <tr>
+      <th>annual_volatility</th>
+      <td>0.09</td>
+      <td>0.09</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>sharpe_ratio</th>
+      <td>0.62</td>
+      <td>-0.55</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>calmar_ratio</th>
+      <td>0.78</td>
+      <td>-1.13</td>
+      <td>1.09</td>
+    </tr>
+    <tr>
+      <th>stability_of_timeseries</th>
+      <td>0.75</td>
+      <td>-0.47</td>
+      <td>0.70</td>
+    </tr>
+    <tr>
+      <th>max_drawdown</th>
+      <td>-0.07</td>
+      <td>-0.04</td>
+      <td>-0.07</td>
+    </tr>
+    <tr>
+      <th>omega_ratio</th>
+      <td>1.16</td>
+      <td>0.88</td>
+      <td>1.22</td>
+    </tr>
+    <tr>
+      <th>sortino_ratio</th>
+      <td>0.97</td>
+      <td>-0.76</td>
+      <td>1.33</td>
+    </tr>
+    <tr>
+      <th>skew</th>
+      <td>1.24</td>
+      <td>0.35</td>
+      <td>1.37</td>
+    </tr>
+    <tr>
+      <th>kurtosis</th>
+      <td>12.72</td>
+      <td>5.66</td>
+      <td>13.59</td>
+    </tr>
+    <tr>
+      <th>tail_ratio</th>
+      <td>0.87</td>
+      <td>0.46</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>common_sense_ratio</th>
+      <td>0.91</td>
+      <td>0.43</td>
+      <td>0.98</td>
+    </tr>
+    <tr>
+      <th>information_ratio</th>
+      <td>-0.02</td>
+      <td>0.03</td>
+      <td>-0.04</td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td>0.03</td>
+      <td>-0.02</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>beta</th>
+      <td>0.31</td>
+      <td>0.25</td>
+      <td>0.33</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Worst Drawdown Periods</th>
+      <th>net drawdown in %</th>
+      <th>peak date</th>
+      <th>valley date</th>
+      <th>recovery date</th>
+      <th>duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.06</td>
+      <td>2005-07-11</td>
+      <td>2006-04-17</td>
+      <td>2006-05-24</td>
+      <td>228</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.53</td>
+      <td>2005-02-18</td>
+      <td>2005-05-11</td>
+      <td>2005-05-16</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.33</td>
+      <td>2006-07-03</td>
+      <td>2006-07-13</td>
+      <td>2006-09-21</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.11</td>
+      <td>2006-09-25</td>
+      <td>2006-10-03</td>
+      <td>2006-10-24</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.11</td>
+      <td>2006-10-31</td>
+      <td>2006-12-07</td>
+      <td>2006-12-19</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mf">0.012</span> <span class="o">-</span><span class="mf">0.025</span><span class="p">]</span>
+</pre></div>
+</div>
+<a class=""
+               data-lightbox="group-fc560c3b-3920-4fec-95bc-c72ffad0f862"
+               href="../../_images/output_2_41.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/output_2_41.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Stress Events</th>
+      <th>mean</th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low Volatility Bull Market</th>
+      <td>0.02%</td>
+      <td>-2.68%</td>
+      <td>4.85%</td>
+    </tr>
+  </tbody>
+</table>
+</div><a class=""
+               data-lightbox="group-b74c6727-68f6-4565-8117-3a966ec0b70d"
+               href="../../_images/output_2_61.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/output_2_61.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Top 10 long positions of all time</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Data2</th>
+      <td>93.59%</td>
+    </tr>
+    <tr>
+      <th>Data0</th>
+      <td>80.42%</td>
+    </tr>
+    <tr>
+      <th>Data1</th>
+      <td>34.47%</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Top 10 short positions of all time</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Top 10 positions of all time</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Data2</th>
+      <td>93.59%</td>
+    </tr>
+    <tr>
+      <th>Data0</th>
+      <td>80.42%</td>
+    </tr>
+    <tr>
+      <th>Data1</th>
+      <td>34.47%</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>All positions ever held</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Data2</th>
+      <td>93.59%</td>
+    </tr>
+    <tr>
+      <th>Data0</th>
+      <td>80.42%</td>
+    </tr>
+    <tr>
+      <th>Data1</th>
+      <td>34.47%</td>
+    </tr>
+  </tbody>
+</table>
+</div><a class=""
+               data-lightbox="group-d58743bc-7410-4a5a-89c9-4d457b9c0a57"
+               href="../../_images/output_2_111.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/output_2_111.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><pre class="literal-block">
+D:drobinWinPython-64bit-2.7.10.3python-2.7.10.amd64libsite-packagespyfolioplotting.py:1210: FutureWarning: .resample() is now a deferred operation
+use .resample(...).mean() instead of .resample(...)
+  **kwargs)
+</pre>
+<a class=""
+               data-lightbox="group-a590fa11-8e4e-481e-a5d0-dc4ca6fe1c00"
+               href="../../_images/output_2_131.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/output_2_131.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Summary stats</th>
+      <th>All trades</th>
+      <th>Long trades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Total number of round_trips</th>
+      <td>661.00</td>
+      <td>661.00</td>
+    </tr>
+    <tr>
+      <th>Percent profitable</th>
+      <td>0.53</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <th>Winning round_trips</th>
+      <td>350.00</td>
+      <td>350.00</td>
+    </tr>
+    <tr>
+      <th>Losing round_trips</th>
+      <td>305.00</td>
+      <td>305.00</td>
+    </tr>
+    <tr>
+      <th>Even round_trips</th>
+      <td>6.00</td>
+      <td>6.00</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>PnL stats</th>
+      <th>All trades</th>
+      <th>Long trades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Total profit</th>
+      <td>$5675.87</td>
+      <td>$5675.87</td>
+    </tr>
+    <tr>
+      <th>Gross profit</th>
+      <td>$21571.73</td>
+      <td>$21571.73</td>
+    </tr>
+    <tr>
+      <th>Gross loss</th>
+      <td>$-15895.86</td>
+      <td>$-15895.86</td>
+    </tr>
+    <tr>
+      <th>Profit factor</th>
+      <td>$1.36</td>
+      <td>$1.36</td>
+    </tr>
+    <tr>
+      <th>Avg. trade net profit</th>
+      <td>$8.59</td>
+      <td>$8.59</td>
+    </tr>
+    <tr>
+      <th>Avg. winning trade</th>
+      <td>$61.63</td>
+      <td>$61.63</td>
+    </tr>
+    <tr>
+      <th>Avg. losing trade</th>
+      <td>$-52.12</td>
+      <td>$-52.12</td>
+    </tr>
+    <tr>
+      <th>Ratio Avg. Win:Avg. Loss</th>
+      <td>$1.18</td>
+      <td>$1.18</td>
+    </tr>
+    <tr>
+      <th>Largest winning trade</th>
+      <td>$1024.99</td>
+      <td>$1024.99</td>
+    </tr>
+    <tr>
+      <th>Largest losing trade</th>
+      <td>$-1155.00</td>
+      <td>$-1155.00</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Duration stats</th>
+      <th>All trades</th>
+      <th>Long trades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Avg duration</th>
+      <td>17 days 00:00:00.001512</td>
+      <td>17 days 00:00:00.001512</td>
+    </tr>
+    <tr>
+      <th>Median duration</th>
+      <td>16 days 00:00:00</td>
+      <td>16 days 00:00:00</td>
+    </tr>
+    <tr>
+      <th>Avg # round_trips per day</th>
+      <td>11.80</td>
+      <td>11.80</td>
+    </tr>
+    <tr>
+      <th>Avg # round_trips per month</th>
+      <td>247.88</td>
+      <td>247.88</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Return stats</th>
+      <th>All trades</th>
+      <th>Long trades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Avg returns all round_trips</th>
+      <td>0.02%</td>
+      <td>0.02%</td>
+    </tr>
+    <tr>
+      <th>Avg returns winning</th>
+      <td>0.12%</td>
+      <td>0.12%</td>
+    </tr>
+    <tr>
+      <th>Avg returns losing</th>
+      <td>-0.10%</td>
+      <td>-0.10%</td>
+    </tr>
+    <tr>
+      <th>Median returns all round_trips</th>
+      <td>0.00%</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>Median returns winning</th>
+      <td>0.02%</td>
+      <td>0.02%</td>
+    </tr>
+    <tr>
+      <th>Median returns losing</th>
+      <td>-0.02%</td>
+      <td>-0.02%</td>
+    </tr>
+    <tr>
+      <th>Largest winning trade</th>
+      <td>2.11%</td>
+      <td>2.11%</td>
+    </tr>
+    <tr>
+      <th>Largest losing trade</th>
+      <td>-2.37%</td>
+      <td>-2.37%</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Symbol stats</th>
+      <th>Data0</th>
+      <th>Data1</th>
+      <th>Data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Avg returns all round_trips</th>
+      <td>-0.02%</td>
+      <td>0.01%</td>
+      <td>0.06%</td>
+    </tr>
+    <tr>
+      <th>Avg returns winning</th>
+      <td>0.12%</td>
+      <td>0.05%</td>
+      <td>0.19%</td>
+    </tr>
+    <tr>
+      <th>Avg returns losing</th>
+      <td>-0.14%</td>
+      <td>-0.04%</td>
+      <td>-0.14%</td>
+    </tr>
+    <tr>
+      <th>Median returns all round_trips</th>
+      <td>-0.00%</td>
+      <td>0.00%</td>
+      <td>0.01%</td>
+    </tr>
+    <tr>
+      <th>Median returns winning</th>
+      <td>0.03%</td>
+      <td>0.01%</td>
+      <td>0.05%</td>
+    </tr>
+    <tr>
+      <th>Median returns losing</th>
+      <td>-0.02%</td>
+      <td>-0.01%</td>
+      <td>-0.04%</td>
+    </tr>
+    <tr>
+      <th>Largest winning trade</th>
+      <td>1.91%</td>
+      <td>0.71%</td>
+      <td>2.11%</td>
+    </tr>
+    <tr>
+      <th>Largest losing trade</th>
+      <td>-2.37%</td>
+      <td>-0.64%</td>
+      <td>-0.99%</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Profitability (PnL / PnL total) per name</th>
+      <th>pnl</th>
+    </tr>
+    <tr>
+      <th>symbol</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Data2</th>
+      <td>1.11%</td>
+    </tr>
+    <tr>
+      <th>Data1</th>
+      <td>0.14%</td>
+    </tr>
+    <tr>
+      <th>Data0</th>
+      <td>-0.25%</td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span> <span class="n">at</span> <span class="mh">0x23982b70</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<a class=""
+               data-lightbox="group-a8d18100-c7d2-4d49-bb03-c472f3b0985a"
+               href="../../_images/output_2_211.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/output_2_211.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Usage of the sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./pyfoliotest.py --help
+usage: pyfoliotest.py [-h] [--data0 DATA0] [--data1 DATA1] [--data2 DATA2]
+                      [--fromdate FROMDATE] [--todate TODATE] [--printout]
+                      [--cash CASH] [--plot] [--plot-style {bar,candle,line}]
+                      [--no-pyfolio]
+
+Sample for pivot point and cross plotting
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data0 DATA0         Data to be read in (default:
+                        ../../datas/yhoo-1996-2015.txt)
+  --data1 DATA1         Data to be read in (default:
+                        ../../datas/orcl-1995-2014.txt)
+  --data2 DATA2         Data to be read in (default:
+                        ../../datas/nvda-1999-2014.txt)
+  --fromdate FROMDATE   Starting date in YYYY-MM-DD format (default:
+                        2005-01-01)
+  --todate TODATE       Ending date in YYYY-MM-DD format (default: 2006-12-31)
+  --printout            Print data lines (default: False)
+  --cash CASH           Cash to start with (default: 50000)
+  --plot                Plot the result (default: False)
+  --plot-style {bar,candle,line}
+                        Plot style (default: bar)
+  --no-pyfolio          Do not do pyfolio things (default: False)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Futures and Spot Compensation &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data Feeds" href="../../datafeed.html" />
+    <link rel="prev" title="Bracket Orders" href="../bracket/bracket.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Futures and Spot Compensation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#putting-it-all-together">Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="futures-and-spot-compensation">
+<h1>Futures and Spot Compensation<a class="headerlink" href="#futures-and-spot-compensation" title="Permalink to this headline">¶</a></h1>
+<p>Release <code class="docutils literal notranslate"><span class="pre">1.9.32.116</span></code> adds support for an interesting use case presented in
+the <a class="reference external" href="https://community.backtrader.com/">Community</a></p>
+<blockquote>
+<div><ul>
+<li><p class="first">Start a trade with a future, which includes <strong>physical delivery</strong></p>
+</li>
+<li><p class="first">Have an indicator tell you something</p>
+</li>
+<li><p class="first">If needed be, close the position by operating on the spot price, effectively
+canceling the physical delivery, be it for receiving the goods or for
+having to deliver them (and hopefully making a profit)</p>
+<p>The future expires on the same day the operation on the spot price takes
+place</p>
+</li>
+</ul>
+</div></blockquote>
+<p>That means:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The platform is fed with data points from two different assets</p>
+</li>
+<li><p class="first">The platform has to somehow understand the assets are related and that
+operations on the <em>spot</em> price will close positions open on the <em>future</em></p>
+<p>In reality, the future is not closed, only the physical delivery is
+<em>compensated</em></p>
+</li>
+</ul>
+</div></blockquote>
+<p>Using that <em>compensation</em> concept, <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> adds a way to let the user
+communicate to the platform that things on one data feed will have compensating
+effects on another. The usage pattern</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+<span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">MyFavouriteDataFeed</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;futurename&#39;</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+<span class="n">data1</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">MyFavouriteDataFeed</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;spotname&#39;</span><span class="p">)</span>
+<span class="n">data1</span><span class="o">.</span><span class="n">compensate</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>  <span class="c1"># let the system know ops on data1 affect data0</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+
+<span class="o">...</span>
+
+<span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="putting-it-all-together">
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p>An example is always worth a thousand posts, so let’s put all the pieces
+together for it.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Use one of the standard sample feeds from the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> sources. This
+will be the future</p>
+</li>
+<li><p class="first">Simulate a similar but distinct price, by reusing the same feed and adding a
+filter which will randomly move the price some points above/below, to
+create a spread. As simple as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The filter which changes the close price</span>
+<span class="k">def</span> <span class="nf">close_changer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">50.0</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>  <span class="c1"># length of stream is unchanged</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Plotting on the same axis will mix the default included <code class="docutils literal notranslate"><span class="pre">BuyObserver</span></code>
+markers and therefore the standard observers will be disabled and manually
+readded to plot with different per-data markers</p>
+</li>
+<li><p class="first">Positions will be entered randomly and exited 10 days later</p>
+<p>This doesn’t match future expiration periods, but this is just putting the
+functionality in place and not checking a trading calendar</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A simulation including execution on the spot price on the day of
+future expiration would require activating <code class="docutils literal notranslate"><span class="pre">cheat-on-close</span></code> to
+make sure the orders are executed when the future expires. This is
+not needed in this sample, because the expiration is being chosen
+at random.</p>
+</div>
+<ul>
+<li><p class="first">Notice that the strategy</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">buy</span></code> operations are executed on <code class="docutils literal notranslate"><span class="pre">data0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sell</span></code> operations are executed on <code class="docutils literal notranslate"><span class="pre">data1</span></code></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bt</span><span class="o">.</span><span class="n">obs</span><span class="o">.</span><span class="n">BuySell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="n">barplot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># done here for</span>
+        <span class="n">BuySellArrows</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">,</span> <span class="n">barplot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># different markers per data</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">entered</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># in the market</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">entered</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p>The execution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./future-spot.py --no-comp
+</pre></div>
+</div>
+<p>With this graphical output.</p>
+<a class=""
+               data-lightbox="group-b97dfb4b-a8fb-4314-aa0e-aa0d86f218b7"
+               href="../../_images/future-spot1.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/future-spot1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>And it works:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">buy</span></code> operations are signaled with a green triangle pointing upwards and
+the legend tells us they belong to <code class="docutils literal notranslate"><span class="pre">data0</span></code> as expected</li>
+<li><code class="docutils literal notranslate"><span class="pre">sell</span></code> operations are signaled with an arrow pointing downwards and
+the legend tells us they belong to <code class="docutils literal notranslate"><span class="pre">data1</span></code> as expected</li>
+<li>Trades are being closed, even if they are being open with <code class="docutils literal notranslate"><span class="pre">data0</span></code> and
+being closed with <code class="docutils literal notranslate"><span class="pre">data1</span></code>, achieving the desired effect (which in real
+life is avoiding the physical delivery of the goods acquired by means of
+the <em>future</em>)</li>
+</ul>
+</div></blockquote>
+<p>One could only imagine what would happen if the same logic is applied without
+the <em>compensation</em> taking place. Let’s do it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./future-spot.py --no-comp
+</pre></div>
+</div>
+<p>And the output</p>
+<a class=""
+               data-lightbox="group-18ed12c0-7061-4280-80bc-e99bf9e37fb8"
+               href="../../_images/future-spot-nocomp1.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/future-spot-nocomp1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>It should be quite obvious that this fails miserably:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The logic expects positions on <code class="docutils literal notranslate"><span class="pre">data0</span></code> to be closed by the operations on
+<code class="docutils literal notranslate"><span class="pre">data1</span></code> and to only open positions on <code class="docutils literal notranslate"><span class="pre">data0</span></code> when not in the market</li>
+<li>But <em>compensation</em> has been deactivated and the intial operation on
+<code class="docutils literal notranslate"><span class="pre">data0</span></code> (green triangle) is never closed, so no other operation can never
+be initiated and short positions on <code class="docutils literal notranslate"><span class="pre">data1</span></code> start accumulating.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sample-usage">
+<h2>Sample Usage<a class="headerlink" href="#sample-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./future-spot.py --help
+usage: future-spot.py [-h] [--no-comp]
+
+Compensation example
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --no-comp
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-code">
+<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="c1"># The filter which changes the close price</span>
+<span class="k">def</span> <span class="nf">close_changer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">50.0</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>  <span class="c1"># length of stream is unchanged</span>
+
+
+<span class="c1"># override the standard markers</span>
+<span class="k">class</span> <span class="nc">BuySellArrows</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">observers</span><span class="o">.</span><span class="n">BuySell</span><span class="p">):</span>
+    <span class="n">plotlines</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">buy</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\u21E7</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">12.0</span><span class="p">),</span>
+                     <span class="n">sell</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\u21E9</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">12.0</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bt</span><span class="o">.</span><span class="n">obs</span><span class="o">.</span><span class="n">BuySell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="n">barplot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># done here for</span>
+        <span class="n">BuySellArrows</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">,</span> <span class="n">barplot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1"># different markers per data</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">entered</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># in the market</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">entered</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;../../datas/2006-day-001.txt&#39;</span>  <span class="c1"># data feed</span>
+
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">dataname</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data0&#39;</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="n">data1</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">dataname</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data1&#39;</span><span class="p">)</span>
+    <span class="n">data1</span><span class="o">.</span><span class="n">addfilter</span><span class="p">(</span><span class="n">close_changer</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_comp</span><span class="p">:</span>
+        <span class="n">data1</span><span class="o">.</span><span class="n">compensate</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+    <span class="n">data1</span><span class="o">.</span><span class="n">plotinfo</span><span class="o">.</span><span class="n">plotmaster</span> <span class="o">=</span> <span class="n">data0</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">)</span>  <span class="c1"># sample strategy</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addobserver</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">obs</span><span class="o">.</span><span class="n">Broker</span><span class="p">)</span>  <span class="c1"># removed below with stdstats=False</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addobserver</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">obs</span><span class="o">.</span><span class="n">Trades</span><span class="p">)</span>  <span class="c1"># removed below with stdstats=False</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">set_coc</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">stdstats</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># and plot</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Compensation example&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-comp&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

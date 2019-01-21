@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Visual Chart &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Oanda" href="../oanda/oanda.html" />
+    <link rel="prev" title="Interactive Brokers" href="../ib/ib.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../live.html">Live Data Feeds and Live Trading</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ib/ib.html">Interactive Brokers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Visual Chart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-code">Sample Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vcstore-the-store">VCStore - the store</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vcdata-feeds">VCData feeds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vcbroker-trading-live">VCBroker - Trading Live</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../oanda/oanda.html">Oanda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="visual-chart">
+<h1>Visual Chart<a class="headerlink" href="#visual-chart" title="Permalink to this headline">¶</a></h1>
+<p>The integration with Visual Chart supports both:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Live Data</em> feeding</li>
+<li><em>Live Trading</em></li>
+</ul>
+</div></blockquote>
+<p><em>Visual Chart</em> is a complete trading solution:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Integrated Charting, data feed and brokering in a single platform</p>
+<p>For more information visit: www.visualchart.com</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>VisualChart 6</em></p>
+</li>
+<li><p class="first"><em>Windows</em> - the one VisualChart is running on</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">comtypes</span></code> fork: <a class="reference external" href="https://github.com/mementum/comtypes">https://github.com/mementum/comtypes</a></p>
+<p>Install it with: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span>
+<span class="pre">https://github.com/mementum/comtypes/archive/master.zip</span></code></p>
+<p>The <em>Visual Chart</em> API is based on <em>COM</em>.</p>
+<p>The current <code class="docutils literal notranslate"><span class="pre">comtypes</span></code> main branch doesn’t support unpacking of
+<code class="docutils literal notranslate"><span class="pre">VT_ARRAYS</span></code> of <code class="docutils literal notranslate"><span class="pre">VT_RECORD</span></code>. And this is used by <em>Visual Chart</em></p>
+<p><a class="reference external" href="https://github.com/enthought/comtypes/pull/104">Pull Request #104</a> has
+been submitted but not yet integrated. As soon as it is integrated, the
+main branch can be used.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pytz</span></code> (optional but really recommended)</p>
+<p>To make sure each and every data is returned in the market time.</p>
+<p>This is true for most markets but some are really an exception (<code class="docutils literal notranslate"><span class="pre">Global</span>
+<span class="pre">Indices</span></code> being a good example)</p>
+<p>Time Management inside <em>Visual Chart</em> and its relation with the delivered
+times over <em>COM</em> is complex and having <code class="docutils literal notranslate"><span class="pre">pytz</span></code> tends to simplify things.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sample-code">
+<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<p>The sources contain a full sample under:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">samples/vctest/vctest.py</span></code></li>
+</ul>
+</div></blockquote>
+<p>The sample cannot cover every possible use case but it tries to provide broad
+insight and should highlight that there is no real difference when it comes to
+use the backtesting module or the live data module</p>
+<p>One thing could be pin-pointed:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The sample waits for a <code class="docutils literal notranslate"><span class="pre">data.LIVE</span></code> data status notification before any
+trading activity takes place.</p>
+<p>This would probably is something to consider in any live strategy</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="vcstore-the-store">
+<h2>VCStore - the store<a class="headerlink" href="#vcstore-the-store" title="Permalink to this headline">¶</a></h2>
+<p>The store is the keystone of the live data feed/trade support, providing a
+layer of adaptation between the <em>COM</em> API and the needs of a data feed
+and a broker proxy.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Providesaccess to getting a <em>broker</em> instance with the method:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">VCStore.getbroker(*args,</span> <span class="pre">**kwargs)</span></code></li>
+</ul>
+</li>
+<li><p class="first">Provides access to getter <em>data</em> feed instances</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">VCStore.getedata(*args,</span> <span class="pre">**kwargs)</span></code></p>
+<p>In this case many of the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> are common to data feeds like
+<code class="docutils literal notranslate"><span class="pre">dataname</span></code>, <code class="docutils literal notranslate"><span class="pre">fromdate</span></code>, <code class="docutils literal notranslate"><span class="pre">todate</span></code>, <code class="docutils literal notranslate"><span class="pre">sessionstart</span></code>, <code class="docutils literal notranslate"><span class="pre">sessionend</span></code>,
+<code class="docutils literal notranslate"><span class="pre">timeframe</span></code>, <code class="docutils literal notranslate"><span class="pre">compression</span></code></p>
+<p>The data may provide other params. Check the reference below.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">VCStore</span></code> will try to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Automatically locate <em>VisualChart</em> in the system using the <em>Windows
+Registry</em><ul>
+<li>If found, the installation directory will be scanned for the <em>COM</em> DLLs
+to create the <em>COM</em> <em>typelibs</em> and be able to instantiate the appropriate
+objects</li>
+<li>If not found, then an attempt will be made with known and hardcoded
+<em>CLSIDs</em> to do the same.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Even if the DLLs can be found by scanning the filesystem, <em>Visual Chart</em>
+itself has to be running. backtrader won’t start <em>Visual Chart</em></p>
+</div>
+<p>Other responsibilities of the <code class="docutils literal notranslate"><span class="pre">VCStore</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Keeping general track of the connectivity status of <em>Visual Chart</em> to the
+server</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="vcdata-feeds">
+<h2>VCData feeds<a class="headerlink" href="#vcdata-feeds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<p>The data feed offered by <em>Visual Chart</em> has some interesting properties:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>Resampling</strong> is done by the platform</p>
+<p>Not in all cases: <em>Seconds</em> is not supported and has still to be done by
+<em>backtrader</em></p>
+<p>As such and only when doing something with seconds would the end user need
+to do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vcstore</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">stores</span><span class="o">.</span><span class="n">VCStore</span><span class="p">()</span>
+<span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;015ES&#39;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Ticks</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">resampledata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Seconds</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In all other cases it is enough with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vcstore</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">stores</span><span class="o">.</span><span class="n">VCStore</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;015ES&#39;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Minutes</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">addata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p>The data will calculate a <code class="docutils literal notranslate"><span class="pre">timeoffset</span></code> internally by comparing the internal
+equipment clock and the <code class="docutils literal notranslate"><span class="pre">ticks</span></code> delivered by the platform in order to
+deliver the <em>automatically</em> resampled bars as early as possible if no new ticks
+are coming in.</p>
+<p>Instantiating the data:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Pass the symbol seen on the top-left side of <em>VisualChart</em> without
+spaces. For example:</p>
+<ul>
+<li><p class="first"><em>ES-Mini</em> is displayed as <code class="docutils literal notranslate"><span class="pre">001</span> <span class="pre">ES</span></code>. Instantiate it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;001ES&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>EuroStoxx 50</em> is displayed as <code class="docutils literal notranslate"><span class="pre">015</span> <span class="pre">ES</span></code>. Instantiate it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;015ES&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>backtrader</em> will make an effort and clear out a whitespace located at
+the fourth position if the name is directly pasted from <em>Visual Chart</em></p>
+</div>
+</div>
+<div class="section" id="time-management">
+<h3>Time management<a class="headerlink" href="#time-management" title="Permalink to this headline">¶</a></h3>
+<p>The time management follow the general rules of <em>backtrader</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>Give the time in <em>Market</em> time, to make sure the code is not dependent on
+DST transitions happening at different times and making local time not
+reliable for time comparisons.</li>
+</ul>
+</div></blockquote>
+<p>This works for most markets in <em>Visual Chart</em> but some specific management is
+done for some markets:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Datas in the exchange <code class="docutils literal notranslate"><span class="pre">096</span></code> which is named <code class="docutils literal notranslate"><span class="pre">International</span> <span class="pre">Indices</span></code>.</p>
+<p>These are theoretically reported to be in the timezone <code class="docutils literal notranslate"><span class="pre">Europe/London</span></code>
+but tests have revealed this seems to be partially true and some internal
+management is in place to cover for it.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The use of real <em>timezones</em> for time management can be enabled by passing the
+parameter <code class="docutils literal notranslate"><span class="pre">usetimezones=True</span></code>. This tries to use <code class="docutils literal notranslate"><span class="pre">pytz</span></code> if available. It is
+not needed, as for most markets the internal time offsets provided by <em>Visual
+Chart</em> allow for the seamless conversion to the market time.</p>
+<p>In any case it would seem to be pointless to report the <code class="docutils literal notranslate"><span class="pre">096.DJI</span></code> in
+<code class="docutils literal notranslate"><span class="pre">Europe/London</span></code> time when it is actually located in <code class="docutils literal notranslate"><span class="pre">US/Eastern</span></code>. As
+such <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will report it in the later. In that case the use of
+<code class="docutils literal notranslate"><span class="pre">pytz</span></code> is more than recommended.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>Dow Jones Industrials</em> index (not the global version) is
+located at <code class="docutils literal notranslate"><span class="pre">099I-DJI</span></code></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All this time management is pending a real test during a DST
+transition in which local and remote markets happend to be out of
+sync with regards to DST.</p>
+</div>
+<p>List of <code class="docutils literal notranslate"><span class="pre">International</span> <span class="pre">Indices</span></code> for which the output <em>timezone</em> is defined in
+<code class="docutils literal notranslate"><span class="pre">VCDATA</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;096.FTSE&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe/London&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.FTEU3&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe/London&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.MIB30&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.SSMI&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.HSI&#39;</span><span class="p">:</span> <span class="s1">&#39;Asia/Hong_Kong&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.BVSP&#39;</span><span class="p">:</span> <span class="s1">&#39;America/Sao_Paulo&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.MERVAL&#39;</span><span class="p">:</span> <span class="s1">&#39;America/Argentina/Buenos_Aires&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.DJI&#39;</span><span class="p">:</span> <span class="s1">&#39;US/Eastern&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.IXIC&#39;</span><span class="p">:</span> <span class="s1">&#39;US/Eastern&#39;</span><span class="p">,</span>
+<span class="s1">&#39;096.NDX&#39;</span><span class="p">:</span> <span class="s1">&#39;US/Eastern&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+<div class="section" id="small-time-problem">
+<h4>Small time problem<a class="headerlink" href="#small-time-problem" title="Permalink to this headline">¶</a></h4>
+<p>Passing <code class="docutils literal notranslate"><span class="pre">fromdate</span></code> or <code class="docutils literal notranslate"><span class="pre">todate</span></code> with a given <strong>time of day</strong> rather than the
+default <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code> seems to create a filter in the <em>COM</em> API and bars for any
+days will only be delivered after the given time.</p>
+<p>As such:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Please pass only <strong>full dates</strong> to <code class="docutils literal notranslate"><span class="pre">VCData</span></code> as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;001ES&#39;</span><span class="p">,</span> <span class="n">fromdate</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>And not::</dt>
+<dd><p class="first last">data = vcstore.getdata(dataname=‘001ES’, fromdate=datetime(2016, 5, 15, 8, 30))</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="backfilling-time-lengths">
+<h4>Backfilling time lengths<a class="headerlink" href="#backfilling-time-lengths" title="Permalink to this headline">¶</a></h4>
+<p>If no <code class="docutils literal notranslate"><span class="pre">fromdate</span></code> is specified by the end user, the platform will
+automatically try to backfill and the carry on with live data. The backfilling
+is timeframe dependent and is:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Ticks</span></code>, <code class="docutils literal notranslate"><span class="pre">MicroSeconds</span></code>, <code class="docutils literal notranslate"><span class="pre">Seconds</span></code>: <strong>1 Day</strong></p>
+<p>The same for the 3 timeframes given that <em>Seconds</em> and <em>MicroSeconds</em> are
+not directly supported by <em>Visual Chart</em> and are done through resampling of
+<em>Ticks</em></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Minutes</span></code>: <strong>2 Days</strong></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Days</span></code>: <strong>1 year</strong></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Weeks</span></code>: <strong>2 years</strong></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Months</span></code>: <strong>5 years</strong></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Months</span></code>: <strong>20 years</strong></p>
+</li>
+</ul>
+</div></blockquote>
+<p>The defined backfilling periods are multiplied by the requested
+<code class="docutils literal notranslate"><span class="pre">compression</span></code>, that is: if the <em>timeframe</em> is <code class="docutils literal notranslate"><span class="pre">Minutes</span></code> and the
+<em>compression*</em> is 5 the final <em>backfilling period</em> will be: <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">days</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">-&gt;</span> <span class="pre">10</span>
+<span class="pre">days</span></code></p>
+</div>
+</div>
+<div class="section" id="trading-the-data">
+<h3>Trading the data<a class="headerlink" href="#trading-the-data" title="Permalink to this headline">¶</a></h3>
+<p><em>Visual Chart</em> offers <strong>continuous futures</strong>. No manual management is needed
+and the future of your choice can be tracked without interruption. This is an
+advantage and presents a small challenge:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ES-Mini</span></code> is <code class="docutils literal notranslate"><span class="pre">001ES</span></code>, but the actual trading asset (ex: Sep-2016) is
+<code class="docutils literal notranslate"><span class="pre">ESU16</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>To overcome this and allow a strategy to track the <em>continuous future</em> and
+trade on the <em>real asset</em> the following can be specified during data
+instantiation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;001ES&#39;</span><span class="p">,</span> <span class="n">tradename</span><span class="o">=</span><span class="s1">&#39;ESU16&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Trades will happen on <code class="docutils literal notranslate"><span class="pre">ESU16</span></code>, but the data feed will be frm <code class="docutils literal notranslate"><span class="pre">001ES</span></code> (the
+data is the same 3 months long)</p>
+</div>
+<div class="section" id="other-parameters">
+<h3>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">qcheck</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code> seconds) controls the frequency to wake up to talk
+to the internal resampler/replayer to avoid late delivery of bars.</p>
+<p>The following logic will be applied to used this parameter:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If internal <em>resampling/replaying</em> is detected, the value will be used
+as it is.</li>
+<li>If no internal <em>resampling/replaying</em> is detected, the data feed will
+not wake up, because there is nothing to report to.</li>
+</ul>
+</div></blockquote>
+<p>The data feed will still wake up to check the <em>Visual Chart</em> built-in
+resampler, but this is automatically controlled.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="data-notifications">
+<h3>Data Notifications<a class="headerlink" href="#data-notifications" title="Permalink to this headline">¶</a></h3>
+<p>The data feed will report the current status via one or more of the following
+(check the <em>Cerebro</em> and <em>Strategy</em> reference)</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Cerebro.notify_data</span></code> (if overriden)n</li>
+<li>A callback addded with <code class="docutils literal notranslate"><span class="pre">Cerebro.adddatacb</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Strategy.notify_data</span></code> (if overriden)</li>
+</ul>
+</div></blockquote>
+<p>An example inside the <em>strategy</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">VCStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">notify_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">data</span><span class="o">.</span><span class="n">LIVE</span><span class="p">:</span>  <span class="c1"># the data has switched to live data</span>
+           <span class="c1"># do something</span>
+           <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The following notifications will be sent following changes in the system:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">CONNECTED</span></code></p>
+<p>Sent on successful initial connection</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">DISCONNECTED</span></code></p>
+<p>In this case retrieving the data is no longer possible and the data will
+indicate the system nothing can be done. Possible conditions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Wrong contract specified</li>
+<li>Interruption during historical download</li>
+<li>Number of reconnection attempts to TWS exceeded</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">CONNBROKEN</span></code></p>
+<p>Connectivity has been lost to either TWS or to the data farms. The data
+feed will try (via the store) to reconnect and backfill, when needed, and
+resume operations</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NOTSUBSCRIBED</span></code></p>
+<p>Contract and connection are ok, but the data cannot be retrieved due to
+lack of permissions.</p>
+<p>The data will indicate to the system that it cannot retrieve the data</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">DELAYED</span></code></p>
+<p>Signaled to indicate that a <em>historical</em>/<em>backfilling</em> operation are in
+progress and the data being processed by the strategy is not real-time data</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LIVE</span></code></p>
+<p>Signaled to indicate that the data to be processed from this point onwards
+by the <em>strategy</em> is real-time data</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Developers of <em>strategies</em> should consider which actions to undertake in cases
+like when a disconnection takes place or when receiving <strong>delayed</strong> data.</p>
+</div>
+</div>
+<div class="section" id="vcbroker-trading-live">
+<h2>VCBroker - Trading Live<a class="headerlink" href="#vcbroker-trading-live" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-broker">
+<h3>Using the broker<a class="headerlink" href="#using-the-broker" title="Permalink to this headline">¶</a></h3>
+<p>To use the <em>VCBroker</em>, the standard broker simulation instance created by
+<em>cerebro</em> has to be replaced.</p>
+<p>Using the <em>Store</em> model (preferred):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+<span class="n">vcstore</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">stores</span><span class="o">.</span><span class="n">VCStore</span><span class="p">()</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">vcstore</span><span class="o">.</span><span class="n">getbroker</span><span class="p">()</span>  <span class="c1"># or cerebro.setbroker(...)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="broker-parameters">
+<h3>Broker Parameters<a class="headerlink" href="#broker-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Be it directly or over <code class="docutils literal notranslate"><span class="pre">getbroker</span></code> the <code class="docutils literal notranslate"><span class="pre">VCBroker</span></code> broker supports no
+parameters. This is because the broker is just a proxy to the a real
+<em>Broker</em>. And what the real broker gives, shall not be taken away.</p>
+</div>
+<div class="section" id="restrictions">
+<h3>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="position">
+<h4>Position<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h4>
+<p><em>Visual Chart</em> reports <strong>open positions</strong>. This could be used most of the time
+to control the actual position, but a final event indicating a <em>Position</em> has
+been closed is missing.</p>
+<p>That makes it compulsory for <em>backtrader</em> to keep full accounting of the
+<em>Position</em> and separate from any previous existing position in your account</p>
+</div>
+<div class="section" id="commission">
+<h4>Commission<a class="headerlink" href="#commission" title="Permalink to this headline">¶</a></h4>
+<p>The <em>COM</em> trading interface doesn’t report commissions. There is no chance for
+<em>backtrader</em> to make and educated guess, unless:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <em>broker</em> is instantiated with a <em>Commission</em> instance indicating which
+commissions do actually take place.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="trading-with-it">
+<h3>Trading with it<a class="headerlink" href="#trading-with-it" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="account">
+<h4>Account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h4>
+<p><em>Visual Chart</em> supports several accounts at the same time in one broker. The
+chosen account can be controlled with the parameter:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">account</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>VisualChart supports several accounts simultaneously on the broker. If
+the default <code class="docutils literal notranslate"><span class="pre">None</span></code> is in place the 1st account in the ComTrader
+<code class="docutils literal notranslate"><span class="pre">Accounts</span></code> collection will be used.</p>
+<p>If an account name is provided, the <code class="docutils literal notranslate"><span class="pre">Accounts</span></code> collection will be
+checked and used if present</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="opperations">
+<h4>Opperations<a class="headerlink" href="#opperations" title="Permalink to this headline">¶</a></h4>
+<p>There is no change with regards to the standar usage. Just use the methods
+available in the strategy (see the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> reference for a full
+explanation)</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">buy</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sell</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">close</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">cancel</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="order-objects-returned">
+<h3>Order objects returned<a class="headerlink" href="#order-objects-returned" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Standard <em>backtrader</em> <code class="docutils literal notranslate"><span class="pre">Order</span></code> objects</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="order-execution-types">
+<h3>Order Execution Types<a class="headerlink" href="#order-execution-types" title="Permalink to this headline">¶</a></h3>
+<p><em>Visual Chart</em> supports the minimum order execution types needed by
+<em>backtrader</em> and as such, anyhing which is backtested can go live.</p>
+<p>As such the order execution types are limited to the ones available in the
+<em>broker simulation</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Order.Market</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Close</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Limit</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Stop</span></code> (when the <em>Stop</em> is triggered a <em>Market</em> order follows)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopLimit</span></code> (when the <em>Stop</em> is triggered a <em>Limit</em> order follows)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="order-validity">
+<h3>Order Validity<a class="headerlink" href="#order-validity" title="Permalink to this headline">¶</a></h3>
+<p>The same validity notion available during backtesting (with <code class="docutils literal notranslate"><span class="pre">valid</span></code> to
+<code class="docutils literal notranslate"><span class="pre">buy</span></code> and <code class="docutils literal notranslate"><span class="pre">sell</span></code>) is available and with the same meaning. As such, the
+<code class="docutils literal notranslate"><span class="pre">valid</span></code> parameter is translated as follows for <em>Visual Chart Orders</em> for the
+following values:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">None</span></code> translates to <em>Good Til Cancelled</em></p>
+<p>Because no validity has been specified it is understood that the order must
+be valid until cancelled</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">datetime/date</span></code> translates to <em>Good Til Date</em></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Beware: <em>Visual Chart</em> does only support “full dates” and the
+<em>time</em> part is discarded.</p>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">timedelta(x)</span></code> translates to <em>Good Til Date</em> (here <code class="docutils literal notranslate"><span class="pre">timedelta(x)</span> <span class="pre">!=</span>
+<span class="pre">timedelta()</span></code>)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Beware: <em>Visual Chart</em> does only support <strong>full dates</strong> and the
+<em>time</em> part is discarded.</p>
+</div>
+<p>This is interpreted as a signal to have an order be valid from <code class="docutils literal notranslate"><span class="pre">now</span></code> +
+<code class="docutils literal notranslate"><span class="pre">timedelta(x)</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">timedelta()</span> <span class="pre">or</span> <span class="pre">0</span></code> translates to <em>Session</em></p>
+<p>A value has been passed (instead of <code class="docutils literal notranslate"><span class="pre">None</span></code>) but is <em>Null</em> and is
+interpreted as an order valid for the current <em>day</em> (session)</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="notifications">
+<h3>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
+<p>The standard <code class="docutils literal notranslate"><span class="pre">Order</span></code> status will be notified to a <em>strategy</em> over the method
+<code class="docutils literal notranslate"><span class="pre">notify_order</span></code> (if overridden)</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Submitted</span></code> - the order has been sent to TWS</li>
+<li><code class="docutils literal notranslate"><span class="pre">Accepted</span></code> - the order has been placed</li>
+<li><code class="docutils literal notranslate"><span class="pre">Rejected</span></code> - order placement failed or was cancelled by the system during
+its lifetime</li>
+<li><code class="docutils literal notranslate"><span class="pre">Partial</span></code> - a partial execution has taken place</li>
+<li><code class="docutils literal notranslate"><span class="pre">Completed</span></code> - the order has been fully executed</li>
+<li><code class="docutils literal notranslate"><span class="pre">Canceled</span></code> (or <code class="docutils literal notranslate"><span class="pre">Cancelled</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Expired</span></code> - Not reported as of yet. An heuristic would be needed to
+distinguish this status from <code class="docutils literal notranslate"><span class="pre">Cancelled</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vcstore">
+<h3>VCStore<a class="headerlink" href="#vcstore" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="backtrader.stores.VCStore">
+<em class="property">class </em><code class="descclassname">backtrader.stores.</code><code class="descname">VCStore</code><a class="headerlink" href="#backtrader.stores.VCStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton class wrapping an ibpy ibConnection instance.</p>
+<p>The parameters can also be specified in the classes which use this store,
+like <code class="docutils literal notranslate"><span class="pre">VCData</span></code> and <code class="docutils literal notranslate"><span class="pre">VCBroker</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="vcbroker">
+<h3>VCBroker<a class="headerlink" href="#vcbroker" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="backtrader.brokers.VCBroker">
+<em class="property">class </em><code class="descclassname">backtrader.brokers.</code><code class="descname">VCBroker</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.brokers.VCBroker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Broker implementation for VisualChart.</p>
+<p>This class maps the orders/positions from VisualChart to the
+internal API of <code class="docutils literal notranslate"><span class="pre">backtrader</span></code>.</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">account</span></code> (default: None)</p>
+<p>VisualChart supports several accounts simultaneously on the broker. If
+the default <code class="docutils literal notranslate"><span class="pre">None</span></code> is in place the 1st account in the ComTrader
+<code class="docutils literal notranslate"><span class="pre">Accounts</span></code> collection will be used.</p>
+<p>If an account name is provided, the <code class="docutils literal notranslate"><span class="pre">Accounts</span></code> collection will be
+checked and used if present</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">commission</span></code> (default: None)</p>
+<p>An object will be autogenerated if no commission-scheme is passed as
+parameter</p>
+<p>See the notes below for further explanations</p>
+</li>
+</ul>
+</div></blockquote>
+<p class="rubric">Notes</p>
+<ul>
+<li><p class="first">Position</p>
+<p>VisualChart reports “OpenPositions” updates through the ComTrader
+interface but only when the position has a “size”. An update to
+indicate a position has moved to ZERO is reported by the absence of
+such position. This forces to keep accounting of the positions by
+looking at the execution events, just like the simulation broker does</p>
+</li>
+<li><p class="first">Commission</p>
+<p>The ComTrader interface of VisualChart does not report commissions and
+as such the auto-generated CommissionInfo object cannot use
+non-existent commissions to properly account for them. In order to
+support commissions a <code class="docutils literal notranslate"><span class="pre">commission</span></code> parameter has to be passed with
+the appropriate commission schemes.</p>
+<p>The documentation on Commission Schemes details how to do this</p>
+</li>
+<li><p class="first">Expiration Timing</p>
+<p>The ComTrader interface (or is it the comtypes module?) discards
+<code class="docutils literal notranslate"><span class="pre">time</span></code> information from <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects and expiration dates are
+always full dates.</p>
+</li>
+<li><p class="first">Expiration Reporting</p>
+<p>At the moment no heuristic is in place to determine when a cancelled
+order has been cancelled due to expiration. And therefore expired
+orders are reported as cancelled.</p>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="vcdata">
+<h3>VCData<a class="headerlink" href="#vcdata" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="backtrader.feeds.VCData">
+<em class="property">class </em><code class="descclassname">backtrader.feeds.</code><code class="descname">VCData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.feeds.VCData" title="Permalink to this definition">¶</a></dt>
+<dd><p>VisualChart Data Feed.</p>
+<p>Params:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">qcheck</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code>)
+Default timeout for waking up to let a resampler/replayer that the
+current bar can be check for due delivery</p>
+<p>The value is only used if a resampling/replaying filter has been
+inserted in the data</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">historical</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+If no <code class="docutils literal notranslate"><span class="pre">todate</span></code> parameter is supplied (defined in the base class),
+this will force a historical only download if set to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>If <code class="docutils literal notranslate"><span class="pre">todate</span></code> is supplied the same effect is achieved</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">milliseconds</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+The bars constructed by <em>Visual Chart</em> have this aspect:
+HH:MM:59.999000</p>
+<p>If this parameter is <code class="docutils literal notranslate"><span class="pre">True</span></code> a millisecond will be added to this time
+to make it look like: HH::MM + 1:00.000000</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradename</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+Continous futures cannot be traded but are ideal for data tracking. If
+this parameter is supplied it will be the name of the current future
+which will be the trading asset. Example:</p>
+<ul class="simple">
+<li>001ES -&gt; ES-Mini continuous supplied as <code class="docutils literal notranslate"><span class="pre">dataname</span></code></li>
+<li>ESU16 -&gt; ES-Mini 2016-09. If this is supplied in <code class="docutils literal notranslate"><span class="pre">tradename</span></code> it
+will be the trading asset.</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">usetimezones</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+For most markets the time offset information provided by <em>Visual Chart</em>
+allows for datetime to be converted to market time (<em>backtrader</em> choice
+for representation)</p>
+<p>Some markets are special (<code class="docutils literal notranslate"><span class="pre">096</span></code>) and need special internal coverage
+and timezone support to display in the user expected market time.</p>
+<p>If this parameter is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> importing <code class="docutils literal notranslate"><span class="pre">pytz</span></code> will be
+attempted to use timezones (default)</p>
+<p>Disabling it will remove timezone usage (may help if the load is
+excesive)</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

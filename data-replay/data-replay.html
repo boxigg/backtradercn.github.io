@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Data - Replay &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Rolling over Futures" href="../data-rollover/rolling-futures-over.html" />
+    <link rel="prev" title="Data - Multiple Timeframes" href="../data-multitimeframe/data-multitimeframe.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data - Replay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-replay-daily-to-weekly">Example - Replay Daily to Weekly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-2-daily-to-daily-with-compression">Example 2 - Daily to Daily with Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="data-replay">
+<h1>Data - Replay<a class="headerlink" href="#data-replay" title="Permalink to this headline">¶</a></h1>
+<p>The time is gone and testing a strategy against a fully formed and closed bar is
+good, but it could be better.</p>
+<p>This is where <em>Data Replay</em> comes in to help. If:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The strategy operates on data with a timeframe X (example: daily)</li>
+</ul>
+</div></blockquote>
+<p>and</p>
+<blockquote>
+<div><ul class="simple">
+<li>Data for a smaller timeframe Y (example: 1 minute) is available</li>
+</ul>
+</div></blockquote>
+<p>Data replay does exactly what the name implies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Replay</span> <span class="n">a</span> <span class="n">daily</span> <span class="n">bar</span> <span class="n">using</span> <span class="n">the</span> <span class="mi">1</span> <span class="n">minute</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>This is of course not exactly how the market developed, but it is far better
+than looking at the daily fully formed and closed bar in isolation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">strategy</span> <span class="n">operates</span> <span class="ow">in</span> <span class="n">realtime</span> <span class="n">during</span> <span class="n">the</span> <span class="n">formation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">daily</span> <span class="n">bar</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">approximation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">formation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bar</span> <span class="n">gives</span> <span class="n">a</span> <span class="n">chance</span> <span class="n">to</span> <span class="n">replicate</span> <span class="n">the</span>
+<span class="n">actual</span> <span class="n">behavior</span> <span class="n">of</span> <span class="n">the</span> <span class="n">strategy</span> <span class="n">under</span> <span class="n">real</span> <span class="n">conditions</span>
+</pre></div>
+</div>
+<p>Putting <em>Data Replay</em> into action follows the regular usage patterns of
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Load a data feed</li>
+<li>Pass the data to cerebro with <code class="docutils literal notranslate"><span class="pre">replaydata</span></code></li>
+<li>Add a strategy</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Preloading is not supported when data is being replayed because each bar
+is actually built in real-time. It will automatically disabled in any
+<code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> instance.</p>
+</div>
+<p>Parameters which can be passed to <code class="docutils literal notranslate"><span class="pre">replaydata</span></code>:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">timeframe</span></code> (default: bt.TimeFrame.Days)</p>
+<p>Destination timeframe  which to be useful has to
+be equal or larger than the source</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">compression</span></code> (default: 1)</p>
+<p>Compress the selected value “n” to 1 bar</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Extended parameters (do not touch if not really needed):</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">bar2edge</span></code> (default: True)</p>
+<p>replays using time boundaries as the target of the closed bar. For
+example with a “ticks -&gt; 5 seconds” the resulting 5 seconds bars will
+be aligned to xx:00, xx:05, xx:10 …</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">adjbartime</span></code> (default: False)</p>
+<p>Use the time at the boundary to adjust the time of the delivered
+resampled bar instead of the last seen timestamp. If resampling to “5
+seconds” the time of the bar will be adjusted for example to hh:mm:05
+even if the last seen timestamp was hh:mm:04.33</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Time will only be adjusted if “bar2edge” is True. It wouldn’t make
+sense to adjust the time if the bar has not been aligned to a
+boundary</p>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">rightedge</span></code> (default: True)</p>
+<p>Use the right edge of the time boundaries to set the time.</p>
+<p>If False and compressing to 5 seconds the time of a resampled bar for
+seconds between hh:mm:00 and hh:mm:04 will be hh:mm:00 (the starting
+boundary</p>
+<p>If True the used boundary for the time will be hh:mm:05 (the ending
+boundary)</p>
+</li>
+</ul>
+</div></blockquote>
+<p>For the sake of working with a example the standard 2006 daily data will be
+replayed on a weekly basis. Which means:</p>
+<blockquote>
+<div><ul class="simple">
+<li>There will finally be 52 bars, one for each week</li>
+<li>Cerebro will call <code class="docutils literal notranslate"><span class="pre">prenext</span></code> and <code class="docutils literal notranslate"><span class="pre">next</span></code> a total of 255 times, which is
+the original count of daily bars</li>
+</ul>
+</div></blockquote>
+<p>The trick:</p>
+<blockquote>
+<div><ul class="simple">
+<li>When a weekly bar is forming, the length (<code class="docutils literal notranslate"><span class="pre">len(self)</span></code>) of the strategy
+will remain unchanged.</li>
+<li>With each new week the length will increase by one</li>
+</ul>
+</div></blockquote>
+<p>Some examples below, but first the sauce of the test script in which the data is
+loaded and passed to cerebro with <code class="docutils literal notranslate"><span class="pre">replaydata</span></code> … and then <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Load the Data</span>
+    <span class="n">datapath</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">dataname</span> <span class="ow">or</span> <span class="s1">&#39;../../datas/2006-day-001.txt&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">)</span>
+
+    <span class="c1"># Handy dictionary for the argument timeframe conversion</span>
+    <span class="n">tframes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">daily</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">,</span>
+        <span class="n">weekly</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Weeks</span><span class="p">,</span>
+        <span class="n">monthly</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Months</span><span class="p">)</span>
+
+    <span class="c1"># First add the original data - smaller timeframe</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">replaydata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                       <span class="n">timeframe</span><span class="o">=</span><span class="n">tframes</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">timeframe</span><span class="p">],</span>
+                       <span class="n">compression</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">compression</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="section" id="example-replay-daily-to-weekly">
+<h2>Example - Replay Daily to Weekly<a class="headerlink" href="#example-replay-daily-to-weekly" title="Permalink to this headline">¶</a></h2>
+<p>The invocation of the script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./replay-example.py --timeframe weekly --compression 1
+</pre></div>
+</div>
+<p>The chart cannot unfortunately show us the real thing happening in the
+background, so let’s have a look at the console output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prenext</span> <span class="nb">len</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">1</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">2</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">3</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">4</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">5</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">6</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">44</span>
+<span class="n">prenext</span> <span class="nb">len</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">45</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">46</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">47</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">48</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">49</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">50</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">11</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">51</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">11</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">52</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">11</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">53</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">51</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">248</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">51</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">249</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">51</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">250</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">51</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">251</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">51</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">252</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">52</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">253</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">52</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">254</span>
+<span class="o">---</span><span class="nb">next</span> <span class="nb">len</span> <span class="mi">52</span> <span class="o">-</span> <span class="n">counter</span> <span class="mi">255</span>
+</pre></div>
+</div>
+<p>As we see the internal <code class="docutils literal notranslate"><span class="pre">self.counter</span></code> variable is keeping track of each call
+to either <code class="docutils literal notranslate"><span class="pre">prenext</span></code> or <code class="docutils literal notranslate"><span class="pre">next</span></code>. The former being called before the applied
+Simple Moving Average produces a value. The latter called when the Simple Moving
+Average is producing values.</p>
+<p>The key:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The length (len(self)) of the strategy changes every 5 bars (5 trading days
+in the week)</li>
+</ul>
+</div></blockquote>
+<p>The strategy is effectively seeing:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">How the weekly bar developed in 5 shots.</p>
+<p>This, again, doesn’t replicate the actual tick-by-tick (and not even minute,
+hour) development of the market, but it is better than actually seeing a
+bar.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The visual output is that of the weekly chart which is the final outcome the
+system is being tested again.</p>
+<a class=""
+               data-lightbox="group-be6d396d-e1e0-4d34-903e-c6e72a53285d"
+               href="../_images/replay-daily-weekly1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/replay-daily-weekly1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="example-2-daily-to-daily-with-compression">
+<h2>Example 2 - Daily to Daily with Compression<a class="headerlink" href="#example-2-daily-to-daily-with-compression" title="Permalink to this headline">¶</a></h2>
+<p>Of course “Replaying” can be applied to the same timeframe but with a
+compression.</p>
+<p>The console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./replay-example.py --timeframe daily --compression 2
+prenext len 1 - counter 1
+prenext len 1 - counter 2
+prenext len 2 - counter 3
+prenext len 2 - counter 4
+prenext len 3 - counter 5
+prenext len 3 - counter 6
+prenext len 4 - counter 7
+...
+...
+---next len 125 - counter 250
+---next len 126 - counter 251
+---next len 126 - counter 252
+---next len 127 - counter 253
+---next len 127 - counter 254
+---next len 128 - counter 255
+</pre></div>
+</div>
+<p>This time we got half the bars as expected because of the factor 2 requested compression.</p>
+<p>The chart:</p>
+<a class=""
+               data-lightbox="group-b71c1658-8e56-49df-83b8-7bfe7ba32d86"
+               href="../_images/replay-daily-daily-compression-21.png"
+               title=""
+               data-title=""
+               ><img src="../_images/replay-daily-daily-compression-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>A reconstruction of the market development is possible. Usually a smaller
+timeframe set of data is available and can be used to discretely replay the
+timeframe which the system operates on.</p>
+<p>The test script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.feeds</span> <span class="kn">as</span> <span class="nn">btfeeds</span>
+<span class="kn">import</span> <span class="nn">backtrader.indicators</span> <span class="kn">as</span> <span class="nn">btind</span>
+
+
+<span class="k">class</span> <span class="nc">SMAStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;onlydaily&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;prenext len </span><span class="si">%d</span><span class="s1"> - counter </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;---next len </span><span class="si">%d</span><span class="s1"> - counter </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c1"># Create a cerebro entity</span>
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">(</span><span class="n">stdstats</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span>
+        <span class="n">SMAStrategy</span><span class="p">,</span>
+        <span class="c1"># args for the strategy</span>
+        <span class="n">period</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">period</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Load the Data</span>
+    <span class="n">datapath</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">dataname</span> <span class="ow">or</span> <span class="s1">&#39;../../datas/2006-day-001.txt&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">)</span>
+
+    <span class="c1"># Handy dictionary for the argument timeframe conversion</span>
+    <span class="n">tframes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">daily</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">,</span>
+        <span class="n">weekly</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Weeks</span><span class="p">,</span>
+        <span class="n">monthly</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Months</span><span class="p">)</span>
+
+    <span class="c1"># First add the original data - smaller timeframe</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">replaydata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                       <span class="n">timeframe</span><span class="o">=</span><span class="n">tframes</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">timeframe</span><span class="p">],</span>
+                       <span class="n">compression</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">compression</span><span class="p">)</span>
+
+    <span class="c1"># Run over everything</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="c1"># Plot the result</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Pandas test script&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--dataname&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;File Data to Load&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--timeframe&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;weekly&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;daily&#39;</span><span class="p">,</span> <span class="s1">&#39;weekly&#39;</span><span class="p">,</span> <span class="s1">&#39;monhtly&#39;</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Timeframe to resample to&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--compression&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Compress n bars into 1&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--period&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Period to apply to indicator&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

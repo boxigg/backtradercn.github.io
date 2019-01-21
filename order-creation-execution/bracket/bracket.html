@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bracket Orders &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Futures and Spot Compensation" href="../futurespot/future-vs-spot.html" />
+    <link rel="prev" title="StopTrail(Limit)" href="../trail/stoptrail.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bracket Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage-pattern">Usage Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-issuing-of-a-bracket">Single Issuing of a Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-issuing-of-a-bracket">Manual Issuing of a Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-sample-of-it">A sample of it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#some-reference">Some reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage">Sample usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="bracket-orders">
+<h1>Bracket Orders<a class="headerlink" href="#bracket-orders" title="Permalink to this headline">¶</a></h1>
+<p>Release <code class="docutils literal notranslate"><span class="pre">1.9.37.116</span></code> adds <code class="docutils literal notranslate"><span class="pre">bracket</span></code> orders giving a very broad spectrum of
+orders which are supported by the backtesting broker (<code class="docutils literal notranslate"><span class="pre">Market</span></code>, <code class="docutils literal notranslate"><span class="pre">Limit</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Close</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code>, <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code>, <code class="docutils literal notranslate"><span class="pre">StopTrail</span></code>, <code class="docutils literal notranslate"><span class="pre">StopTrailLimit</span></code>, <code class="docutils literal notranslate"><span class="pre">OCO</span></code>)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is implemented for <em>backtesting</em> and for the <em>Interactivers
+Brokers</em> store</p>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">bracket</span></code> order isn’s a single order but it is actually made up of <em>3</em>
+orders. Let’s consider the long side</p>
+<blockquote>
+<div><ul class="simple">
+<li>A main side <code class="docutils literal notranslate"><span class="pre">buy</span></code> order, usually set to be a <code class="docutils literal notranslate"><span class="pre">Limit</span></code> or <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code>
+order</li>
+<li>A low side <code class="docutils literal notranslate"><span class="pre">sell</span></code> order, usually set to be a <code class="docutils literal notranslate"><span class="pre">Stop</span></code> order to limit
+losses</li>
+<li>A high side <code class="docutils literal notranslate"><span class="pre">sell</span></code> order, usually set to be a <code class="docutils literal notranslate"><span class="pre">Limit</span></code> order to take
+profit</li>
+</ul>
+</div></blockquote>
+<p>With corresponding <code class="docutils literal notranslate"><span class="pre">sell</span></code> and 2 x <code class="docutils literal notranslate"><span class="pre">buy</span></code> orders for the short side.</p>
+<p>The low/high side orders do actually create a bracket around the main side order.</p>
+<p>To put some logic into it, the following rules apply:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The 3 orders are submitted together to avoid having any of them triggered
+independently</li>
+<li>The low/high side orders are marked as children of the main side</li>
+<li>The children are not active until the main side is executed</li>
+<li>The cancellation of the main side cancels both the low and high side</li>
+<li>The execution of the main side activates both the low and high side</li>
+<li>Upon being active<ul>
+<li>The execution or cancellation of any of low/high side orders
+automatically cancels the other</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="usage-pattern">
+<h2>Usage Pattern<a class="headerlink" href="#usage-pattern" title="Permalink to this headline">¶</a></h2>
+<p>There are two possibilities to create the bracket set of orders</p>
+<blockquote>
+<div><ul class="simple">
+<li>Single issuing of the 3 orders</li>
+<li>Manual issuing of the 3 orders</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="single-issuing-of-a-bracket">
+<h2>Single Issuing of a Bracket<a class="headerlink" href="#single-issuing-of-a-bracket" title="Permalink to this headline">¶</a></h2>
+<p><em>backtrader</em> offers two new methods in the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> to control <em>bracket</em>
+orders.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">buy_bracket</span></code> and <code class="docutils literal notranslate"><span class="pre">sell_bracket</span></code></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Signature and info below or in the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> reference section.</p>
+</div>
+<p>With a single statement a complete set of 3 orders. An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brackets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy_bracket</span><span class="p">(</span><span class="n">limitprice</span><span class="o">=</span><span class="mf">14.00</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">13.50</span><span class="p">,</span> <span class="n">stopprice</span><span class="o">=</span><span class="mf">13.00</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">stopprice</span></code> and <code class="docutils literal notranslate"><span class="pre">limitprice</span></code> wrap the main <code class="docutils literal notranslate"><span class="pre">price</span></code></p>
+<p>This should be enough. The actual target <code class="docutils literal notranslate"><span class="pre">data</span></code> would be <code class="docutils literal notranslate"><span class="pre">data0</span></code> and the
+<code class="docutils literal notranslate"><span class="pre">size</span></code> would be automatically determined by the default sizer. Of course both
+and many other parameters can be specified to have a fine control of the
+execution.</p>
+<p>The return value is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A <code class="docutils literal notranslate"><span class="pre">list</span></code> containing the 3 orders in this order: <code class="docutils literal notranslate"><span class="pre">[main,</span> <span class="pre">stop,</span> <span class="pre">limit]</span></code></li>
+</ul>
+</div></blockquote>
+<p>Because when issuing a <code class="docutils literal notranslate"><span class="pre">sell_bracket</span></code> order, the low and high sides would be
+turned aound, the parameters are named following convention <code class="docutils literal notranslate"><span class="pre">stop</span></code> and <code class="docutils literal notranslate"><span class="pre">limit</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">stop</span></code> is meant to stop the losses (low side in a long operation, and
+high side in a short operation)</li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code> is meant to take the profit (high side in a long operation and
+low side in a short operation)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="manual-issuing-of-a-bracket">
+<h2>Manual Issuing of a Bracket<a class="headerlink" href="#manual-issuing-of-a-bracket" title="Permalink to this headline">¶</a></h2>
+<p>This involves the generation of the 3 orders and playing around with the
+<code class="docutils literal notranslate"><span class="pre">transmit</span></code> and <code class="docutils literal notranslate"><span class="pre">parent</span></code> arguments. The rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The main side order must be created 1st and have <code class="docutils literal notranslate"><span class="pre">transmit=False</span></code></li>
+<li>The low/high side orders must have <code class="docutils literal notranslate"><span class="pre">parent=main_side_order</span></code></li>
+<li>The 1st low/high side order to be created must have <code class="docutils literal notranslate"><span class="pre">transmit=False</span></code></li>
+<li>The last order to be created (either the low or high side) sets
+<code class="docutils literal notranslate"><span class="pre">transmit=True</span></code></li>
+</ul>
+</div></blockquote>
+<p>A practical example doing what the single command from above did:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mainside</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="mf">13.50</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span> <span class="n">transmit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lowside</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="mf">13.00</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">mainsize</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Stop</span><span class="p">,</span>
+                     <span class="n">transmit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">mainside</span><span class="p">)</span>
+<span class="n">highside</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="mf">14.00</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">mainsize</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span>
+                     <span class="n">transmit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">mainside</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where there is a lot more to do:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Keep track of the <code class="docutils literal notranslate"><span class="pre">mainside</span></code> order to indicate it is the parent of the
+others</p>
+</li>
+<li><p class="first">Control <code class="docutils literal notranslate"><span class="pre">transmit</span></code> to make sure only the last order triggers the joint
+transmission</p>
+</li>
+<li><p class="first">Specify the execution types</p>
+</li>
+<li><p class="first">Specify the <code class="docutils literal notranslate"><span class="pre">size</span></code> for the low and high side</p>
+<p>Because the <code class="docutils literal notranslate"><span class="pre">size</span></code> <strong>MUST</strong> be the same. If the parameter were not
+specified manually and the end user had introduced a sizer, the sizer could
+actually indicate a different value for the orders. That’s why it has to be
+manually added to the calls after it has been set for the <code class="docutils literal notranslate"><span class="pre">mainside</span></code>
+order.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="a-sample-of-it">
+<h2>A sample of it<a class="headerlink" href="#a-sample-of-it" title="Permalink to this headline">¶</a></h2>
+<p>Running the sample from below produces this output (capped for brevity)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./bracket.py --plot
+
+2005-01-28: Oref 1 / Buy at 2941.11055
+2005-01-28: Oref 2 / Sell Stop at 2881.99275
+2005-01-28: Oref 3 / Sell Limit at 3000.22835
+2005-01-31: Order ref: 1 / Type Buy / Status Submitted
+2005-01-31: Order ref: 2 / Type Sell / Status Submitted
+2005-01-31: Order ref: 3 / Type Sell / Status Submitted
+2005-01-31: Order ref: 1 / Type Buy / Status Accepted
+2005-01-31: Order ref: 2 / Type Sell / Status Accepted
+2005-01-31: Order ref: 3 / Type Sell / Status Accepted
+2005-02-01: Order ref: 1 / Type Buy / Status Expired
+2005-02-01: Order ref: 2 / Type Sell / Status Canceled
+2005-02-01: Order ref: 3 / Type Sell / Status Canceled
+...
+2005-08-11: Oref 16 / Buy at 3337.3892
+2005-08-11: Oref 17 / Sell Stop at 3270.306
+2005-08-11: Oref 18 / Sell Limit at 3404.4724
+2005-08-12: Order ref: 16 / Type Buy / Status Submitted
+2005-08-12: Order ref: 17 / Type Sell / Status Submitted
+2005-08-12: Order ref: 18 / Type Sell / Status Submitted
+2005-08-12: Order ref: 16 / Type Buy / Status Accepted
+2005-08-12: Order ref: 17 / Type Sell / Status Accepted
+2005-08-12: Order ref: 18 / Type Sell / Status Accepted
+2005-08-12: Order ref: 16 / Type Buy / Status Completed
+2005-08-18: Order ref: 17 / Type Sell / Status Completed
+2005-08-18: Order ref: 18 / Type Sell / Status Canceled
+...
+2005-09-26: Oref 22 / Buy at 3383.92535
+2005-09-26: Oref 23 / Sell Stop at 3315.90675
+2005-09-26: Oref 24 / Sell Limit at 3451.94395
+2005-09-27: Order ref: 22 / Type Buy / Status Submitted
+2005-09-27: Order ref: 23 / Type Sell / Status Submitted
+2005-09-27: Order ref: 24 / Type Sell / Status Submitted
+2005-09-27: Order ref: 22 / Type Buy / Status Accepted
+2005-09-27: Order ref: 23 / Type Sell / Status Accepted
+2005-09-27: Order ref: 24 / Type Sell / Status Accepted
+2005-09-27: Order ref: 22 / Type Buy / Status Completed
+2005-10-04: Order ref: 24 / Type Sell / Status Completed
+2005-10-04: Order ref: 23 / Type Sell / Status Canceled
+...
+</pre></div>
+</div>
+<p>Where 3 different outcomes are shown:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">In the 1st case the main side order expired and this automatically
+cancelled the other two</p>
+</li>
+<li><p class="first">In the 2nd case the main side order was completed and the low (stop in the
+buy case) was executed limiting losses</p>
+</li>
+<li><p class="first">In the 3rd case the main side order was completed and the high side (limit)
+was executed</p>
+<p>This can be noticed because the <em>Completed</em> ids are <code class="docutils literal notranslate"><span class="pre">22</span></code> and <code class="docutils literal notranslate"><span class="pre">24</span></code> and
+the <strong>high</strong> side order is being issued last, which means the non-executed
+low side order has id 23.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Visually</p>
+<a class=""
+               data-lightbox="group-e8b504c1-2456-4a8d-850c-ba9e993be835"
+               href="../../_images/bracket1.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/bracket1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>It can be immediately seen that the losing trades align around the same value
+and winning trades too, which is the purpose of the backeting. Controlling
+both sides.</p>
+<p>The sample as run issues the 3 orders manually, but it can be told to use
+<code class="docutils literal notranslate"><span class="pre">buy_bracket</span></code>. Let’s see the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./bracket.py --strat usebracket=True
+</pre></div>
+</div>
+<p>With the same result</p>
+<a class=""
+               data-lightbox="group-1ea287ae-e903-43d0-92ed-a2a655e9bb43"
+               href="../../_images/bracket-buy_bracket1.png"
+               title=""
+               data-title=""
+               ><img src="../../_images/bracket-buy_bracket1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="some-reference">
+<h2>Some reference<a class="headerlink" href="#some-reference" title="Permalink to this headline">¶</a></h2>
+<p>See the new <code class="docutils literal notranslate"><span class="pre">buy_bracket</span></code> and <code class="docutils literal notranslate"><span class="pre">sell_bracket</span></code> methods</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buy_bracket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plimit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span> <span class="n">valid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tradeid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">trailamount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oargs</span><span class="o">=</span><span class="p">{},</span>
+                <span class="n">stopprice</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stopexec</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Stop</span><span class="p">,</span> <span class="n">stopargs</span><span class="o">=</span><span class="p">{},</span>
+                <span class="n">limitprice</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limitexec</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span> <span class="n">limitargs</span><span class="o">=</span><span class="p">{},</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create a bracket order group (low side - buy order - high side). The</span>
+<span class="sd">    default behavior is as follows:</span>
+
+<span class="sd">      - Issue a **buy** order with execution ``Limit`</span>
+
+<span class="sd">      - Issue a *low side* bracket **sell** order with execution ``Stop``</span>
+
+<span class="sd">      - Issue a *high side* bracket **sell** order with execution</span>
+<span class="sd">        ``Limit``.</span>
+
+<span class="sd">    See below for the different parameters</span>
+
+<span class="sd">      - ``data`` (default: ``None``)</span>
+
+<span class="sd">        For which data the order has to be created. If ``None`` then the</span>
+<span class="sd">        first data in the system, ``self.datas[0] or self.data0`` (aka</span>
+<span class="sd">        ``self.data``) will be used</span>
+
+<span class="sd">      - ``size`` (default: ``None``)</span>
+
+<span class="sd">        Size to use (positive) of units of data to use for the order.</span>
+
+<span class="sd">        If ``None`` the ``sizer`` instance retrieved via ``getsizer`` will</span>
+<span class="sd">        be used to determine the size.</span>
+
+<span class="sd">        **Note**: The same size is applied to all 3 orders of the bracket</span>
+
+<span class="sd">      - ``price`` (default: ``None``)</span>
+
+<span class="sd">        Price to use (live brokers may place restrictions on the actual</span>
+<span class="sd">        format if it does not comply to minimum tick size requirements)</span>
+
+<span class="sd">        ``None`` is valid for ``Market`` and ``Close`` orders (the market</span>
+<span class="sd">        determines the price)</span>
+
+<span class="sd">        For ``Limit``, ``Stop`` and ``StopLimit`` orders this value</span>
+<span class="sd">        determines the trigger point (in the case of ``Limit`` the trigger</span>
+<span class="sd">        is obviously at which price the order should be matched)</span>
+
+<span class="sd">      - ``plimit`` (default: ``None``)</span>
+
+<span class="sd">        Only applicable to ``StopLimit`` orders. This is the price at which</span>
+<span class="sd">        to set the implicit *Limit* order, once the *Stop* has been</span>
+<span class="sd">        triggered (for which ``price`` has been used)</span>
+
+<span class="sd">      - ``trailamount`` (default: ``None``)</span>
+
+<span class="sd">        If the order type is StopTrail or StopTrailLimit, this is an</span>
+<span class="sd">        absolute amount which determines the distance to the price (below</span>
+<span class="sd">        for a Sell order and above for a buy order) to keep the trailing</span>
+<span class="sd">        stop</span>
+
+<span class="sd">      - ``trailpercent`` (default: ``None``)</span>
+
+<span class="sd">        If the order type is StopTrail or StopTrailLimit, this is a</span>
+<span class="sd">        percentage amount which determines the distance to the price (below</span>
+<span class="sd">        for a Sell order and above for a buy order) to keep the trailing</span>
+<span class="sd">        stop (if ``trailamount`` is also specified it will be used)</span>
+
+<span class="sd">      - ``exectype`` (default: ``bt.Order.Limit``)</span>
+
+<span class="sd">        Possible values: (see the documentation for the method ``buy``</span>
+
+<span class="sd">      - ``valid`` (default: ``None``)</span>
+
+<span class="sd">        Possible values: (see the documentation for the method ``buy``</span>
+
+<span class="sd">      - ``tradeid`` (default: ``0``)</span>
+
+<span class="sd">        Possible values: (see the documentation for the method ``buy``</span>
+
+<span class="sd">      - ``oargs`` (default: ``{}``)</span>
+
+<span class="sd">        Specific keyword arguments (in a ``dict``) to pass to the main side</span>
+<span class="sd">        order. Arguments from the default ``**kwargs`` will be applied on</span>
+<span class="sd">        top of this.</span>
+
+<span class="sd">      - ``**kwargs``: additional broker implementations may support extra</span>
+<span class="sd">        parameters. ``backtrader`` will pass the *kwargs* down to the</span>
+<span class="sd">        created order objects</span>
+
+<span class="sd">        Possible values: (see the documentation for the method ``buy``</span>
+
+<span class="sd">        **Note**: this ``kwargs`` will be applied to the 3 orders of a</span>
+<span class="sd">        bracket. See below for specific keyword arguments for the low and</span>
+<span class="sd">        high side orders</span>
+
+<span class="sd">      - ``stopprice`` (default: ``None``)</span>
+
+<span class="sd">        Specific price for the *low side* stop order</span>
+
+<span class="sd">      - ``stopexec`` (default: ``bt.Order.Stop``)</span>
+
+<span class="sd">        Specific execution type for the *low side* order</span>
+
+<span class="sd">      - ``stopargs`` (default: ``{}``)</span>
+
+<span class="sd">        Specific keyword arguments (in a ``dict``) to pass to the low side</span>
+<span class="sd">        order. Arguments from the default ``**kwargs`` will be applied on</span>
+<span class="sd">        top of this.</span>
+
+<span class="sd">      - ``limitprice`` (default: ``None``)</span>
+
+<span class="sd">        Specific price for the *high side* stop order</span>
+
+<span class="sd">      - ``stopexec`` (default: ``bt.Order.Limit``)</span>
+
+<span class="sd">        Specific execution type for the *high side* order</span>
+
+<span class="sd">      - ``limitargs`` (default: ``{}``)</span>
+
+<span class="sd">        Specific keyword arguments (in a ``dict``) to pass to the high side</span>
+<span class="sd">        order. Arguments from the default ``**kwargs`` will be applied on</span>
+<span class="sd">        top of this.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      - A list containing the 3 bracket orders [order, stop side, limit</span>
+<span class="sd">        side]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">sell_bracket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plimit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span> <span class="n">valid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tradeid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">trailamount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trailpercent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">oargs</span><span class="o">=</span><span class="p">{},</span>
+                 <span class="n">stopprice</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stopexec</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Stop</span><span class="p">,</span> <span class="n">stopargs</span><span class="o">=</span><span class="p">{},</span>
+                 <span class="n">limitprice</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limitexec</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span> <span class="n">limitargs</span><span class="o">=</span><span class="p">{},</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create a bracket order group (low side - buy order - high side). The</span>
+<span class="sd">    default behavior is as follows:</span>
+
+<span class="sd">      - Issue a **sell** order with execution ``Limit`</span>
+
+<span class="sd">      - Issue a *high side* bracket **buy** order with execution ``Stop``</span>
+
+<span class="sd">      - Issue a *low side* bracket **buy** order with execution ``Limit``.</span>
+
+<span class="sd">    See ``bracket_buy`` for the meaning of the parameters</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      - A list containing the 3 bracket orders [order, stop side, limit</span>
+<span class="sd">        side]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-usage">
+<h2>Sample usage<a class="headerlink" href="#sample-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./bracket.py --help
+usage: bracket.py [-h] [--data0 DATA0] [--fromdate FROMDATE] [--todate TODATE]
+                  [--cerebro kwargs] [--broker kwargs] [--sizer kwargs]
+                  [--strat kwargs] [--plot [kwargs]]
+
+Sample Skeleton
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --data0 DATA0        Data to read in (default:
+                       ../../datas/2005-2006-day-001.txt)
+  --fromdate FROMDATE  Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --todate TODATE      Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --cerebro kwargs     kwargs in key=value format (default: )
+  --broker kwargs      kwargs in key=value format (default: )
+  --sizer kwargs       kwargs in key=value format (default: )
+  --strat kwargs       kwargs in key=value format (default: )
+  --plot [kwargs]      kwargs in key=value format (default: )
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-code">
+<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">ma</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">,</span>
+        <span class="n">p1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">p2</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">limit</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
+        <span class="n">limdays</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">limdays2</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">hold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">usebracket</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># use order_target_size</span>
+        <span class="n">switchp1p2</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># switch prices of order1 and order2</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">notify_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}: Order ref: {} / Type {} / Status {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">order</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="s1">&#39;Buy&#39;</span> <span class="o">*</span> <span class="n">order</span><span class="o">.</span><span class="n">isbuy</span><span class="p">()</span> <span class="ow">or</span> <span class="s1">&#39;Sell&#39;</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">.</span><span class="n">getstatusname</span><span class="p">()))</span>
+
+        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">order</span><span class="o">.</span><span class="n">Completed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">holdstart</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">order</span><span class="o">.</span><span class="n">alive</span><span class="p">()</span> <span class="ow">and</span> <span class="n">order</span><span class="o">.</span><span class="n">ref</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">ref</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ma1</span><span class="p">,</span> <span class="n">ma2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ma</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ma</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cross</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">CrossOver</span><span class="p">(</span><span class="n">ma1</span><span class="p">,</span> <span class="n">ma2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">usebracket</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Using buy_bracket&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span><span class="p">:</span>
+            <span class="k">return</span>  <span class="c1"># pending orders do nothing</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>  <span class="c1"># crossing up</span>
+
+                <span class="n">close</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="n">close</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">-</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">close</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">close</span>
+
+                <span class="n">valid1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">limdays</span><span class="p">)</span>
+                <span class="n">valid2</span> <span class="o">=</span> <span class="n">valid3</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">limdays2</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">switchp1p2</span><span class="p">:</span>
+                    <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p1</span>
+                    <span class="n">valid1</span><span class="p">,</span> <span class="n">valid2</span> <span class="o">=</span> <span class="n">valid2</span><span class="p">,</span> <span class="n">valid1</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">usebracket</span><span class="p">:</span>
+                    <span class="n">o1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span>
+                                  <span class="n">price</span><span class="o">=</span><span class="n">p1</span><span class="p">,</span>
+                                  <span class="n">valid</span><span class="o">=</span><span class="n">valid1</span><span class="p">,</span>
+                                  <span class="n">transmit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+                    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}: Oref {} / Buy at {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">o1</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="n">p1</span><span class="p">))</span>
+
+                    <span class="n">o2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Stop</span><span class="p">,</span>
+                                   <span class="n">price</span><span class="o">=</span><span class="n">p2</span><span class="p">,</span>
+                                   <span class="n">valid</span><span class="o">=</span><span class="n">valid2</span><span class="p">,</span>
+                                   <span class="n">parent</span><span class="o">=</span><span class="n">o1</span><span class="p">,</span>
+                                   <span class="n">transmit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+                    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}: Oref {} / Sell Stop at {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">o2</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="n">p2</span><span class="p">))</span>
+
+                    <span class="n">o3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">(</span><span class="n">exectype</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">Order</span><span class="o">.</span><span class="n">Limit</span><span class="p">,</span>
+                                   <span class="n">price</span><span class="o">=</span><span class="n">p3</span><span class="p">,</span>
+                                   <span class="n">valid</span><span class="o">=</span><span class="n">valid3</span><span class="p">,</span>
+                                   <span class="n">parent</span><span class="o">=</span><span class="n">o1</span><span class="p">,</span>
+                                   <span class="n">transmit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+                    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}: Oref {} / Sell Limit at {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">o3</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">o1</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="n">o2</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span> <span class="n">o3</span><span class="o">.</span><span class="n">ref</span><span class="p">]</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">os</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy_bracket</span><span class="p">(</span>
+                        <span class="n">price</span><span class="o">=</span><span class="n">p1</span><span class="p">,</span> <span class="n">valid</span><span class="o">=</span><span class="n">valid1</span><span class="p">,</span>
+                        <span class="n">stopprice</span><span class="o">=</span><span class="n">p2</span><span class="p">,</span> <span class="n">stopargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">valid</span><span class="o">=</span><span class="n">valid2</span><span class="p">),</span>
+                        <span class="n">limitprice</span><span class="o">=</span><span class="n">p3</span><span class="p">,</span> <span class="n">limitargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">valid</span><span class="o">=</span><span class="n">valid3</span><span class="p">),)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">orefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">ref</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">os</span><span class="p">]</span>
+
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># in the market</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">holdstart</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">hold</span><span class="p">:</span>
+                <span class="k">pass</span>  <span class="c1"># do nothing in this case</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;Sample Skeleton&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/2005-2006-day-001.txt&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

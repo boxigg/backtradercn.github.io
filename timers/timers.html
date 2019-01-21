@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Timers &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Target Orders" href="../order_target/order_target.html" />
+    <link rel="prev" title="Sizers - Smart Staking" href="../sizers/sizers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Timers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-pattern">Usage pattern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-timers-via-strategy">Adding timers - Via Strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-timers-via-cerebro">Adding timers - Via Cerebro</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#when-are-timers-called">When are timers called</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#if-cheat-false">If <code class="docutils literal notranslate"><span class="pre">cheat=False</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-cheat-true">If <code class="docutils literal notranslate"><span class="pre">cheat=True</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-with-daily-bars">Running with daily bars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-with-5-minute-bars">Running with 5-minute bars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-scenarios">Additional scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters-to-add-timer">Parameters to <code class="docutils literal notranslate"><span class="pre">add_timer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage-scheduled-py">Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage-scheduled-min-py">Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-source-scheduled-py">Sample source <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-source-scheduled-min-py">Sample source <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="timers">
+<h1>Timers<a class="headerlink" href="#timers" title="Permalink to this headline">¶</a></h1>
+<p>Release <code class="docutils literal notranslate"><span class="pre">1.9.44.116</span></code> added <em>timers</em> to the arsenal of tools available in
+<em>backtrader</em>. This functionality allows to get a call back to the
+<code class="docutils literal notranslate"><span class="pre">notify_timer</span></code> (available in <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> and <code class="docutils literal notranslate"><span class="pre">Strategy</span></code>) at given points in
+time, with a fine grained end-user control.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some corrections have been made in <code class="docutils literal notranslate"><span class="pre">1.9.46.116</span></code></p>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Timer based in absolute time input or with regards to session start/end
+times</li>
+<li>Timezone specification for the time specification, be it directly or via
+<em>pytz</em> compatible objects or via data feed
+session end times</li>
+<li>Starting offset with regards to the specified time</li>
+<li>Repetitions intervals</li>
+<li>Weekdays filter (with carry over option)</li>
+<li>Monthdays filter (with carry over option)</li>
+<li>Custom callback filter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="usage-pattern">
+<h2>Usage pattern<a class="headerlink" href="#usage-pattern" title="Permalink to this headline">¶</a></h2>
+<p>Both in <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> and <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> subclasses the timer callback will be
+received in the following method.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">notify_timer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timer</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Receives a timer notification where ``timer`` is the timer which was</span>
+<span class="sd">    returned by ``add_timer``, and ``when`` is the calling time. ``args``</span>
+<span class="sd">    and ``kwargs`` are any additional arguments passed to ``add_timer``</span>
+
+<span class="sd">    The actual ``when`` time can be later, but the system may have not be</span>
+<span class="sd">    able to call the timer before. This value is the timer value and not the</span>
+<span class="sd">    system time.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="adding-timers-via-strategy">
+<h3>Adding timers - Via Strategy<a class="headerlink" href="#adding-timers-via-strategy" title="Permalink to this headline">¶</a></h3>
+<p>Done with the method</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_timer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span>
+              <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span> <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+              <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span> <span class="n">weekcarry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">monthdays</span><span class="o">=</span><span class="p">[],</span> <span class="n">monthcarry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">allow</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">tzdata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cheat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>It returns the created <code class="docutils literal notranslate"><span class="pre">Timer</span></code> instance.</p>
+<p>See below for an explanation of the parameters.</p>
+</div>
+<div class="section" id="adding-timers-via-cerebro">
+<h3>Adding timers - Via Cerebro<a class="headerlink" href="#adding-timers-via-cerebro" title="Permalink to this headline">¶</a></h3>
+<p>Done with the same method and just the addition of the parameter <code class="docutils literal notranslate"><span class="pre">strats</span></code>. If
+set to <code class="docutils literal notranslate"><span class="pre">True</span></code> the timer will not only be notified to the <em>cerebro</em>, it will
+also be notified to all strategies running in the system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_timer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span>
+              <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span> <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+              <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span> <span class="n">weekcarry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">monthdays</span><span class="o">=</span><span class="p">[],</span> <span class="n">monthcarry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">allow</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">tzdata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cheat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>It returns the created <code class="docutils literal notranslate"><span class="pre">Timer</span></code> instance.</p>
+</div>
+</div>
+<div class="section" id="when-are-timers-called">
+<h2>When are timers called<a class="headerlink" href="#when-are-timers-called" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="if-cheat-false">
+<h3>If <code class="docutils literal notranslate"><span class="pre">cheat=False</span></code><a class="headerlink" href="#if-cheat-false" title="Permalink to this headline">¶</a></h3>
+<p>This is the default. In this case a timer will be called:</p>
+<blockquote>
+<div><ul class="simple">
+<li>After the data feeds have loaded the new values for the current bar</li>
+<li>After the broker has evaluated orders and recalculated the portfolio value</li>
+<li>Before indicators have been recalculated (because this is triggered by the
+strategies)</li>
+<li>Before any <code class="docutils literal notranslate"><span class="pre">next</span></code> method of any strategy is called</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="if-cheat-true">
+<h3>If <code class="docutils literal notranslate"><span class="pre">cheat=True</span></code><a class="headerlink" href="#if-cheat-true" title="Permalink to this headline">¶</a></h3>
+<p>In this case a timer will be called:</p>
+<blockquote>
+<div><ul class="simple">
+<li>After the data feeds have loaded the new values for the current bar</li>
+<li><strong>Before</strong> the broker has evaluated orders and recalculated the portfolio
+value</li>
+<li>And consequently before indicators have been recalculated and <code class="docutils literal notranslate"><span class="pre">next</span></code>
+method of any strategy is called</li>
+</ul>
+</div></blockquote>
+<p>Which allows for example the following scenario with daily bars:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Before the new bar is evaluated by the broker the timer is called</li>
+<li>The indicators have the value from the previous day at the close and can be
+used to generate an entry/exit signal (or a flag may have been set during
+the last evaluation of <code class="docutils literal notranslate"><span class="pre">next</span></code>)</li>
+<li>Because the new prices are available, the stake can be calculated using the
+opening price. This assumes that one is for example getting a good
+indication about the <code class="docutils literal notranslate"><span class="pre">open</span></code> from watching the opening auction.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="running-with-daily-bars">
+<h2>Running with daily bars<a class="headerlink" href="#running-with-daily-bars" title="Permalink to this headline">¶</a></h2>
+<p>The sample <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code> defaults to running with the standard daily bars
+available in the <em>backtrader</em> distribution. The parameters to the strategy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">SESSION_START</span><span class="p">,</span>
+        <span class="n">timer</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">cheat</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>And the data has the following session times:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start: 09:00</li>
+<li>end: 17:30</li>
+</ul>
+</div></blockquote>
+<p>Running with just a time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;datetime.time(15,30)&#39;
+
+strategy notify_timer with tid 0, when 2005-01-03 15:30:00 cheat False
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 0, when 2005-01-04 15:30:00 cheat False
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+strategy notify_timer with tid 0, when 2005-01-05 15:30:00 cheat False
+3, 2005-01-05 17:30:00, Week 1, Day 3, O 2969.0, H 2969.0, L 2942.69, C 2947.19
+strategy notify_timer with tid 0, when 2005-01-06 15:30:00 cheat False
+...
+</pre></div>
+</div>
+<p>As specified the timer is ticking at <code class="docutils literal notranslate"><span class="pre">15:30</span></code>. No surprises there. Let’s add
+an offset of 30 minutes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;datetime.time(15,30)&#39;,offset=&#39;datetime.timedelta(minutes=30)&#39;
+
+strategy notify_timer with tid 0, when 2005-01-03 16:00:00 cheat False
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 0, when 2005-01-04 16:00:00 cheat False
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+strategy notify_timer with tid 0, when 2005-01-05 16:00:00 cheat False
+...
+</pre></div>
+</div>
+<p>And the time has changed from <code class="docutils literal notranslate"><span class="pre">15:30</span></code> to <code class="docutils literal notranslate"><span class="pre">16:00</span></code> for the timer. No
+surprises. Let’s do the same but referencing the start of the session.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;bt.timer.SESSION_START&#39;,offset=&#39;datetime.timedelta(minutes=30)&#39;
+
+strategy notify_timer with tid 0, when 2005-01-03 09:30:00 cheat False
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 0, when 2005-01-04 09:30:00 cheat False
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+...
+</pre></div>
+</div>
+<p>Et voilá! The time at which the callback is called is <code class="docutils literal notranslate"><span class="pre">09:30</span></code>. And the
+session start, see above, is <code class="docutils literal notranslate"><span class="pre">09:00</span></code>. This gives the ability to simply say
+that one wants to execute an action <em>30 minutes</em> after the start of the
+session.</p>
+<p>Let’s add a repetition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;bt.timer.SESSION_START&#39;,offset=&#39;datetime.timedelta(minutes=30)&#39;,repeat=&#39;datetime.timedelta(minutes=30)&#39;
+
+strategy notify_timer with tid 0, when 2005-01-03 09:30:00 cheat False
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 0, when 2005-01-04 09:30:00 cheat False
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+strategy notify_timer with tid 0, when 2005-01-05 09:30:00 cheat False
+...
+</pre></div>
+</div>
+<p><strong>There is no repetition</strong>. The reason being that the resolution of the prices
+is daily. The timer is called for the 1st time at <code class="docutils literal notranslate"><span class="pre">09:30</span></code> like in the
+previous example. But when the system get the next batch of prices, they are
+happening on the next day. And the timer can only, obviously, be called once. A
+lower resolution is needed.</p>
+<p>But before moving on to a lower resolution, let’s cheat by having the timer
+called before the end of the session.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;bt.timer.SESSION_START&#39;,cheat=True
+
+strategy notify_timer with tid 1, when 2005-01-03 09:00:00 cheat True
+-- 2005-01-03 Create buy order
+strategy notify_timer with tid 0, when 2005-01-03 09:00:00 cheat False
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 1, when 2005-01-04 09:00:00 cheat True
+strategy notify_timer with tid 0, when 2005-01-04 09:00:00 cheat False
+-- 2005-01-04 Buy Exec @ 2969.78
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+strategy notify_timer with tid 1, when 2005-01-05 09:00:00 cheat True
+strategy notify_timer with tid 0, when 2005-01-05 09:00:00 cheat False
+...
+</pre></div>
+</div>
+<p>The strategy adds a 2nd timer with <code class="docutils literal notranslate"><span class="pre">cheat=True</span></code>. This is added 2nd and will
+therefore received the 2nd <code class="docutils literal notranslate"><span class="pre">tid</span></code> (<em>timer id</em>) which is <code class="docutils literal notranslate"><span class="pre">1</span></code> (see in the
+above examples that the assigned <code class="docutils literal notranslate"><span class="pre">tid</span></code> was <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p>
+<p>And <code class="docutils literal notranslate"><span class="pre">1</span></code> is called before <code class="docutils literal notranslate"><span class="pre">0</span></code>, because that timer is <em>cheating</em> and is being
+called before many events in the system happen (see above for the explanation)</p>
+<p>Due to the <em>daily</em> resolution of the prices it doesn’t make much of a
+difference except that:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The strategy also issues an order right before the open … and it is being
+matched with the opening price the next day</p>
+<p>This, even if cheating by acting before the open, is still the normal
+behavior, because <em>cheating-on-open</em> has also not been activated in the
+broker.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The same but with <code class="docutils literal notranslate"><span class="pre">coo=True</span></code> for the broker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --strat when=&#39;bt.timer.SESSION_START&#39;,cheat=True --broker coo=True
+
+strategy notify_timer with tid 1, when 2005-01-03 09:00:00 cheat True
+-- 2005-01-03 Create buy order
+strategy notify_timer with tid 0, when 2005-01-03 09:00:00 cheat False
+-- 2005-01-03 Buy Exec @ 2952.29
+1, 2005-01-03 17:30:00, Week 1, Day 1, O 2952.29, H 2989.61, L 2946.8, C 2970.02
+strategy notify_timer with tid 1, when 2005-01-04 09:00:00 cheat True
+strategy notify_timer with tid 0, when 2005-01-04 09:00:00 cheat False
+2, 2005-01-04 17:30:00, Week 1, Day 2, O 2969.78, H 2979.88, L 2961.14, C 2971.12
+strategy notify_timer with tid 1, when 2005-01-05 09:00:00 cheat True
+strategy notify_timer with tid 0, when 2005-01-05 09:00:00 cheat False
+...
+</pre></div>
+</div>
+<p>And something has changed.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The order is issued on <code class="docutils literal notranslate"><span class="pre">2005-01-03</span></code> in the cheating timer</p>
+</li>
+<li><p class="first">The order is executed on <code class="docutils literal notranslate"><span class="pre">2005-01-03</span></code> with the opening price</p>
+<p>Effectively like if one had acted on the opening auction price seconds
+before the real opening of the market.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="running-with-5-minute-bars">
+<h2>Running with 5-minute bars<a class="headerlink" href="#running-with-5-minute-bars" title="Permalink to this headline">¶</a></h2>
+<p>The sample <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code> defaults to running with the standard 5-minute
+bars available in the <em>backtrader</em> distribution. The parameters to the strategy
+are extended to include <code class="docutils literal notranslate"><span class="pre">monthdays</span></code> and the <em>carry</em> options</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">SESSION_START</span><span class="p">,</span>
+        <span class="n">timer</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">cheat</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">weekcarry</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">monthdays</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">monthcarry</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The data has the same session times:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start: 09:00</li>
+<li>end: 17:30</li>
+</ul>
+</div></blockquote>
+<p>Let’s do some experiments. First a single timer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled-min.py --strat when=&#39;datetime.time(15, 30)&#39;
+
+1, 2006-01-02 09:05:00, Week 1, Day 1, O 3578.73, H 3587.88, L 3578.73, C 3582.99
+2, 2006-01-02 09:10:00, Week 1, Day 1, O 3583.01, H 3588.4, L 3583.01, C 3588.03
+...
+77, 2006-01-02 15:25:00, Week 1, Day 1, O 3599.07, H 3599.68, L 3598.47, C 3599.68
+strategy notify_timer with tid 0, when 2006-01-02 15:30:00 cheat False
+78, 2006-01-02 15:30:00, Week 1, Day 1, O 3599.64, H 3599.73, L 3599.0, C 3599.67
+...
+179, 2006-01-03 15:25:00, Week 1, Day 2, O 3634.72, H 3635.0, L 3634.06, C 3634.87
+strategy notify_timer with tid 0, when 2006-01-03 15:30:00 cheat False
+180, 2006-01-03 15:30:00, Week 1, Day 2, O 3634.81, H 3634.89, L 3634.04, C 3634.23
+...
+</pre></div>
+</div>
+<p>The timer kicks in as requested at <code class="docutils literal notranslate"><span class="pre">15:30</span></code>. The log shows how it does that
+during the 1st two days.</p>
+<p>Adding a <code class="docutils literal notranslate"><span class="pre">repeat</span></code> of <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">minutes</span></code> to the mix</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled-min.py --strat when=&#39;datetime.time(15, 30)&#39;,repeat=&#39;datetime.timedelta(minutes=15)&#39;
+
+...
+74, 2006-01-02 15:10:00, Week 1, Day 1, O 3596.12, H 3596.63, L 3595.92, C 3596.63
+75, 2006-01-02 15:15:00, Week 1, Day 1, O 3596.36, H 3596.65, L 3596.19, C 3596.65
+76, 2006-01-02 15:20:00, Week 1, Day 1, O 3596.53, H 3599.13, L 3596.12, C 3598.9
+77, 2006-01-02 15:25:00, Week 1, Day 1, O 3599.07, H 3599.68, L 3598.47, C 3599.68
+strategy notify_timer with tid 0, when 2006-01-02 15:30:00 cheat False
+78, 2006-01-02 15:30:00, Week 1, Day 1, O 3599.64, H 3599.73, L 3599.0, C 3599.67
+79, 2006-01-02 15:35:00, Week 1, Day 1, O 3599.61, H 3600.29, L 3599.52, C 3599.92
+80, 2006-01-02 15:40:00, Week 1, Day 1, O 3599.96, H 3602.06, L 3599.76, C 3602.05
+strategy notify_timer with tid 0, when 2006-01-02 15:45:00 cheat False
+81, 2006-01-02 15:45:00, Week 1, Day 1, O 3601.97, H 3602.07, L 3601.45, C 3601.83
+82, 2006-01-02 15:50:00, Week 1, Day 1, O 3601.74, H 3602.8, L 3601.63, C 3602.8
+83, 2006-01-02 15:55:00, Week 1, Day 1, O 3602.53, H 3602.74, L 3602.33, C 3602.61
+strategy notify_timer with tid 0, when 2006-01-02 16:00:00 cheat False
+84, 2006-01-02 16:00:00, Week 1, Day 1, O 3602.58, H 3602.75, L 3601.81, C 3602.14
+85, 2006-01-02 16:05:00, Week 1, Day 1, O 3602.16, H 3602.16, L 3600.86, C 3600.96
+86, 2006-01-02 16:10:00, Week 1, Day 1, O 3601.2, H 3601.49, L 3600.94, C 3601.27
+...
+strategy notify_timer with tid 0, when 2006-01-02 17:15:00 cheat False
+99, 2006-01-02 17:15:00, Week 1, Day 1, O 3603.96, H 3603.96, L 3602.89, C 3603.79
+100, 2006-01-02 17:20:00, Week 1, Day 1, O 3603.94, H 3605.95, L 3603.87, C 3603.91
+101, 2006-01-02 17:25:00, Week 1, Day 1, O 3604.0, H 3604.76, L 3603.85, C 3604.64
+strategy notify_timer with tid 0, when 2006-01-02 17:30:00 cheat False
+102, 2006-01-02 17:30:00, Week 1, Day 1, O 3604.06, H 3604.41, L 3603.95, C 3604.33
+103, 2006-01-03 09:05:00, Week 1, Day 2, O 3604.08, H 3609.6, L 3604.08, C 3609.6
+104, 2006-01-03 09:10:00, Week 1, Day 2, O 3610.34, H 3617.31, L 3610.34, C 3617.31
+105, 2006-01-03 09:15:00, Week 1, Day 2, O 3617.61, H 3617.87, L 3616.03, C 3617.51
+106, 2006-01-03 09:20:00, Week 1, Day 2, O 3617.24, H 3618.86, L 3616.09, C 3618.42
+...
+179, 2006-01-03 15:25:00, Week 1, Day 2, O 3634.72, H 3635.0, L 3634.06, C 3634.87
+strategy notify_timer with tid 0, when 2006-01-03 15:30:00 cheat False
+180, 2006-01-03 15:30:00, Week 1, Day 2, O 3634.81, H 3634.89, L 3634.04, C 3634.23
+...
+</pre></div>
+</div>
+<p>As expected the 1st call is triggered at <code class="docutils literal notranslate"><span class="pre">15:30</span></code> and then starts repeating
+every 15 minutes until the end of the session at <code class="docutils literal notranslate"><span class="pre">17:30</span></code>. When the new session
+kicks in, the timer has been reset to <code class="docutils literal notranslate"><span class="pre">15:30</span></code> again.</p>
+<p>And now with cheating before the session start</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled-min.py --strat when=&#39;bt.timer.SESSION_START&#39;,cheat=True
+
+strategy notify_timer with tid 1, when 2006-01-02 09:00:00 cheat True
+-- 2006-01-02 09:05:00 Create buy order
+strategy notify_timer with tid 0, when 2006-01-02 09:00:00 cheat False
+1, 2006-01-02 09:05:00, Week 1, Day 1, O 3578.73, H 3587.88, L 3578.73, C 3582.99
+-- 2006-01-02 09:10:00 Buy Exec @ 3583.01
+2, 2006-01-02 09:10:00, Week 1, Day 1, O 3583.01, H 3588.4, L 3583.01, C 3588.03
+...
+</pre></div>
+</div>
+<p>Order creation is t <code class="docutils literal notranslate"><span class="pre">09:05:00</span></code> and execution at <code class="docutils literal notranslate"><span class="pre">09:10:00</span></code> because the
+broker is not in <em>cheat-on-open</em> mode. Let’s set it …</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled-min.py --strat when=&#39;bt.timer.SESSION_START&#39;,cheat=True --broker coo=True
+
+strategy notify_timer with tid 1, when 2006-01-02 09:00:00 cheat True
+-- 2006-01-02 09:05:00 Create buy order
+strategy notify_timer with tid 0, when 2006-01-02 09:00:00 cheat False
+-- 2006-01-02 09:05:00 Buy Exec @ 3578.73
+1, 2006-01-02 09:05:00, Week 1, Day 1, O 3578.73, H 3587.88, L 3578.73, C 3582.99
+2, 2006-01-02 09:10:00, Week 1, Day 1, O 3583.01, H 3588.4, L 3583.01, C 3588.03
+...
+</pre></div>
+</div>
+<p>And the issuing time and execution time are <code class="docutils literal notranslate"><span class="pre">09:05:00</span></code> with the execution
+price being the opening price at <code class="docutils literal notranslate"><span class="pre">09:05:00</span></code>.</p>
+</div>
+<div class="section" id="additional-scenarios">
+<h2>Additional scenarios<a class="headerlink" href="#additional-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>Timers allow specifying on which days they have to be executed by passing a
+list of days (integers following the iso spec, where Mon=1 and Sun=7) as in</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">weekdays=[5]</span></code> which would ask for the timer to only be valid on Fridays</p>
+<p>In case a Friday is a non-trading day and the timer should kick-in on the
+next trading day, one can add <code class="docutils literal notranslate"><span class="pre">weekcarry=True</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+<p>Similar to it, one can decide to act on the 15th day of each month with:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">monthdays=[15]</span></code></p>
+<p>In case the 15th happens to be non-trading day and the timer should kick-in
+on the next trading day, one can add <code class="docutils literal notranslate"><span class="pre">monthcarry=True</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+<p>There isn’t an implementation for things like:  <em>the 3rd Friday of March, June,
+September and December</em> (futures/options expirations), but there is a
+possibility to implement rules by passing:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">allow=callable</span></code> where the callable accepts  <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code>
+instance. Notice this is not a <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> instance, because the
+<em>allow</em> callable is only meant to decide if a given day is suitable for
+timers or not.</p>
+<p>To implement something like the rule laid out above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FutOpExp</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fridays</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curmonth</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">isowkday</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">curmonth</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">curmonth</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fridays</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Mon=1 ... Sun=7</span>
+        <span class="k">if</span> <span class="n">isowkday</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">curmonth</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fridays</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">friday</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># 3rd Friday</span>
+                <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># timer allowed</span>
+
+        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># timer disallowed</span>
+</pre></div>
+</div>
+<p>And one would pass <code class="docutils literal notranslate"><span class="pre">allow=FutOpeExp()</span></code> to the creation of the timer</p>
+<p>This would allow a timer to kick in on the 3rd Friday of those months and
+may be close positions before the futures expire.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="parameters-to-add-timer">
+<h2>Parameters to <code class="docutils literal notranslate"><span class="pre">add_timer</span></code><a class="headerlink" href="#parameters-to-add-timer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">when</span></code>: can be<ul>
+<li><code class="docutils literal notranslate"><span class="pre">datetime.time</span></code> instance (see below <code class="docutils literal notranslate"><span class="pre">tzdata</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_START</span></code> to reference a session start</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_END</span></code> to reference a session end</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">offset</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance</p>
+<p>Used to offset the value <code class="docutils literal notranslate"><span class="pre">when</span></code>. It has a meaningful use in
+combination with <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> and <code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code>, to indicated
+things like a timer being called <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">minutes</span></code> after the session
+start.</p>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">repeat</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance</p>
+<p>Indicates if after a 1st call, further calls will be scheduled
+within the same session at the scheduled <code class="docutils literal notranslate"><span class="pre">repeat</span></code> delta</p>
+<p>Once the timer goes over the end of the session it is reset to the
+original value for <code class="docutils literal notranslate"><span class="pre">when</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">weekdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days (iso codes, Monday is 1, Sunday is 7) the timers can
+be actually invoked</p>
+<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">weekcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>). If <code class="docutils literal notranslate"><span class="pre">True</span></code> and the weekday was
+not seen (ex: trading holiday), the timer will be executed on the
+next day (even if in a new week)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">monthdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days of the month a timer has to be executed. For example
+always on day <em>15</em> of the month</p>
+<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">monthcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>). If the day was not seen
+(weekend, trading holiday), the timer will be executed on the next
+available day.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">allow</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>). A callback which receives a
+<cite>datetime.date`</cite> instance and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the date is
+allowed for timers or else returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tzdata</span></code> which can be either <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), a <code class="docutils literal notranslate"><span class="pre">pytz</span></code>
+instance or a <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code>: <code class="docutils literal notranslate"><span class="pre">when</span></code> is interpreted at face value (which translates
+to handling it as if it where UTC even if it’s not)</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being specified
+in the local time specified by the timezone instance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being
+specified in the local time specified by the <code class="docutils literal notranslate"><span class="pre">tz</span></code> parameter of
+the data feed instance.</p>
+<dl class="docutils">
+<dt><strong>Note</strong>: If <code class="docutils literal notranslate"><span class="pre">when</span></code> is either <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> or</dt>
+<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code> and <code class="docutils literal notranslate"><span class="pre">tzdata</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the 1st <em>data feed</em>
+in the system (aka <code class="docutils literal notranslate"><span class="pre">self.data0</span></code>) will be used as the reference
+to find out the session times.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">strats</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) call also the <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code> of
+strategies</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cheat</span></code> (default <code class="docutils literal notranslate"><span class="pre">False</span></code>) if <code class="docutils literal notranslate"><span class="pre">True</span></code> the timer will be called
+before the broker has a chance to evaluate the orders. This opens
+the chance to issue orders based on opening price for example right
+before the session starts</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">*args</span></code>: any extra args will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: any extra kwargs will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sample-usage-scheduled-py">
+<h2>Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code><a class="headerlink" href="#sample-usage-scheduled-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled.py --help
+usage: scheduled.py [-h] [--data0 DATA0] [--fromdate FROMDATE]
+                    [--todate TODATE] [--cerebro kwargs] [--broker kwargs]
+                    [--sizer kwargs] [--strat kwargs] [--plot [kwargs]]
+
+Sample Skeleton
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --data0 DATA0        Data to read in (default:
+                       ../../datas/2005-2006-day-001.txt)
+  --fromdate FROMDATE  Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --todate TODATE      Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --cerebro kwargs     kwargs in key=value format (default: )
+  --broker kwargs      kwargs in key=value format (default: )
+  --sizer kwargs       kwargs in key=value format (default: )
+  --strat kwargs       kwargs in key=value format (default: )
+  --plot [kwargs]      kwargs in key=value format (default: )
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-usage-scheduled-min-py">
+<h2>Sample usage <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code><a class="headerlink" href="#sample-usage-scheduled-min-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scheduled-min.py --help
+usage: scheduled-min.py [-h] [--data0 DATA0] [--fromdate FROMDATE]
+                        [--todate TODATE] [--cerebro kwargs] [--broker kwargs]
+                        [--sizer kwargs] [--strat kwargs] [--plot [kwargs]]
+
+Timer Test Intraday
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --data0 DATA0        Data to read in (default: ../../datas/2006-min-005.txt)
+  --fromdate FROMDATE  Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --todate TODATE      Date[time] in YYYY-MM-DD[THH:MM:SS] format (default: )
+  --cerebro kwargs     kwargs in key=value format (default: )
+  --broker kwargs      kwargs in key=value format (default: )
+  --sizer kwargs       kwargs in key=value format (default: )
+  --strat kwargs       kwargs in key=value format (default: )
+  --plot [kwargs]      kwargs in key=value format (default: )
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-source-scheduled-py">
+<h2>Sample source <code class="docutils literal notranslate"><span class="pre">scheduled.py</span></code><a class="headerlink" href="#sample-source-scheduled-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">SESSION_START</span><span class="p">,</span>
+        <span class="n">timer</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">cheat</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">timer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_timer</span><span class="p">(</span>
+                <span class="n">when</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">when</span><span class="p">,</span>
+                <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span>
+                <span class="n">repeat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">repeat</span><span class="p">,</span>
+                <span class="n">weekdays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">weekdays</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">cheat</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_timer</span><span class="p">(</span>
+                <span class="n">when</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">when</span><span class="p">,</span>
+                <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span>
+                <span class="n">repeat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">repeat</span><span class="p">,</span>
+                <span class="n">cheat</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">isowk</span><span class="p">,</span> <span class="n">isowkday</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;{}, {}, Week {}, Day {}, O {}, H {}, L {}, C {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(),</span>
+            <span class="n">isowk</span><span class="p">,</span> <span class="n">isowkday</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">notify_timer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timer</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;strategy notify_timer with tid {}, when {} cheat {}&#39;</span><span class="o">.</span>
+              <span class="n">format</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">tid</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="n">timer</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">cheat</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">timer</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">cheat</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-- {} Create buy order&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">notify_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">order</span><span class="o">.</span><span class="n">Completed</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-- {} Buy Exec @ {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">,</span>
+        <span class="n">compression</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">sessionstart</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">sessionend</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;Sample Skeleton&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/2005-2006-day-001.txt&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-source-scheduled-min-py">
+<h2>Sample source <code class="docutils literal notranslate"><span class="pre">scheduled-min.py</span></code><a class="headerlink" href="#sample-source-scheduled-min-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">St</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">SESSION_START</span><span class="p">,</span>
+        <span class="n">timer</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">cheat</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">offset</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">repeat</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(),</span>
+        <span class="n">weekdays</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">weekcarry</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">monthdays</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">monthcarry</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bt</span><span class="o">.</span><span class="n">ind</span><span class="o">.</span><span class="n">SMA</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">timer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_timer</span><span class="p">(</span>
+                <span class="n">when</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">when</span><span class="p">,</span>
+                <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span>
+                <span class="n">repeat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">repeat</span><span class="p">,</span>
+                <span class="n">weekdays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">weekdays</span><span class="p">,</span>
+                <span class="n">weekcarry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">weekcarry</span><span class="p">,</span>
+                <span class="n">monthdays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">monthdays</span><span class="p">,</span>
+                <span class="n">monthcarry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">monthcarry</span><span class="p">,</span>
+                <span class="c1"># tzdata=self.data0,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">cheat</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_timer</span><span class="p">(</span>
+                <span class="n">when</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">when</span><span class="p">,</span>
+                <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span>
+                <span class="n">repeat</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">repeat</span><span class="p">,</span>
+                <span class="n">weekdays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">weekdays</span><span class="p">,</span>
+                <span class="n">weekcarry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">weekcarry</span><span class="p">,</span>
+                <span class="n">monthdays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">monthdays</span><span class="p">,</span>
+                <span class="n">monthcarry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">monthcarry</span><span class="p">,</span>
+                <span class="c1"># tzdata=self.data0,</span>
+                <span class="n">cheat</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">isowk</span><span class="p">,</span> <span class="n">isowkday</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;{}, {}, Week {}, Day {}, O {}, H {}, L {}, C {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(),</span>
+            <span class="n">isowk</span><span class="p">,</span> <span class="n">isowkday</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">notify_timer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timer</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;strategy notify_timer with tid {}, when {} cheat {}&#39;</span><span class="o">.</span>
+              <span class="n">format</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">tid</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="n">timer</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">cheat</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">timer</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">cheat</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-- {} Create buy order&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">notify_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">order</span><span class="o">.</span><span class="n">Completed</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;-- {} Buy Exec @ {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(),</span> <span class="n">order</span><span class="o">.</span><span class="n">executed</span><span class="o">.</span><span class="n">price</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="c1"># Data feed kwargs</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Minutes</span><span class="p">,</span>
+        <span class="n">compression</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">sessionstart</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">sessionend</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Parse from/to-date</span>
+    <span class="n">dtfmt</span><span class="p">,</span> <span class="n">tmfmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;T%H:%M:%S&#39;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">,</span> <span class="s1">&#39;todate&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">strpfmt</span> <span class="o">=</span> <span class="n">dtfmt</span> <span class="o">+</span> <span class="n">tmfmt</span> <span class="o">*</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">strpfmt</span><span class="p">)</span>
+
+    <span class="c1"># Data feed</span>
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="c1"># Broker</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">brokers</span><span class="o">.</span><span class="n">BackBroker</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">broker</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Sizer</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addsizer</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">sizers</span><span class="o">.</span><span class="n">FixedSize</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">sizer</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Strategy</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">St</span><span class="p">,</span> <span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">strat</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Execute</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">cerebro</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>  <span class="c1"># Plot if requested to</span>
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s1">&#39;Timer Test Intraday&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/2006-min-005.txt&#39;</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to read in&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Defaults for dates</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Date[time] in YYYY-MM-DD[THH:MM:SS] format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cerebro&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--broker&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sizer&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--strat&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;{}&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;kwargs in key=value format&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

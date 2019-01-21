@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Orders &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Order Management and Execution" href="order-creation-execution/order-creation-execution.html" />
+    <link rel="prev" title="Fillers" href="filler.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#order-creation">Order creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order-notification">Order notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order-status-values">Order Status values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference-order-and-associated-classes">Reference: Order and associated classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="orders">
+<h1>Orders<a class="headerlink" href="#orders" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> is the key control system in <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> and <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> (a
+subclass) is the key control point of the end user. The latter needs a chaining
+method to other parts of the system and that’s where <strong>orders</strong> play a key
+role.</p>
+<p><em>Orders</em> translate the decisions made by the logic in a <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> into a
+message suitable for the <code class="docutils literal notranslate"><span class="pre">Broker</span></code> to execute an action. This is done with:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>Creation</em></p>
+<p>Through Strategy’s methods: <code class="docutils literal notranslate"><span class="pre">buy`</span></code>, <code class="docutils literal notranslate"><span class="pre">sell</span></code> and <code class="docutils literal notranslate"><span class="pre">close</span></code>
+(<a class="reference internal" href="strategy.html"><span class="doc">Strategy</span></a>) which return an <code class="docutils literal notranslate"><span class="pre">order</span></code> instance as a reference</p>
+</li>
+<li><p class="first"><em>Cancellation</em></p>
+<p>Through Strategy’s method: <code class="docutils literal notranslate"><span class="pre">cancel</span></code> (<a class="reference internal" href="strategy.html"><span class="doc">Strategy</span></a>) which takes an
+order instance to operate on</p>
+</li>
+</ul>
+</div></blockquote>
+<p>And the <em>orders</em> serve also as a communication method back to the user, to
+notify how things are running in the broker.</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>Notification</em></p>
+<p>To Strategy method: <code class="docutils literal notranslate"><span class="pre">notify_order</span></code> (<a class="reference internal" href="strategy.html"><span class="doc">Strategy</span></a>) which reports an
+<code class="docutils literal notranslate"><span class="pre">order</span></code> instance</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="order-creation">
+<h2>Order creation<a class="headerlink" href="#order-creation" title="Permalink to this headline">¶</a></h2>
+<p>When invoking the <code class="docutils literal notranslate"><span class="pre">buy</span></code>, <code class="docutils literal notranslate"><span class="pre">sell</span></code> and <code class="docutils literal notranslate"><span class="pre">close</span></code> the following parameters
+apply for creation:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">data</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>For which data the order has to be created. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then the
+first data in the system, <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span> <span class="pre">or</span> <span class="pre">self.data0</span></code> (aka
+<code class="docutils literal notranslate"><span class="pre">self.data</span></code>) will be used</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">size</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Size to use (positive) of units of data to use for the order.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> the <code class="docutils literal notranslate"><span class="pre">sizer</span></code> instance retrieved via <code class="docutils literal notranslate"><span class="pre">getsizer</span></code> will
+be used to determine the size.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">price</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Price to use (live brokers may place restrictions on the actual
+format if it does not comply to minimum tick size requirements)</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is valid for <code class="docutils literal notranslate"><span class="pre">Market</span></code> and <code class="docutils literal notranslate"><span class="pre">Close</span></code> orders (the market
+determines the price)</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders this value
+determines the trigger point (in the case of <code class="docutils literal notranslate"><span class="pre">Limit</span></code> the trigger
+is obviously at which price the order should be matched)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plimit</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Only applicable to <code class="docutils literal notranslate"><span class="pre">StopLimit</span></code> orders. This is the price at which
+to set the implicit <em>Limit</em> order, once the <em>Stop</em> has been
+triggered (for which <code class="docutils literal notranslate"><span class="pre">price</span></code> has been used)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">exectype</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>. A market order will be executed
+with the next available price. In backtesting it will be the
+opening price of the next bar</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Limit</span></code>. An order which can only be executed at the given
+<code class="docutils literal notranslate"><span class="pre">price</span></code> or better</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Stop</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed like an <code class="docutils literal notranslate"><span class="pre">Order.Market</span></code> order</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.StopLimit</span></code>. An order which is triggered at <code class="docutils literal notranslate"><span class="pre">price</span></code> and
+executed as an implicit <em>Limit</em> order with price given by
+<code class="docutils literal notranslate"><span class="pre">pricelimit</span></code></li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">valid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Possible values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code>: this generates an order that will not expire (aka
+<em>Good till cancel</em>) and remain in the market until matched or
+canceled. In reality brokers tend to impose a temporal limit,
+but this is usually so far away in time to consider it as not
+expiring</li>
+<li><code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> instance: the date
+will be used to generate an order valid until the given
+datetime (aka <em>good till date</em>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">timedelta()</span></code>: a day valid until
+the <em>End of the Session</em> (aka <em>day</em> order) will be generated</li>
+<li><code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">value</span></code>: This is assumed to be a value corresponding
+to a datetime in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> coding (the one used by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code>) and will used to generate an order valid until
+that time (<em>good till date</em>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradeid</span></code> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p>
+<p>This is an internal value applied by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> to keep track
+of overlapping trades on the same asset. This <code class="docutils literal notranslate"><span class="pre">tradeid</span></code> is sent
+back to the <em>strategy</em> when notifying changes to the status of the
+orders.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: additional broker implementations may support extra
+parameters. <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will pass the <em>kwargs</em> down to the
+created order objects</p>
+<p>Example: if the 4 order execution types directly supported by
+<code class="docutils literal notranslate"><span class="pre">backtrader</span></code> are not enough, in the case of for example
+<em>Interactive Brokers</em> the following could be passed as <em>kwargs</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orderType</span><span class="o">=</span><span class="s1">&#39;LIT&#39;</span><span class="p">,</span> <span class="n">lmtPrice</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">auxPrice</span><span class="o">=</span><span class="mf">9.8</span>
+</pre></div>
+</div>
+<p>This would override the settings created by <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> and
+generate a <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">IF</span> <span class="pre">TOUCHED</span></code> order with a <em>touched</em> price of 9.8
+and a <em>limit</em> price of 10.0.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">close</span></code> method will examine the current position and
+correspondingly use <code class="docutils literal notranslate"><span class="pre">buy</span></code> or <code class="docutils literal notranslate"><span class="pre">sell</span></code> to effectively <strong>close</strong> the
+position. <code class="docutils literal notranslate"><span class="pre">size</span></code> will also be automatically calculated unless the
+parameter is an input from the user, in which case a partial <em>close</em>
+or a <em>reversal</em> can be achieved</p>
+</div>
+</div>
+<div class="section" id="order-notification">
+<h2>Order notification<a class="headerlink" href="#order-notification" title="Permalink to this headline">¶</a></h2>
+<p>To receive notifications the <code class="docutils literal notranslate"><span class="pre">notify_order</span></code> method has to be overriden in the
+user subclassed <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> (the default behavior is to do nothing). The
+following applies to those notifications:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Issued before the strategy’s <code class="docutils literal notranslate"><span class="pre">next</span></code> method is called</p>
+</li>
+<li><p class="first">May (and will) happen several times for the same <em>order</em> with the same or
+different status during the same <em>next</em> cycle.</p>
+<p>An <em>order</em> may be submitted to the <em>broker</em> and be <em>accepted</em> and its
+execution <em>completed</em> before <code class="docutils literal notranslate"><span class="pre">next</span></code> will be invoked again.</p>
+<p>In this case at least 3 notifications will happen with the following
+<code class="docutils literal notranslate"><span class="pre">status</span></code> values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Order.Submitted</span></code> because the order was sent to the <em>broker</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Accepted</span></code> because the order was taken by the <em>broker</em> and
+awaits potential execution</li>
+<li><code class="docutils literal notranslate"><span class="pre">Order.Completed</span></code> because in the example it was quickly matched and
+completely filled (which may be the case usually for <code class="docutils literal notranslate"><span class="pre">Market</span></code> orders)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Notifications may happen even several times for the same status in the case of
+<code class="docutils literal notranslate"><span class="pre">Order.Partial</span></code>. This status will not be seen in the <em>backtesting</em> broker
+(which doesn’t consider volume when matching) but it will for sure be set by
+real brokers.</p>
+<p>Real brokers may issue one or more executions before updating a position, and
+this group of executions will make up for an <code class="docutils literal notranslate"><span class="pre">Order.Partial</span></code> notification.</p>
+<p>Actual execution data is in the attribute: <code class="docutils literal notranslate"><span class="pre">order.executed</span></code> which is an
+object of type <code class="docutils literal notranslate"><span class="pre">OrderData</span></code> (see below for the reference), with usual fields
+as <code class="docutils literal notranslate"><span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">price</span></code></p>
+<p>The values at the time of creation are stored in <code class="docutils literal notranslate"><span class="pre">order.created</span></code> which
+remains unchanged throughout the lifecycle of an <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
+</div>
+<div class="section" id="order-status-values">
+<h2>Order Status values<a class="headerlink" href="#order-status-values" title="Permalink to this headline">¶</a></h2>
+<p>The following are defined:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Created</span></code>: set when the <code class="docutils literal notranslate"><span class="pre">Order</span></code> instance is created. Never to be
+seen by end-users unless <code class="docutils literal notranslate"><span class="pre">order</span></code> instances are manually created rather
+than through <code class="docutils literal notranslate"><span class="pre">buy</span></code>, <code class="docutils literal notranslate"><span class="pre">sell</span></code> and <code class="docutils literal notranslate"><span class="pre">close</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Submitted</span></code>: set when the <code class="docutils literal notranslate"><span class="pre">order</span></code> instance has been transmitted
+to the <code class="docutils literal notranslate"><span class="pre">broker</span></code>. This simply means it has been <em>sent</em>. In <em>backtesting</em>
+mode this will be an immediate action, but it may take actual <em>time</em> with a
+real broker, which may receive the order and only first notify when it has
+been forwarded to an exchange</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Accepted</span></code>: the <code class="docutils literal notranslate"><span class="pre">broker</span></code> has taken the order and it is in the
+system (or already in a exchange) awaiting execution according to the set
+parameters like execution type, size, price and validity</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Partial</span></code>: the <code class="docutils literal notranslate"><span class="pre">order</span></code> has been partially
+executed. <code class="docutils literal notranslate"><span class="pre">order.executed</span></code> contains the current filled <code class="docutils literal notranslate"><span class="pre">size</span></code> and
+average price.</p>
+<p><code class="docutils literal notranslate"><span class="pre">order.executed.exbits</span></code> contains a complete list of <code class="docutils literal notranslate"><span class="pre">ExecutionBits</span></code>
+detailing the partial fillings</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Complete</span></code>: the <code class="docutils literal notranslate"><span class="pre">order</span></code> has been completely filled
+average price.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Rejected</span></code>: the <code class="docutils literal notranslate"><span class="pre">broker</span></code> has rejected the order. A parameter
+(like for example <code class="docutils literal notranslate"><span class="pre">valid</span></code> to determine its lifetime) may not be accepted
+by the <code class="docutils literal notranslate"><span class="pre">broker</span></code> and the <code class="docutils literal notranslate"><span class="pre">order</span></code> cannot be accepted.</p>
+<p>The reason will be notified via the <code class="docutils literal notranslate"><span class="pre">notify_store</span></code> method of the
+<code class="docutils literal notranslate"><span class="pre">strategy</span></code>. Although this may seem awkward, the reason is that real life
+brokers will notify this over an event, which may or may not be direclty
+related to the order. But the notification from the broker can still be
+seen in <code class="docutils literal notranslate"><span class="pre">notify_store</span></code>.</p>
+<p>This status will not be seen in the <em>backtesting</em> broker</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Margin</span></code>: the order execution would imply a margin call and the
+previously accepted order has been taken off the system</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Cancelled</span></code> (or <code class="docutils literal notranslate"><span class="pre">Order.Canceled</span></code>): confirmation of the user
+requested cancellation</p>
+<p>It must be taken into account that a request to <em>cancel</em> an order via the
+<code class="docutils literal notranslate"><span class="pre">cancel</span></code> method of the strategy is no guarantee of cancellation. The
+order may have been already executed but such execution may not have yet
+notified by the broker and/or the notification may not have yet been
+delivered to the strategy</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Order.Expired</span></code>: a previously accepted <em>order*</em> which had a time validity
+has expired and ben taken off the system</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="reference-order-and-associated-classes">
+<h2>Reference: Order and associated classes<a class="headerlink" href="#reference-order-and-associated-classes" title="Permalink to this headline">¶</a></h2>
+<p>These objects are the generic classes in the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> ecosystem. They may
+been extended and/or contain extra embedded information when operating with
+other brokers. See the reference of the appropriate broker</p>
+<dl class="class">
+<dt id="backtrader.order.Order">
+<em class="property">class </em><code class="descclassname">backtrader.order.</code><code class="descname">Order</code><a class="headerlink" href="#backtrader.order.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class which holds creation/execution data and type of oder.</p>
+<p>The order may have the following status:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Submitted: sent to the broker and awaiting confirmation</p>
+</li>
+<li><p class="first">Accepted: accepted by the broker</p>
+</li>
+<li><p class="first">Partial: partially executed</p>
+</li>
+<li><p class="first">Completed: fully exexcuted</p>
+</li>
+<li><p class="first">Canceled/Cancelled: canceled by the user</p>
+</li>
+<li><p class="first">Expired: expired</p>
+</li>
+<li><p class="first">Margin: not enough cash to execute the order.</p>
+</li>
+<li><p class="first">Rejected: Rejected by the broker</p>
+<p>This can happen during order submission (and therefore the order will
+not reach the Accepted status) or before execution with each new bar
+price because cash has been drawn by other sources (future-like
+instruments may have reduced the cash or orders orders may have been
+executed)</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Member Attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ref: unique order identifier</li>
+<li>created: OrderData holding creation data</li>
+<li>executed: OrderData holding execution data</li>
+<li>info: custom information passed over method <code class="xref py py-func docutils literal notranslate"><span class="pre">addinfo()</span></code>. It is kept
+in the form of an OrderedDict which has been subclassed, so that keys
+can also be specified using ‘.’ notation</li>
+</ul>
+</div></blockquote>
+<p>User Methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li>isbuy(): returns bool indicating if the order buys</li>
+<li>issell(): returns bool indicating if the order sells</li>
+<li>alive(): returns bool if order is in status Partial or Accepted</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="backtrader.order.OrderData">
+<em class="property">class </em><code class="descclassname">backtrader.order.</code><code class="descname">OrderData</code><span class="sig-paren">(</span><em>dt=None</em>, <em>size=0</em>, <em>price=0.0</em>, <em>pricelimit=0.0</em>, <em>remsize=0</em>, <em>pclose=0.0</em>, <em>trailamount=0.0</em>, <em>trailpercent=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.order.OrderData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds actual order data for Creation and Execution.</p>
+<p>In the case of Creation the request made and in the case of Execution the
+actual outcome.</p>
+<p>Member Attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>exbits : iterable of OrderExecutionBits for this OrderData</li>
+<li>dt: datetime (float) creation/execution time</li>
+<li>size: requested/executed size</li>
+<li>price: execution price
+Note: if no price is given and no pricelimite is given, the closing
+price at the time or order creation will be used as reference</li>
+<li>pricelimit: holds pricelimit for StopLimit (which has trigger first)</li>
+<li>trailamount: absolute price distance in trailing stops</li>
+<li>trailpercent: percentage price distance in trailing stops</li>
+<li>value: market value for the entire bit size</li>
+<li>comm: commission for the entire bit execution</li>
+<li>pnl: pnl generated by this bit (if something was closed)</li>
+<li>margin: margin incurred by the Order (if any)</li>
+<li>psize: current open position size</li>
+<li>pprice: current open position price</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="backtrader.order.OrderExecutionBit">
+<em class="property">class </em><code class="descclassname">backtrader.order.</code><code class="descname">OrderExecutionBit</code><span class="sig-paren">(</span><em>dt=None</em>, <em>size=0</em>, <em>price=0.0</em>, <em>closed=0</em>, <em>closedvalue=0.0</em>, <em>closedcomm=0.0</em>, <em>opened=0</em>, <em>openedvalue=0.0</em>, <em>openedcomm=0.0</em>, <em>pnl=0.0</em>, <em>psize=0</em>, <em>pprice=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.order.OrderExecutionBit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Intended to hold information about order execution. A “bit” does not
+determine if the order has been fully/partially executed, it just holds
+information.</p>
+<p>Member Attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>dt: datetime (float) execution time</li>
+<li>size: how much was executed</li>
+<li>price: execution price</li>
+<li>closed: how much of the execution closed an existing postion</li>
+<li>opened: how much of the execution opened a new position</li>
+<li>openedvalue: market value of the “opened” part</li>
+<li>closedvalue: market value of the “closed” part</li>
+<li>closedcomm: commission for the “closed” part</li>
+<li>openedcomm: commission for the “opened” part</li>
+<li>value: market value for the entire bit size</li>
+<li>comm: commission for the entire bit execution</li>
+<li>pnl: pnl generated by this bit (if something was closed)</li>
+<li>psize: current open position size</li>
+<li>pprice: current open position price</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

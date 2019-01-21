@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Operating the platform &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exceptions" href="exceptions.html" />
+    <link rel="prev" title="Platform Concepts" href="concepts.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operating the platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#line-iterators">Line Iterators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extra-methods-for-indicators">Extra methods for <em>Indicators</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-period">Minimum Period</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#up-and-running">Up and Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-feeds">Data Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-strategy-derived-class">A Strategy (derived) class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-cerebro">A Cerebro</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="operating-the-platform">
+<h1>Operating the platform<a class="headerlink" href="#operating-the-platform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="line-iterators">
+<h2>Line Iterators<a class="headerlink" href="#line-iterators" title="Permalink to this headline">¶</a></h2>
+<p>To engage into operations, the plaftorm uses the notion of <cite>line
+iterators</cite>. They have been loosely modeled after Python’s iterators but have
+actually nothing to do with them.</p>
+<p>Strategies and Indicators are <cite>line iterators</cite>.</p>
+<p>The <cite>line iterator</cite> concept tries to describe the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A <cite>Line Iterator</cite> kicks slave <cite>line iterators</cite> telling them to iterate</li>
+<li>A <cite>Line Iterator</cite> then iterates over its own declared named lines <cite>setting</cite>
+values</li>
+</ul>
+</div></blockquote>
+<p>The key to iteration, just like with regular Python iterators, is:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">next</span></code> method</p>
+<p>It will be called for each iteration. The <code class="docutils literal notranslate"><span class="pre">datas</span></code> array which the <em>line
+iterator</em> has and serve as basis for logic/calculations will have already
+been moved to the next index by the platform (barring <cite>data replay</cite>)</p>
+<p>Called when the <strong>minimum period</strong> for the <cite>line iterator</cite> has been met. A
+bit more on this below.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>But because they are not regular iterators, two additional methods exist:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">prenext</span></code></p>
+<p>Called before the <strong>minimum period</strong> for the <cite>line iterator`</cite> has been met.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">nextstart</span></code></p>
+<p>Called exactly <strong>ONCE</strong> when the <strong>minimum period</strong> for the <cite>line iterator`</cite>
+has been met.</p>
+<p>The default behavior is to forward the call to <code class="docutils literal notranslate"><span class="pre">next</span></code>, but can of course
+be overriden if needed.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="extra-methods-for-indicators">
+<h3>Extra methods for <em>Indicators</em><a class="headerlink" href="#extra-methods-for-indicators" title="Permalink to this headline">¶</a></h3>
+<p>To speed up operations, <cite>Indicators</cite> support a batch operation mode which has
+been termed as <cite>runonce</cite>. It is not strictly needed (a <code class="docutils literal notranslate"><span class="pre">next</span></code> method suffices)
+but it greatly reduces time.</p>
+<p>The <cite>runonce</cite> methods rules void the <cite>get/set</cite> point with index 0 and relies on
+direct access to the underlying arrays holding the data and being passed the
+right indices for each state.</p>
+<p>The defined methods follow the naming of the next family:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">once(self,</span> <span class="pre">start,</span> <span class="pre">end)</span></code></p>
+<p>Called when the minimum period has been met. The internal array must be
+processed between start and end which are zero based from the start of the
+internal array</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">preonce(self,</span> <span class="pre">start,</span> <span class="pre">end)</span></code></p>
+<p>Called before the minimum period has been met.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oncestart(self,</span> <span class="pre">start,</span> <span class="pre">end)</span></code></p>
+<p>Called exactly <strong>ONCE</strong> when the minimum period has been met.</p>
+<p>The default behavior is to forward the call to <code class="docutils literal notranslate"><span class="pre">once</span></code>, but can of course
+be overriden if needed.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="minimum-period">
+<h3>Minimum Period<a class="headerlink" href="#minimum-period" title="Permalink to this headline">¶</a></h3>
+<p>A picture is worth a thousand words and in this case possibly an example
+too. A SimpleMovingAverage is capable of explaining it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleMovingAverage</span><span class="p">(</span><span class="n">Indicator</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sma&#39;</span><span class="p">,)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>  <span class="c1"># Not relevant for the explanation</span>
+
+    <span class="k">def</span> <span class="nf">prenext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prenext:: current period:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">nextstart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nextstart:: current period:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="c1"># emulate default behavior ... call next</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;next:: current period:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>And the instantiation could look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Briefly explained:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Assuming the data passed to the moving average is a standard data feed its
+default period is <code class="docutils literal notranslate"><span class="pre">1</span></code> that is: the data feed produces a bar with no
+initial delay.</li>
+<li>Then the <strong>“period=25”</strong> instantiated moving average would have its methods
+called as follows:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">prenext</span></code> 24 times</li>
+<li><code class="docutils literal notranslate"><span class="pre">nextstart</span></code> 1 time (in turn calling <code class="docutils literal notranslate"><span class="pre">next</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">next</span></code> n additional times until the <em>data feed</em> has been exhausted</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>Let’s go for the killer indicator: <em>a SimpleMovingAverage</em> over another
+<em>SimpleMovingAverage</em>. The instantiation could look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sma1</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">sma2</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="n">sma1</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What now goes on:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The same as above for <code class="docutils literal notranslate"><span class="pre">sma1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sma2</span></code> is receiving a <strong>data feed</strong> which has a <em>minimum period</em> of 25 which
+is our <code class="docutils literal notranslate"><span class="pre">sma1</span></code> and therefore</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">sma2</span></code> methods are called as indicated:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">prenext</span></code> the first 25 + 18 times for a total of 43 times<ul>
+<li>25 times to let <code class="docutils literal notranslate"><span class="pre">sma1</span></code> produce its 1st sensible value</li>
+<li>18 times to accumulate extra <code class="docutils literal notranslate"><span class="pre">sma1</span></code> values</li>
+<li>For a total of 19 values (1 after 25 calls and then 18 more)</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">nextstart</span></code> then 1 time (in turn calling <code class="docutils literal notranslate"><span class="pre">next</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">next</span></code> the n additional times until the <em>data feed</em> has been exhausted</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>The platform is calling <code class="docutils literal notranslate"><span class="pre">next</span></code> when the system has already processed 44 bars.</p>
+<p>The <em>minimum period</em> has been automatically adjusted to the incoming <cite>data</cite>.</p>
+<p>Strategies and Indicators adhere to this behavior:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Only when the automatically calculated minimum period has been reached will
+<code class="docutils literal notranslate"><span class="pre">next</span></code> be called (barring the initial hook call to <code class="docutils literal notranslate"><span class="pre">nextstart</span></code>)</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same rules apply to <code class="docutils literal notranslate"><span class="pre">preonce</span></code>, <code class="docutils literal notranslate"><span class="pre">oncestart</span></code> and <code class="docutils literal notranslate"><span class="pre">once</span></code> for
+the <strong>runonce</strong> batch operation mode</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>minimum period</strong> behavior can be manipulated although it’s not
+recommended. Should it be wished used the <code class="docutils literal notranslate"><span class="pre">setminperiod(minperiod)</span></code>
+method in either Strategies or Indicators</p>
+</div>
+</div>
+</div>
+<div class="section" id="up-and-running">
+<h2>Up and Running<a class="headerlink" href="#up-and-running" title="Permalink to this headline">¶</a></h2>
+<p>Getting up and running involves at least 3 <em>Lines</em> objects:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A Data feed</li>
+<li>A Strategy (actually a class derived from Strategy)</li>
+<li>A Cerebro (<em>brain</em> in Spanish)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="data-feeds">
+<h2>Data Feeds<a class="headerlink" href="#data-feeds" title="Permalink to this headline">¶</a></h2>
+<p>These objects, obviously, provide the data which will be backtested by applying
+calculations (direct and/or with Indicators)</p>
+<p>The platform provides several data feeds:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Several CSV Format and a Generic CSV reader</li>
+<li>Yahoo online fetcher</li>
+<li>Support for receiving <em>Pandas DataFrames</em> and <em>blaze</em> objects</li>
+<li>Live Data Feeds with <em>Interacive Brokers</em>, <em>Visual Chart</em> and <em>Oanda</em></li>
+</ul>
+</div></blockquote>
+<p>The platform makes no assumption about the content of the data feed such as
+timeframe and compression. Those values, together with a name, can be supplied
+for informational purposes and advance operations like Data Feed Resampling
+(turning a for example a 5 minute Data Feed into a Daily Data Feed)</p>
+<p>Example of setting up a Yahoo Finance Data Feed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.feeds</span> <span class="k">as</span> <span class="nn">btfeeds</span>
+
+<span class="o">...</span>
+
+<span class="n">datapath</span> <span class="o">=</span> <span class="s1">&#39;path/to/your/yahoo/data.csv&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">YahooFinanceCSVData</span><span class="p">(</span>
+    <span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">,</span>
+    <span class="nb">reversed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The optional <code class="docutils literal notranslate"><span class="pre">reversed</span></code> parameter for Yahoo is shown, because the CSV files
+directly downloaded from Yahoo start with the latest date, rather than with the
+oldest.</p>
+<p>If your data spans a large time range, the actual loaded data can be limited as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">YahooFinanceCSVData</span><span class="p">(</span>
+    <span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">,</span>
+    <span class="nb">reversed</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fromdate</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">todate</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Both the <em>fromdate</em> and the <em>todate</em> will be included if present in the data
+feed.</p>
+<p>As already mentioned timeframe, compression and name can be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">YahooFinanceCSVData</span><span class="p">(</span>
+    <span class="n">dataname</span><span class="o">=</span><span class="n">datapath</span><span class="p">,</span>
+    <span class="nb">reversed</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fromdate</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">todate</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+    <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">,</span>
+    <span class="n">compression</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Yahoo&#39;</span>
+   <span class="p">)</span>
+</pre></div>
+</div>
+<p>If the data is plotted, those values will be used.</p>
+</div>
+<div class="section" id="a-strategy-derived-class">
+<h2>A Strategy (derived) class<a class="headerlink" href="#a-strategy-derived-class" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before going on and for a more simplified approach, please check the
+<em>Signals</em> section of the documentation if subclassing a strategy is
+not wished.</p>
+</div>
+<p>The goal of anyone using the platform is backtesting the data and this is done
+inside a Strategy (derived class).</p>
+<p>There are 2 methods which at least need customization:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">__init__</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">next</span></code></li>
+</ul>
+</div></blockquote>
+<p>During initialization indicators on data and other calculations are created
+prepared to later apply the logic.</p>
+<p>The next method is later called to apply the logic for each and every bar of the
+data.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If data feeds of different timeframes (and thus different bar counts)
+are passed the <code class="docutils literal notranslate"><span class="pre">next</span></code> method will be called for the master data
+(the 1st one passed to cerebro, see below) which must be the the data
+with the smaller timeframe</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the Data Replay functionality is used, the <code class="docutils literal notranslate"><span class="pre">next</span></code> method will be
+called several time for the same bar as the development of the bar is
+replayed.</p>
+</div>
+<p>A basic Strategy derived class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Strategies have other methods (or hook points) which can be overriden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="n">submitted_order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buy</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">:</span>
+            <span class="n">submitted_order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sell</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Backtesting is about to start&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Backtesting is finished&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">notify_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;An order new/changed/executed/canceled has been received&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> methods should be self-explanatory. As expected and
+following the text in the print function, the <code class="docutils literal notranslate"><span class="pre">notify_order</span></code> method will be
+called when the strategy needs a notification. Use case:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A buy or sell is requested (as seen in next)</p>
+<p>buy/sell will return an <em>order</em> which is submitted to the broker. Keeping a
+reference to this submitted order is up to the caller.</p>
+<p>It can for example be used to ensure that no new orders are submitted if an
+order is still pending.</p>
+</li>
+<li><p class="first">If the order is Accepted/Executed/Canceled/Changed the broker will notify
+the status change (and for example execution size) back to the strategy via
+the notify method</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The QuickStart guide has a complete and functional example of order management
+in the <code class="docutils literal notranslate"><span class="pre">notify_order</span></code> method.</p>
+<p>More can be done with other Strategy classes:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">buy</span></code> / <code class="docutils literal notranslate"><span class="pre">sell</span></code> / <code class="docutils literal notranslate"><span class="pre">close</span></code></p>
+<p>Use the underlying <em>broker</em> and <em>sizer</em> to send the broker a buy/sell
+order</p>
+<p>The same could be done by manually creating an Order and passing it over to
+the broker. But the platform is about making it easy for those using it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">close</span></code> will get the current market position and close it immediately.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">getposition</span></code> (or the property “position”)</p>
+<p>Returns the current market position</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">setsizer</span></code>/<code class="docutils literal notranslate"><span class="pre">getsizer</span></code> (or the property “sizer”)</p>
+<p>These allow setting/getting the underlying stake Sizer. The same logic can
+be checked against Sizers which provide different stakes for the same
+situation (fixed size, proportional to capital, exponential)</p>
+<p>There is plenty of literature but Van K. Tharp has excellent books on the
+subject.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>A Strategy is a <em>Lines</em> object and these support parameters, which are collected
+using the standard Python kwargs argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">btind</span><span class="o">.</span><span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+    <span class="o">...</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> is no longer instantiated with a fixed
+value of 20, but rather with the parameter “period” which has been defined for
+the strategy.</p>
+</div>
+<div class="section" id="a-cerebro">
+<h2>A Cerebro<a class="headerlink" href="#a-cerebro" title="Permalink to this headline">¶</a></h2>
+<p>Once Data Feeds are available and the Strategy has been defined, a Cerebro
+instance is what brings everything together and execute the
+actions. Instantiating one is easy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Defaults are taking care of if nothing special is wished.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">A default broker is created</p>
+</li>
+<li><p class="first">No commission for the operations</p>
+</li>
+<li><p class="first">Data Feeds will be preloaded</p>
+</li>
+<li><p class="first">The default execution mode will be runonce (batch operation) which is the
+faster</p>
+<p>All indicators must support the <code class="docutils literal notranslate"><span class="pre">runonce</span></code> mode for full speed. The ones
+included in the platform do.</p>
+<p>Custom indicators do not need to implement the runonce
+functionality. <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> will simulate it, which means those non-runonce
+compatible indicators will run slower. But still most of the system will
+run in batch mode.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Since a Data feed is already available and a Strategy too (created earlier) the
+standard way to put it all together and get it up and running is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">MyStrategy</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notice the following:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The Data Feed “instance” is added</p>
+</li>
+<li><p class="first">The MyStrategy “class” is added along with parameters (kwargs) that will be
+passed to it.</p>
+<p>The instantiation of MyStrategy will be done by cerebro in the background
+and any kwargs in “addstrategy” will be passed to it</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The user may add as many Strategies and Data Feeds as wished. How Strategies
+communicate with each other to achieve coordination (if wished be) is not
+enforced/restricted by the platform.</p>
+<p>Of course a Cerebro offers additional possibilities:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Decide about preloading and operation mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">(</span><span class="n">runonce</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There is a constraint here: <code class="docutils literal notranslate"><span class="pre">runonce</span></code> needs preloading (if not, a batch
+operation cannot be run) Of course preloading Data Feeds does not enforce
+<code class="docutils literal notranslate"><span class="pre">runonce</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">setbroker</span></code> / <code class="docutils literal notranslate"><span class="pre">getbroker</span></code> (and the <em>broker</em> property)</p>
+<p>A custom broker can be set if wished. The actual broker instance can also be
+accesed</p>
+</li>
+<li><p class="first">Plotting. In a regular case as easy as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>plot takes some arguments for the customization</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">numfigs=1</span></code></p>
+<p>If the plot is too dense it may be broken down into several plots</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">plotter=None</span></code></p>
+<p>A customer plotter instance can be passed and cerebro will not
+instantiate a default one</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> - standard keyword arguments</p>
+<p>Which will get passed to the plotter.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Please see the plotting section for more information.</p>
+</li>
+<li><p class="first">Optimization of strategies.</p>
+<p>As mentioned above, Cerebro gets a Strategy derived class (not an instance)
+and the keyword arguments that will be passed to it upon instantiation,
+which will happen when “run” is called.</p>
+<p>This is so to enable optimization. The same Strategy class will be
+instantiated as many times as needed with new parameters. If an instance had
+been passed to cerebro … this would not be possible.</p>
+<p>Optimization is requested as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">optstrategy</span><span class="p">(</span><span class="n">MyStrategy</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The method <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code> has the same signature as <code class="docutils literal notranslate"><span class="pre">addstrategy</span></code> but
+does extra housekeeping to ensure optimization runs as expected. A strategy
+could be expecting a <em>range</em> as a normal parameter for a strategy and
+<code class="docutils literal notranslate"><span class="pre">addstrategy</span></code> will make no assumptions about the passed parameter.</p>
+<p>On the other hand, <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code> will understand that an iterable is a set
+of values that has to be passed in sequence to each instantiation of the
+Strategy class.</p>
+<p>Notice that instead of a single value a <em>range</em> of values is passed. In this
+simple case 10 values 10 -&gt; 19 (20 is the upper limit) will be tried for
+this strategy.</p>
+<p>If a more complex strategy is developed with extra parameters they can all
+be passed to <em>optstrategy</em>. Parameters which must not undergo optimization
+can be passed directly without the end user having to create a dummy
+iterable of just one value. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">optstrategy</span><span class="p">(</span><span class="n">MyStrategy</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code> method sees factor and creates (a needed) dummy iterable
+in the background for factor which has a single element (in the example 3.5)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Interactive Python shells and some types of frozen executables
+under <em>Windows</em> have problems with the Python <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module</p>
+<p class="last">Please read the Python documentation about <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>.</p>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

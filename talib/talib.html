@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TA-Lib &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mixing Timeframes in Indicators" href="../mixing-timeframes/indicators-mixing-timeframes.html" />
+    <link rel="prev" title="Using Indicators" href="../induse.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TA-Lib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ta-lib">Using <em>ta-lib</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moving-averages-and-ma-type">Moving Averages and MA_Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-ta-lib-indicators">Plotting ta-lib indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-and-comparisons">Examples and comparisons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kama-kaufman-moving-average">KAMA (Kaufman Moving Average)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sma">SMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ema">EMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stochastic">Stochastic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rsi">RSI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macd">MACD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bollinger-bands">Bollinger Bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aroon">AROON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ultimate-oscillator">Ultimate Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trix">Trix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adxr">ADXR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dema">DEMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tema">TEMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ppo">PPO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#williamsr">WilliamsR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#roc">ROC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-usage">Sample Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="ta-lib">
+<h1>TA-Lib<a class="headerlink" href="#ta-lib" title="Permalink to this headline">¶</a></h1>
+<p>Even if <em>backtrader</em> offers an already high number of built-in indicators and
+developing an indicator is mostly a matter of defining the inputs, outputs and
+writing the formula in a natural manner, some people want to use <em>TA-LIB</em>. Some
+of the reasons:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Indicator <em>X</em> is in the library and not in <em>backtrader</em> (the author would
+gladly accept a request)</li>
+<li><em>TA-LIB</em> behavior is well known and people trust good old things</li>
+</ul>
+</div></blockquote>
+<p>In order to satisfy each and every taste, <em>TA-LIB</em> integration is offered.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/mrjbq7/ta-lib">Python wrapper for TA-Lib</a></li>
+<li>Any dependencies needed by it (for example <em>numpy</em>)</li>
+</ul>
+</div></blockquote>
+<p>The installation details are on the <em>GitHub</em> repository</p>
+</div>
+<div class="section" id="using-ta-lib">
+<h2>Using <em>ta-lib</em><a class="headerlink" href="#using-ta-lib" title="Permalink to this headline">¶</a></h2>
+<p>As easy as using any of the indicators already built-in in
+<em>backtrader</em>. Example of a <em>Simple Moving Average</em>. First the <em>backtrader</em>
+one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+        <span class="o">...</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Now the <em>ta-lib</em> example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+        <span class="o">...</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Et voilá! Of course the <em>params</em> for the <em>ta-lib</em> indicators are defined by the
+library itself and not by <em>backtrader</em>. In this case the <em>SMA</em> in <em>ta-lib</em>
+takes a parameter named <code class="docutils literal notranslate"><span class="pre">timeperiod</span></code> to defined the size of the operating
+window.</p>
+<p>For indicators that require more than one input, for example the <em>Stochastic</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stoc</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">STOCH</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span>
+                                   <span class="n">fastk_period</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">slowk_period</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">slowd_period</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="o">...</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">high</span></code>, <code class="docutils literal notranslate"><span class="pre">low</span></code> and <code class="docutils literal notranslate"><span class="pre">close</span></code> have been individually passed. One
+could always pass <code class="docutils literal notranslate"><span class="pre">open</span></code> instead of <code class="docutils literal notranslate"><span class="pre">low</span></code> (or any other data series) and
+experiment.</p>
+<p>The <em>ta-lib</em> indicator documentation is automatically parsed and added to the
+<em>backtrader</em> docs. You may also check the <em>ta-lib</em> source code/docs. Or
+adittionally do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">SMA</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which in this case outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SMA</span><span class="p">([</span><span class="n">input_arrays</span><span class="p">],</span> <span class="p">[</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">30</span><span class="p">])</span>
+
+<span class="n">Simple</span> <span class="n">Moving</span> <span class="n">Average</span> <span class="p">(</span><span class="n">Overlap</span> <span class="n">Studies</span><span class="p">)</span>
+
+<span class="n">Inputs</span><span class="p">:</span>
+    <span class="n">price</span><span class="p">:</span> <span class="p">(</span><span class="nb">any</span> <span class="n">ndarray</span><span class="p">)</span>
+<span class="n">Parameters</span><span class="p">:</span>
+    <span class="n">timeperiod</span><span class="p">:</span> <span class="mi">30</span>
+<span class="n">Outputs</span><span class="p">:</span>
+    <span class="n">real</span>
+</pre></div>
+</div>
+<p>Which offers some information:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Which <em>Input</em> is to be expected (<em>DISREGARD the ``ndarray`` comment</em> because
+backtrader manages the conversions in the background)</li>
+<li>Which <em>parameters</em> and which default values</li>
+<li>Which output <em>lines</em> the indicator actually offers</li>
+</ul>
+</div></blockquote>
+<div class="section" id="moving-averages-and-ma-type">
+<h3>Moving Averages and MA_Type<a class="headerlink" href="#moving-averages-and-ma-type" title="Permalink to this headline">¶</a></h3>
+<p>To select a specific <em>moving average</em> for indicators like <code class="docutils literal notranslate"><span class="pre">bt.talib.STOCH</span></code>,
+the standard <em>ta-lib</em> <code class="docutils literal notranslate"><span class="pre">MA_Type</span></code> is accesible with
+<code class="docutils literal notranslate"><span class="pre">backtrader.talib.MA_Type</span></code>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SMA:&#39;</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">MA_Type</span><span class="o">.</span><span class="n">SMA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T3:&#39;</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">MA_Type</span><span class="o">.</span><span class="n">T3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-ta-lib-indicators">
+<h2>Plotting ta-lib indicators<a class="headerlink" href="#plotting-ta-lib-indicators" title="Permalink to this headline">¶</a></h2>
+<p>Just as with regular usage, there is nothing special to do to plot the <em>ta-lib</em>
+indicators.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Indicators which output a <em>CANDLE</em> (all those looking for a
+candlestick pattern) deliver a binary output: either 0 or 100. In
+order to avoid adding a <code class="docutils literal notranslate"><span class="pre">subplot</span></code> to the chart, there is an
+automated plotting translation to plot them over the <em>data</em> at the
+point in time in which the pattern was recognized.</p>
+</div>
+</div>
+<div class="section" id="examples-and-comparisons">
+<h2>Examples and comparisons<a class="headerlink" href="#examples-and-comparisons" title="Permalink to this headline">¶</a></h2>
+<p>The following are plots comparing the outputs of some <em>ta-lib</em> indicators
+against the equivalent built-in indicators in <em>backtrader</em>. To consider:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <em>ta-lib</em> indicators get a <code class="docutils literal notranslate"><span class="pre">TA_</span></code> prefix on the plot. This is
+specifically done by the sample to help the user spot which is which</li>
+<li><em>Moving Averages</em> (if both deliver the same result) will be plotted <em>ON</em>
+top of the other existing <em>Moving Average</em>. The two indicators cannot be
+seen separately and the test is a pass if that’s the case.</li>
+<li>All samples include a <code class="docutils literal notranslate"><span class="pre">CDLDOJI</span></code> indicator as a reference</li>
+</ul>
+</div></blockquote>
+<div class="section" id="kama-kaufman-moving-average">
+<h3>KAMA (Kaufman Moving Average)<a class="headerlink" href="#kama-kaufman-moving-average" title="Permalink to this headline">¶</a></h3>
+<p>This is the 1st example because it is the only (from all indicators which the
+sample directly compare) that has a difference:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The initial values of the the samples are not the same</li>
+<li>At some point in time, the values converge and both <em>KAMA</em> implementations
+have the same behavior.</li>
+</ul>
+</div></blockquote>
+<p>After having analyzed the <em>ta-lib</em> source code:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The implementation in <em>ta-lib</em> makes a non-industry standard choice for the
+1st values of the <em>KAMA</em>.</p>
+<p>The choice can be seen in the source code quoting from the source code):
+<em>The yesterday price is used here as the previous KAMA.</em></p>
+</li>
+</ul>
+</div></blockquote>
+<p><em>backtrader</em> does the usual choice which is the same as for example the one
+from <em>Stockcharts</em>:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><a class="reference external" href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:kaufman_s_adaptive_moving_average">KAMA at StockCharts</a></p>
+<p><em>Since we need an initial value to start the calculation, the first KAMA is
+just a simple moving average</em></p>
+</li>
+</ul>
+</div></blockquote>
+<p>Hence the difference. Furthermore:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <em>ta-lib</em> <code class="docutils literal notranslate"><span class="pre">KAMA</span></code> implementation doesn’t allow specifying the <code class="docutils literal notranslate"><span class="pre">fast</span></code>
+and <code class="docutils literal notranslate"><span class="pre">slow</span></code> periods for the adjustment of the <em>scalable constant</em> defined
+by <em>Kaufman</em>.</li>
+</ul>
+</div></blockquote>
+<p>Sample execution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind kama
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-2621c1dc-b85d-40f7-877c-9cf789b9af6c"
+               href="../_images/ta-lib-kama1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-kama1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="sma">
+<h3>SMA<a class="headerlink" href="#sma" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind sma
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-b7f0d617-c8b9-4560-a8d9-e018fd135404"
+               href="../_images/ta-lib-sma1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-sma1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="ema">
+<h3>EMA<a class="headerlink" href="#ema" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind ema
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-725b514b-4fb4-474b-b905-f4c197e8f0ae"
+               href="../_images/ta-lib-ema1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-ema1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="stochastic">
+<h3>Stochastic<a class="headerlink" href="#stochastic" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind stoc
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-afd498be-0092-4ec5-a5f0-9377d5ca1ad5"
+               href="../_images/ta-lib-stoc1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-stoc1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="rsi">
+<h3>RSI<a class="headerlink" href="#rsi" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind rsi
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-57815fc3-0215-42f1-92f5-370e53811ef0"
+               href="../_images/ta-lib-rsi1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-rsi1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="macd">
+<h3>MACD<a class="headerlink" href="#macd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind macd
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-dfdb547a-cf37-4385-8213-b7835ebebd73"
+               href="../_images/ta-lib-macd1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-macd1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="bollinger-bands">
+<h3>Bollinger Bands<a class="headerlink" href="#bollinger-bands" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind bollinger
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-8df2c18d-78a1-4656-8c6d-d0c5b01c1f96"
+               href="../_images/ta-lib-bollinger1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-bollinger1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="aroon">
+<h3>AROON<a class="headerlink" href="#aroon" title="Permalink to this headline">¶</a></h3>
+<p>Note that <em>ta-lib</em> chooses to put the <em>down</em> line first and the colours are
+inverted when compared with the <em>backtrader</em> built-in indicator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind aroon
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-27b6edfb-6f6d-48c9-8e1b-59d8967fc71c"
+               href="../_images/ta-lib-aroon1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-aroon1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="ultimate-oscillator">
+<h3>Ultimate Oscillator<a class="headerlink" href="#ultimate-oscillator" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind ultimate
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-8e2f19e0-8aca-4738-80a5-98768b6e1dba"
+               href="../_images/ta-lib-ultimate1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-ultimate1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="trix">
+<h3>Trix<a class="headerlink" href="#trix" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind trix
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-ba6ba313-5703-4517-b2c9-6545912b5aaa"
+               href="../_images/ta-lib-trix1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-trix1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="adxr">
+<h3>ADXR<a class="headerlink" href="#adxr" title="Permalink to this headline">¶</a></h3>
+<p>Here <em>backtrader</em> offers both the <code class="docutils literal notranslate"><span class="pre">ADX</span></code> and <code class="docutils literal notranslate"><span class="pre">ADXR</span></code> lines.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind adxr
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-eb12fe6d-c80c-43fe-9d15-89d052489f11"
+               href="../_images/ta-lib-adxr1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-adxr1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="dema">
+<h3>DEMA<a class="headerlink" href="#dema" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind dema
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-3309d4f2-15e3-42fa-86e5-8c7e21b357d3"
+               href="../_images/ta-lib-dema1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-dema1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="tema">
+<h3>TEMA<a class="headerlink" href="#tema" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind tema
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-b48ba572-ef4d-46c1-85ea-27fc6bfd621c"
+               href="../_images/ta-lib-tema1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-tema1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="ppo">
+<h3>PPO<a class="headerlink" href="#ppo" title="Permalink to this headline">¶</a></h3>
+<p>Here <em>backtrader</em> offers not only the <code class="docutils literal notranslate"><span class="pre">ppo</span></code> line, but a more traditional
+<code class="docutils literal notranslate"><span class="pre">macd</span></code> approach.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind ppo
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-b421027b-fc8c-4239-a582-a6bc5e30b7d1"
+               href="../_images/ta-lib-ppo1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-ppo1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="williamsr">
+<h3>WilliamsR<a class="headerlink" href="#williamsr" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind williamsr
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-1d0c7c25-fa5e-4135-aa82-1bbbf16051ac"
+               href="../_images/ta-lib-williamsr1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-williamsr1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="roc">
+<h3>ROC<a class="headerlink" href="#roc" title="Permalink to this headline">¶</a></h3>
+<p>All indicators show have exactly the same shape, but how to track <em>momentum</em> or
+<em>rate of change</em> has several definitions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --plot --ind roc
+</pre></div>
+</div>
+<p>Output</p>
+<a class=""
+               data-lightbox="group-520133f7-e810-4fdc-bd21-7a2cd190e47c"
+               href="../_images/ta-lib-roc1.png"
+               title=""
+               data-title=""
+               ><img src="../_images/ta-lib-roc1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+<div class="section" id="sample-usage">
+<h2>Sample Usage<a class="headerlink" href="#sample-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./talibtest.py --help
+usage: talibtest.py [-h] [--data0 DATA0] [--fromdate FROMDATE]
+                    [--todate TODATE]
+                    [--ind {sma,ema,stoc,rsi,macd,bollinger,aroon,ultimate,trix,kama,adxr,dema,tema,ppo,williamsr,roc}]
+                    [--no-doji] [--use-next] [--plot [kwargs]]
+
+Sample for ta-lib
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data0 DATA0         Data to be read in (default:
+                        ../../datas/yhoo-1996-2015.txt)
+  --fromdate FROMDATE   Starting date in YYYY-MM-DD format (default:
+                        2005-01-01)
+  --todate TODATE       Ending date in YYYY-MM-DD format (default: 2006-12-31)
+  --ind {sma,ema,stoc,rsi,macd,bollinger,aroon,ultimate,trix,kama,adxr,dema,tema,ppo,williamsr,roc}
+                        Which indicator pair to show together (default: sma)
+  --no-doji             Remove Doji CandleStick pattern checker (default:
+                        False)
+  --use-next            Use next (step by step) instead of once (batch)
+                        (default: False)
+  --plot [kwargs], -p [kwargs]
+                        Plot the read data applying any kwargs passed For
+                        example (escape the quotes if needed): --plot
+                        style=&quot;candle&quot; (to plot candles) (default: None)
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-code">
+<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="kn">as</span> <span class="nn">bt</span>
+
+
+<span class="k">class</span> <span class="nc">TALibStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;ind&#39;</span><span class="p">,</span> <span class="s1">&#39;sma&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;doji&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">),)</span>
+
+    <span class="n">INDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sma&#39;</span><span class="p">,</span> <span class="s1">&#39;ema&#39;</span><span class="p">,</span> <span class="s1">&#39;stoc&#39;</span><span class="p">,</span> <span class="s1">&#39;rsi&#39;</span><span class="p">,</span> <span class="s1">&#39;macd&#39;</span><span class="p">,</span> <span class="s1">&#39;bollinger&#39;</span><span class="p">,</span> <span class="s1">&#39;aroon&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ultimate&#39;</span><span class="p">,</span> <span class="s1">&#39;trix&#39;</span><span class="p">,</span> <span class="s1">&#39;kama&#39;</span><span class="p">,</span> <span class="s1">&#39;adxr&#39;</span><span class="p">,</span> <span class="s1">&#39;dema&#39;</span><span class="p">,</span> <span class="s1">&#39;ppo&#39;</span><span class="p">,</span> <span class="s1">&#39;tema&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;roc&#39;</span><span class="p">,</span> <span class="s1">&#39;williamsr&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">doji</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">CDLDOJI</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;sma&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_SMA&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;ema&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">EMA</span><span class="p">(</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_SMA&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">EMA</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;stoc&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">STOCH</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span>
+                           <span class="n">fastk_period</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">slowk_period</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">slowd_period</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                           <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_STOCH&#39;</span><span class="p">)</span>
+
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">Stochastic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;macd&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">MACD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_MACD&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">MACD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">MACDHisto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;bollinger&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">BBANDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+                            <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_BBANDS&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">BollingerBands</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;rsi&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">RSI</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_RSI&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">RSI</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;aroon&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">AROON</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_AROON&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">AroonIndicator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;ultimate&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ULTOSC</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span>
+                            <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ULTOSC&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">UltimateOscillator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;trix&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">TRIX</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>  <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_TRIX&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">Trix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;adxr&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ADXR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span>
+                          <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ADXR&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">ADXR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;kama&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">KAMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_KAMA&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">KAMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;dema&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">DEMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_DEMA&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">DEMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;ppo&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">PPO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_PPO&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">PPO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">_movav</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">SMA</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;tema&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">TEMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_TEMA&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">TEMA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;roc&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ROC</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ROC&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ROCP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ROCP&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ROCR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ROCR&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">ROCR100</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_ROCR100&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">ROC</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">Momentum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">MomentumOscillator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">ind</span> <span class="o">==</span> <span class="s1">&#39;williamsr&#39;</span><span class="p">:</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">talib</span><span class="o">.</span><span class="n">WILLR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">high</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">low</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">,</span>
+                           <span class="n">plotname</span><span class="o">=</span><span class="s1">&#39;TA_WILLR&#39;</span><span class="p">)</span>
+            <span class="n">bt</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">WilliamsR</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">runstrat</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="n">dkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">fromdate</span><span class="p">:</span>
+        <span class="n">fromdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">fromdate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;fromdate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fromdate</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">todate</span><span class="p">:</span>
+        <span class="n">todate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">todate</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">dkwargs</span><span class="p">[</span><span class="s1">&#39;todate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">todate</span>
+
+    <span class="n">data0</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">feeds</span><span class="o">.</span><span class="n">YahooFinanceCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data0</span><span class="p">,</span> <span class="o">**</span><span class="n">dkwargs</span><span class="p">)</span>
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data0</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">TALibStrategy</span><span class="p">,</span> <span class="n">ind</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">ind</span><span class="p">,</span> <span class="n">doji</span><span class="o">=</span><span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_doji</span><span class="p">)</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">runcone</span><span class="o">=</span><span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">use_next</span><span class="p">,</span> <span class="n">stdstats</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span><span class="p">:</span>
+        <span class="n">pkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;candle&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">True</span><span class="p">:</span>  <span class="c1"># evals to True but is not True</span>
+            <span class="n">npkwargs</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dict(&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>  <span class="c1"># args were passed</span>
+            <span class="n">pkwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">npkwargs</span><span class="p">)</span>
+
+        <span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">pkwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample for sizer&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--data0&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;../../datas/yhoo-1996-2015.txt&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data to be read in&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--fromdate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2005-01-01&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Starting date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--todate&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;2006-12-31&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Ending date in YYYY-MM-DD format&#39;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--ind&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="n">TALibStrategy</span><span class="o">.</span><span class="n">INDS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="n">choices</span><span class="o">=</span><span class="n">TALibStrategy</span><span class="o">.</span><span class="n">INDS</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Which indicator pair to show together&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-doji&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Remove Doji CandleStick pattern checker&#39;</span><span class="p">))</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--use-next&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Use next (step by step) &#39;</span>
+                              <span class="s1">&#39;instead of once (batch)&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Plot options</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Plot the read data applying any kwargs passed</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;For example (escape the quotes if needed):</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                              <span class="s1">&#39;  --plot style=&quot;candle&quot; (to plot candles)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">pargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">pargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">runstrat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

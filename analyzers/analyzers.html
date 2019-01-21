@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Analyzers &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PyFolio Overview" href="pyfolio.html" />
+    <link rel="prev" title="Benchmarking" href="../observer-benchmark/benchmarking.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="../index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="../index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analyzers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nature-of-analyzers">Nature of analyzers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#location-in-the-ecosystem">Location in the ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#additional-location">Additional Location</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#returning-the-analysis">Returning the analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modus-operandi">Modus operandi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyzer-patterns">Analyzer Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-quick-example">A quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forensic-analysis-of-an-analyzer">Forensic Analysis of an Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="analyzers">
+<h1>Analyzers<a class="headerlink" href="#analyzers" title="Permalink to this headline">¶</a></h1>
+<p>Be it backtesting or trading, being able to analyze the performance of the
+trading system is key to understanding if not only profit has been attained,
+but also if it has been achieved with too much risk or if it was really worth
+the effort when compared with a reference asset (or a risk-free asset)</p>
+<p>That’s where the family of <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> objects comes in: provide an analysis
+of what’s happened or even of what’s actually happening.</p>
+<div class="section" id="nature-of-analyzers">
+<h2>Nature of analyzers<a class="headerlink" href="#nature-of-analyzers" title="Permalink to this headline">¶</a></h2>
+<p>The interface is modeled after that of <em>Lines</em> objects, feature for example a
+<code class="docutils literal notranslate"><span class="pre">next</span></code> method but there is a major difference:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Analyzers</span></code> do not hold lines.</p>
+<p>That means they are not expensive in terms of memory because even after
+having analyzed thousands of price bars they may still simply hold a single
+result in memory.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="location-in-the-ecosystem">
+<h2>Location in the ecosystem<a class="headerlink" href="#location-in-the-ecosystem" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> objects are (like <em>strategies</em>, <em>observers</em> and <em>datas</em>) added to
+the system through a <code class="docutils literal notranslate"><span class="pre">cerebro</span></code> instance:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">addanalyzer(ancls,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></li>
+</ul>
+</div></blockquote>
+<p>But when it comes to operation during <code class="docutils literal notranslate"><span class="pre">cerebro.run</span></code> the following will happen
+for each <em>strategy</em> present in the system</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ancls</span></code> will be instantiated with <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> during a <code class="docutils literal notranslate"><span class="pre">cerebro.run</span></code></li>
+<li>The <code class="docutils literal notranslate"><span class="pre">ancls</span></code> instance will be attached to the strategy</li>
+</ul>
+</div></blockquote>
+<p>That means:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the backtesting run contains for example <em>3 strategies</em> then <em>3
+instances</em> of <code class="docutils literal notranslate"><span class="pre">ancls</span></code> will be created and each of them will be attached
+to a different strategy.</li>
+</ul>
+</div></blockquote>
+<p>Bottomline: <em>an analyzer analyzes the performance of a single strategy</em> and
+<em>not the performance of an entires system</em></p>
+<div class="section" id="additional-location">
+<h3>Additional Location<a class="headerlink" href="#additional-location" title="Permalink to this headline">¶</a></h3>
+<p>Some <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> objects may actually use other analyzers to complete its
+work. For example: <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> uses the output of <code class="docutils literal notranslate"><span class="pre">TimeReturn</span></code> for the
+calculations.</p>
+<p>These <em>sub-analyzers</em> or <em>slave-analyzers</em> will also be inserted into the same
+strategy as the one creating them. But they are completely invisible to the user.</p>
+</div>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<p>To carry out the intended work, <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> objects are provided with some
+default attributes which are automagically passed and set in the instance for
+ease of use:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.strategy</span></code>: reference to the strategy subclass in which the
+analyzer object is operating.  Anything accessible by the <em>strategy</em> can
+also be accessd by the <em>analyzer</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.datas[x]</span></code>: the array of data feeds present in the
+strategy. Although this could be accesed over the <em>strategy</em> reference, the
+shortcut makes work more comfortable.</li>
+<li><code class="docutils literal notranslate"><span class="pre">self.data</span></code>: shortcut to <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span></code> for extra comfort.</li>
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX</span></code>: shortcuts to the different <code class="docutils literal notranslate"><span class="pre">self.datas[x]</span></code></li>
+</ul>
+<p>Some other aliases are available although they are probably an overkill:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX_Y</span></code> where X is a reference to <code class="docutils literal notranslate"><span class="pre">self.datas[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>
+refers to the line, finally pointing to: <code class="docutils literal notranslate"><span class="pre">self.datas[X].lines[Y]</span></code></li>
+</ul>
+</div></blockquote>
+<p>If the line has a name, the following is also available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX_Name</span></code> which resolves to <code class="docutils literal notranslate"><span class="pre">self.datas[X].Name</span></code> returning
+the line by name rather than by index</li>
+</ul>
+</div></blockquote>
+<p>For the first data, the last two shortcuts are available without the initial
+<code class="docutils literal notranslate"><span class="pre">X</span></code> numeric reference. For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.data_2</span></code> refers to <code class="docutils literal notranslate"><span class="pre">self.datas[0].lines[2]</span></code></li>
+</ul>
+</div></blockquote>
+<p>And</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.data_close</span></code> refers to <code class="docutils literal notranslate"><span class="pre">self.datas[0].close</span></code></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="returning-the-analysis">
+<h3>Returning the analysis<a class="headerlink" href="#returning-the-analysis" title="Permalink to this headline">¶</a></h3>
+<p>The <em>Analyzer</em> base class creates a <code class="docutils literal notranslate"><span class="pre">self.rets</span></code> (of type
+<code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>) member attribute to return the analysis. This is
+done in the method <code class="docutils literal notranslate"><span class="pre">create_analysis</span></code> which can be overriden by subclasses if
+creating custom analyzers.</p>
+</div>
+</div>
+<div class="section" id="modus-operandi">
+<h2>Modus operandi<a class="headerlink" href="#modus-operandi" title="Permalink to this headline">¶</a></h2>
+<p>Although <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> objects are not <em>Lines</em> objects and therefore do not
+iterate over lines, they have been designed to follow the same operation
+pattern.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Instantiated before the system is put into motion (therefore calling
+<code class="docutils literal notranslate"><span class="pre">__init__</span></code>)</p>
+</li>
+<li><p class="first">Signaled the begin of operations with <code class="docutils literal notranslate"><span class="pre">start</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">prenext</span></code> / <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> / <code class="docutils literal notranslate"><span class="pre">next</span></code> will be invoked following the
+calculated minimum period of the <em>strategy</em> the indicator is working in.</p>
+<p>The default behaviour of <code class="docutils literal notranslate"><span class="pre">prenext</span></code> and <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> is to invoke next,
+because an analyzer may be analyzing from the very first moment the system
+is alive.</p>
+<p>It may be customary to call <code class="docutils literal notranslate"><span class="pre">len(self)</span></code> in <em>Lines</em> objects to check the
+actual amount of bars. This also works in <code class="docutils literal notranslate"><span class="pre">Analyzers</span></code> by returning the
+value for <code class="docutils literal notranslate"><span class="pre">self.strategy</span></code></p>
+</li>
+<li><p class="first">Orders and trades will be notified just like they are to the strategy via
+<code class="docutils literal notranslate"><span class="pre">notify_order</span></code> and <code class="docutils literal notranslate"><span class="pre">notify_trade</span></code></p>
+</li>
+<li><p class="first">Cash and value will also be notified like it is done with the strategy
+over the <code class="docutils literal notranslate"><span class="pre">notify_cashvalue</span></code> method</p>
+</li>
+<li><p class="first">Cash, value and fundvalue and fund shares will also be notified like it is
+done with the strategy over the <code class="docutils literal notranslate"><span class="pre">notify_fund</span></code> method</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stop</span></code> will be invoked to signal the end of operations</p>
+</li>
+</ol>
+</div></blockquote>
+<p>Once the regular operations cycle has been completed, the <em>analyzers</em> featuring
+additional methods for extracting/outputting information</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">get_analysis</span></code>: which ideally (not enforced) returnes a <code class="docutils literal notranslate"><span class="pre">dict</span></code> -like
+object containing the analysis results.</li>
+<li><code class="docutils literal notranslate"><span class="pre">print</span></code> uses a standard <code class="docutils literal notranslate"><span class="pre">backtrader.WriterFile</span></code> (unless overriden) to
+write the analysis result from <code class="docutils literal notranslate"><span class="pre">get_analysis</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">pprint</span></code> (<em>pretty print</em>) uses the Python <code class="docutils literal notranslate"><span class="pre">pprint</span></code> module to print the
+<code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> resutls.</li>
+</ul>
+</div></blockquote>
+<p>And finally:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> creates a member attribute <code class="docutils literal notranslate"><span class="pre">self.ret</span></code> (of type
+<code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>) to which analyzers write the analysis results.</p>
+<p>Subclasses of <em>Analyzer</em> can override this method to change this behavior</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="analyzer-patterns">
+<h2>Analyzer Patterns<a class="headerlink" href="#analyzer-patterns" title="Permalink to this headline">¶</a></h2>
+<p>Development of <em>Analyzer</em> objects in the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> platform have revealed
+2 different usage patterns for the generation of the analysis:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">During execution by gathering information in the <code class="docutils literal notranslate"><span class="pre">notify_xxx</span></code> and
+<code class="docutils literal notranslate"><span class="pre">next</span></code> methods, and generating the current information of the analysis
+in <code class="docutils literal notranslate"><span class="pre">next</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">TradeAnalyzer</span></code>, for example, uses just the <code class="docutils literal notranslate"><span class="pre">notify_trade</span></code> method
+to generate the statistics.</p>
+</li>
+<li><p class="first">Gather (or not) the information as above, but generate the analysis in a
+single pass during the <code class="docutils literal notranslate"><span class="pre">stop</span></code> method</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SQN</span></code> (<em>System Quality Number</em>) gathers trade information during
+<code class="docutils literal notranslate"><span class="pre">notify_trade</span></code> but generates the statistic during the <code class="docutils literal notranslate"><span class="pre">stop</span></code> method</p>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="a-quick-example">
+<h2>A quick example<a class="headerlink" href="#a-quick-example" title="Permalink to this headline">¶</a></h2>
+<p>As easy as it can be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="kn">import</span> <span class="nn">backtrader.analyzers</span> <span class="k">as</span> <span class="nn">btanalyzers</span>
+<span class="kn">import</span> <span class="nn">backtrader.feeds</span> <span class="k">as</span> <span class="nn">btfeeds</span>
+<span class="kn">import</span> <span class="nn">backtrader.strategies</span> <span class="k">as</span> <span class="nn">btstrats</span>
+
+<span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+<span class="c1"># data</span>
+<span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;../datas/sample/2005-2006-day-001.txt&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">btfeeds</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="n">dataname</span><span class="p">)</span>
+
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># strategy</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">btstrats</span><span class="o">.</span><span class="n">SMA_CrossOver</span><span class="p">)</span>
+
+<span class="c1"># Analyzer</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">addanalyzer</span><span class="p">(</span><span class="n">btanalyzers</span><span class="o">.</span><span class="n">SharpeRatio</span><span class="p">,</span> <span class="n">_name</span><span class="o">=</span><span class="s1">&#39;mysharpe&#39;</span><span class="p">)</span>
+
+<span class="n">thestrats</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">thestrat</span> <span class="o">=</span> <span class="n">thestrats</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sharpe Ratio:&#39;</span><span class="p">,</span> <span class="n">thestrat</span><span class="o">.</span><span class="n">analyzers</span><span class="o">.</span><span class="n">mysharpe</span><span class="o">.</span><span class="n">get_analysis</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Executing it (having stored it in <code class="docutils literal notranslate"><span class="pre">analyzer-test.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./analyzer-test.py
+Sharpe Ratio: {&#39;sharperatio&#39;: 11.647332609673256}
+</pre></div>
+</div>
+<p>There is no plotting, because the <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> is a single value at the end
+of the calculation.</p>
+</div>
+<div class="section" id="forensic-analysis-of-an-analyzer">
+<h2>Forensic Analysis of an Analyzer<a class="headerlink" href="#forensic-analysis-of-an-analyzer" title="Permalink to this headline">¶</a></h2>
+<p>Let’s repeat that <code class="docutils literal notranslate"><span class="pre">Analyzers</span></code> are not Lines objects, but to seamlessly
+integrate them into the <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> ecosystem, the internal API conventions
+of several Lines object are followed (actually a <strong>mixture</strong> of them)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The code for the <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> has evolved to take for example into
+account annualization and the version here should only be a
+reference.</p>
+<p>Please check the <a class="reference internal" href="../analyzers-reference.html"><span class="doc">Analyzers Reference</span></a></p>
+<p class="last">There is additionally a <code class="docutils literal notranslate"><span class="pre">SharpeRatio_A</span></code> which provides the value
+directly in annualized form regardless of the sought timeframe</p>
+</div>
+<p>Code for <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> to serve as a basis (a simplified version)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">operator</span>
+
+<span class="kn">from</span> <span class="nn">backtrader.utils.py3</span> <span class="kn">import</span> <span class="nb">map</span>
+<span class="kn">from</span> <span class="nn">backtrader</span> <span class="kn">import</span> <span class="n">Analyzer</span><span class="p">,</span> <span class="n">TimeFrame</span>
+<span class="kn">from</span> <span class="nn">backtrader.mathsupport</span> <span class="kn">import</span> <span class="n">average</span><span class="p">,</span> <span class="n">standarddev</span>
+<span class="kn">from</span> <span class="nn">backtrader.analyzers</span> <span class="kn">import</span> <span class="n">AnnualReturn</span>
+
+
+<span class="k">class</span> <span class="nc">SharpeRatio</span><span class="p">(</span><span class="n">Analyzer</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;timeframe&#39;</span><span class="p">,</span> <span class="n">TimeFrame</span><span class="o">.</span><span class="n">Years</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;riskfreerate&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SharpeRatio</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anret</span> <span class="o">=</span> <span class="n">AnnualReturn</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Not needed ... but could be used</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Not needed ... but could be used</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">retfree</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">riskfreerate</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">anret</span><span class="o">.</span><span class="n">rets</span><span class="p">)</span>
+        <span class="n">retavg</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">sub</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">anret</span><span class="o">.</span><span class="n">rets</span><span class="p">,</span> <span class="n">retfree</span><span class="p">)))</span>
+        <span class="n">retdev</span> <span class="o">=</span> <span class="n">standarddev</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">anret</span><span class="o">.</span><span class="n">rets</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">retavg</span> <span class="o">/</span> <span class="n">retdev</span>
+
+    <span class="k">def</span> <span class="nf">get_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sharperatio</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The code can be broken down into:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">params</span></code> declaration</p>
+<p>Although the declared ones are not used (meant as an example), <em>Analyzers</em>
+like most other objects in <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> support parameters</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">__init__</span></code> method</p>
+<p>Just like <em>Strategies</em> declare <em>Indicators</em> in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, the same do
+analyzers with support objects.</p>
+<p>In this case: the <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> is calculated using <strong>Annual Returns</strong>. The
+calculation will be automatic and will be available to <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> for
+its own calculations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The actual implementation of <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> uses the more
+generic and later developed <code class="docutils literal notranslate"><span class="pre">TimeReturn</span></code> analyzer</p>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">next</span></code> method</p>
+<p><code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> doesn’t need it, but this method will be called after each
+invocation of the parent strategy <code class="docutils literal notranslate"><span class="pre">next</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">start</span></code> method</p>
+<p>Called right before the backtesting starts. Can be used for extra
+initialization tasks. Sharperatio doesn’t need it</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stop</span></code> method</p>
+<p>Called right after the backtesting ends. Like <code class="docutils literal notranslate"><span class="pre">SharpeRatio</span></code> does, it can
+be used to finish/make the calculation</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> method (returns a dictionary)</p>
+<p>Access for external callers to the produced analysis</p>
+<p>Returns: a dictionary with the analysis.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="backtrader.Analyzer">
+<em class="property">class </em><code class="descclassname">backtrader.</code><code class="descname">Analyzer</code><a class="headerlink" href="#backtrader.Analyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analyzer base class. All analyzers are subclass of this one</p>
+<p>An Analyzer instance operates in the frame of a strategy and provides an
+analysis for that strategy.</p>
+<p>Automagically set member attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">self.strategy</span></code> (giving access to the <em>strategy</em> and anything
+accessible from it)</li>
+<li><code class="docutils literal notranslate"><span class="pre">self.datas[x]</span></code> giving access to the array of data feeds present in
+the the system, which could also be accessed via the strategy reference</li>
+<li><code class="docutils literal notranslate"><span class="pre">self.data</span></code>, giving access to <code class="docutils literal notranslate"><span class="pre">self.datas[0]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">self.datas[X]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX_Y</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">self.datas[X].lines[Y]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.dataX_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">self.datas[X].name</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.data_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">self.datas[0].name</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">self.data_Y</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">self.datas[0].lines[Y]</span></code></li>
+</ul>
+</div></blockquote>
+<p>This is not a <em>Lines</em> object, but the methods and operation follow the same
+design</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">__init__</span></code> during instantiation and initial setup</li>
+<li><code class="docutils literal notranslate"><span class="pre">start</span></code> / <code class="docutils literal notranslate"><span class="pre">stop</span></code> to signal the begin and end of operations</li>
+<li><code class="docutils literal notranslate"><span class="pre">prenext</span></code> / <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> / <code class="docutils literal notranslate"><span class="pre">next</span></code> family of methods that follow
+the calls made to the same methods in the strategy</li>
+<li><code class="docutils literal notranslate"><span class="pre">notify_trade</span></code> / <code class="docutils literal notranslate"><span class="pre">notify_order</span></code> / <code class="docutils literal notranslate"><span class="pre">notify_cashvalue</span></code> /
+<code class="docutils literal notranslate"><span class="pre">notify_fund</span></code> which receive the same notifications as the equivalent
+methods of the strategy</li>
+</ul>
+</div></blockquote>
+<p>The mode of operation is open and no pattern is preferred. As such the
+analysis can be generated with the <code class="docutils literal notranslate"><span class="pre">next</span></code> calls, at the end of operations
+during <code class="docutils literal notranslate"><span class="pre">stop</span></code> and even with a single method like <code class="docutils literal notranslate"><span class="pre">notify_trade</span></code></p>
+<p>The important thing is to override <code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> to return a <em>dict-like</em>
+object containing the results of the analysis (the actual format is
+implementation dependent)</p>
+<dl class="method">
+<dt id="backtrader.Analyzer.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked to indicate the start of operations, giving the analyzer
+time to setup up needed things</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked to indicate the end of operations, giving the analyzer
+time to shut down needed things</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.prenext">
+<code class="descname">prenext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.prenext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked for each prenext invocation of the strategy, until the minimum
+period of the strategy has been reached</p>
+<p>The default behavior for an analyzer is to invoke <code class="docutils literal notranslate"><span class="pre">next</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.nextstart">
+<code class="descname">nextstart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.nextstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked exactly once for the nextstart invocation of the strategy,
+when the minimum period has been first reached</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked for each next invocation of the strategy, once the minum
+preiod of the strategy has been reached</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.notify_cashvalue">
+<code class="descname">notify_cashvalue</code><span class="sig-paren">(</span><em>cash</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.notify_cashvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives the cash/value notification before each next cycle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.notify_fund">
+<code class="descname">notify_fund</code><span class="sig-paren">(</span><em>cash</em>, <em>value</em>, <em>fundvalue</em>, <em>shares</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.notify_fund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives the current cash, value, fundvalue and fund shares</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.notify_order">
+<code class="descname">notify_order</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.notify_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives order notifications before each next cycle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.notify_trade">
+<code class="descname">notify_trade</code><span class="sig-paren">(</span><em>trade</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.notify_trade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives trade notifications before each next cycle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.get_analysis">
+<code class="descname">get_analysis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.get_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <em>dict-like</em> object with the results of the analysis</p>
+<p>The keys and format of analysis results in the dictionary is
+implementation dependent.</p>
+<p>It is not even enforced that the result is a <em>dict-like object</em>, just
+the convention</p>
+<p>The default implementation returns the default OrderedDict <code class="docutils literal notranslate"><span class="pre">rets</span></code>
+created by the default <code class="docutils literal notranslate"><span class="pre">create_analysis</span></code> method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.create_analysis">
+<code class="descname">create_analysis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.create_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Meant to be overriden by subclasses. Gives a chance to create the
+structures that hold the analysis.</p>
+<p>The default behaviour is to create a <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> named <code class="docutils literal notranslate"><span class="pre">rets</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.print">
+<code class="descname">print</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the results returned by <code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> via a standard
+<code class="docutils literal notranslate"><span class="pre">Writerfile</span></code> object, which defaults to writing things to standard
+output</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the results returned by <code class="docutils literal notranslate"><span class="pre">get_analysis</span></code> using the pretty
+print Python module (<em>pprint</em>)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Analyzer.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Analyzer.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support for invoking <code class="docutils literal notranslate"><span class="pre">len</span></code> on analyzers by actually returning the
+current length of the strategy the analyzer operates on</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

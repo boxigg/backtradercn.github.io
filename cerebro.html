@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cerebro &#8212; backtrader 1.9.69.122 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss-2016-12-25-2300.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/myjs-2016-12-25-2300.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cheat On Open" href="cerebro/cheat-on-open/cheat-on-open.html" />
+    <link rel="prev" title="Exceptions" href="exceptions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+ <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"> -->
+        <a class="navbar-brand" href="/">
+          backtrader</a>
+        <a href="index.html">
+	  <span class="navbar-text navbar-version pull-left"><b>1.9.69.122</b></span>
+	</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav navbar-right"> 
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/docu">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://community.backtrader.com">Community</a></li>
+            
+            
+	      
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- backtrader-001 -->
+      <ins class="adsbygoogle"
+	   style="display:block"
+	   data-ad-client="ca-pub-2694577446631179"
+	   data-ad-slot="3977998265"
+	   data-ad-format="auto"></ins>
+      <script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div class="globaltoc">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Platform Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating.html">Operating the platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cerebro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gathering-input">Gathering input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execute-the-backtesting">Execute the backtesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-observers">Standard Observers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#returning-the-results">Returning the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#giving-access-to-the-plotting-facilities">Giving access to the plotting facilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backtesting-logic">Backtesting logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cheat-on-open/cheat-on-open.html">Cheat On Open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy.html">Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers/sizers.html">Sizers - Smart Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers/timers.html">Timers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_target/order_target.html">Target Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_strategy/signal_strategy.html">Strategy with Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/slippage.html">Slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filler.html">Fillers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/order-creation-execution.html">Order Management and Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/oco/oco.html">OCO orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/trail/stoptrail.html">StopTrail(Limit)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/bracket/bracket.html">Bracket Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-creation-execution/futurespot/future-vs-spot.html">Futures and Spot Compensation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed.html">Data Feeds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-csv.html">CSV Data Feed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datafeed-develop-general/datafeed-develop-general.html">Binary Datafeed Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-a-datafeed.html">Extending a Datafeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-datafeed/pandas-datafeed.html">Pandas DataFeed Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tradingcalendar/tradingcalendar.html">Trading Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-resampling/data-resampling.html">Data Resampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-multitimeframe/data-multitimeframe.html">Data - Multiple Timeframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-replay/data-replay.html">Data - Replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-rollover/rolling-futures-over.html">Rolling over Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induse.html">Using Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talib/talib.html">TA-Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixing-timeframes/indicators-mixing-timeframes.html">Mixing Timeframes in Indicators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inddev.html">Indicator Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-and-statistics/observers-and-statistics.html">Observers and Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observer-benchmark/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/analyzers.html">Analyzers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio.html">PyFolio Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers/pyfolio-integration/pyfolio-integration.html">Pyfolio Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writer.html">Writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-schemes/commission-schemes.html">Commissions: Stocks vs Futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending-commissions/commission-schemes-extended.html">Extending Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-defined-commissions/commission-schemes-subclassing.html">User Defined Commissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commission-credit.html">Commissions: Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="position.html">Position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade.html">Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/ranges/plotting-date-ranges.html">Plotting Date Ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting/sameaxis/plot-sameaxis.html">Plotting on the same axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization-improvements.html">Optimization improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automated-bt-run/automated-bt-run.html">Automating BackTesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-savings/memory-savings.html">Saving Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timemgmt.html">DateTime Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live/live.html">Live Data Feeds and Live Trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataautoref.html">Data Feeds Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datayahoo.html">Yahoo Data Feed Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indautoref.html">Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talibindautoref.html">TA-Lib Indicator Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategy-reference.html">Strategies Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzers-reference.html">Analyzers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observers-reference.html">Observers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sizers-reference.html">Sizers Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters-reference.html">Filters Reference</a></li>
+</ul>
+
+</div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="cerebro">
+<h1>Cerebro<a class="headerlink" href="#cerebro" title="Permalink to this headline">¶</a></h1>
+<p>This class is the cornerstone of <code class="docutils literal notranslate"><span class="pre">backtrader</span></code> because it serves as a central
+point for:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Gathering all inputs (<em>Data Feeds</em>), actors (<em>Stratgegies</em>), spectators
+(<em>Observers</em>), critics (<em>Analyzers</em>) and documenters (<em>Writers</em>) ensuring the
+show still goes on at any moment.</li>
+<li>Execute the backtesting/or live data feeding/trading</li>
+<li>Returning the results</li>
+<li>Giving access to the plotting facilities</li>
+</ol>
+</div></blockquote>
+<div class="section" id="gathering-input">
+<h2>Gathering input<a class="headerlink" href="#gathering-input" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic" start="0">
+<li><p class="first">Start by creating a <code class="docutils literal notranslate"><span class="pre">cerebro</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Some <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to control execution are supported, see the reference
+(the same arguments can be applied later to the <code class="docutils literal notranslate"><span class="pre">run</span></code> method)</p>
+</li>
+<li><p class="first">Add <em>Data feeds</em></p>
+<p>The most usual pattern is <code class="docutils literal notranslate"><span class="pre">cerebro.adddata(data)</span></code>, where <code class="docutils literal notranslate"><span class="pre">data</span></code> is a
+<em>data feed</em> already instantiated. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;mypath.days&#39;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">adddata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Resampling</em> and <em>Replaying</em> a data is possible and follows the same pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;mypath.min&#39;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Minutes</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">resampledata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BacktraderCSVData</span><span class="p">(</span><span class="n">dataname</span><span class="o">=</span><span class="s1">&#39;mypath.min&#39;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Minutes</span><span class="p">)</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">replaydatadata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="n">bt</span><span class="o">.</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">Days</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The system can accept any number of data feeds, including mixing regular data
+with resampled and/or replayed data. Of course some of this combinationns
+will for sure make no sense and a restriction apply in order to be able to
+combine datas: <em>time aligment</em>. See the
+<a class="reference internal" href="data-multitimeframe/data-multitimeframe.html"><span class="doc">Data - Multiple Timeframes</span></a>,
+<a class="reference internal" href="data-resampling/data-resampling.html"><span class="doc">Data Resampling</span></a> - Resampling` and
+<a class="reference internal" href="data-replay/data-replay.html"><span class="doc">Data - Replay</span></a> sections.</p>
+</li>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">Strategies</span></code></p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">datas</span> <span class="pre">feeds</span></code> which are already an instance of a class,
+<code class="docutils literal notranslate"><span class="pre">cerebro</span></code> takes directly the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class and the arguments to
+pass to it. The rationale behind: <em>in an optimization scenario the class
+will be instantiated several times and passed different arguments</em></p>
+<p>Even if no <em>optimization</em> is run, the pattern still applies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">addstrategy</span><span class="p">(</span><span class="n">MyStrategy</span><span class="p">,</span> <span class="n">myparam1</span><span class="o">=</span><span class="n">value1</span><span class="p">,</span> <span class="n">myparam2</span><span class="o">=</span><span class="n">value2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When <em>optimizing</em> the parameters have to be added as iterables. See the
+<em>Optimization</em> section for a detailed explanation. The basic pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">optstrategy</span><span class="p">(</span><span class="n">MyStrategy</span><span class="p">,</span> <span class="n">myparam1</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Which will run <code class="docutils literal notranslate"><span class="pre">MyStrategy</span></code> 10 times with <code class="docutils literal notranslate"><span class="pre">myparam1</span></code> taking values
+from 10 to 19 (remember ranges in Python are half-open and <code class="docutils literal notranslate"><span class="pre">20</span></code> will not
+be reached)</p>
+</li>
+<li><p class="first">Other elements</p>
+<p>There are some other elements which can be added to enhance the
+backtesting experience. See the appropriate sections for it. The methods
+are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">addwriter</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">addanalyzer</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">addobserver</span></code> (or <code class="docutils literal notranslate"><span class="pre">addobservermulti</span></code>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Changing the broker</p>
+<p>Cerebro will use the default broker in <code class="docutils literal notranslate"><span class="pre">backtrader</span></code>, but this can be
+overriden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">broker</span> <span class="o">=</span> <span class="n">MyBroker</span><span class="p">()</span>
+<span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">broker</span>  <span class="c1"># property using getbroker/setbroker methods</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Receive notifications</p>
+<p>If <em>data feeds</em> and/or <em>brokers</em> send notifications (or a <em>store</em> provider
+which creates them) they will be received through the
+<code class="docutils literal notranslate"><span class="pre">Cerebro.notify_store</span></code> method. There are three (3) ways to work with
+these notifications</p>
+<ul>
+<li><p class="first">Add a <em>callback</em> to a <code class="docutils literal notranslate"><span class="pre">cerebro</span></code> instance via the
+<code class="docutils literal notranslate"><span class="pre">addnotifycallback(callback)</span></code> call. The callback has to support this
+signature:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">callback</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">msg</span></code>, <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> received are
+implementation defined (depend entirely on the <em>data/broker/store</em>) but
+in general one should expect them to be <em>printable</em> to allow for
+reception and experimentation.</p>
+</li>
+<li><p class="first">Override the <code class="docutils literal notranslate"><span class="pre">notify_store</span></code> method in the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> subclass which
+is added to a <code class="docutils literal notranslate"><span class="pre">cerebro</span></code> instance.</p>
+<p>The signature: <code class="docutils literal notranslate"><span class="pre">notify_store(self,</span> <span class="pre">msg,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></p>
+</li>
+<li><p class="first">Subclass <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> and override <code class="docutils literal notranslate"><span class="pre">notify_store</span></code> (same signature as in
+the <code class="docutils literal notranslate"><span class="pre">Strategy</span></code>)</p>
+<p>This should be the least preferred method</p>
+</li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="execute-the-backtesting">
+<h2>Execute the backtesting<a class="headerlink" href="#execute-the-backtesting" title="Permalink to this headline">¶</a></h2>
+<p>There is a single method to do it, but it supports several options (which can
+be also specified when instantiating) to decide how to run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the reerence below to understand which arguments are available.</p>
+<div class="section" id="standard-observers">
+<h3>Standard Observers<a class="headerlink" href="#standard-observers" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cerebro</span></code> (unless otherwise specified) automatically instantiates <em>three</em>
+standard <cite>observers</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li>A <em>Broker</em> observer which keeps track of <code class="docutils literal notranslate"><span class="pre">cash</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> (portfolio)</li>
+<li>A <em>Trades</em> observer which should show how effective each trade has been</li>
+<li>A <em>Buy/Sell</em> observer which should document when operations are executed</li>
+</ul>
+</div></blockquote>
+<p>Should a cleaner plotting be wished just disable them with <code class="docutils literal notranslate"><span class="pre">stdstats=False</span></code></p>
+</div>
+</div>
+<div class="section" id="returning-the-results">
+<h2>Returning the results<a class="headerlink" href="#returning-the-results" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cerebro</span></code> returns the instances of the strategies it created during
+backtesting. This allows to analyze what they did, because all elements in the
+strategies are accessible:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The format of <code class="docutils literal notranslate"><span class="pre">result</span></code> returned by <code class="docutils literal notranslate"><span class="pre">run</span></code> will vary depending on whether <em>optimization</em>
+is used (a <em>strategy</em> was added with <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code>):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">All strategies added with <code class="docutils literal notranslate"><span class="pre">addstrategy</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> will be a <code class="docutils literal notranslate"><span class="pre">list</span></code> of the instances run during the backtesting</p>
+</li>
+<li><p class="first">1 or more strategies were added with <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> will be a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">list</span></code>. Each internal list will contain
+the strategies after each optimization run</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The default behavior for <em>optimization</em> was changed to only return
+the <em>analyzers</em> present in the system, to make message passing across
+computer cores lighter.</p>
+<p class="last">If the complete set of strategies is wished as return value, set the
+parameter <code class="docutils literal notranslate"><span class="pre">optreturn</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</div>
+</div>
+<div class="section" id="giving-access-to-the-plotting-facilities">
+<h2>Giving access to the plotting facilities<a class="headerlink" href="#giving-access-to-the-plotting-facilities" title="Permalink to this headline">¶</a></h2>
+<p>As an extra an if <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is installed, the strategies can be
+plotted. With the usual pattern being:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cerebro</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See below for the reference and the section <a class="reference internal" href="plotting/plotting.html"><span class="doc">Plotting</span></a></p>
+</div>
+<div class="section" id="backtesting-logic">
+<h2>Backtesting logic<a class="headerlink" href="#backtesting-logic" title="Permalink to this headline">¶</a></h2>
+<p>Brief outline of the flow of things:</p>
+<blockquote>
+<div><ol class="arabic" start="0">
+<li><p class="first">Deliver any store notifications</p>
+</li>
+<li><p class="first">Ask data feeds to deliver the next set of ticks/bars</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.9.0.99: </span><em>New Behavior</em></p>
+<p>Data Feeds are synchronized by peeking at the <em>datetime</em> which is going
+to be provided next by available data feeds. Feeds which have not
+traded in the new period still provide the old data points, whilst data
+feeds which have new data available offer this one (along with the
+calculation of indicators)</p>
+<p><em>Old Behavior</em> (retained when using <code class="docutils literal notranslate"><span class="pre">oldsync=True</span></code> with <em>Cerebro</em>)</p>
+<p>The 1st data inserted into the system is the <code class="docutils literal notranslate"><span class="pre">datamaster</span></code> and the
+system will wait for it to deliver a tick</p>
+<p>The other data feeds are, more or less, slaves to the <code class="docutils literal notranslate"><span class="pre">datamaster</span></code>
+and:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>If the next tick to deliver is newer (datetime-wise) than the one
+delivered by the <code class="docutils literal notranslate"><span class="pre">datamaster</span></code> it will not be delivered</li>
+<li>May return without delivering a new tick for a number of reasons</li>
+</ul>
+</div></blockquote>
+<p>The logic was designed to easily synchronize multiple data feeds and
+data feeds with different timeframes</p>
+</div></blockquote>
+</div>
+</li>
+<li><p class="first">Notify the strategy about queued broker notifications of orders, trades
+and cash/value</p>
+</li>
+<li><p class="first">Tell the broker to accept queued orders and execute the pending orders
+with the new data</p>
+</li>
+<li><p class="first">Call the strategies’ <code class="docutils literal notranslate"><span class="pre">next</span></code> method to let the strategy evaluate the new
+data (and maybe issue orders which are queued in the broker)</p>
+<p>Depending on the stage it may be <code class="docutils literal notranslate"><span class="pre">prenext</span></code> or <code class="docutils literal notranslate"><span class="pre">nextstart</span></code> before the
+minimum period requirements of the strategy/indicators are met</p>
+<p>Internally the strategies will also kick the <code class="docutils literal notranslate"><span class="pre">observers</span></code>,
+<code class="docutils literal notranslate"><span class="pre">indicators</span></code>, <code class="docutils literal notranslate"><span class="pre">analyzers</span></code>  and other active elements</p>
+</li>
+<li><p class="first">Tell any <code class="docutils literal notranslate"><span class="pre">writers</span></code> to write the data to its target</p>
+</li>
+</ol>
+</div></blockquote>
+<p>Important to take into account:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In step <code class="docutils literal notranslate"><span class="pre">1</span></code> above when the <em>data feeds</em> deliver the new set of bars,
+those bars are <strong>closed</strong>. This means the data has already happened.</p>
+<p>As such, <em>orders</em> issued by the strategy in step <code class="docutils literal notranslate"><span class="pre">4</span></code> cannot be
+<em>executed</em> with the data from step <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p class="last">This means that orders will be executed with the concept of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span>
+<span class="pre">1</span></code>. Where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the bar moment at which the order was executed
+and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> the next one, which is the earliest moment in time for
+a possible order execution</p>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="backtrader.Cerebro">
+<em class="property">class </em><code class="descclassname">backtrader.</code><code class="descname">Cerebro</code><a class="headerlink" href="#backtrader.Cerebro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Params:</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">preload</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>Whether to preload the different <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feeds</span></code> passed to cerebro for
+the Strategies</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">runonce</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">Indicators</span></code> in vectorized mode to speed up the entire system.
+Strategies and Observers will always be run on an event based basis</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">live</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>If no data has reported itself as <em>live</em> (via the data’s <code class="docutils literal notranslate"><span class="pre">islive</span></code>
+method but the end user still want to run in <code class="docutils literal notranslate"><span class="pre">live</span></code> mode, this
+parameter can be set to true</p>
+<p>This will simultaneously deactivate <code class="docutils literal notranslate"><span class="pre">preload</span></code> and <code class="docutils literal notranslate"><span class="pre">runonce</span></code>. It
+will have no effect on memory saving schemes.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">Indicators</span></code> in vectorized mode to speed up the entire system.
+Strategies and Observers will always be run on an event based basis</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">maxcpus</span></code> (default: None -&gt; all available cores)</p>
+<blockquote>
+<div><p>How many cores to use simultaneously for optimization</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">stdstats</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>If True default Observers will be added: Broker (Cash and Value),
+Trades and BuySell</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oldbuysell</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">stdstats</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and observers are getting automatically
+added, this switch controls the main behavior of the <code class="docutils literal notranslate"><span class="pre">BuySell</span></code>
+observer</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">False</span></code>: use the modern behavior in which the buy / sell signals
+are plotted below / above the low / high prices respectively to avoid
+cluttering the plot</li>
+<li><code class="docutils literal notranslate"><span class="pre">True</span></code>: use the deprecated behavior in which the buy / sell signals
+are plotted where the average price of the order executions for the
+given moment in time is. This will of course be on top of an OHLC bar
+or on a Line on Cloe bar, difficulting the recognition of the plot.</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oldtrades</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">stdstats</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and observers are getting automatically
+added, this switch controls the main behavior of the <code class="docutils literal notranslate"><span class="pre">Trades</span></code>
+observer</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">False</span></code>: use the modern behavior in which trades for all datas are
+plotted with different markers</li>
+<li><code class="docutils literal notranslate"><span class="pre">True</span></code>: use the old Trades observer which plots the trades with the
+same markers, differentiating only if they are positive or negative</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">exactbars</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>With the default value each and every value stored in a line is kept in
+memory</p>
+<dl class="docutils">
+<dt>Possible values:</dt>
+<dd><ul class="first last">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>: all “lines” objects reduce memory usage to the
+automatically calculated minimum period.</p>
+<p>If a Simple Moving Average has a period of 30, the underlying data
+will have always a running buffer of 30 bars to allow the
+calculation of the Simple Moving Average</p>
+<ul class="simple">
+<li>This setting will deactivate <code class="docutils literal notranslate"><span class="pre">preload</span></code> and <code class="docutils literal notranslate"><span class="pre">runonce</span></code></li>
+<li>Using this setting also deactivates <strong>plotting</strong></li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-1</span></code>: datafreeds and indicators/operations at strategy level will
+keep all data in memory.</p>
+<p>For example: a <code class="docutils literal notranslate"><span class="pre">RSI</span></code> internally uses the indicator <code class="docutils literal notranslate"><span class="pre">UpDay</span></code> to
+make calculations. This subindicator will not keep all data in
+memory</p>
+<ul class="simple">
+<li>This allows to keep <code class="docutils literal notranslate"><span class="pre">plotting</span></code> and <code class="docutils literal notranslate"><span class="pre">preloading</span></code> active.</li>
+<li><code class="docutils literal notranslate"><span class="pre">runonce</span></code> will be deactivated</li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-2</span></code>: data feeds and indicators kept as attributes of the
+strategy will keep all points in memory.</p>
+<p>For example: a <code class="docutils literal notranslate"><span class="pre">RSI</span></code> internally uses the indicator <code class="docutils literal notranslate"><span class="pre">UpDay</span></code> to
+make calculations. This subindicator will not keep all data in
+memory</p>
+<p>If in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> something like
+<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">self.data.close</span> <span class="pre">-</span> <span class="pre">self.data.high</span></code> is defined, then <code class="docutils literal notranslate"><span class="pre">a</span></code>
+will not keep all data in memory</p>
+<ul class="simple">
+<li>This allows to keep <code class="docutils literal notranslate"><span class="pre">plotting</span></code> and <code class="docutils literal notranslate"><span class="pre">preloading</span></code> active.</li>
+<li><code class="docutils literal notranslate"><span class="pre">runonce</span></code> will be deactivated</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">objcache</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>Experimental option to implement a cache of lines objects and reduce
+the amount of them. Example from UltimateOscillator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span> <span class="o">-</span> <span class="n">TrueLow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">tr</span> <span class="o">=</span> <span class="n">TrueRange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># -&gt; creates another TrueLow(self.data)</span>
+</pre></div>
+</div>
+<p>If this is <code class="docutils literal notranslate"><span class="pre">True</span></code> the 2nd <code class="docutils literal notranslate"><span class="pre">TrueLow(self.data)</span></code> inside <code class="docutils literal notranslate"><span class="pre">TrueRange</span></code>
+matches the signature of the one in the <code class="docutils literal notranslate"><span class="pre">bp</span></code> calculation. It will be
+reused.</p>
+<p>Corner cases may happen in which this drives a line object off its
+minimum period and breaks things and it is therefore disabled.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">writer</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">True</span></code> a default WriterFile will be created which will
+print to stdout. It will be added to the strategy (in addition to any
+other writers added by the user code)</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tradehistory</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will activate update event logging in each trade
+for all strategies. This can also be accomplished on a per strategy
+basis with the strategy method <code class="docutils literal notranslate"><span class="pre">set_tradehistory</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">optdatas</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">True</span></code> and optimizing (and the system can <code class="docutils literal notranslate"><span class="pre">preload</span></code> and use
+<code class="docutils literal notranslate"><span class="pre">runonce</span></code>, data preloading will be done only once in the main process
+to save time and resources.</p>
+<p>The tests show an approximate <code class="docutils literal notranslate"><span class="pre">20%</span></code> speed-up moving from a sample
+execution in <code class="docutils literal notranslate"><span class="pre">83</span></code> seconds to <code class="docutils literal notranslate"><span class="pre">66</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">optreturn</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">True</span></code> the optimization results will not be full <code class="docutils literal notranslate"><span class="pre">Strategy</span></code>
+objects (and all <em>datas</em>, <em>indicators</em>, <em>observers</em> …) but and object
+with the following attributes (same as in <code class="docutils literal notranslate"><span class="pre">Strategy</span></code>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code> (or <code class="docutils literal notranslate"><span class="pre">p</span></code>) the strategy had for the execution</li>
+<li><code class="docutils literal notranslate"><span class="pre">analyzers</span></code> the strategy has executed</li>
+</ul>
+</div></blockquote>
+<p>In most occassions, only the <em>analyzers</em> and with which <em>params</em> are
+the things needed to evaluate a the performance of a strategy. If
+detailed analysis of the generated values for (for example)
+<em>indicators</em> is needed, turn this off</p>
+<p>The tests show a <code class="docutils literal notranslate"><span class="pre">13%</span> <span class="pre">-</span> <span class="pre">15%</span></code> improvement in execution time. Combined
+with <code class="docutils literal notranslate"><span class="pre">optdatas</span></code> the total gain increases to a total speed-up of
+<code class="docutils literal notranslate"><span class="pre">32%</span></code> in an optimization run.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">oldsync</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>Starting with release 1.9.0.99 the synchronization of multiple datas
+(same or different timeframes) has been changed to allow datas of
+different lengths.</p>
+<p>If the old behavior with data0 as the master of the system is wished,
+set this parameter to true</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tz</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<p>Adds a global timezone for strategies. The argument <code class="docutils literal notranslate"><span class="pre">tz</span></code> can be</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code>: in this case the datetime displayed by strategies will be
+in UTC, which has been always the standard behavior</li>
+<li><code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance. It will be used as such to convert UTC times to
+the chosen timezone</li>
+<li><code class="docutils literal notranslate"><span class="pre">string</span></code>. Instantiating a <code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance will be attempted.</li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span></code>. Use, for the strategy, the same timezone as the
+corresponding <code class="docutils literal notranslate"><span class="pre">data</span></code> in the <code class="docutils literal notranslate"><span class="pre">self.datas</span></code> iterable (<code class="docutils literal notranslate"><span class="pre">0</span></code> would
+use the timezone from <code class="docutils literal notranslate"><span class="pre">data0</span></code>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cheat_on_open</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">next_open</span></code> method of strategies will be called. This happens
+before <code class="docutils literal notranslate"><span class="pre">next</span></code> and before the broker has had a chance to evaluate
+orders. The indicators have not yet been recalculated. This allows
+issuing an orde which takes into account the indicators of the previous
+day but uses the <code class="docutils literal notranslate"><span class="pre">open</span></code> price for stake calculations</p>
+<p>For cheat_on_open order execution, it is also necessary to make the
+call <code class="docutils literal notranslate"><span class="pre">cerebro.broker.set_coo(True)</span></code> or instantite a broker with
+<code class="docutils literal notranslate"><span class="pre">BackBroker(coo=True)</span></code> (where <em>coo</em> stands for cheat-on-open) or set
+the <code class="docutils literal notranslate"><span class="pre">broker_coo</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Cerebro will do it
+automatically unless disabled below.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">broker_coo</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<p>This will automatically invoke the <code class="docutils literal notranslate"><span class="pre">set_coo</span></code> method of the broker
+with <code class="docutils literal notranslate"><span class="pre">True</span></code> to activate <code class="docutils literal notranslate"><span class="pre">cheat_on_open</span></code> execution. Will only do it
+if <code class="docutils literal notranslate"><span class="pre">cheat_on_open</span></code> is also <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">quicknotify</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<p>Broker notifications are delivered right before the delivery of the
+<em>next</em> prices. For backtesting this has no implications, but with live
+brokers a notification can take place long before the bar is
+delivered. When set to <code class="docutils literal notranslate"><span class="pre">True</span></code> notifications will be delivered as soon
+as possible (see <code class="docutils literal notranslate"><span class="pre">qcheck</span></code> in live feeds)</p>
+<p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> for compatibility. May be changed to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</li>
+</ul>
+<dl class="method">
+<dt id="backtrader.Cerebro.addstorecb">
+<code class="descname">addstorecb</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addstorecb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a callback to get messages which would be handled by the
+notify_store method</p>
+<p>The signature of the callback must support the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>callback(msg, *args, **kwargs)</li>
+</ul>
+</div></blockquote>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">msg</span></code>, <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> received are
+implementation defined (depend entirely on the <em>data/broker/store</em>) but
+in general one should expect them to be <em>printable</em> to allow for
+reception and experimentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.notify_store">
+<code class="descname">notify_store</code><span class="sig-paren">(</span><em>msg</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.notify_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive store notifications in cerebro</p>
+<p>This method can be overridden in <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> subclasses</p>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">msg</span></code>, <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> received are
+implementation defined (depend entirely on the <em>data/broker/store</em>) but
+in general one should expect them to be <em>printable</em> to allow for
+reception and experimentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.adddatacb">
+<code class="descname">adddatacb</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.adddatacb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a callback to get messages which would be handled by the
+notify_data method</p>
+<p>The signature of the callback must support the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>callback(data, status, *args, **kwargs)</li>
+</ul>
+</div></blockquote>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> received are implementation
+defined (depend entirely on the <em>data/broker/store</em>) but in general one
+should expect them to be <em>printable</em> to allow for reception and
+experimentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.notify_data">
+<code class="descname">notify_data</code><span class="sig-paren">(</span><em>data</em>, <em>status</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.notify_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive data notifications in cerebro</p>
+<p>This method can be overridden in <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> subclasses</p>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> received are
+implementation defined (depend entirely on the <em>data/broker/store</em>) but
+in general one should expect them to be <em>printable</em> to allow for
+reception and experimentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.adddata">
+<code class="descname">adddata</code><span class="sig-paren">(</span><em>data</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.adddata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Feed</span></code> instance to the mix.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">name</span></code> is not None it will be put into <code class="docutils literal notranslate"><span class="pre">data._name</span></code> which is
+meant for decoration/plotting purposes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.resampledata">
+<code class="descname">resampledata</code><span class="sig-paren">(</span><em>dataname</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.resampledata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Feed</span></code> to be resample by the system</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">name</span></code> is not None it will be put into <code class="docutils literal notranslate"><span class="pre">data._name</span></code> which is
+meant for decoration/plotting purposes.</p>
+<p>Any other kwargs like <code class="docutils literal notranslate"><span class="pre">timeframe</span></code>, <code class="docutils literal notranslate"><span class="pre">compression</span></code>, <code class="docutils literal notranslate"><span class="pre">todate</span></code> which
+are supported by the resample filter will be passed transparently</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.replaydata">
+<code class="descname">replaydata</code><span class="sig-paren">(</span><em>dataname</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.replaydata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Feed</span></code> to be replayed by the system</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">name</span></code> is not None it will be put into <code class="docutils literal notranslate"><span class="pre">data._name</span></code> which is
+meant for decoration/plotting purposes.</p>
+<p>Any other kwargs like <code class="docutils literal notranslate"><span class="pre">timeframe</span></code>, <code class="docutils literal notranslate"><span class="pre">compression</span></code>, <code class="docutils literal notranslate"><span class="pre">todate</span></code> which
+are supported by the replay filter will be passed transparently</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.chaindata">
+<code class="descname">chaindata</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.chaindata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chains several data feeds into one</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">name</span></code> is passed as named argument and is not None it will be put
+into <code class="docutils literal notranslate"><span class="pre">data._name</span></code> which is meant for decoration/plotting purposes.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then the name of the 1st data will be used</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.rolloverdata">
+<code class="descname">rolloverdata</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.rolloverdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chains several data feeds into one</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">name</span></code> is passed as named argument and is not None it will be put
+into <code class="docutils literal notranslate"><span class="pre">data._name</span></code> which is meant for decoration/plotting purposes.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then the name of the 1st data will be used</p>
+<p>Any other kwargs will be passed to the RollOver class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addstrategy">
+<code class="descname">addstrategy</code><span class="sig-paren">(</span><em>strategy</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addstrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class to the mix for a single pass run.
+Instantiation will happen during <code class="docutils literal notranslate"><span class="pre">run</span></code> time.</p>
+<p>args and kwargs will be passed to the strategy as they are during
+instantiation.</p>
+<p>Returns the index with which addition of other objects (like sizers)
+can be referenced</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.optstrategy">
+<code class="descname">optstrategy</code><span class="sig-paren">(</span><em>strategy</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.optstrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> class to the mix for optimization. Instantiation
+will happen during <code class="docutils literal notranslate"><span class="pre">run</span></code> time.</p>
+<p>args and kwargs MUST BE iterables which hold the values to check.</p>
+<p>Example: if a Strategy accepts a parameter <code class="docutils literal notranslate"><span class="pre">period</span></code>, for optimization
+purposes the call to <code class="docutils literal notranslate"><span class="pre">optstrategy</span></code> looks like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>cerebro.optstrategy(MyStrategy, period=(15, 25))</li>
+</ul>
+</div></blockquote>
+<p>This will execute an optimization for values 15 and 25. Whereas</p>
+<blockquote>
+<div><ul class="simple">
+<li>cerebro.optstrategy(MyStrategy, period=range(15, 25))</li>
+</ul>
+</div></blockquote>
+<p>will execute MyStrategy with <code class="docutils literal notranslate"><span class="pre">period</span></code> values 15 -&gt; 25 (25 not
+included, because ranges are semi-open in Python)</p>
+<p>If a parameter is passed but shall not be optimized the call looks
+like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>cerebro.optstrategy(MyStrategy, period=(15,))</li>
+</ul>
+</div></blockquote>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">period</span></code> is still passed as an iterable … of just 1
+element</p>
+<p><code class="docutils literal notranslate"><span class="pre">backtrader</span></code> will anyhow try to identify situations like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>cerebro.optstrategy(MyStrategy, period=15)</li>
+</ul>
+</div></blockquote>
+<p>and will create an internal pseudo-iterable if possible</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.optcallback">
+<code class="descname">optcallback</code><span class="sig-paren">(</span><em>cb</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.optcallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <em>callback</em> to the list of callbacks that will be called with the
+optimizations when each of the strategies has been run</p>
+<p>The signature: cb(strategy)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addindicator">
+<code class="descname">addindicator</code><span class="sig-paren">(</span><em>indcls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addindicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">Indicator</span></code> class to the mix. Instantiation will be done at
+<code class="docutils literal notranslate"><span class="pre">run</span></code> time in the passed strategies</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addobserver">
+<code class="descname">addobserver</code><span class="sig-paren">(</span><em>obscls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addobserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">Observer</span></code> class to the mix. Instantiation will be done at
+<code class="docutils literal notranslate"><span class="pre">run</span></code> time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addobservermulti">
+<code class="descname">addobservermulti</code><span class="sig-paren">(</span><em>obscls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addobservermulti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">Observer</span></code> class to the mix. Instantiation will be done at
+<code class="docutils literal notranslate"><span class="pre">run</span></code> time</p>
+<p>It will be added once per “data” in the system. A use case is a
+buy/sell observer which observes individual datas.</p>
+<p>A counter-example is the CashValue, which observes system-wide values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addanalyzer">
+<code class="descname">addanalyzer</code><span class="sig-paren">(</span><em>ancls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addanalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code> class to the mix. Instantiation will be done at
+<code class="docutils literal notranslate"><span class="pre">run</span></code> time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addwriter">
+<code class="descname">addwriter</code><span class="sig-paren">(</span><em>wrtcls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addwriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an <code class="docutils literal notranslate"><span class="pre">Writer</span></code> class to the mix. Instantiation will be done at
+<code class="docutils literal notranslate"><span class="pre">run</span></code> time in cerebro</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>The core method to perform backtesting. Any <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> passed to it
+will affect the value of the standard parameters <code class="docutils literal notranslate"><span class="pre">Cerebro</span></code> was
+instantiated with.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">cerebro</span></code> has not datas the method will immediately bail out.</p>
+<p>It has different return values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>For No Optimization: a list contanining instances of the Strategy
+classes added with <code class="docutils literal notranslate"><span class="pre">addstrategy</span></code></li>
+<li>For Optimization: a list of lists which contain instances of the
+Strategy classes added with <code class="docutils literal notranslate"><span class="pre">addstrategy</span></code></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.runstop">
+<code class="descname">runstop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.runstop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If invoked from inside a strategy or anywhere else, including other
+threads the execution will stop as soon as possible.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.setbroker">
+<code class="descname">setbroker</code><span class="sig-paren">(</span><em>broker</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.setbroker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a specific <code class="docutils literal notranslate"><span class="pre">broker</span></code> instance for this strategy, replacing the
+one inherited from cerebro.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.getbroker">
+<code class="descname">getbroker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.getbroker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the broker instance.</p>
+<p>This is also available as a <code class="docutils literal notranslate"><span class="pre">property</span></code> by the name <code class="docutils literal notranslate"><span class="pre">broker</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>plotter=None</em>, <em>numfigs=1</em>, <em>iplot=True</em>, <em>start=None</em>, <em>end=None</em>, <em>width=16</em>, <em>height=9</em>, <em>dpi=300</em>, <em>tight=True</em>, <em>use=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the strategies inside cerebro</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">plotter</span></code> is None a default <code class="docutils literal notranslate"><span class="pre">Plot</span></code> instance is created and
+<code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are passed to it during instantiation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numfigs</span></code> split the plot in the indicated number of charts reducing
+chart density if wished</p>
+<p><code class="docutils literal notranslate"><span class="pre">iplot</span></code>: if <code class="docutils literal notranslate"><span class="pre">True</span></code> and running in a <code class="docutils literal notranslate"><span class="pre">notebook</span></code> the charts will be
+displayed inline</p>
+<p><code class="docutils literal notranslate"><span class="pre">use</span></code>: set it to the name of the desired matplotlib backend. It will
+take precedence over <code class="docutils literal notranslate"><span class="pre">iplot</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">start</span></code>: An index to the datetime line array of the strategy or a
+<code class="docutils literal notranslate"><span class="pre">datetime.date</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> instance indicating the start
+of the plot</p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code>: An index to the datetime line array of the strategy or a
+<code class="docutils literal notranslate"><span class="pre">datetime.date</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> instance indicating the end
+of the plot</p>
+<p><code class="docutils literal notranslate"><span class="pre">width</span></code>: in inches of the saved figure</p>
+<p><code class="docutils literal notranslate"><span class="pre">height</span></code>: in inches of the saved figure</p>
+<p><code class="docutils literal notranslate"><span class="pre">dpi</span></code>: quality in dots per inches of the saved figure</p>
+<p><code class="docutils literal notranslate"><span class="pre">tight</span></code>: only save actual content and not the frame of the figure</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addsizer">
+<code class="descname">addsizer</code><span class="sig-paren">(</span><em>sizercls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addsizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Sizer</span></code> class (and args) which is the default sizer for any
+strategy added to cerebro</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addsizer_byidx">
+<code class="descname">addsizer_byidx</code><span class="sig-paren">(</span><em>idx</em>, <em>sizercls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addsizer_byidx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">Sizer</span></code> class by idx. This idx is a reference compatible to
+the one returned by <code class="docutils literal notranslate"><span class="pre">addstrategy</span></code>. Only the strategy referenced by
+<code class="docutils literal notranslate"><span class="pre">idx</span></code> will receive this size</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.add_signal">
+<code class="descname">add_signal</code><span class="sig-paren">(</span><em>sigtype</em>, <em>sigcls</em>, <em>*sigargs</em>, <em>**sigkwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.add_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a signal to the system which will be later added to a
+<code class="docutils literal notranslate"><span class="pre">SignalStrategy</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.signal_concurrent">
+<code class="descname">signal_concurrent</code><span class="sig-paren">(</span><em>onoff</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.signal_concurrent" title="Permalink to this definition">¶</a></dt>
+<dd><p>If signals are added to the system and the <code class="docutils literal notranslate"><span class="pre">concurrent</span></code> value is
+set to True, concurrent orders will be allowed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.signal_accumulate">
+<code class="descname">signal_accumulate</code><span class="sig-paren">(</span><em>onoff</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.signal_accumulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>If signals are added to the system and the <code class="docutils literal notranslate"><span class="pre">accumulate</span></code> value is
+set to True, entering the market when already in the market, will be
+allowed to increase a position</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.signal_strategy">
+<code class="descname">signal_strategy</code><span class="sig-paren">(</span><em>stratcls</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.signal_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a SignalStrategy subclass which can accept signals</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addcalendar">
+<code class="descname">addcalendar</code><span class="sig-paren">(</span><em>cal</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addcalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a global trading calendar to the system. Individual data feeds
+may have separate calendars which override the global one</p>
+<p><code class="docutils literal notranslate"><span class="pre">cal</span></code> can be an instance of <code class="docutils literal notranslate"><span class="pre">TradingCalendar</span></code> a string or an
+instance of <code class="docutils literal notranslate"><span class="pre">pandas_market_calendars</span></code>. A string will be will be
+instantiated as a <code class="docutils literal notranslate"><span class="pre">PandasMarketCalendar</span></code> (which needs the module
+<code class="docutils literal notranslate"><span class="pre">pandas_market_calendar</span></code> installed in the system.</p>
+<p>If a subclass of <cite>TradingCalendarBase</cite> is passed (not an instance) it
+will be instantiated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.addtz">
+<code class="descname">addtz</code><span class="sig-paren">(</span><em>tz</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.addtz" title="Permalink to this definition">¶</a></dt>
+<dd><p>This can also be done with the parameter <code class="docutils literal notranslate"><span class="pre">tz</span></code></p>
+<p>Adds a global timezone for strategies. The argument <code class="docutils literal notranslate"><span class="pre">tz</span></code> can be</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code>: in this case the datetime displayed by strategies will be
+in UTC, which has been always the standard behavior</li>
+<li><code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance. It will be used as such to convert UTC times to
+the chosen timezone</li>
+<li><code class="docutils literal notranslate"><span class="pre">string</span></code>. Instantiating a <code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance will be attempted.</li>
+<li><code class="docutils literal notranslate"><span class="pre">integer</span></code>. Use, for the strategy, the same timezone as the
+corresponding <code class="docutils literal notranslate"><span class="pre">data</span></code> in the <code class="docutils literal notranslate"><span class="pre">self.datas</span></code> iterable (<code class="docutils literal notranslate"><span class="pre">0</span></code> would
+use the timezone from <code class="docutils literal notranslate"><span class="pre">data0</span></code>)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.add_timer">
+<code class="descname">add_timer</code><span class="sig-paren">(</span><em>when</em>, <em>offset=datetime.timedelta(0)</em>, <em>repeat=datetime.timedelta(0)</em>, <em>weekdays=[]</em>, <em>weekcarry=False</em>, <em>monthdays=[]</em>, <em>monthcarry=True</em>, <em>allow=None</em>, <em>tzdata=None</em>, <em>strats=False</em>, <em>cheat=False</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.add_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules a timer to invoke <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>when</strong> (<em>-</em>) – <p>can be</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">datetime.time</span></code> instance (see below <code class="docutils literal notranslate"><span class="pre">tzdata</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_START</span></code> to reference a session start</li>
+<li><code class="docutils literal notranslate"><span class="pre">bt.timer.SESSION_END</span></code> to reference a session end</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance<p>Used to offset the value <code class="docutils literal notranslate"><span class="pre">when</span></code>. It has a meaningful use in
+combination with <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> and <code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code>, to indicated
+things like a timer being called <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">minutes</span></code> after the session
+start.</p>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">repeat</span></code> which must be a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> instance<p>Indicates if after a 1st call, further calls will be scheduled
+within the same session at the scheduled <code class="docutils literal notranslate"><span class="pre">repeat</span></code> delta</p>
+<p>Once the timer goes over the end of the session it is reset to the
+original value for <code class="docutils literal notranslate"><span class="pre">when</span></code></p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">weekdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days (iso codes, Monday is 1, Sunday is 7) the timers can
+be actually invoked<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">weekcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>). If <code class="docutils literal notranslate"><span class="pre">True</span></code> and the weekday was
+not seen (ex: trading holiday), the timer will be executed on the
+next day (even if in a new week)</li>
+<li><code class="docutils literal notranslate"><span class="pre">monthdays</span></code>: a <strong>sorted</strong> iterable with integers indicating on
+which days of the month a timer has to be executed. For example
+always on day <em>15</em> of the month<p>If not specified, the timer will be active on all days</p>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">monthcarry</span></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>). If the day was not seen
+(weekend, trading holiday), the timer will be executed on the next
+available day.</li>
+<li><code class="docutils literal notranslate"><span class="pre">allow</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>). A callback which receives a
+<cite>datetime.date`</cite> instance and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the date is
+allowed for timers or else returns <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">tzdata</span></code> which can be either <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), a <code class="docutils literal notranslate"><span class="pre">pytz</span></code>
+instance or a <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance.<p><code class="docutils literal notranslate"><span class="pre">None</span></code>: <code class="docutils literal notranslate"><span class="pre">when</span></code> is interpreted at face value (which translates
+to handling it as if it where UTC even if it’s not)</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytz</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being specified
+in the local time specified by the timezone instance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">feed</span></code> instance: <code class="docutils literal notranslate"><span class="pre">when</span></code> will be interpreted as being
+specified in the local time specified by the <code class="docutils literal notranslate"><span class="pre">tz</span></code> parameter of
+the data feed instance.</p>
+<dl class="docutils">
+<dt><strong>Note</strong>: If <code class="docutils literal notranslate"><span class="pre">when</span></code> is either <code class="docutils literal notranslate"><span class="pre">SESSION_START</span></code> or</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">SESSION_END</span></code> and <code class="docutils literal notranslate"><span class="pre">tzdata</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the 1st <em>data feed</em>
+in the system (aka <code class="docutils literal notranslate"><span class="pre">self.data0</span></code>) will be used as the reference
+to find out the session times.</dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">strats</span></code> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) call also the <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code> of
+strategies</li>
+<li><code class="docutils literal notranslate"><span class="pre">cheat</span></code> (default <code class="docutils literal notranslate"><span class="pre">False</span></code>) if <code class="docutils literal notranslate"><span class="pre">True</span></code> the timer will be called
+before the broker has a chance to evaluate the orders. This opens
+the chance to issue orders based on opening price for example right
+before the session starts</li>
+<li><code class="docutils literal notranslate"><span class="pre">*args</span></code>: any extra args will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: any extra kwargs will be passed to <code class="docutils literal notranslate"><span class="pre">notify_timer</span></code></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return Value:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The created timer</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.notify_timer">
+<code class="descname">notify_timer</code><span class="sig-paren">(</span><em>timer</em>, <em>when</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.notify_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a timer notification where <code class="docutils literal notranslate"><span class="pre">timer</span></code> is the timer which was
+returned by <code class="docutils literal notranslate"><span class="pre">add_timer</span></code>, and <code class="docutils literal notranslate"><span class="pre">when</span></code> is the calling time. <code class="docutils literal notranslate"><span class="pre">args</span></code>
+and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are any additional arguments passed to <code class="docutils literal notranslate"><span class="pre">add_timer</span></code></p>
+<p>The actual <code class="docutils literal notranslate"><span class="pre">when</span></code> time can be later, but the system may have not be
+able to call the timer before. This value is the timer value and no the
+system time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backtrader.Cerebro.add_order_history">
+<code class="descname">add_order_history</code><span class="sig-paren">(</span><em>orders</em>, <em>notify=True</em><span class="sig-paren">)</span><a class="headerlink" href="#backtrader.Cerebro.add_order_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a history of orders to be directly executed in the broker for
+performance evaluation</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">orders</span></code>: is an iterable (ex: list, tuple, iterator, generator)
+in which each element will be also an iterable (with length) with
+the following sub-elements (2 formats are possible)</p>
+<p><code class="docutils literal notranslate"><span class="pre">[datetime,</span> <span class="pre">size,</span> <span class="pre">price]</span></code> or <code class="docutils literal notranslate"><span class="pre">[datetime,</span> <span class="pre">size,</span> <span class="pre">price,</span> <span class="pre">data]</span></code></p>
+<dl class="docutils">
+<dt><strong>Note</strong>: it must be sorted (or produce sorted elements) by</dt>
+<dd><p class="first last">datetime ascending</p>
+</dd>
+</dl>
+<p>where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">datetime</span></code> is a python <code class="docutils literal notranslate"><span class="pre">date/datetime</span></code> instance or a string
+with format YYYY-MM-DD[THH:MM:SS[.us]] where the elements in
+brackets are optional</li>
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code> is an integer (positive to <em>buy</em>, negative to <em>sell</em>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">price</span></code> is a float/integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">data</span></code> if present can take any of the following values<ul>
+<li><em>None</em> - The 1st data feed will be used as target</li>
+<li><em>integer</em> - The data with that index (insertion order in
+<strong>Cerebro</strong>) will be used</li>
+<li><em>string</em> - a data with that name, assigned for example with
+<code class="docutils literal notranslate"><span class="pre">cerebro.addata(data,</span> <span class="pre">name=value)</span></code>, will be the target</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">notify</span></code> (default: <em>True</em>)</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">True</span></code> the 1st strategy inserted in the system will be
+notified of the artificial orders created following the information
+from each order in <code class="docutils literal notranslate"><span class="pre">orders</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Note</strong>: Implicit in the description is the need to add a data feed</dt>
+<dd>which is the target of the orders. This is for example needed by
+analyzers which track for example the returns</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, 2016, 2017, 2018 Daniel Rodriguez.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
